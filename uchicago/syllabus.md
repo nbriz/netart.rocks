@@ -47,9 +47,9 @@ We generally accept that computers and the Internet evolved outside of fine art 
 
 Readings, videos, tutorials, exercises and other details, links and materials related to work and conversations we'll be having each week can be found on the class website: https://netart.rocks/uchicago
 
-- **2020.01.04**: Introductions + Calibrations
-- **2020.01.11**: Histories of the Internet
+- **2020.01.11**: Introductions + Calibrations
 - **2020.01.18**: MLK HOLIDAY
+- **2020.01.25**: Histories of the Internet
 - **2020.02.01**: net.art && the World Wide Web
 - **2020.02.08**: Digital Folklore b4 Social Media
 - **2020.02.15**: Online Profiles: Me Vs My
