@@ -112,6 +112,20 @@ a[href="#"] {
   opacity: 0.5;
 }
 
+a.button {
+  border: none;
+  background: var(--red);
+  font-family: sans-serif;
+  padding: 15px 40px;
+  border-radius: 42px;
+  font-size: 24px;
+  color: #fff;
+  transition: all 0.25s;
+}
+
+a.button:hover {
+  background: var(--blue);
+}
 
 pre {
   color: #444;
