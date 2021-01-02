@@ -2,6 +2,7 @@
 ### MAAD 23631 (Winter 2021)
 
 [view as .pdf](syllabus.pdf)
+
 [view as plain text](https://raw.githubusercontent.com/nbriz/netart.rocks/main/uchicago/syllabus.md)
 
 ```css
