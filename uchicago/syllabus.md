@@ -1,6 +1,9 @@
 # Internet Art I
 ### MAAD 23631 (Winter 2021)
 
+[view as .pdf](syllabus.pdf)
+[view as plain text](https://raw.githubusercontent.com/nbriz/netart.rocks/main/uchicago/syllabus.md)
+
 ```css
 .details {
   where: https://netart.rocks/uchicago;
@@ -28,7 +31,7 @@ We generally accept that computers and the Internet evolved outside of fine art 
 - 30%: tutorials and experiments
 - 40%: final project
 
-**class discussions**: So much of what we’re going to cover in class, both in terms of the theory and practice, can be gleaned through your own online research. The most valuable aspect of learning this material in the classroom (albeit virtually this quarter), rather than on your own, is the chance for realtime interactivity with your professor and peers. I can not stress enough how important it is to take advantage of class discussions. The focus of these discussions will be predominantly determined by questions and comments submitted by the class ahead of time on a shared doc. Readings and videos assigned for homework will often b accompanied by open questions which will also inform our class discussions. Participating in these discussions will mean showing up to our meet.jit.si room (group video chat) every week on time, leaving questions or comments in the doc and sharing your thoughts with the class on our group video chat.
+**class discussions**: So much of what we’re going to cover in class, both in terms of the theory and practice, can be gleaned through your own online research. The most valuable aspect of learning this material in the classroom (albeit virtually this quarter), rather than on your own, is the chance for realtime interactivity with your professor and peers. I can not stress enough how important it is to take advantage of class discussions. The focus of these discussions will be predominantly determined by questions and comments submitted by the class ahead of time on a shared doc. Readings and videos assigned for homework will often be accompanied by open questions which will also inform our class discussions. Participating in these discussions will mean showing up to our meet.jit.si room (group video chat) every week on time, leaving questions or comments in the doc and sharing your thoughts with the class on our group video chat.
 
 **tutorials and experiments**: In addition to readings and videos, you will also be assigned online interactive tutorials (linked on the class website), as well as creative coding experiments. These will be focused on learning prerequisite skills and core concepts we'll need for the final project. Your sketches (creative coding experiments) will be submitted to a shared doc where everyone in class will be able to learn from and/or comment on each others work.
 
