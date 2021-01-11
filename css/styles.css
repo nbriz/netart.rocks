@@ -1,6 +1,6 @@
 
 :root {
-  --gray: #272822;
+  --gray: #323232;
   --red: #dc3037;
   --blue: #50acc5;
 }
@@ -154,6 +154,11 @@ a.button {
 
 a.button:hover {
   background: var(--blue);
+}
+
+b {
+  color: black;
+  font-style: italic;
 }
 
 pre {
