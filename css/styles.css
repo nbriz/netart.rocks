@@ -169,8 +169,11 @@ pre {
 }
 
 code {
-  border-radius: 15px;
-  padding: 25px;
+  border-radius: 6px;
+  padding: 1px 8px;
+  border: 1px solid var(--red);
+  color: var(--red);
+  font-size: 17px;
 }
 
 /*highlight overrides*/
