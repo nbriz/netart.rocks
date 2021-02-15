@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Internet Art I: University of Chicago</title>
+    <meta name="description" content="a class website for Internet Art (MAAD 23631) at the University of Chicago">
+    <meta name="author" content="Nick Briz">
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png"  href="https://raw.githubusercontent.com/nbriz/netart.rocks/main/images/icon.png">
+    <link rel="stylesheet" href="../css/styles.css" id="style">
+
+  </head>
+  <body>
+
+    <header>
+      <h1>2021.03.01</h1>
+      <h2>CSS Art: Irrational Virtuosos</h2>
+    </header>
+
+    <article>
+
+      <p>
+        Cascading Style Sheets, or CSS, was a language introduced to the Web in the mid 90s for the purpose of separating a webpage's "form" or "presentation" from it's "structure" or "content". Initially it handled things like layout, color changes and typography, but today in the era of CSS3, it has evolved to become a much more expressive language capable of creating interactive effects and animations. In the web-development world, there are creative coders that like to challenge themselves and inspire each other to push CSS to its limits and produce playful works of "CSS Art", like CSS Art legend Diana Smith...
+      </p>
+
+      <video style="max-width: 100%;" controls>
+        <source src="files/diana-smith-css-art.mp4" type="video/mp4">
+          <source src="files/diana-smith-css-art.webm" type="video/webm">
+      </video>
+
+      <blockquote cite="https://www.vox.com/2018/5/3/17309078/digital-art-diana-a-smith-francine-coded-browser-art">
+        <p>If you’ve ever seen ASCII art — those popular computer pictures formed from text and symbols on your keyboard — then you’ve seen how computer code can be used to create art. Believe it or not, we’ve come so far in the way that sophisticated computer languages can interpret commands that we can now use them to create stunning illustrations — like the ones developer Diana A. Smith creates.</p>
+        <cite>
+          <a href="https://www.vox.com/2018/5/3/17309078/digital-art-diana-a-smith-francine-coded-browser-art" target="_blank">Aja Romano (Vox.com)</a>
+        </cite>
+      </blockquote>
+
+      <p>
+        Diana Smith's pieces are extremely detailed, and while other CSS artists strive for that sort of "skeumophic" realism with their pieces (Check out <a href="https://www.cssartist.com/" target="_blank">Kass Sanch</a>'s <a href="https://codepen.io/kassandrasanch/pen/WNxJZyz" target="_blank">Polaroid Camera</a> for example), most CSS artists produce more minimalist works like this <a href="https://codepen.io/srekoble/pen/RLpNVJ" target="_blank">sketch by Vangel Tzo</a> or this <a href="https://codepen.io/maaarj/pen/gmNeXd" target="_blank">sketch by Marjo Sobrecaray</a>. CSS Art is most often cute and cartoonish, like this <a href="https://codepen.io/vicbergquist/pen/ZJXROr" target="_blank">CSS cartoon taco</a> by Victoria Bergquist or these <a href="https://codepen.io/justyouraverageonion/pen/ErmNPJ" target="_blank">couple of kitties</a> by JustYourAverageOnion.
+      </p>
+    
+
+      <p>
+        As mentioned above, modern CSS has the ability to create <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions" target="_blank">transitions</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations" target="_blank">animations</a>, which CSS artists often times use to bring their creations to life, like this <a href="https://codepen.io/davidkpiano/pen/Xempjq" target="_blank">swining cat</a> or this <a href="https://codepen.io/davidkpiano/pen/BGxgLa" target="_blank">pracning dog</a>, both by David Khourshid.
+      </p>
+
+      <p>
+        The CSS art scene prides itself in writing CSS code to do things the creators of the language (the folks at the W3C CSS working groups) never intended it to be used for. For example, the CSS <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow" target="_blank">box-shadow</a> property was created to allow web develoeprs to add shadows to any of their HTML elements. You can give an element more than one shadow by adding another set of box-shadow values to that property separated by a comma. Because it's possible to produce a shadow with hard edges (rather than the more conventional fuzzy edges) CSS artists realized this property could be used to create pixel art like this <a href="https://codepen.io/ivorjetski/pen/xxKBWBN" target="_blank">pixel art piece</a> by Ben Evans or this, now infamous in the scene, <a href="https://codepen.io/jaysalvat/pen/HaqBf" target="_blank">pure CSS Mona Lisa</a> by Jay Salvat. I put together a simple <a href="http://68.183.115.149:1337/?layout=dock-left#code/eJyFlUFuwyAQRfc5BZvuagXS1ILUyl1smQYkt6CYJI6i3L14sLpp/Ucyloc3M3y+ZGjGdB/scSNEF/q7eOQPIb7a88l/H4T8oNBZf3LpIJSUVzdPPfPIT++vS0EMo08+5JK2G8NwSbZUphCpLE4lHuxn7vMuX0p4831yf5ZZwi5M1ejaPtzyVJx+h84jXs5xsK+UJ4SpIVYzVvUq1xLzefZth9sDTgjwvca83mOuGX2G0VfRBkjF+v4BptaAEwKc9ge4YeQpxQioSCEtgxwACRJjrpxbn7QDTghwzegzjL7iIErYMQqLxXr9H5QYk4OAc+3JQcBJOuCa0WcYfcUgkFAMMviQAZgQ4EUASqBDUDHHFEogD1FCOUf/SShXRrNdrppNky+OY7Od3z8QAc3D" target="_blank">netnet sketch</a> that demonstrates this technique in action (it also includes a CSS transition).
+      </p>
+
+      <p>
+        In their quest to push CSS to it's limits, these artists often challenge themselves to create entire compositions by styling only a single HTML element, this is accomplished using CSS "pseudo-elements", specifically the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::before" target="_blank">::before</a> and the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::after" target="_blank">::after</a> pseudo-elements, which can be used to style a single element as though it was actually three different HTML elements, which gives the CSS artist more room to experiment. I put together a couple of netnet sketches to demonstrate this technique in action, this <a href="http://68.183.115.149:1337/?layout=dock-left#code/eJydVO1OgzAU/b+nuJkx0cRqh2ucde5dCi2jWilpyxwa391LCgzwK5GEpvTcj3NOb9j60Bi1A1gAcGdtgHfcARCS7klmjXUczvI8p/fpQwf4qlBORXDVonf4bL5DkxYV4k4MqNGlGspSertm9z1U6H1h8A097vapuEgYu4LTQq/ZZZvwscAltbLp6BaqzeSwovRQxIpS+8qIhkNu1DEePdU+6LzBBmVQJYZnuCoXQYHNS6KDevFTIBXZ897ZupQ9s4NwFyeDToSuo/iO06uWoeCQUFp1/XuWo6PKeh20LTmI1FtTB9U1tU4qR5yQukY+jJ7/TmZyKZfjGtiuOgLW1rKLPV1CFxicKHsathKZDg06nTAPSnhFbB3mEjlPVW4HqYOhy+XDWDv7Ip39qfyN6FKqI9KO30blmHc75AVbIcb6z17kZiZyNk4TSwjWIG3dkb/TeiS1IdgXDnR6HVEE/WqHyHFe/nBjtVnP7Rgd/eRH1L+eyF/P2P5rTJJ+cLc38SeAO6kPkBnh/eMyhi532xs83C0+AVZUOSU=" target="_blank"> cartoonish sphere</a> (inspired by css artist <a href="https://agathe.dev/" target="_blank">Agathe Cocco</a>) and this <a href="http://68.183.115.149:1337/?layout=dock-left#code/eJyllNtuozAQhu/zFKNUlUAKqWGDkrhpnqO3NrbBrYORbVKyq777DoUmzXapVFWCYU5Y/3y2vPPhZOR+BkCdtQH+oAeQJLxMCmuso3CjlCJbfo+F1xkabsVpbDswV+qaArl/CyupyypQSAk5VkNKaN8YdqKgjOyG1FPrg1YnXL4Ossb2Aq10Q5EZXdaJDvLgrwucFc+ls20t3nUdmYsuOuOzvqVvKunkKLGxXgdtUSTj3po2yGG9Fy1CRSEjpOmu1X9IceuEdIljQreoJye3/4qh0BeZScr+i3qjQrvCSGABMTTdm1nAjWRc8DU6Ki0I531GcclF76zYeqvQEdk227A+QxjZbj5NRCmXyp4nO/Obz78x0hSPYBsKSfY+oZEqfIx/RgLb+3cBruQsyvJ8ARdDlmk8VdnEkK6m/oshW93Go3zHao9wDhT8s3x5jFC6kOVYVdrgQaLATeuiNG+6/7BlClum0H5JbZ1fQUt/jeHvRNdCdogxvd6g7NMGrb935HoaBAkMz5LkUxTSKQgXBru78QaY7YQ+QmGY9w/zgcp8v7vD5P4v/D8qLg==" target="_blank">realistic sphere</a> (inspired by css artist <a href="https://shunyakoide.com/" target="_blank">Shunya Koide</a>). For more examples of "single element" works, check out this <a href="https://codepen.io/lynnandtonic/pen/xxOVbvd" target="_blank">Single div CSS ship</a> by Lynn Fisher, or this or this <a href="https://codepen.io/jkantner/pen/wvWXyKG" target="_blank">Single Element Hourglass</a> by Jon Kantner, or this <a href="https://codepen.io/joshnh/pen/JCGoF" target="_blank">Single Element Pure CSS MacBook Pro</a> by Joshua Hibbert.
+      </p>
+
+      <p>
+        I've created <a href="https://www.youtube.com/watch?v=4mDbR_5gFnE&feature=youtu.be" target="_blank">a video tutorial</a> where i reconstruct Joshua Hibbert's MacBook CSS Art step by step and discuss the different ways he (and others in the scene) leverage these CSS properties in unconventional ways. I've also put together a gallery of some of my favorite CSS Art pieces for inspiration. Click on the image below to see the full collection.
+      </p>
+
+      <br><br>
+
+      <a href="css-art-gallery/index.html">
+        <img src="images/css-art-gallery.png" alt="css art gallery">
+      </a>
+
+    </article>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+  </body>
+</html>
