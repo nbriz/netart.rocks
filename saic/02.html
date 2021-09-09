@@ -45,7 +45,7 @@
         Choose a website and create an Internet Travelogue which charts your HTTP request packet's journey across the Internet. Here's one <a href="https://docs.google.com/presentation/d/1C3pUSAQrkc-pEO6Pk5MUqB4KMF0KMcb0gzk_cXoUQ-w/edit?usp=sharing" target="_blank">example of what your Internet Travelogue</a> could look like, and here's <a href="https://labs.rs/en/packets/" target="_blank">another example</a>. In order to chart your packet's journey you'll need to use a few tools.
       </p>
 
-      <img src="images/nslookup.png" alt="nslookup">
+      <img src="../images/notes/nslookup.png" alt="nslookup">
 
       <p>
         First, you'll need to know your IP address, the number which locates you (or your WiFi router to be more precise) on the Internet. Do a websearch for "What's my IP address" and you'll find it. This is your starting point, the packet's "from" address. Next you'll need to find the packet's "to" address, or the IP address of the website you're requesting. If you're using a Mac or Linux computer, open your <b>Terminal</b> application (or the <b>Command Prompt</b> on Windows) and run <code>nslookup example.com</code> replacing "example.com" with your website.
@@ -59,7 +59,7 @@
         Next we'll need to chart the journey from our IP address to the IP address of the computer hosting the requested website. On a Mac or Linux computer, open your <b>Terminal</b> again (or the <b>Command Prompt</b> on Windows) and run <code>traceroute -I 255.255.255.255</code> (or <code>tracert 255.255.255.255</code> on Windows), replacing "255.255.255.255" with your destination's IP address.
       </p>
 
-      <img src="images/traceroute.png" alt="nslookup">
+      <img src="../images/notes/traceroute.png" alt="nslookup">
 
       <p>
         The traceroute application will start to list the IP addresses of each "hop" (or router) your packet takes on it's journey. Once you have your list of hops, look up each IP address like you did before to find the GPS coordinates of each and find them on the map. The IP addresses along the way are likely going to be <a href="https://www.internetexchangemap.com/" target="_blank">Internet exchange points</a> or "colocation centers", or "carrier hotels". These are all names for large data centers where different networks meet and connect with each other to exchange Internet traffic. Use those terms (in addition to "data center") to try and find the buildings (near the GPS coordinates) where the hops might have taken place. If there's ever a hop between two different continents, then it's likely your packet took a journey through an under sea cable, use this map of <a href="https://www.submarinecablemap.com/" target="_blank">submarine cables</a> to try and identify which one.
