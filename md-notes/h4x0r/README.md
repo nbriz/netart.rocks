@@ -3,7 +3,7 @@
 
 ![War Games Terminal](images/terminal.gif)
 
-Jennifer (played by Ally Sheedy) looking at computer terminal, in much the same way I do, in the 1983 film War Games: [movie trailer](https://netart.rocks/files/war-games-clip3.mp4) +++ [grades hacking clip](https://www.youtube.com/watch?v=hbqMuvnx5MU)
+Jennifer (played by Ally Sheedy) looking at a computer terminal, in much the same way I do, in the 1983 film War Games: [movie trailer](https://www.youtube.com/watch?v=hbqMuvnx5MU) +++ [grades hacking clip](https://netart.rocks/files/war-games-clip3.mp4)
 
 ### early hacker culture
 
@@ -123,51 +123,51 @@ list devices
 
 switch device into monitor mode
 `airmon-ng start [device]`
-ex: `airmon-ng start wlan0`
+- ex: `airmon-ng start wlan0`
 
 start scanning w/that monitor mode device
 `airodump-ng [device]`
-ex: `airodump-ng wlan0mon`
+- ex: `airodump-ng wlan0mon`
 (press `a` to switch between display modes)
 
 start monitoring specific network
 `airodump-ng [device] --bssid [router-MAC] -c [channel] -w [path/to/save/file]`
-ex: `airodump-ng wlan0mon --bssid FF:FF:FF:00:00:00 -c 11 -w Documents/hax`
+- ex: `airodump-ng wlan0mon --bssid FF:FF:FF:00:00:00 -c 11 -w Documents/hax`
 
 send deauth packets
 `aireplay-ng [device] -0 [num] -a [router-MAC] -c [client-MAC]`
-ex: `aireplay-ng wlan0mon -0 5 -a FF:FF:FF:00:00:00 -c AA:AA:AA:BB:BB:BB`
+- ex: `aireplay-ng wlan0mon -0 5 -a FF:FF:FF:00:00:00 -c AA:AA:AA:BB:BB:BB`
 
 crack the password
 `aircrack-ng -w [path/to/wordlist.txt] [path/to/file.cap]`
-ex: `aircrack-ng -w Downloads/rockyou.txt Documents/hax-01.cap`
+- ex: `aircrack-ng -w Downloads/rockyou.txt Documents/hax-01.cap`
 
 **multiple terminal "screens"**
 
 first run `screen`, once it's running you can then run commands. All commands start with `ctrl a` followed by...
 
-`c` create new terminal
-`spacebar` switch to next terminal
-`backspace` switch to previous terminal
-`[num]` switch to specific number terminal
-`l` split screen vertically
-`S` (capital S) split screen horizontally
-`tab` switch between screens
-`Q` (capital Q) unsplit
+- `c` create new terminal
+- `spacebar` switch to next terminal
+- `backspace` switch to previous terminal
+- `[num]` switch to specific number terminal
+- `l` split screen vertically
+- `S` (capital S) split screen horizontally
+- `tab` switch between screens
+- `Q` (capital Q) unsplit
 
 **other workshop commands**
 
-scanning devices on ur network (use sudo to get MAC addresses)
+scanning devices on your network (use `sudo` to get MAC addresses)
 `nmap -sn [IP]/24` or `nmap -sn [IP]-[range]`
-ex: `nmap -sn 192.168.0.0/24` ex: `nmap -sn 192.168.0.0-255`
+- ex: `nmap -sn 192.168.0.0/24` or `nmap -sn 192.168.0.0-255`
 
-logging into another computer on ur network
+logging into another computer on your network
 `ssh [username]@[IP-address]`
-ex: `ssh root@192.168.0.15`
+- ex: `ssh root@192.168.0.15`
 
-copying files to ur computer from anther computer on the network
-`scp [username]@[IP-address]:[~/path/to/file] [path/on/ur/comptuer/to/file]`
-ex: `ssh root@192.168.0.15`:~/Downloades/rockyou.txt ~/Desktop/rockyou.txt`
+copying files to your computer from anther computer on the network
+`scp [username]@[IP-address]:[~/path/to/file] [path/on/your/comptuer/to/file]`
+- ex: `ssh root@192.168.0.15`:~/Downloades/rockyou.txt ~/Desktop/rockyou.txt`
 
 to edit your local DNS on Linux/Mac
 `sudo nano /etc/hosts`
