@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Internet Art II</title>
+    <meta name="description" content="a class website for Internet Art II (MAAD 23632) at the University of Chicago">
+    <meta name="author" content="Nick Briz">
+    <meta charset="utf-8">
+
+    <!-- social media stuff -->
+    <meta property="og:title" content="Internet Art I">
+    <meta property="og:url" content="https://netart.rocks/uchicago">
+    <meta property="og:image" content="https://netart.rocks/images/netartdiagram.gif">
+    <meta property="og:description" content="a class website for Internet Art I (MAAD 23632) at the University of Chicago">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:site_name" content="https://netart.rocks/uchicago">
+    <meta name="twitter:site" content="@nbriz">
+
+    <link rel="icon" type="image/png"  href="https://netart.rocks/images/icon.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style media="screen">
+      code.schedule {
+        color: black;
+        border: none;
+      }
+
+      code.schedule::after {
+        content: ':'
+      }
+
+      #sections > li {
+        font-size: 32px;
+      }
+
+      @media (max-width: 960px) {
+        #sections > li {
+          font-size: 3vw;
+        }
+      }
+
+      .center {
+        text-align: center;
+        display: block;
+        width: 100%;
+      }
+
+      a.center, b.center {
+        font-size: 24px;
+        border-bottom: 2px solid var(--white);
+      }
+
+      .double {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .double p {
+        max-width: 440px;
+      }
+
+      @media (max-width: 986px) {
+        .double { flex-direction: column; }
+        .double p { margin: 40px auto; }
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <header>
+      <h1>internet art</h1>
+      <h2>a crash course</h2>
+    </header>
+
+    <article>
+      <iframe width="800" height="450" src="https://www.youtube.com/embed/0DZ0wBjFKg4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <b style="display:block;margin-top:15px;">start here ↑</b>
+    </article>
+
+    <br><br><br><br><br><br>
+
+    <article>
+      <p>
+        In theory, this course is meant to follow the MAAD 23631 intro course, Internet Art I. In practice you may not have taken that course, as it's not technically a prerequisite. That said, there are certain histories, references, ideas/concepts and coding languages covered in that course which would be helpful (if not necessary) to understand before diving into the material covered in this course. If you did not take the intro course, feel free to poke around and explore as much of the material on the <a href="/uchicago/netart1">Internet Art I</a> website as you'd like. In the interest of time I've put together some material meant to function as a "Crash Course" for those who did not take the intro course.
+      </p>
+    </article>
+
+    <hr>
+
+    <article>
+      <h3 class="center">Interactive Lesssons</h3>
+      <p class="center" style="margin-top: -46px;">(<a href="https://netnet.studio" target="_blank">netnet.studio</a>)</p>
+    </article>
+
+    <section class="double">
+      <div>
+        <b class="center">HTML + CSS crash course</b>
+        <p>
+
+          Although HTML and CSS can be used to build complex creative experiences from hypertext narratives to video games, the basics are ultimately pretty simple. Here are a couple of quick + high level introductions to <a href="https://netnet.studio/?ex=1" target="_blank">HTML</a> and <a href="https://netnet.studio/?ex=1" target="_blank">CSS</a>.
+        </p>
+      </div>
+      <div>
+        <b class="center">fromt net.art to CSS Art</b>
+        <p>
+          If you've never written code before see <a href="https://netnet.studio/?tutorial=what-is-code" target="_blank">What is Code</a>, for an intro to HTML check out this <a href="https://netnet.studio/?tutorial=html-crash-course" target="_blank">HTML crash course</a>, then check out <a href="https://netnet.studio/?tutorial=net-art-1" target="_blank">net.art (part 1)</a> and <a href="https://netnet.studio/?tutorial=net-art-2" target="_blank">net.art (part 2)</a> to learn how artists in the 90s first began experimenting with HTML. For an intro to CSS check out this <a href="https://netnet.studio/?tutorial=css-crash-course" target="_blank">CSS crash course</a>, then check out how contemporary artists/designers push CSS to it's limits in <a href="https://netnet.studio/?tutorial=css-art-1" target="_blank">CSS Art (part 1)</a> and <a href="https://netnet.studio/?tutorial=css-art-2" target="_blank">CSS Art (part 2)</a>.
+        </p>
+      </div>
+    </section>
+
+    <hr>
+
+    <article>
+      <h3 class="center">Video Lessons</h3>
+    </article>
+
+    <section class="double">
+      <div>
+        <b class="center">conceptual bg</b>
+        <p>This <a target="_blank" href="https://www.youtube.com/watch?v=0DZ0wBjFKg4&list=PLoQrXDiSBWYE9WKxEbWgTEbajfJqIEVnu">YouTube playlist</a> is an older series i made (2016), but it covers many of the core perspectives, concepts and historical background covered in the Internet Art I course.</p>
+      </div>
+      <div>
+        <b class="center">technical bg</b>
+        <p>This <a target="_blank" href="https://www.youtube.com/watch?list=PLoQrXDiSBWYEBMAhY-IkChuaUJ3_lE04o&v=n44uu9gCpvg">YouTube playlist</a> is an HTML + CSS crash course. It covers how to setup a web project, how to avoid some common mistakes, how to write basic HTML + CSS + a bit of JavaScript and how to host a simple web project on the online (via GitHub).</p>
+      </div>
+    </section>
+
+    <hr>
+
+    <article>
+      <a href="https://anthology.rhizome.org/simple-net-art-diagram" target="_blank">
+        <img class="mtaa" src="/images/netartdiagram.gif" alt="mtaa - simple net art diagram">
+      </a>
+    </article>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <script src="/js/Averigua.js"></script>
+    <script src="/js/rainbow-text.js"></script>
+    <script src="/js/fancy-chars.js"></script>
+    <script>
+      FancyText.animate(document.querySelector('header > h1'), 200, 0.2)
+
+      Array.from(document.querySelectorAll('h3'))
+        .forEach(h3 => FancyText.animate(h3, 5000, 0.2))
+
+      Array.from(document.querySelectorAll('a'))
+        .filter(a => a.className !== 'button')
+        .forEach(a => RainbowText.hoverShimmer(a))
+    </script>
+  </body>
+</html>

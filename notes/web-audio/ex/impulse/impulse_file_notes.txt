@@ -1,0 +1,10 @@
+
+the following is a collection of impulse response files to be used for AudioFX('reverb')
+
+------------------------------------------------------------------------------------------------------------------
+reverb1 >> via >> https://github.com/Theodeus/tuna/blob/master/impulses/impulse_rev.wav
+reverb2 >> via >> https://github.com/cwilso/Audio-Input-Effects/blob/master/sounds/cardiod-rear-levelled.wav
+reverb3 >> via >> http://freesound.org/people/recordinghopkins/sounds/175363/
+reverb4 >> via >> http://freesound.org/people/NoiseCollector/sounds/184097/
+reverb5 >> via >> http://freesound.org/people/NoiseCollector/sounds/126220/
+reverb6 >> via >> http://freesound.org/people/staticpony1/sounds/249598/

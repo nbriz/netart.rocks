@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>WebAudio API Notes</title>
+        <link rel="stylesheet" href="libs/css/monokai_sublime.css">
+        <style>
+            body { font-size:16px; font-family:sans-serif; }
+            nav { display:flex; justify-content: space-between; }
+            nav, pre, section { margin:10px auto; max-width:910px; }
+            canvas, code { border-radius:12px; }
+            code a { color:#75715e; }
+            button { border:none; background:#23241f; color:#f92672; padding:10px; width:100px }
+            button:hover { cursor:pointer; background:#f92672; color:#23241f; }
+            nav > span { text-transform:uppercase; }
+            p { max-width: 910px; margin: 20px auto; }
+        </style>
+    </head>
+    <body>
+
+        <div id="app">
+            <!-- navigation -->
+            <nav>
+                <button v-on:click="prev">previous</button>
+                <span>{{ title }}</span>
+                <button v-on:click="next">next</button>
+            </nav>
+            <!-- miscellaneous -->
+            <section><!-- for canvas tags && other misc elements --></section>
+            <!-- code example -->
+<pre><code class="js hljs" ref="code">{{ code }}</code></pre>
+            <!-- list any dependencies-->
+            <p>
+                {{ dependencies }}
+                <span v-for="(l,i) in libs">
+                    <a :href="l.url" target="_blank">{{l.name}}</a>
+                    <span v-if="i!==libs.length-1">, </span>
+                </span>
+            </p>
+        </div>
+
+
+        <script src="libs/js/vue.min.js"></script>
+        <script src="libs/js/highlight.pack.js"></script>
+        <script src="libs/js/dat.gui.min.js"></script>
+        <script>
+
+            const app = new Vue({
+                el: '#app',
+                data: {
+                    url: new URL(location),
+                    path: null,
+                    file:null,
+                    lesson:null,
+                    idx:0,
+                    title:null,
+                    js:null,
+                    code:null,
+                    lessonDict:null,
+                    dependencies:'this sketch has no dependencies',
+                    libs:[]
+                },
+                mounted:function(){
+                    // this.path = `${this.url.protocol}//${this.url.pathname}`
+                    this.path = this.url.origin + this.url.pathname
+                    this.lesson = this.url.searchParams.get('l')
+                    this.file = this.url.searchParams.get('js')
+                    this.root = this.url.origin+this.url.pathname
+                        .slice(0,this.url.pathname.indexOf('lesson'))
+
+                    // load lessons dictionary && script tags
+                    fetch(`index.json`)
+                    .then(res => res.json() )
+                    .then(data => {
+                        this.loadLessonDict(data)
+                        this.setupPageInfo(data)
+                        // this.loadHelperScripts(() => {
+                        //     this.loadScript(`ex/${this.file}`)
+                        // })
+                        this.loadScriptsSync()
+                    }).catch(err => { console.error(err) })
+
+                    // load example code
+                    fetch(`ex/${this.file}`)
+                    .then(res => res.text() )
+                    .then(data => {
+                        this.code = data
+                        Vue.nextTick(() => {
+                            hljs.highlightBlock(this.$refs.code)
+                            this.$refs.code.style.padding = "18px"
+                            this.linkComments()
+                        })
+                    }).catch(err => { console.error(err) })
+                },
+                methods:{
+                    loadLessonDict:function(data){
+                        for (let i = 0; i < data.lessons.length; i++) {
+                            if( data.lessons[i].name == this.lesson ){
+                                this.lessonDict = data.lessons[i]
+                                break
+                            }
+                        }
+                    },
+                    setupPageInfo:function(data){
+                        let p, n
+                        for (let i = 0; i < this.lessonDict.snippets.length; i++) {
+                            if( this.lessonDict.snippets[i].file == this.file ){
+                                this.idx = i
+                                this.title =
+                                    `[${i}] ${this.lessonDict.snippets[i].name}`
+                                break
+                            }
+                        }
+                    },
+                    // after:function(times,func){
+                    //     return function() {
+                    //         if (--times < 1) {
+                    //             return func.apply(this, arguments)
+                    //         }
+                    //     }
+                    // },
+                    // loadHelperScripts:function(callback){
+                    //     let libs = this.lessonDict.snippets[this.idx].libs
+                    //     if(!libs) callback()
+                    //     else {
+                    //         this.dependencies =
+                    //             'this sketch has the following dependencies: '
+                    //         let loadMain = this.after(libs.length,callback)
+                    //         libs.forEach(lib=>{
+                    //             let l = lib.split('/')
+                    //             this.libs.push({
+                    //                 url:`${this.root}ex/${lib}`,
+                    //                 name: l[l.length-1]
+                    //             })
+                    //             this.loadScript(`ex/${lib}`,loadMain)
+                    //         })
+                    //     }
+                    // },
+                    loadScript:function(src,callback){
+                        let s = document.createElement('script')
+                            s.type = 'text/javascript'
+                            s.src = src
+                            s.onload = s.onreadystatechange = () => {
+                                if(callback) callback()
+                            }
+                        document.body.appendChild(s)
+                    },
+                    syncScript(i,arr,end){
+                        if(i<arr.length){
+                            this.loadScript(`ex/${arr[i]}`,() => {
+                                this.syncScript(i+1,arr,end)
+                            })
+                        } else { end() }
+                    },
+                    loadScriptsSync:function(file){
+                        let libs = this.lessonDict.snippets[this.idx].libs
+                        if(!libs) this.loadScript(`ex/${this.file}`)
+                        else {
+                            libs.forEach(lib=>{
+                                let l = lib.split('/')
+                                this.libs.push({
+                                    url:`${this.root}ex/${lib}`,
+                                    name: l[l.length-1]
+                                })
+                            })
+                            this.syncScript(0,libs,() => {
+                                this.loadScript(`ex/${this.file}`)
+                            })
+                            this.dependencies = 'this sketch has the following dependencies: '
+                        }
+                    },
+                    linkComments:function(){
+                        let comments = document.querySelectorAll('.hljs-comment')
+                        for (let i = 0; i < comments.length; i++) {
+                            let match = /\[([^\]]*)\]\(([^)]*)\)/g
+                            let html = comments[i].textContent.replace(match,(_,txt,lnk)=>{
+                                return `<a href="${lnk}" target="_blank">${txt}</a>`
+                            })
+                            comments[i].innerHTML = html
+                        }
+                    },
+                    next:function(){
+                        let n = this.lessonDict.snippets[this.idx+1]
+                        if(n) location = `${this.path}?l=${this.lesson}&js=${n.file}`
+                        else location = this.root
+                    },
+                    prev:function(){
+                        let p = this.lessonDict.snippets[this.idx-1]
+                        if(p) location = `${this.path}?l=${this.lesson}&js=${p.file}`
+                        else location = this.root
+                    }
+                }
+            })
+
+        </script>
+    </body>
+</html>

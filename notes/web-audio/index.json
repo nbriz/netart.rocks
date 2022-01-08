@@ -1,0 +1,156 @@
+{
+    "title":"WebAudio API Notes",
+    "description":"this is a series of example/lessons for the WebAudio API",
+    "lessons": [
+        {
+            "name":"the Basics",
+            "snippets": [
+                { "name":"Audio Context", "file":"wa0.js" },
+                { "name":"Audio Source Node (factory method)", "file":"wa1.js" },
+                { "name":"Audio Source Node (constructor method)", "file":"wa2.js" },
+                { "name":"Audio Processing Node", "file":"wa3.js" },
+                { "name":"AnalyserNode (drawing to canvas)", "file":"wa4.js" },
+                { "name":"Canvas Visualization", "file":"wa6.js" },
+                { "name":"Audio Parameters (intro)", "file":"wa7.js",
+                  "libs":["helpers/wave-canvas.js"] },
+                { "name":"Audio Params (ADSR Envelope) 1", "file":"wa8.js",
+                  "libs":["helpers/wave-canvas.js"] },
+                { "name":"Audio Params (ADSR Envelope) 2", "file":"wa9.js",
+                  "libs":["helpers/wave-canvas.js"] }
+            ]
+        },
+        {
+            "name":"Audio Buffers",
+            "snippets": [
+                { "name":"Creating an Audio Buffer", "file":"ab0.js" },
+                { "name":"Filling the Buffer", "file":"ab1.js" },
+                { "name":"Buffer Source Node", "file":"ab2.js",
+                  "libs":["helpers/wave-canvas.js"] },
+                { "name":"Looping the Buffer", "file":"ab3.js",
+                  "libs":["helpers/wave-canvas.js"] },
+                { "name":"White, Pink, Brown (algorithms)", "file":"ab4.js",
+                  "libs":["helpers/wave-canvas.js"] },
+                { "name":"Sine Wave (algorithm)", "file":"ab5.js",
+                  "libs":["helpers/wave-canvas.js"] },
+                { "name":"Square Wave (algorithm)", "file":"ab6.js",
+                  "libs":["helpers/wave-canvas.js"] },
+                { "name":"Sawtooth Wave (algorithm)", "file":"ab7.js",
+                  "libs":["helpers/wave-canvas.js"] },
+                { "name":"Load Buffer (XMLHttpRequest)", "file":"ab8.js",
+                  "libs":["helpers/wave-canvas.js"] },
+                { "name":"Load Buffer (Fetch API)", "file":"ab9.js",
+                  "libs":["helpers/wave-canvas.js"] },
+                { "name":"Looping Portion of Buffer", "file":"ab10.js",
+                  "libs":["helpers/wave-canvas.js"] },
+                { "name":"Adjusting Playback Rate", "file":"ab11.js",
+                  "libs":["helpers/wave-canvas.js"] },
+                  { "name":"Sound Fonts", "file":"ab12.js",
+                    "libs":["helpers/wave-canvas.js",
+                    "sound-fonts/Baritone_Sax-Reed/0670_Aspirin_sf2_file.js",
+                    "sound-fonts/Music_Box-Chromatic_Percussion/0100_SBLive_sf2.js",
+                    "sound-fonts/Choir_Aahs-Ensemble/0520_Soul_Ahhs_sf2_file.js"] }
+            ]
+        },
+        {
+            "name":"Oscillators",
+            "snippets": [
+                { "name":"Basic Oscillators", "file":"o0.js",
+                  "libs":["helpers/wave-canvas.js","helpers/adsr.js"] },
+                { "name":"Custom Oscillators (wavetables) 1", "file":"o1.js",
+                  "libs":["helpers/wave-canvas.js"] },
+                { "name":"Custom Oscillators (wavetables) 2", "file":"o2.js",
+                  "libs":["helpers/wave-canvas.js","helpers/adsr.js",
+                          "wave-tables/Piano.js","wave-tables/Trombone.js",
+                          "wave-tables/Phoneme_ah.js","wave-tables/Phoneme_ee.js"] }
+            ]
+        },
+        {
+            "name":"Processing Nodes",
+            "snippets": [
+                { "name":"Gain Node", "file":"p0.js",
+                  "libs":["helpers/wave-canvas.js"] },
+                { "name":"Delay Node", "file":"p1.js",
+                  "libs":["helpers/wave-canvas.js"] },
+                { "name":"Convolver Node (reverb) 1", "file":"p2.js",
+                  "libs":["helpers/wave-canvas.js","helpers/BufferLoader.js"] },
+                { "name":"Convolver Node 2 (wet/dry mix)", "file":"p3.js",
+                  "libs":["helpers/wave-canvas.js","helpers/BufferLoader.js",
+                    "impulse/base64_impulse.js"] },
+                { "name":"Convolver Node 3 (algorithmic)", "file":"p4.js",
+                  "libs":["helpers/wave-canvas.js"] },
+                { "name":"Biquod Filter Node", "file":"p5.js",
+                    "libs":["helpers/wave-canvas.js","helpers/FilterGUI.js"] },
+                { "name":"WaveShaper Node (distortion)", "file":"p6.js",
+                    "libs":["helpers/wave-canvas.js"] }
+            ]
+        },
+        {
+            "name":"Misc FX",
+            "snippets": [
+                { "name":"Slapback Delay", "file":"fx0.js",
+                  "libs":["helpers/wave-canvas.js"]  },
+                { "name":"Ring Mod", "file":"fx1.js",
+                  "libs":["helpers/wave-canvas.js"]  },
+                { "name":"Chorus", "file":"fx2.js",
+                  "libs":["helpers/wave-canvas.js"]  },
+                { "name":"Flanger", "file":"fx3.js",
+                  "libs":["helpers/wave-canvas.js"]  }
+            ]
+        },
+        {
+            "name":"Music Theory",
+            "snippets": [
+                { "name":"Rythm 1", "file":"mt0.js",
+                  "libs":["helpers/wave-canvas.js","helpers/adsr.js"]  },
+                { "name":"Rythm 2", "file":"mt1.js",
+                  "libs":["helpers/wave-canvas.js","helpers/Sequencer.js"]  },
+                { "name":"Notes: pure intonation", "file":"mt3.js",
+                  "libs":["helpers/wave-canvas.js"]   },
+                { "name":"Notes: equal temperment", "file":"mt4.js",
+                  "libs":["helpers/wave-canvas.js"]   },
+                { "name":"Modes: Greek scales", "file":"mt5.js",
+                  "libs":["helpers/melody-canvas.js","helpers/Note.js"]   },
+                { "name":"Modes: minor scales", "file":"mt6.js",
+                  "libs":["helpers/melody-canvas.js","helpers/Note.js"]   },
+                { "name":"Modes: more scales", "file":"mt7.js",
+                  "libs":["helpers/melody-canvas.js","helpers/Note.js",
+                  "helpers/Melody.js"]   },
+                { "name":"Melodies", "file":"mt8.js",
+                  "libs":["helpers/melody-canvas.js","helpers/Note.js",
+                  "helpers/Melody.js","helpers/Sequencer.js",
+                  "helpers/adsr.js"]   },
+                { "name":"Chords: harmonic fields 1", "file":"mt9.js",
+                  "libs":["helpers/freq-canvas.js","helpers/Note.js",
+                  "helpers/Melody.js","helpers/Sequencer.js",
+                  "helpers/adsr.js"]   },
+                { "name":"Chords: harmonic fields 2", "file":"mt10.js",
+                  "libs":["helpers/freq-canvas.js","helpers/Note.js",
+                  "helpers/Melody.js","helpers/Chord.js","helpers/Sequencer.js",
+                  "helpers/adsr.js","helpers/PolyOsc.js"]   },
+                { "name":"Chords: progressions (cadence)", "file":"mt11.js",
+                  "libs":["helpers/freq-canvas.js","helpers/Note.js",
+                  "helpers/Melody.js","helpers/Chord.js","helpers/Sequencer.js",
+                  "helpers/adsr.js","helpers/PolyOsc.js"]   }
+            ]
+        },
+        {
+            "name":"Analysis and Visualization",
+            "snippets": [
+                { "name":"Basic Visualizations 1", "file":"av0.js" },
+                { "name":"Basic Visualizations 2", "file":"av1.js" },
+                { "name":"Frequency Bars Helper", "file":"av2.js",
+                  "libs":["helpers/freq-canvas.js"] },
+                { "name":"Audio File Waveform", "file":"av3.js",
+                  "libs":["helpers/buffer-canvas.js"] },
+                { "name":"Pitch Detection Oscillator", "file":"av4.js",
+                  "libs":["helpers/pitch-analysis.js"] },
+                { "name":"Pitch Detection AudioBuffer", "file":"av5.js",
+                  "libs":["helpers/pitch-analysis.js"] },
+                { "name":"Pitch Matching", "file":"av6.js",
+                  "libs":["helpers/pitch-analysis.js"] },
+                { "name":"Beat Detection", "file":"av7.js",
+                  "libs":[] }
+            ]
+        }
+    ]
+}

@@ -1,123 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Internet Art I</title>
-    <meta name="description" content="a class website for Internet Art I (MAAD 23631) at the University of Chicago">
-    <meta name="author" content="Nick Briz">
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- social media stuff -->
-    <meta property="og:title" content="Internet Art I">
-    <meta property="og:url" content="https://netart.rocks/uchicago">
-    <meta property="og:image" content="https://netart.rocks/images/netartdiagram.gif">
-    <meta property="og:description" content="a class website for Internet Art I (MAAD 23631) at the University of Chicago">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta property="og:site_name" content="https://netart.rocks/uchicago">
-    <meta name="twitter:site" content="@nbriz">
+    <title>netart.rocks</title>
+    <meta name="description" content="A homepage for various internet art courses I teach at the School of the University of Chicago">
+    <meta name="author" content="Nick Briz">
 
-    <link rel="icon" type="image/png"  href="https://netart.rocks/images/icon.png">
-    <link rel="stylesheet" href="../css/styles.css" id="style">
-    <style media="screen">
-      code.schedule {
-        color: black;
-        border: none;
-      }
+    <link rel="icon" type="image/png"  href="https://raw.githubusercontent.com/nbriz/netart.rocks/main/images/icon.png">
 
-      code.schedule::after {
-        content: ':'
-      }
-    </style>
+    <link rel="stylesheet" href="/css/styles.css">
   </head>
   <body>
 
-    <header>
-      <h1>Internet Art I</h1>
-      <h2>MAAD 23631 1 (Autumn 2021)</h2>
-    </header>
-
-
-    <section class="info-table">
-      <div>
-        <div>where:</div>
-        <div>Crerar Library 134</div>
-      </div>
-      <div>
-        <div>when:</div>
-        <div>Tues, 11:00am - 1:20pm</div>
-      </div>
-      <div>
-        <div>professor:</div>
-        <div>Nick Briz</div>
-      </div>
-      <div>
-        <div>email:</div>
-        <div>nb<i></i>riz@uchicago<i></i>.edu</div>
-      </div>
-    </section>
-
-
-    <blockquote cite="https://www.goodreads.com/book/show/23492802-magic-and-loss">
-      <p>The Web represents a grand emotional, sensory, and intellectual adventure for anyone willing to explore it actively. [...] For artists, ignoring the imperative to grasp the cultural implications of the Internet means risking irrelevance. [...] As human discourse adapts to its new home, everything we do and think as human beings will be and is being shaped by new values. [...] If it’s ever fair to say that anything has “changed everything,” it’s fair to say so about the Internet.</p>
-      <cite>
-        <a href="https://www.goodreads.com/book/show/23492802-magic-and-loss" target="_blank">Virginia Heffernan</a>
-      </cite>
+    <blockquote cite="https://web.archive.org/web/20190618225330/https://store.mcsweeneys.net/products/information-doesn-t-want-to-be-free">
+        <p>
+            The single most important thing you need in order to have a career in the arts is persistence. The second most important thing you need is talent. The third most important thing is a grounding in how the online world works. Its that Important
+        </p>
+        <cite>
+          <a href="https://web.archive.org/web/20190618225330/https://store.mcsweeneys.net/products/information-doesn-t-want-to-be-free" target="_blank">Cory Doctorow</a>
+        </cite>
     </blockquote>
 
+    <header>
+      <h1 class="rainbow-text">internet art I</h1>
+    </header>
 
     <article>
-      <h3>Course Description</h3>
       <p>
         We generally accept that computers and the Internet evolved outside of fine art contexts, in fields like science and mathematics. That said, the history of these technologies is a history of creative individuals collaboratively shaping one of the most important narratives of our time, "the Internet is the great masterpiece of human civilization" (Heffernan). In this studio course, we'll learn what the Internet is, how it works, how it got here and how to engage with it as an artistic medium. This means we'll be learning how to craft it from code, specifically HTML (hypertext markup language) and CSS (cascading style sheets), but also studying its aesthetics, conventions and practices. We'll be drawing inspiration from various Internet art movements, from the net.art scene of the 1990s, to the digital folk art of GeoCities at the turn of the century, to the Web design and CSS art scenes of today. The goal of this course will be to cultivate our own piece of Internet art, informed by the research, discussions, exercises and experiments we'll make along the way.
       </p>
 
-      <div class="flex" style="margin: 60px 0px;">
-        <a class="button" target="_blank" href="syllabus.pdf">syllabus</a>
-        <a class="button" target="_blank" href="https://canvas.uchicago.edu/courses/38491">class canvas</a>
+      <div class="sec-buttons">
+        <a class="button" href="netart1">class site</a>
       </div>
-
-      <a href="https://anthology.rhizome.org/simple-net-art-diagram" target="_blank">
-        <img class="mtaa" src="../images/netartdiagram.gif" alt="mtaa - simple net art diagram">
-      </a>
     </article>
 
-    <br>
-    <br>
+    <br><br>
+
+    <header>
+      <h1 class="rainbow-text">internet art II</h1>
+    </header>
 
     <article>
-      <h3>Learning Goals</h3>
-      <ul>
-        <li>
-          Foundational understanding of what the Internet is and how it works (specifically the Web)
-        </li>
-        <li>
-          General background on various canonical and niche cultural figures, movements and ideas which have informed the development of Internet art
-        </li>
-        <li>
-          Working knowledge of HTML and CSS, specifically how to hand craft works of Internet art as well as how to publish them on the Web
-        </li>
-      </ul>
-      <h3>Schedule</h3>
-      <ul>
-        <li><code class="schedule">09.28 - 10.05</code> <a href="00.html">Class Calibrations</a></li>
-        <li><code class="schedule">10.05 - 10.12</code><a href="01.html">WTF is the Internet?</a></li>
-        <li><code class="schedule">10.12 - 10.19</code><a href="02.html">HTML && the World Wide Web</a></li>
-        <li><code class="schedule">10.19 - 10.26</code><a href="03.html">net.art: when artists discovered HTML</a></li>
-        <li><code class="schedule">10.26 - 11.02</code><a href="04.html">CSS art: Irrational Virtuosos</a></li>
-        <li><code class="schedule">11.02 - 11.09</code><a href="05.html">CSS art: (cont’d)</a></li>
-        <li><code class="schedule">intermission&nbsp;</code><a href="intermission.html">Re:Meta (the future of cyberspace)</a></li>
-        <li><code class="schedule">11.09 - 11.16</code><a href="06.html">Digital Folklore: home pages vs profiles</a></li>
-        <li><code class="schedule">11.16 - 11.23</code><a href="07.html">Web Design: tropes, trends, techniques</a></li>
-        <li><code class="schedule">11.23 - 11.30</code><a href="08.html">Cultivating the Web</a></li>
-        <li><code class="schedule">intermission&nbsp;</code><a href="js.html">JavaScript Teaser</a></li>
-        <li><code class="schedule">11.30 - 12.07</code><a href="09.html">Final Project</a></li>
-      </ul>
+      <p>
+         Though the web was originally conceived as an online space for sharing hyperlinked documents, the modern Web browser has evolved into a creative coding playground capable of producing all manner of networked art and algorithmic compositions. In this course we'll learn JavaScript, the Web's defacto programming language. Throughout the quarter we'll experiment with various different Web APIs for creating generative and interactive Internet art including HTML5 video, Canvas (2D/3D animations) and Web Audio. We'll learn how to produce work that responds to various input sources (trackpad/mouse, touchscreen, keyboard, cameras, microphones) and how to fetch and incorporate data from external APIs elsewhere on the Internet. This course counts towards the Media Practice and Design requirement for the MAAD program.
+      </p>
+
+      <div class="sec-buttons">
+        <a class="button" href="netart2">class site</a>
+      </div>
     </article>
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    <br><br>
+
+    <header>
+      <h1 class="rainbow-text">collab artware</h1>
+    </header>
+
+    <article>
+      <p>
+         In this course we'll be working together as an open source arts collective. We'll produce an online app which explores the expressive space between software as a tool and software as art. We'll learn the processes and tools that professional creative technologists use when working together to produce "software art" projects. This is an intermediate level coding course with work being predominantly written in JavaScript (server side and client side). While proficiency in JavaScript is not required, it's recommended that students have a background in basic programming concepts (data types, variables, functions, conditions, loops, etc) as this course will build on those to introduce more intermediate level concepts and programming paradigms. This course counts towards the Media Practice and Design requirement for the MAAD program.
+      </p>
+
+      <div class="sec-buttons">
+        <a class="button" href="artware">class site</a>
+      </div>
+    </article>
+
+    <br><br><br><br>
+    <script src="/js/MouseTrails.js"></script>
+    <script src="/js/Averigua.js"></script>
+    <script src="/js/rainbow-text.js"></script>
+    <script src="/js/fancy-chars.js"></script>
+    <script>
+      document.querySelectorAll('.rainbow-text').forEach(ele => {
+        FancyText.animate(ele, 200, 0.1)
+        ele.__shimmer = RainbowText.shimmer(ele)
+      })
+
+      const trail = new MouseTrails('rainbow')
+      window.addEventListener('mousemove', (e) => {
+        trail.mouseMoved(e.clientX, e.clientY)
+      })
+    </script>
 
   </body>
 </html>

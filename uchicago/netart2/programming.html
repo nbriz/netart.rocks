@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Internet Art II</title>
+    <meta name="description" content="a class website for Internet Art II (MAAD 23632) at the University of Chicago">
+    <meta name="author" content="Nick Briz">
+    <meta charset="utf-8">
+
+    <!-- social media stuff -->
+    <meta property="og:title" content="Internet Art I">
+    <meta property="og:url" content="https://netart.rocks/uchicago">
+    <meta property="og:image" content="https://netart.rocks/images/netartdiagram.gif">
+    <meta property="og:description" content="a class website for Internet Art I (MAAD 23632) at the University of Chicago">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:site_name" content="https://netart.rocks/uchicago">
+    <meta name="twitter:site" content="@nbriz">
+
+    <link rel="icon" type="image/png"  href="https://netart.rocks/images/icon.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/monokai_sublime.css">
+    <style media="screen">
+      .double {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .double p {
+        max-width: 440px;
+      }
+
+      .double div {
+        text-align: center;
+      }
+
+      @media (max-width: 986px) {
+        .double { flex-direction: column; }
+        .double p { margin: 40px auto; }
+      }
+
+      .machine-code {
+        font-size: 18px;
+        background: #2e2e2e;
+        color: white;
+        padding: 20px 0 0 0;
+      }
+
+      code.hljs {
+        padding: 20px !important;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+
+    <header>
+      <h1>programming</h1>
+      <h2>from Machine Code to JavaScript</h2>
+    </header>
+
+    <article>
+      <h3>Machine Code</h3>
+
+      <p>
+        It's important to remember (see the notes on <a href="whats-a-computer.html">What's a Comuter</a>) the computer is a very specific (and complex) arrangement of circuits in such a way that makes it possible for it to remember values and manipulate values (do math), but how does electricity become "values"? That's where Machine Code (often written in binary code) enters the picture. That electrical current is made up of high voltages and low voltages which we refer to as a 1 or a 0 (binary code) for the sake of being able to use these voltages to represent values or data.
+      </p>
+
+      <iframe class="rwd" height="500" src="https://www.youtube.com/embed/1GSjbWt0c9M?list=PL8dPuuaLjXtNlUrzyH5r6jN9ulIgZBpdo" frameborder="0" allowfullscreen></iframe>
+
+     <p>
+       As the video above explained, binary code can be used to represent ANY data we choose and we can give the computer data in binary code to operate on, in the old days we would do that by flipping switches (on/off 1/0) or storing our data in punched cards/tape (whole-punch/no-whole-punch 1/0) and having the computer read the tape. We can also pass instructions for what we want the computer to do with the data, computers are designed to (or "wired up to") interpret certain sequences of binary code as instruction codes (like "add" this, or "store" that), and so early programs <i>could</i> look <i>something</i> like this:
+     </p>
+
+     </article>
+
+     <div>
+       <img src="/images/notes/machine-code/0.png" alt="machine code" id="machine-code" name="0" class="rwd" style="cursor:pointer">
+       <br>
+        <b style="display:block;margin:15px;">click the image to "step" through the program ↑</b>
+     </div>
+
+     <article>
+
+     <div class="grid cols3to1">
+       <p>
+     		Programmers rarely ever deal with binary code directly, we made things easier by writnig "assembly code" which were slightly more human readable versions of this machine code (which we would translate into binary before running), here's the same program in a <i>hypothetical</i> assembly language:
+     	</p>
+      <pre class="machine-code">
+     	ORG 0
+     	LDA A
+     	ADD B
+     	STA C
+     	HLT
+     A,	DEC 84
+     B,	DEC 12
+     C,	DEC 0
+     	END
+	   </pre>
+    </div>
+
+    <p>
+      It's rare you find folks working in assembly these days (though some folks do, check out the cool 8bit art of <a href="https://www.austinchronicle.com/screens/2012-05-04/8-bit-artisan/" target="_blank">Rachel Weil</a> for example) becuase if it's that complicated to tell a computer to add 2 numbers together it be virtually impossible to make it do much more complicated tasks (generally speaking, Rachel might disagree). Add to that the fact that you need to know the instruction codes and "architecture" (how the switches are wired up) for every CPU design if you wanted your program to work on every computer (the only computer Rachel worries about is the NES) and you would have to re-write your code each time, essentially you would have to be quite the expert to do even really simple things... enter Grace Hopper:
+    </p>
+
+    <br><br><br>
+
+     <h3>Programming Languages</h3>
+
+    <video width="960" height="500" poster="/images/notes/gracehopper.png" class="rwd" controls>
+      <source src="/files/grace-hopper.mp4" type="video/mp4">
+    </video>
+
+    <div class="grid cols3to1">
+      <p>
+        This code is an example of <a href="https://en.wikipedia.org/wiki/FLOW-MATIC" target="_blank">FLOW-MATIC</a> the first "english-like" compiled language developed under Admiral Hopper, which would eventually lead to COBOL, which is still used today.
+      </p>
+      <pre class="machine-code" style="padding-right:43px;">
+      INPUT FIRST FILE=A SECOND FILE=B,
+      OUTPUT SUM FILE=C;
+      ADD A TO B
+      TRANSFER B TO SUM
+      CLOSE-OUT FILE SUM
+      STOP.
+      </pre>
+    </div>
+
+    <p>
+      It's an obsolete language, but this is as close as I can approximate what it would have looked like to add tweo numbers together, let's assume the values 84 and 12 are stored in file A and B. Admiral Hopper also popularized the idea of machine-independent programming languages which is generally how we think of programming languages today.
+    </p>
+
+     <p>
+       Today we have lots of "higher level" (of <b>abstraction</b>) languages meant to be written and read by humans. Different languages specialize in different contexts (for example JavaScript is ideal for programming apps for the web) and they all have different "<b>syntax</b>" but ultimately they can all do the same things (JavaScript could be used to write pretty much anything, not just web apps). In order to use a language on any given system (particular computer architecture) you need to make sure someone has written a <b>compiler</b> or <b>interpreter</b> for that language on that system so that your code can get translated to the machine code the computer needs in order to actually run your program. Here are a few more examples of the same simple program written in a few different languages, notice their general similarity despite their difference in syntax
+     </p>
+
+     <div class="flex">
+     <pre><code class="cpp hljs javascript"><span class="hljs-comment">// C </span>
+#include <span class="hljs-string">&lt;stdio.h&gt;</span>
+
+<span class="hljs-keyword">void</span> <span class="hljs-title">main</span>(){
+
+  <span class="hljs-keyword">int</span> a = <span class="hljs-number">84</span>;
+  <span class="hljs-keyword">int</span> b = <span class="hljs-number">12</span>;
+  <span class="hljs-keyword">int</span> c = a + b;
+  printf(<span class="hljs-string">"%d\n"</span>, c );
+
+}</code></pre>
+
+     <pre><code class="java hljs javascript">// Java
+
+class myprogram {
+  public static void main(String args[]) {
+    <span class="hljs-keyword">int</span> a = <span class="hljs-number">84</span>;
+    <span class="hljs-keyword">int</span> b = <span class="hljs-number">12</span>;
+    <span class="hljs-keyword">int</span> c = a + b;
+    System.out.println(c);
+  }
+}
+     </code></pre>
+
+     <pre><code class="javascript hljs"><span class="hljs-comment">// JavaScript (aka ECMAScript)</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span>(<span class="hljs-params"></span>)</span>{
+  <span class="hljs-keyword">var</span> a = <span class="hljs-number">84</span>;
+  <span class="hljs-keyword">var</span> b = <span class="hljs-number">12</span>;
+  <span class="hljs-keyword">var</span> c = a + b;
+  <span class="hljs-built_in">console</span>.log( c );
+}
+
+main();
+
+</code></pre>
+           </div>
+
+           <div class="flex">
+     <pre><code class="cpp hljs javascript"><span class="hljs-comment"># Python </span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title">main</span>():
+  a = 84
+  b = 12
+  c = a + b
+  print(c)
+
+main()
+
+     </code></pre>
+
+     <pre><code class="java hljs javascript">&lt;?php <span class="hljs-comment"># php </span>
+
+  function main() {
+    $a = 84;
+    $b = 12;
+    $c = $a + $b;
+    echo $c."\n";
+  }
+
+  main();
+?&gt;</code></pre>
+
+     <pre><code class="javascript hljs">// C++
+#include <span class="hljs-string">&lt;iostream&gt;</span>
+
+<span class="hljs-keyword">void</span> <span class="hljs-title">main</span>() {
+  <span class="hljs-keyword">int</span> a = <span class="hljs-number">84</span>;
+  <span class="hljs-keyword">int</span> b = <span class="hljs-number">12</span>;
+  <span class="hljs-keyword">int</span> c = a + b;
+  std::cout << c;
+}
+
+     </code></pre>
+           </div>
+
+    </article>
+
+    <br><br><br>
+
+    <article>
+      <h3>JavaScript</h3>
+      <p>
+        As we've discussed computer programming languages are meant to be read by people, in order for computers to understand your code (your instructions) it needs to be translated into machine code that the computer understands. Typically, this is done by running your code through a <b><i>compiler</i></b> which will spit out a machine code version of your file (the "source" code) that the computer can actually run (the app/program or "binary"). Another way to do this is with an <b><i>interpreter</i></b> or "runtime" which rather than converting your source code into a separtae machine code file, it will translate your code for the computer right at the time you run your file through the interpreter (ie. at "run-time"). All your browsers and many other apps (including Adobe's creative apps like Photoshop and the apps of the Microsoft Office suite) have a JavaScript runtime included in them. This means we can write JavaScript code that can run inside these various apps in order to write "scripts" for controlling these applications. But it's also possible to create our own applications using other JavaScript "libraries" and "frameworks", for example we can create terminal or CLI (command line interface) apps using pkg and we can create native GUI (graphical user interface) applications for desktop using electron (but these are both beyond the scope of this lesson).
+      </p>
+      <p>
+        There is also a standalone runtime, specifically a jit (or <a href="https://hacks.mozilla.org/2017/02/a-crash-course-in-just-in-time-jit-compilers/" target="_blank">just-in-time</a>) compiler which we can run in the terminal (like we would for other languages like C or python using their terminal based compilers and interpreters) which is called nodejs. Visit the <a href="https://nodejs.org/en/" target="_blank">nodejs website</a> to download the LTS version (the latest stable long-term-support version) of the compiler. Then after you've installed node make sure everything's working by running <code class="k">node -v</code> in your terminal (you may need to quit and relaunch your terminal after installing node first). If you see your node version number print to the console then you've got it installed! There's a couple of ways to get started from here, like most CLI apps you can run <code class="k">man node</code> or <code class="k">node -h</code> or <code class="k">node --help</code> to learn more about it, but in our case (to finish this lesson) we're going to launch the node "shell" in order to write and run some JavaScript code.
+      </p>
+
+      <img src="/images/notes/computers/nodeshell.gif" alt="nodejs demo" class="rwd">
+
+      <p>
+        If you run <code class="k">node</code> without any arguments it will open up a JavaScript shell, this is essentially an interactive JavaScript environment (it's <i>sort of</i> like being "inside" node) every line of JavaScript you enter (as in type-in + hit enter) will automatically get turned into machine code and executed by your CPU then returned back (echoed) to the shell. Once in the shell enter a number to see the shell echo it back to you. This worked because numbers in JavaScript are an official <b>data-type</b> so the shell can return it back to you. Next try writing something like <code class="k">84 + 12</code>, this time it returns 96 b/c the <code class="k">+</code> symbol in JavaScript is an "operator" which is used to load up that "ADD" instruction we discussed earlier and return the result of that operation.
+      </p>
+
+      <p>
+        A fragment of code that produces a value is called an <b><i>expression</i></b>. We use operators in conjunction with data to write expressions. While an expression like this one is as simple as it possibly gets, I hope this background (from Machine Code to JavaScript) gives you a bit of an appreciation for the level of abstraction programming languages like JavaScript provide.
+      </p>
+    </article>
+
+    <br><br><br><br><br><br>
+
+
+    <script src="/js/highlight.pack.js"></script>
+    <script> hljs.initHighlightingOnLoad(); </script>
+    <script src="/js/Averigua.js"></script>
+    <script src="/js/rainbow-text.js"></script>
+    <script src="/js/fancy-chars.js"></script>
+    <script>
+      FancyText.animate(document.querySelector('header > h1'), 200, 0.2)
+
+      Array.from(document.querySelectorAll('h3'))
+        .forEach(h3 => FancyText.animate(h3, 5000, 0.2))
+
+      Array.from(document.querySelectorAll('a'))
+        .filter(a => a.className !== 'button')
+        .forEach(a => RainbowText.hoverShimmer(a))
+
+      document.querySelector('#machine-code').onclick = function(){
+        let v = parseInt(this.getAttribute('name'));
+        if(v<10) v++; else v=0;
+        this.setAttribute('name',v);
+        this.src = '/images/notes/machine-code/'+v+'.png';
+      }
+    </script>
+  </body>
+</html>

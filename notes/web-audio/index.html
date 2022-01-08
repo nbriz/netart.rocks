@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>WebAudio API Notes</title>
+        <link rel="stylesheet" href="libs/css/monokai_sublime.css">
+        <link rel="icon" type="image/png"  href="https://netizen.org/classes/netart1/images/icon.png">
+        <link rel="stylesheet" href="/css/styles.css">
+    </head>
+    <body>
+
+      <header>
+        <h1>Web Audio API</h1>
+        <h2>algorithmically composed sound/music</h2>
+      </header>
+
+      <br><br>
+
+      <article id="app">
+        <div class="grid cols2">
+          <div v-for="l in json.lessons">
+              <h3>{{ l.name }}</h3>
+              <li v-for="s in l.snippets">
+                <a :href="getURL(l,s)">
+                   {{s.name}}
+               </a>
+             </div>
+              </li>
+        </div>
+      </article>
+
+      <br><br><br><br><br><br><br><br><br><br>
+
+      <script src="libs/js/vue.min.js"></script>
+      <script src="/js/Averigua.js"></script>
+      <script src="/js/rainbow-text.js"></script>
+      <script src="/js/fancy-chars.js"></script>
+      <script>
+        const app = new Vue({
+          el: '#app',
+          data: {
+            url: new URL(location),
+            json:{}
+          },
+          mounted (){
+            // this.url = this.url.slice(0,this.url.indexOf('index'))
+
+            fetch('index.json')
+            .then( res => res.json() )
+            .then( data => {
+              this.json = data
+
+              Vue.nextTick(() => {
+                FancyText.animate(document.querySelector('header > h1'), 200, 0.2)
+
+                Array.from(document.querySelectorAll('h3'))
+                  .forEach(h3 => FancyText.animate(h3, 5000, 0.2))
+
+                Array.from(document.querySelectorAll('a'))
+                  .filter(a => a.className !== 'button')
+                  .forEach(a => RainbowText.hoverShimmer(a))
+              })
+            })
+            .catch( err => { console.error(err) })
+          },
+          methods: {
+            getURL (l,s) {
+              let url = this.url.toString()
+              if (url.includes('index.html')) {
+                url = url.substring(0, url.length - 10)
+              }
+              return `${url}lesson.html?l=${l.name}&js=${s.file}`
+            }
+          }
+        })
+
+      </script>
+    </body>
+</html>

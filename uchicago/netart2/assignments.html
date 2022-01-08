@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Internet Art II</title>
+    <meta name="description" content="a class website for Internet Art II (MAAD 23632) at the University of Chicago">
+    <meta name="author" content="Nick Briz">
+    <meta charset="utf-8">
+
+    <!-- social media stuff -->
+    <meta property="og:title" content="Internet Art I">
+    <meta property="og:url" content="https://netart.rocks/uchicago">
+    <meta property="og:image" content="https://netart.rocks/images/netartdiagram.gif">
+    <meta property="og:description" content="a class website for Internet Art I (MAAD 23632) at the University of Chicago">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:site_name" content="https://netart.rocks/uchicago">
+    <meta name="twitter:site" content="@nbriz">
+
+    <link rel="icon" type="image/png"  href="https://netart.rocks/images/icon.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style media="screen">
+      :root {
+        --assignment-links: #00f;
+      }
+      .double {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .double p {
+        max-width: 440px;
+      }
+
+      .double div {
+        text-align: center;
+      }
+
+      @media (max-width: 986px) {
+        .double { flex-direction: column; }
+        .double p { margin: 40px auto; }
+      }
+
+      div.center a {
+        display: block;
+        font-size: 24px;
+        font-weight: bold;
+        font-style: italic;
+        text-decoration: underline;
+        color: var(--assignment-links);
+      }
+
+      div.center a:hover {
+        border-bottom: none;
+      }
+    </style>
+  </head>
+  <body>
+
+    <header>
+      <h3 class="center">assignments</h3>
+    </header>
+
+    <article>
+      <p>
+         Each student will be expected to complete and submit 3 assignments: the first by <b>Jan 30</b>, the second by <b>Feb 20</b> and the third by <b>Mar 06</b>. These assignments are creative code sketches/experiments/projects uploaded to your <a href="https://github.com/" target="_blank">GitHub</a> account, each as it's own repository (repo). The URL for these repos will then be submitted to the <a href="#" target="_blank">class canvas</a> by the due date for that corresponding assignment. There are a series of different assignments to choose from based on your interest and technical proficiency. Each of these assignments has a corresponding lesson on this website which you should complete prior to starting on the assignment. These lessons may include a combination of online notes, readings, video lectures, tutorials and interactive code examples.
+      </p>
+    </article>
+
+    <br><br><br><br>
+
+
+    <section class="double">
+      <div>
+        <div class="center">
+          <a href="#" target="_blank"><img id="css-art-assignment" src="/images/computer.gif" alt="retro computer gif" style="width: 100px;"></a>
+          <a href="#" target="_blank">CSS-Art.Assignment</a>
+        </div>
+        <i>can apply to assignment #1</i>
+        <p>
+          The goal of this assignment is to introduce you to code and get you oriented with the basics of creative coding for the web. If you've never written any code before (ie. you are an absolute beginner) consider making this your first assignment this quarter. Make sure to review the material in <a href="/uchicago/netart2/prologue.html">What's Internet Art? (from net.art to CSS Art)</a> before starting on this assignment.
+        </p>
+      </div>
+      <div>
+        <div class="center">
+          <a href="https://github.com/net-art-uchicago/code-poetry" target="_blank"><img id="code-poetry-assignment" src="/images/computer.gif" alt="retro computer gif" style="width: 100px;"></a>
+          <a href="https://github.com/net-art-uchicago/code-poetry" target="_blank">CodePoetry.Assignment</a>
+        </div>
+        <i>can apply to assignment #1</i>
+        <p>
+          This assignment has 2 goals. The primary goal is to make sure you understand how to fork and modify projects on GitHub. The secondary goal is to learn to see our code in a new light, not merely as instructions to the computer but as an aesthetic space for creative expression itself. If you've never used git or GitHub before, consider making this your first assignment this quarter. Make sure to complete the lesson <a href="/uchicago/netart2/act1.html">Versioning (Open Source Code Poetry)</a> before starting on this assignment.
+        </p>
+      </div>
+    </section>
+
+    <br><br><br>
+
+    <section class="double">
+      <div>
+        <div class="center">
+          <a href="https://github.com/net-art-uchicago/10print" target="_blank"><img id="tenprint-assignment" src="/images/computer.gif" alt="retro computer gif" style="width: 100px;"></a>
+          <a href="https://github.com/net-art-uchicago/10print" target="_blank">10Print.Assignment</a>
+        </div>
+        <i>can apply to assignment #1 or #2</i>
+        <p>
+          The goal of this assignment is to make sure you're comfortable with the core programming concepts in JavaScript, specifically how we work with data (declaring and reassigning variables) and how to control the flow of a program (writing statements and expressions like loops, conditionals and creating functions). If you already know how to work with git/GitHub and you have some prior experience coding (HTML, CSS, C, python, etc) but are new to JavaScript, consider making this your first assignment this quarter. If your first assignment was either the CSS Art or Code Poetry assignments, consider making this your second assignment. Make sure to complete the lesson <a href="/uchicago/netart2/act2.html">Randomness (Generative Art in JavaScript)</a> before starting on this assignment.
+        </p>
+      </div>
+      <div>
+        <div class="center">
+          <a href="https://github.com/net-art-uchicago/form-code" target="_blank"><img id="form-code-assignment" src="/images/computer.gif" alt="retro computer gif" style="width: 100px;"></a>
+          <a href="https://github.com/net-art-uchicago/form-code" target="_blank">Form+Code.Assignment</a>
+        </div>
+        <i>can apply to assignment #2 or #3</i>
+        <p>
+          The goal of this assignment is to create an algorithmic (visual) composition where the same code produces slightly different visual outputs each time it's run (ie. each time we refresh the page and/or as we interact with it). We'll do this by learning how to use the web browser's Canvas API (either using the native API directly or via the p5.js library) for creating generative 2D drawings. Make sure to complete the lesson <a href="/uchicago/netart2/act3.html">Algorithmic Composition (audio + visual)</a>, specifically the first section on Form + Code, before starting  on this assignment.
+        </p>
+      </div>
+    </section>
+
+    <br><br><br>
+
+    <section class="double">
+      <div>
+        <div class="center">
+          <a href="https://github.com/net-art-uchicago/algo-muzak" target="_blank"><img id="algomuzak-assignment" src="/images/computer.gif" alt="retro computer gif" style="width: 100px;"></a>
+          <a href="https://github.com/net-art-uchicago/algo-muzak" target="_blank">algoMuzak.Assignment</a>
+        </div>
+        <i>can apply to assignment #2 or #3</i>
+        <p>
+          The goal of this assignment is to create an algorithmic (musical) composition where the same code produces slightly different musical outputs each time it's run (ie. each time we refresh the page). We'll do this by learning how to use the web browser's Web Audio API. Make sure to complete the lesson <a href="/uchicago/netart2/act3.html">Algorithmic Composition (audio + visual)</a>, specifically the second section on algorithmic music, before starting  on this assignment.
+        </p>
+      </div>
+      <div>
+        <div class="center">
+          <a href="#" target="_blank"><img id="artware-assignment" src="/images/computer.gif" alt="retro computer gif" style="width: 100px;"></a>
+          <a href="#" target="_blank">artware.Assignment</a>
+        </div>
+        <i>can apply to assignment #2 or #3</i>
+        <p>
+          For more advanced students there is an alternative 3rd assignment which is fairly open. The goal of this assignment is to produce "artware" (or software art) experimenting with any number of browser APIs, 3rd party REST APIs and libraries including the browser's DOM API, the Events API and the Fetch API as well as learning the basics of writing server side code, by creating your own server and REST API (using a framework called express.js) as well as experimenting with the socket API (using a library called socket.io). You can begin watching the tutorials in the the lesson <a href="/uchicago/netart2/epilogue.html">Server Side: artware, surveillance, telepresence</a>, each of which build on the previous one, and each offering different directions you could take this final assignment in.
+        </p>
+      </div>
+    </section>
+
+    <br><br><br><br><br><br>
+
+    <script src="/js/Averigua.js"></script>
+    <script src="/js/rainbow-text.js"></script>
+    <script src="/js/fancy-chars.js"></script>
+    <script src="/js/netitor.min.js"></script>
+    <script src="/js/netnet-bg.js"></script>
+    <script>
+      Array.from(document.querySelectorAll('h3'))
+        .forEach(h3 => FancyText.animate(h3, 5000, 0.2))
+
+      Array.from(document.querySelectorAll('a'))
+        .filter(a => a.className !== 'button')
+        .forEach(a => RainbowText.hoverShimmer(a))
+
+      const bg = new NNBG(['assignment-links', 'blue', 'black'])
+
+      bg.addHoverElement('#css-art-assignment', 'eJztU91ugjAYvfcpGpclkgytDqJW57u0tEBjx0dKRd2yd19ZAQHdz83uJKFpv9Pv9JxT2BbmrMQOoRFCRAMY9G5nCPk+S/wIFGiCHuI4xmu2qYEiT4UWDpxX6NI+q1vookIpXdIWVTITLS3Gz0G4bqBUJqmyr2lwnTA6WYThE7oMeBp6VcPHyA4M+LmWy2i0TzQcMt50l1RPLiY8dwqUQscKjgSlknORtVRTJ7tmO0puUoIWGOcn15iKSlmvlEMhjYTMChWKGlkKV2egudC+plweCoJC/OjqXBa5omeCZPaVAlMQ7Tc/qu8l7XXprZL8hApQktd7L8l6Q1eEMBFD6y6CzIjMmhmPN1274ZXb8IZZyuypB1ObffNlxsXJynFrJWLb99z2GcgtFjbLRvxqIH5w9z2rvuXwK95OpH0+n4Ex8EoQ7t+AM4Gv46CxEfqXNOarYBhHp/RdHs5/0LMfDNRefRl/uf5Fc6vbmftj7YzLEkWKFsXL2G0d77YzW9zdoTt0h/4RGn0Cj+M9jQ==', {
+        black: '#faa7a8', blue: '#faa7a8', 'assignment-links': '#fff09b'
+      })
+
+      bg.addHoverElement('#code-poetry-assignment', 'eJyNUVuOwiAU/ZZVnMQ/CdXoX9uwFdIHto1NaSjNjBq/3INbcB8uxZXIYxJHayZzIJcLnPvgkA5m30o+I7NclXsckWfFrtJq7MoYeWs3CQrVKh1jvtquEmxVZ9jQHGSMzbr/TnAi6TIkIWmvreUehDPGCAcWDs55A2N2BgoY9ayFcCcCQogQcL+cPbfQ2VDbowZfujESRkWBcLuG4R1K6aSOTxus7+KZgfAPTf2JBnrsYGqrTlVPg7OutIopVUa+TuBKjLqS01q/+8DQy2wXOdInnaieikOeMr8uP+/89126dH/2AE5seeI=', {
+        black: '#000', blue: '#000', 'assignment-links': '#0f0'
+      })
+
+      bg.addHoverElement('#tenprint-assignment', 'eJxtkcFugzAMhu88haUdAHUF1hWtpbSXXbfbpF16CSRANIhRCKPd1HdfQmDtpF0w/v3Fzu+knTrX7OAAZEjP8K1/ABoiSy4SiHZjmpH8o5TYC5rA3frhcbsltpBjjVJrm+gpZpnVChRqWZCG1+cEGhTYtSRnN7WOf7EE1pv2ZEX8ZLKocUig4pQyYdWaC7asGC8rpeHVDI8dhknOsKZGvjhpONlw0i6XvFXGUNGLXHEUo7MXLMFT7KT8ySMvwKOY9w0TKjCED3/SwMDPepwWYLEHk46zbjtTSQZv7pij6BQMsIeBC4pDwIVg8p1TVUEIcTRCHVNvvGHYK88cvodVHPnWMVOg5bZXuoPrTnYleKbAtRbtdEhh0GGxmIdaI69EVYEkemqjr3OAKIivAMxttQv3eHQn+QKs7tj/VPgLOdfvtEbPcv68DLsD8wTT5p3UkIc0HMMPjQCurQ==', {
+        black: '#41399a', blue: '#41399a', 'assignment-links': '#8075eb'
+      })
+
+      bg.addHoverElement('#form-code-assignment', 'eJydVm1r2zAQ/t5fcQ2jkZfESQyFQZ3A6Dr2ZbRshTFKoaolx2K25MpyatPmv+9kO6mduFsptNbp7rm3xyc5/vGXy/Pr31cXEJkkXh75doGYytViwOUAmNCLQWz0YHkE4EecMiugmHBDIYiozrhZDHITTj4NGpMRJuZLf1qv1m+6dfTvFSsbWBZokZp6AxAomRlgsID5bNbRGWVo3KMvMlTe3HZ0ZY+O9QHZFtnRBlSuqTUwFeQJl8YNNKeGX8Tc7siwBgydrVe1dTNTxtxNVSaMUBLdh6EoOBv2oWIeGkTM+mxGpYemR8FMhGohJde/7KZrj7hYRWYL+FbtGsSuC8u6S9OUS3YeiZiR2tfpNm8KjNJEXXFzrqThBTbtMWy4gYa5DKomNZVMJUASIceQ0MKBpwYCIEIgpky5Cq0FFgtkJJeMh0IiK4is1YC+Z/Zhm4bNzl1zk2tZGUbwnZrIrZMRBz5iQnSdNMb5toPNQX1MYEsknRdjSOclPjwreWW7ziZRlSJ70IZUUqoeCaIxSeXtOdsqakNZGUpreD17jJ0CKeZjKPG/8HD12pmRa/eer4S8wsDE6egTtebXqnHummxYa6rjdUxBrDLeEy0zWv3hpFXqfq14gPMUyH55oYjjn3Ys7Tzr1T0lszHUf3NneAD9wQPTINqDO+6OqfPWFDN3dopZdvBQaSAxNyDssJzh4tcXA4qjUbt2wIvBTfMsIs3U7FXkOC1o2UBbZwem4LUhbC/cxGu/+gpR/huxeX1INX28XHMd0zTDccG32nkL1bFcY8NN4Lnl/nTW94K3NN4hjeTD03ozhpenc/cuHpubEg8SlYENbsWqShzp7EbcomSXNhf26O88fLzPT05eIhzjRTDr5oDqqPwn6OaNVHaHWPOHnGfmsxQJtZCvmiacWNzhFL51et/FY9UPjBZ2UFDaY6u2Lveu8+fnxs23jNWOmGlyEKI9QqSfwAPSqhO/uxJshGbjT18+yv60/lbjx7v6ZfAXcVs+BQ==', {
+        black: '#000', blue: '#000', 'assignment-links': '#fff'
+      })
+
+      bg.addHoverElement('#algomuzak-assignment', 'eJylVm1P40YQ/p5fMaJXxYaQOCkBygWk8FZOOrXo4ITUqhIbe52sztlN12ucHMd/78x645eQUl1rRbE9fmZ2Xp6Z3VFqVgk/awGkPDRCSXjGZ4CFSgW9nkAsljx6b4VGLU4gWCyLt4THpvaai8jMTqAfBE95IZlxMZ2ZQjQj0Utr1HPrjdxyZyhxTygLtVgYcqa327IGNG+nwGDCUhECX7L5IuGgYpipHL2BSLMccvbEY6XnCJQRxJr/lXEZrlBJp/iq5hAxw8jelEuumeERTFZgZhzGkiWrlOtfVcQhS4WcWnHI5BNLYXz7obXba6FmqGRqIDRLOAXJcy8XMlJ5d5xFQl0oafjSwLdv4MQ5n3wRpv7R9/zSShwbtIK2uqHm6MzahxpEpWED8lsaiiRhRtVBU9nA/MKEtF+nsjvF5+4TSzKOkKA7GFIMaLSLmhKz7U2lQ64F6BRJ8FaKyHTEUyMko/L4ZKPXIzPWFw4TbnLOJYwPbOLHhy3ihAEhyft+QApxJgtWodo1VsbzHb9slVIzlmJuzV9rNueeQ/kWImIgQbesqAvpDPpHhwHle9vXERwcBL5zYh9v1tY25N4pFJ9f1ulJDdPGJrF010W9/53XFq01q9g65PSV1f+4VqFW0MCt0u12K9oW655CpMJszqVxjLlKOL157QLQttQqtG0v1zUwcXp1xxMkBpKw7Vq27XdVHKfcPBC+Ui8a/zv0b6wCGvh3BbZYcBldzEQSecVy/kakF7ZNnStTblwPejuDaKeKEVFYb62+8DuaSKix80Nsr50GJhGSP7h0DJupZlqzFY2hFH3kdsogo1wXTLI45vojl1OrSp1VEvBcyAuVSeOgpDi2tux0gc9CmmMr8OpW/EZDFTTiZUNhFu/FnKvMeO5ThwZvAD3oD3zyuj+IF6nFVtHF2Mu1+H8eHB4NdrZgPtFECDqAvzpFOs2KWw9thkinFlfeA4POYXnnOJqKTHkYZQrBfn9w7Bd0LeYPVux8ZTgFc2nhl4j2SlvVGnb4vza73g5Ko1UkEz4V8paZmee7HQw5o5JsLivCFNTvNepXgolYQeGp0uDZaUei93gbNVRQsre3ro11t7gkesYS8dXRxV5pyLAAyKPCBadCxokRVeh/iD9tNY/xH0u6C16z33pw4Dtlmp3o2Sn65tcSMFdP/F55yw6s1kiepHyD7huIJU3KIk1W8rKRVafyBi+svxtaRe95VTklbumvaVNt59u4MxgOt3Hneq30JnX+wTQeG2Cq2WJWWq6qbhub6ZsO/T9Qcd5gDVWoH9ByoxHcXYw/Xl3C51s4H3+Cuw+/X/0PGm0hUcmho+GPdEByQ3+2Hqx0kec0lJt8whyio8167eKp4WhYLbriSaJyjDoz9oA0QxTX9tF6UGyo9DqnSZgyk9lzlrOwfd486unEe/dcd+els/lOFX7casaOpOUm0/Zr9bH/Nw0a27LtQd8RucGHMNMatx57+qq4YUN7Y2q2addobwJwy6Fvg4PFEsZasOQVAk3c0670+O55y+Hk5ebrI83vDvwUWNpS05Ujn47RxVH5b9UDnJs=', {
+        black: '#f92672', blue: '#f92672', 'assignment-links': '#00f'
+      })
+
+      bg.addHoverElement('#artware-assignment', 'eJzNVl9v2zYQf14/BauktQ1Ekp3EsePJLoq269s2oAW6YhgQWjxJbClRJSnHruHvvqMky4qtphswoPODxNP9v/vd0cHT17+9ev/x9zckMalYPAnsiwiaxXMHMocwruaOMMpZPCEkSIAye8BjCoaSMKFKg5k7hYncqVOzDDcCFh9gSV7meeBXZMXSZmPPJUHIUrIN2dYEISlVMc9mZPhz8ymnjPEsfvBtScPPsZJFxmbk7JLRSRTtmbu95ZTyrGWZcZ0LupmRSMD6YOlToQ2PNm4oMwOZmZEQn6AOAlTwOHO5gVSfMhPgcYJKo+FwlXRHsEDPq+/HYSkXKw2h4RILEEpRpNl/E2cT0FnZhwflXrv3nJlkRsbDZ61o0Iur+VeYkavLfH3EiGjKBWagaaZdDYpHBwEDa+OWsZyG2HTyatq2ialKhX2MOprI07gV7mPGv5WK/b5v07jVJQs9xQAdj8b5mjBpDLA6iJ/wV3FdRRkv9JFNWRjBMyyO1dRS8LZizXRlFOFczIh7NTpki4lVU+DXY2CP+5EK7DDUkxFY8CxqrQAhtGi8B7YoWoVz58whnM0dJmMH+48zSJlUdIktzovcaWlYCFrJsv/OIgEhZOC3rLaIwK9c19MaKp6bvVhUZCU+SQzmtYxJf9DqDkJTGyxkTOb4DIsUO+R9KUBt3oFAXEvV750huzc4UimUQJVeYkyuZ76PIl4I0qc595cKgGmfpzQGX9GMybR3pK3gC2pvCW6jROI+6L19876HhW4gCyZM+ujjwooefBPimQSyvgJN5gvkae+Tlll/cCrCKC46lNm2OMRm6mGHXxqj+LIw0O9hU3oXxEp7KWiNMbdt7QYNCKp3R1F//fAukrgEKCZWuj0tMOKKh2BrbP3kSuagDMfow3t6JLrukIoVZ38cyW2+Ifexs1F3+0Zhg7x7oFgi5cVy5VuVXPLMaP98W4W5w9N6d3G+3ez8fWJ3/5cGVu6jjuTxzSXTfw7/8hheclwA+6WOvsOCeQzw5cj1Bg/UjGc32atqlduK3ksZEft4Ss630e6uGzXdeCkrjmA5RYqgZWTk+XPCPCFDWmq9aBGeFZmR65E3nQ6vhsPx5HYyubmZHhtCte8ZymI05E4n3s3l9XgyvhlOr29vL6//HYIa9GBcFjXoePcD4fJwIKt5/AdD/BZk12Y8WnNN6fAGXeGoaC+VX7kQ1Atl6q9GfgyylIEXn2EzN6DND1x9Law9WofqYugPDiRWoybx0mtuk8CvLju8/eyfzr8BURDthA==',  {
+        black: '#2da7ff', blue: '#2da7ff', 'assignment-links': '#fff'
+      })
+
+    </script>
+  </body>
+</html>

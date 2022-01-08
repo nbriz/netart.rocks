@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Internet Art II</title>
+    <meta name="description" content="a class website for Internet Art II (MAAD 23632) at the University of Chicago">
+    <meta name="author" content="Nick Briz">
+    <meta charset="utf-8">
+
+    <!-- social media stuff -->
+    <meta property="og:title" content="Internet Art I">
+    <meta property="og:url" content="https://netart.rocks/uchicago">
+    <meta property="og:image" content="https://netart.rocks/images/netartdiagram.gif">
+    <meta property="og:description" content="a class website for Internet Art II (MAAD 23632) at the University of Chicago">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:site_name" content="https://netart.rocks/uchicago/netart2">
+    <meta name="twitter:site" content="@nbriz">
+
+    <link rel="icon" type="image/png"  href="https://netart.rocks/images/icon.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style media="screen">
+      code.schedule {
+        color: black;
+        border: none;
+      }
+
+      code.schedule::after {
+        content: ':'
+      }
+
+      #sections > li {
+        font-size: 30px;
+      }
+
+      @media (max-width: 960px) {
+        #sections > li {
+          font-size: 3vw;
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+    <header>
+      <h1>internet art II</h1>
+      <h2>MAAD 23632 1 (Winter 2022)</h2>
+    </header>
+
+
+    <blockquote cite="https://www.goodreads.com/book/show/23492802-magic-and-loss">
+      <p>The Web represents a grand emotional, sensory, and intellectual adventure for anyone willing to explore it actively. [...] For artists, ignoring the imperative to grasp the cultural implications of the Internet means risking irrelevance. [...] As human discourse adapts to its new home, everything we do and think as human beings will be and is being shaped by new values. [...] If it’s ever fair to say that anything has “changed everything,” it’s fair to say so about the Internet.</p>
+      <cite>
+        <a href="/files/magic-and-loss.pdf" target="_blank">Virginia Heffernan</a>
+      </cite>
+    </blockquote>
+
+
+    <article>
+      <h3>course description</h3>
+      <p>
+         Though the web was originally conceived as an online space for sharing hyperlinked documents, the modern Web browser has evolved into a creative coding playground capable of producing all manner of networked art and algorithmic compositions. In this course we'll learn JavaScript, the Web's defacto programming language. Throughout the quarter we'll experiment with various different Web APIs for creating generative and interactive Internet art including HTML5 video, Canvas (2D/3D animations) and Web Audio. We'll learn how to produce work that responds to various input sources (trackpad/mouse, touchscreen, keyboard, cameras, microphones) and how to fetch and incorporate data from external APIs elsewhere on the Internet. This course counts towards the Media Practice and Design requirement for the MAAD program.
+      </p>
+
+      <div class="flex" style="margin: 60px 0px;">
+        <a class="button" target="_blank" href="Internet Art II (Winter 2022).pdf">syllabus</a>
+        <a class="button" href="assignments.html">assignments</a>
+      </div>
+    </article>
+
+    <hr>
+
+    <article>
+      <a href="http://www.evan-roth.com/~/works/a-tribute-to-heather-series/#hemisphere=east&strand=97" target="_blank">
+        <img class="mtaa" style="width:100px;" src="/images/arts/hotairballoon copy 21.gif" alt="From A Tribute to Heather by Evan Roth">
+      </a>
+    </article>
+
+    <article>
+      <h3>learning goals</h3>
+      <ul>
+        <li>
+          Foundational understanding of web programming concepts, tools and working knowledge of the JavaScript programming language.
+        </li>
+        <li>
+          General understanding of the web's creative potential, by learning how to produce interactive and generative compositions using the browsers native APIs (which may include the DOM, Canvas, WebGL, WebXR, WebAudio among others) as well as through creative libraries (which may include p5.js, three.js, tone.js, aframe among others)
+        </li>
+      </ul>
+
+      <br><br><br>
+
+      <h3>lessons/tutorials</h3>
+      <ul id="sections">
+        <li><code class="schedule">Prologue </code> <a href="prologue.html">What's Internet Art? (from net.art to CSS Art)</a></li>
+        <li><code class="schedule">Act I &nbsp;&nbsp;&nbsp;</code> <a href="act1.html">Versioning (Open Source Code Poetry)</a></li>
+        <li><code class="schedule">Act II &nbsp;&nbsp;</code> <a href="act2.html">Randomness (Generative Art in JavaScript)</a></li>
+        <li><code class="schedule">Act III &nbsp;</code> <a href="act3.html">Algorithmic Composition (audio + visual)</a></li>
+        <li><code class="schedule">Epilogue </code> <a href="epilogue.html">Server Side: artware, surveillance, telepresence</a></li>
+      </ul>
+
+      <br><br><br>
+
+      <h3>notes</h3>
+      <ul>
+        <li><code class="schedule">FLOSS</code> <a href="/uchicago/netart2/open-source.html">open source culture</a></li>
+        <li><code class="schedule">computers</code> <a href="/uchicago/netart2/whats-a-computer.html">what are they really?</a></li>
+        <li><code class="schedule">programming</code> <a href="/uchicago/netart2/programming.html">from machine code to JS</a></li>
+        <li><code class="schedule">JavaScript</code> <a href="js-basics.html">core concepts of the craft</a></li>
+        <li><code class="schedule">form + code</code> <a href="form-code.html">artists && exhibitions</a></li>
+        <li><code class="schedule">Web Audio API</code> <a href="/notes/web-audio">interactive demos</a></li>
+      </ul>
+    </article>
+
+    <br>
+    <br>
+
+    <article>
+      <a href="https://elephant.art/what-does-net-art-mean-in-the-post-digital-age-olia-lialina-30032020/" target="_blank">
+        <img class="olia" src="/images/arts/olia_lialina.gif" alt="Olia Lialina, GIF portrait">
+      </a>
+    </article>
+
+    <section class="info-table">
+      <div>
+        <div>where:</div>
+        <div>Crerar Library 134</div>
+      </div>
+      <div>
+        <div>when:</div>
+        <div>Mon, 09:30am - 12:20pm</div>
+      </div>
+      <div>
+        <div>professor:</div>
+        <div>Nick Briz</div>
+      </div>
+      <div>
+        <div>TA:</div>
+        <div><a href="https://netnet.studio" target="_blank">netnet</a></div>
+      </div>
+      <div>
+        <div>email:</div>
+        <div>nb<i></i>riz@uchicago<i></i>.edu</div>
+      </div>
+    </section>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <script src="/js/MouseTrails.js"></script>
+    <script src="/js/Averigua.js"></script>
+    <script src="/js/rainbow-text.js"></script>
+    <script src="/js/fancy-chars.js"></script>
+    <script>
+      FancyText.animate(document.querySelector('header > h1'), 200, 0.2)
+
+      Array.from(document.querySelectorAll('h3'))
+        .forEach(h3 => FancyText.animate(h3, 5000, 0.2))
+
+      Array.from(document.querySelectorAll('a'))
+        .filter(a => a.className !== 'button')
+        .forEach(a => RainbowText.hoverShimmer(a))
+
+      const trail = new MouseTrails('rainbow')
+      window.addEventListener('mousemove', (e) => {
+        trail.mouseMoved(e.clientX, e.clientY)
+      })
+    </script>
+  </body>
+</html>

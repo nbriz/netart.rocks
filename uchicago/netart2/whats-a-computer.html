@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Internet Art II</title>
+    <meta name="description" content="a class website for Internet Art II (MAAD 23632) at the University of Chicago">
+    <meta name="author" content="Nick Briz">
+    <meta charset="utf-8">
+
+    <!-- social media stuff -->
+    <meta property="og:title" content="Internet Art I">
+    <meta property="og:url" content="https://netart.rocks/uchicago">
+    <meta property="og:image" content="https://netart.rocks/images/netartdiagram.gif">
+    <meta property="og:description" content="a class website for Internet Art I (MAAD 23632) at the University of Chicago">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:site_name" content="https://netart.rocks/uchicago">
+    <meta name="twitter:site" content="@nbriz">
+
+    <link rel="icon" type="image/png"  href="https://netart.rocks/images/icon.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style media="screen">
+      .double {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .double p {
+        max-width: 440px;
+      }
+
+      .double div {
+        text-align: center;
+      }
+
+      @media (max-width: 986px) {
+        .double { flex-direction: column; }
+        .double p { margin: 40px auto; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <header>
+      <h1>computers</h1>
+    </header>
+
+    <article>
+      <iframe class="rwd" src="https://www.youtube.com/embed/O5nskjZ_GoI?list=PL8dPuuaLjXtNlUrzyH5r6jN9ulIgZBpdo" allowfullscreen="" height="500" frameborder="0"></iframe>
+      <p> As it turns out, the first computers didn't even use electricity, there’s nothing inherent to the concept of a computer that requires electricity (it just so happens that electric current flows pretty fast, which makes it useful for doing things really fast). In theory you could create a computer using gears and levers powered by steam, which is exactly what Charles Babbage designed in Victorian Era England, 100 years before the first electronic computers were made. In a sense Babbage was the first computer engineer and his Analytical Engine (had it been completed) the first computer, capable of doing all the key things, as proven/articulated by Ada Lovelace who, in her Notes of the Analytical Engine, described how the Engine could be used to calculate all kinds of things. She detailed the specific instructions necessary for “programming” the Engine, in a sense making her the first computer programmer. </p>
+      <img src="/images/notes/computers/analyticalengine.jpg" alt="the analytical engine">
+      <p class="center"><i>from '<a href="http://sydneypadua.com/2dgoggles/" target="_blank">The Thrilling Adventures of Lovelace and Babbage</a>' by Sydney Padua</i></p>
+    </article>
+
+    <blockquote cite="https://www.goodreads.com/book/show/23492802-magic-and-loss">
+      <p>Again, it [the Analytical Engine] might act upon other things besides number, were objects found whose mutual fundamental relations could be expressed by those of the abstract science of operations, and which should be also susceptible of adaptations to the action of the operating notation and mechanism of the engine . . . Supposing, for instance, that the fundamental relations of pitched sounds in the science of harmony and of musical composition were susceptible of such expression and adaptations, the engine might compose elaborate and scientific pieces of music of any degree of complexity or extent. </p>
+      <cite>
+        <a href="https://en.wikipedia.org/wiki/Ada_Lovelace" target="_blank">Ada Lovelace</a> (from her notes on the Analytical Engine)
+      </cite>
+    </blockquote>
+
+    <br><br>
+
+    <article>
+      <p>
+        While you could build a steam power computer out of gears (or anything really like <a href="https://www.youtube.com/watch?v=OpLU__bhu2w" target="_blank">dominoes</a> or even <a href="https://www.youtube.com/watch?v=1X21HQphy6I" target="_blank">blocks in minecraft</a>) things got a lot more practical and faster when we replaced gears with electro-mechanical relays and cables, and even faster when we replaced those relay switches with vacume-tube switches and even faster still when we replaced those with transistors, all the while more or less the same basic idea, but each time smaller and more efficient:
+      </p>
+      <iframe class="rwd" src="https://www.youtube.com/embed/LN0ucKNX0hc?list=PL8dPuuaLjXtNlUrzyH5r6jN9ulIgZBpdo" allowfullscreen="" height="500" frameborder="0"></iframe>
+      <p>
+        ...and so, computers are really just a very massive/complex arrangement of circuits, or small switches connected together that pass along electrical signals from one part of the circuit to another. We can arrange these circuits in ways that do arithmetic (in the <a href="https://www.youtube.com/watch?v=xISG4nGTQYE" target="_blank">CPU</a>) or remember things (in <a href="https://www.youtube.com/watch?v=XETZoRYdtkw" target="_blank">memory</a>) and in ways that can keep that current <a href="https://www.youtube.com/watch?v=SmQ5K7UQPMM" target="_blank">flowing</a> incredibly fast.
+        <br><br>
+        while it's totally possible to build your own computer (some folks do it <a href="https://www.youtube.com/watch?v=HyznrdDSSGM" target="_blank">for fun</a>) as programmers we don't really have to worry about putting the circuits together we just focus on programming the computer, telling the computer what to do or telling the computer how the electricity should flow, that's programming.
+      </p>
+    </article>
+
+    <br><br><br><br><br><br>
+
+    <script src="/js/Averigua.js"></script>
+    <script src="/js/rainbow-text.js"></script>
+    <script src="/js/fancy-chars.js"></script>
+    <script>
+      FancyText.animate(document.querySelector('header > h1'), 200, 0.2)
+
+      Array.from(document.querySelectorAll('h3'))
+        .forEach(h3 => FancyText.animate(h3, 5000, 0.2))
+
+      Array.from(document.querySelectorAll('a'))
+        .filter(a => a.className !== 'button')
+        .forEach(a => RainbowText.hoverShimmer(a))
+    </script>
+  </body>
+</html>

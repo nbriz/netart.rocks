@@ -1,32 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="utf-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+
     <title>netart.rocks</title>
     <meta name="description" content="A homepage for various Internet Art educational materials I've produced over the years">
     <meta name="author" content="Nick Briz">
-    <meta charset="utf-8">
+
     <link rel="icon" type="image/png"  href="https://raw.githubusercontent.com/nbriz/netart.rocks/main/images/icon.png">
+
     <link rel="stylesheet" href="css/styles.css">
+    <style media="screen">
+
+      *::-moz-selection {
+        background-color: var(--white);
+        color: var(--black);
+      }
+
+      *::selection {
+        background-color: var(--white);
+        color: var(--black);
+      }
+
+      body {
+        cursor: url(/images/cursors/minis/0.gif), auto;
+        animation: mini-cursors 1s infinite;
+      }
+
+      #intro {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        color: var(--white);
+      }
+
+      #intro > h1 {
+        display: flex;
+        /* justify-content: space-between; */
+        align-items: center;
+        font-size: 10vw;
+      }
+
+      #intro > h1 > span {
+        display: inline-block;
+        height: 12vw;
+        width: 5vw;
+      }
+
+      #intro h3 {
+        font-size: 2.5vw;
+      }
+
+      .circle {
+        border: 0.3vw solid var(--white);
+        width: 4vw;
+        height: 4vw;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(2vw);
+        opacity: 0;
+        transition: opacity 0.5s;
+      }
+
+      #main {
+        height: 75vh;
+        width: 100vw;
+      }
+
+      #main > p {
+        color: var(--white);
+        font-size: 20px;
+      }
+
+      #main > p > a {
+        color: #ff0;
+        border-bottom: 1px solid #ff0;
+      }
+
+      @media (max-width: 1060px) {
+        #main {
+          margin: 0 auto;
+          max-width: 80vw;
+        }
+      }
+    </style>
   </head>
   <body>
 
-    <header>
-      <h2>netart.rocks</h2>
-    </header>
+    <section id="intro">
+      <h3>(how to / why) make</h3>
+      <h1>internet art</h1>
+      <span class="circle"><h3>↓</h3></span>
+    </section>
 
+    <article id="main">
+      <p>
+        Hi there! my name is <a href="http://nickbriz.com" target="_blank">Nick Briz</a> && i'm an artist/educator/organizer based in Chicago, IL; i make work <i>with</i>, but also <i>about</i>, the technology that has come to define the present era. This domain has been used for various different educational projects i've developed over the years on the subject of <a href="https://en.wikipedia.org/wiki/Internet_art" target="_blank">Internet Art</a>—from after school programs to university courses to online tutorials. If u're one of my former <a href="https://marwen.org/" target="_blank">Marwen</a>, <a href="/saic">SAIC</a>, <a href="/uchicago">University of Chicago</a> or YouTube students looking for material that used to be on here, but has since vanished, my apologies for the <a href="https://en.wikipedia.org/wiki/Link_rot" target="_blank">link rot</a>. Send me an <a href="http://nickbriz.email/" target="_blank">email</a> && i'll gladly dig up whatever it is u're looking for. I'm currently working on updating some of my free/online edu materials in collaboration w/my non-profit arts collective <a href="https://netizen.org" target="_blank">netizen.org</a>, get a sneak peak at that here: <a href="https://netnet.studio">https://netnet.studio</a>.
+      </p>
+    </article>
+
+    <page-background></page-background>
+
+    <script src="/js/MouseTrails.js"></script>
+    <script src="/js/fancy-chars.js"></script>
+    <script src="/js/page-background.js"></script>
+    <script>
+      // FancyText.fancify(document.querySelector('h1'), 0.1)
+      FancyText.animate(document.querySelector('h1'), 200, 0.1)
+      setTimeout(() => {
+        document.querySelector('.circle').style.opacity = 1
+      }, 3500)
+
+      const trail = new MouseTrails('white')
+      window.addEventListener('mousemove', (e) => {
+        trail.mouseMoved(e.clientX, e.clientY)
+      })
+    </script>
+<!--
     <article>
       <br>
       <br>
       <iframe width="100%" height="450px" src="https://www.youtube.com/embed/videoseries?list=PLoQrXDiSBWYE9WKxEbWgTEbajfJqIEVnu" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </article>
 
-    <article>
-      <p>
-        Hi there! my name is <a href="http://nickbriz.com" target="_blank">Nick Briz</a> && i'm an artist/educator/organizer based in Chicago, IL; i make work <i>with</i>, but also <i>about</i>, the technology that has come to define the present era. This domain has been used for various different educational projects i've developed over the years on the subject of <a href="https://en.wikipedia.org/wiki/Internet_art" target="_blank">Internet Art</a>—from after school programs to university courses to online tutorials. If u're a <a href="https://marwen.org/" target="_blank">Marwen</a>, <a href="https://www.saic.edu/" target="_blank">SAIC</a>, <a href="https://www.uchicago.edu/" target="_blank">University of Chicago</a> or YouTube student looking for material that used to be on here, but has since vanished, my apologies for the <a href="https://en.wikipedia.org/wiki/Link_rot" target="_blank">link rot</a>. Send me an <a href="http://nickbriz.email/" target="_blank">email</a> && i'll gladly dig up whatever it is u're looking for. I'm currently working on updating some of my free/online edu materials in collaboration w/my non-profit arts collective <a href="https://netizen.org" target="_blank">netizen.org</a>, get a sneak peak at that here: <a href="https://netnet.studio">https://netnet.studio</a>.
-      </p>
-
-      <br>
-      <br>
       <blockquote cite="https://web.archive.org/web/20190618225330/https://store.mcsweeneys.net/products/information-doesn-t-want-to-be-free">
           <p>
               The single most important thing you need in order to have a career in the arts is persistence. The second most important thing you need is talent. The third most important thing is a grounding in how the online world works. Its that Important
@@ -41,12 +143,6 @@
         <img class="mtaa" src="images/mtaa.jpg" alt="mtaa - simple net art diagram">
       </a>
     </article>
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
+-->
   </body>
 </html>

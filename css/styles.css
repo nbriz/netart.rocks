@@ -1,9 +1,18 @@
 
 :root {
   --gray: #323232;
-  --red: #dc3037;
-  --blue: #50acc5;
+  --red: #f00/* #dc3037 */;
+  --green: #0f0/* #4FC476 */;
+  --blue: #00f/* #50acc5 */;
+  --light-blue: #0091b8;
+  --black: #000000;
+  --white: #ffffff;
 }
+
+
+/*
+  OLD TYPFACES
+*/
 
 /* fjalla-one-regular - latin */
 @font-face {
@@ -33,29 +42,157 @@
        url('fonts/volkhov-v12-latin-regular.svg#Volkhov') format('svg'); /* Legacy iOS */
 }
 
+/*
+  NETIZEN TYPFACES
+*/
+
+@font-face {
+    font-family: 'fira-sans-bold';
+    src: url('fonts/firasans-bold-webfont.woff2') format('woff2'),
+         url('fonts/firasans-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'fira-sans-regular';
+    src: url('fonts/firasans-regular-webfont.woff2') format('woff2'),
+         url('fonts/firasans-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'fira-mono-regular';
+    src: url('fonts/FiraMono-Regular.woff2') format('woff2'),
+         url('fonts/FiraMono-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*
+  NEWSROOM TYPFACES
+*/
+
+@font-face {
+   font-family: "ivar-text";
+   src: url("fonts/IvarText-Regular.woff2") format("woff2"),
+        url("fonts/IvarText-Regular.woff") format("woff");
+   font-style: normal;
+   font-weight: 400
+ }
+
+ @font-face {
+   font-family: "ivar-text";
+   src: url("fonts/IvarText-Italic.woff2") format("woff2"),
+        url("fonts/IvarText-Italic.woff") format("woff");
+   font-style: italic;
+   font-weight: 400
+ }
+
+ @font-face {
+   font-family: "ivar-text";
+   src: url("fonts/IvarText-Bold.woff2") format("woff2"),
+        url("fonts/IvarText-Bold.woff") format("woff");
+   font-style: normal;
+   font-weight: 600
+ }
+
+ @font-face {
+   font-family: "ivar-text";
+   src: url("fonts/IvarText-BoldItalic.woff2") format("woff2"),
+        url("fonts/IvarText-BoldItalic.woff") format("woff");
+   font-style: italic;
+   font-weight: 600
+ }
+
+
+* { box-sizing: border-box; }
+
+*::-moz-selection {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+*::selection {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+/* image files by bokuwatensai */
+/* https://www.cursors-4u.com/cursor/2014/03/14/rainbow-pinwheel-set.html */
+@keyframes rainbow-cursor {
+  0% { cursor: url(/images/cursors/rainbow/0.gif), auto; }
+  5% { cursor: url(/images/cursors/rainbow/1.gif), auto; }
+  9% { cursor: url(/images/cursors/rainbow/2.gif), auto; }
+  14% { cursor: url(/images/cursors/rainbow/3.gif), auto; }
+  18% { cursor: url(/images/cursors/rainbow/4.gif), auto; }
+  23% { cursor: url(/images/cursors/rainbow/5.gif), auto; }
+  27% { cursor: url(/images/cursors/rainbow/6.gif), auto; }
+  32% { cursor: url(/images/cursors/rainbow/7.gif), auto; }
+  36% { cursor: url(/images/cursors/rainbow/8.gif), auto; }
+  41% { cursor: url(/images/cursors/rainbow/9.gif), auto; }
+  45% { cursor: url(/images/cursors/rainbow/10.gif), auto; }
+  50% { cursor: url(/images/cursors/rainbow/11.gif), auto; }
+  55% { cursor: url(/images/cursors/rainbow/12.gif), auto; }
+  59% { cursor: url(/images/cursors/rainbow/13.gif), auto; }
+  64% { cursor: url(/images/cursors/rainbow/14.gif), auto; }
+  68% { cursor: url(/images/cursors/rainbow/15.gif), auto; }
+  73% { cursor: url(/images/cursors/rainbow/16.gif), auto; }
+  77% { cursor: url(/images/cursors/rainbow/17.gif), auto; }
+  82% { cursor: url(/images/cursors/rainbow/18.gif), auto; }
+  86% { cursor: url(/images/cursors/rainbow/19.gif), auto; }
+  91% { cursor: url(/images/cursors/rainbow/20.gif), auto; }
+  95% { cursor: url(/images/cursors/rainbow/21.gif), auto; }
+  100% { cursor: url(/images/cursors/rainbow/22.gif), auto; }
+}
+
+@keyframes mini-cursors {
+  0% { cursor: url(/images/cursors/minis/0.gif), auto; }
+  14% { cursor: url(/images/cursors/minis/1.gif), auto; }
+  29% { cursor: url(/images/cursors/minis/2.gif), auto; }
+  43% { cursor: url(/images/cursors/minis/3.gif), auto; }
+  57% { cursor: url(/images/cursors/minis/4.gif), auto; }
+  71% { cursor: url(/images/cursors/minis/5.gif), auto; }
+  86% { cursor: url(/images/cursors/minis/6.gif), auto; }
+}
+
 
 body {
+  color: var(--black);
   padding: 0px;
   margin: 0px;
+  cursor: url(/images/cursors/rainbow/0.gif), auto;
+  animation: rainbow-cursor 1.5s infinite;
 }
 
 header {
-  background-color: var(--gray);
   padding: 20px;
 }
 
+header > * {
+  color: var(--black);
+}
+
+header > h1 {
+  height: 100px;
+}
+
 h1, h2 {
-  color: #fff;
+  font-family: 'fira-mono-regular', monospace;
   font-weight: 100;
   text-align: center;
   margin: 0px;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   word-spacing: 3px;
 }
 
 h1 {
-  font-family: 'Fjalla One', sans-serif;
+  /* font-family: 'Fjalla One', sans-serif; */
   font-size: 78px;
+  /* font-family: 'fira-sans-bold', sans-serif; */
+  /* font-family: 'fira-sans-regular', sans-serif; */
+  /* font-family: 'fira-mono-regular', monospace; */
 }
 
 @media (max-width: 800px) {
@@ -63,22 +200,22 @@ h1 {
 }
 
 h2 {
-  color: #fff;
   font-size: 38px;
   margin: 0px 0px 5px 0px;
   font-family: sans-serif;
 }
 
 h3 {
-  font-family: 'Fjalla One', sans-serif;
-  text-transform: uppercase;
-  color: var(--blue);
+  /* font-family: 'Fjalla One', sans-serif; */
+  font-family: 'fira-mono-regular', sans-serif;
+  /* text-transform: uppercase; */
   font-size: 38px;
   word-spacing: 10px;
 }
 
 h4 {
-  font-family: 'Fjalla One', sans-serif;
+  /* font-family: 'Fjalla One', sans-serif; */
+  font-family: 'fira-bold-regular', sans-serif;
   text-transform: uppercase;
   font-size: 24px;
   letter-spacing: 1px;
@@ -90,34 +227,70 @@ blockquote, article, .info-table {
 }
 
 blockquote {
-  border-left: 10px solid var(--red);
-  padding-left: 30px;
+  position: relative;
+  border: 2px solid var(--blue);
+  border-radius: 15px 15px 0 0;
+  background-color: var(--white);
+  /* border-left: 10px solid var(--red);
+  padding-left: 30px; */
   max-width: 800px;
   margin: 90px auto;
   font-size: 19px;
 }
 
+blockquote::before {
+  content: "❝";
+  display: block;
+  width: 100%;
+  height: 48px;
+  background: var(--blue);
+  color: var(--white);
+  padding: 0px 10px;
+  font-size: 50px;
+  border-radius: 13px 13px 0 0;
+  box-sizing: border-box;
+}
+
+blockquote::after {
+  content: "";
+  /* display: block; */
+  background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='3' height='3'%3E%3Ccircle cx='2.5' cy='2.5' r='.5' fill='%230000ff'/%3E%3C/svg%3E") repeat bottom left;
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
 blockquote p {
-  color: var(--red);
+  /* color: var(--red); */
   font-style: italic;
   line-height: 32px;
+  padding: 10px 38px;
 }
 
 blockquote cite {
   text-align: right;
   display: block;
-  color: var(--red) !important;
+  color: var(--blue) !important;
+  padding: 0 38px 20px 0;
 }
 
 blockquote cite:before {
   content: "— ";
 }
 
-article > p,.grid p, ul {
-  font-family: 'Volkhov', serif;
-  font-size: 19px;
-  line-height: 30px;
-  color: var(--gray);
+article > p,
+.grid p,
+ul, p {
+  /* font-family: 'Volkhov', serif; */
+  /* font-size: 19px; */
+  /* line-height: 30px; */
+  font-family: "ivar-text", "Georgia", serif;
+  font-size: 18px;
+  line-height: 1.7;
 }
 
 li {
@@ -128,33 +301,67 @@ img {
   max-width: 100%;
 }
 
+
+
+
+
+@keyframes rainbow {
+  0% { background-position-x: -200%; }
+  100% { background-position-x: 0%; }
+}
+
 a {
-  color: var(--red);
+  color: var(--blue);
   text-decoration: none;
 }
 
 a:hover {
-  color: var(--blue);
+  /* color: transparent;
+  background: linear-gradient(to left, var(--red), var(--red), var(--blue), var(--blue), var(--green), var(--green), var(--red));
+  background-size: 200%;
+  background-clip: text;
+  animation: rainbow 5s linear infinite; */
+  border-bottom: 2px solid var(--blue);
 }
 
 a[href="#"] {
   opacity: 0.5;
 }
 
+.rainbow-text {
+  /* color: transparent; */
+  /* background: linear-gradient(to left, #a0a, #0aa, #00a, #0a0, #aa0, #a00); */
+  /* background: linear-gradient(to left, var(--red), var(--red), var(--blue), var(--blue), var(--green), var(--green), var(--red));
+  background-size: 200%;
+  background-clip: text;
+  animation: rainbow 5s linear infinite; */
+}
+
 a.button {
-  border: none;
-  background: var(--red);
-  font-family: sans-serif;
+  font-family: 'fira-mono-regular', monospace;
+  font-size: 24px;
   padding: 15px 40px;
   border-radius: 42px;
-  font-size: 24px;
-  color: #fff;
-  transition: all 0.25s;
+  border: 4px solid var(--blue);
+  animation: rainbow 5s linear infinite;
+  /* transition: all 0.25s; */
+  /* color: transparent;
+  background: linear-gradient(to left, var(--red), var(--red), var(--blue), var(--blue), var(--green), var(--green), var(--red));
+  background-size: 200%;
+  background-clip: text; */
 }
 
 a.button:hover {
-  background: var(--blue);
+  color: var(--white);
+  background: linear-gradient(to left, var(--red), var(--red), var(--blue), var(--blue), var(--green), var(--green), var(--red));
+  background-size: 200%;
+  /* filter: saturate(0.75) contrast(0.75); */
+  opacity: 0.6;
 }
+
+
+
+
 
 b {
   color: black;
@@ -175,6 +382,15 @@ code {
   color: var(--red);
   font-size: 17px;
 }
+
+hr {
+  max-width: 800px;
+  border: 1px solid var(--black);
+  border-bottom: none;
+  margin: 80px auto;
+}
+
+
 
 /*highlight overrides*/
 .hljs-keyword, .hljs-built_in { color: #66D9EF; }
@@ -230,6 +446,12 @@ code {
   margin: 0 auto;
 }
 
+.olia {
+  width: 240px;
+  display: block;
+  margin: 0 auto;
+}
+
 .center {
   text-align: center;
 }
@@ -267,4 +489,17 @@ code {
   .cols2 {
     grid-template-columns: 1fr;
   }
+}
+
+.sec-title {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  /* font-size: 10vw; */
+}
+
+.sec-buttons {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
 }

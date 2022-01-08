@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Internet Art II</title>
+    <meta name="description" content="a class website for Internet Art II (MAAD 23632) at the University of Chicago">
+    <meta name="author" content="Nick Briz">
+    <meta charset="utf-8">
+
+    <!-- social media stuff -->
+    <meta property="og:title" content="Internet Art I">
+    <meta property="og:url" content="https://netart.rocks/uchicago">
+    <meta property="og:image" content="https://netart.rocks/images/netartdiagram.gif">
+    <meta property="og:description" content="a class website for Internet Art I (MAAD 23632) at the University of Chicago">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:site_name" content="https://netart.rocks/uchicago">
+    <meta name="twitter:site" content="@nbriz">
+
+    <link rel="icon" type="image/png"  href="https://netart.rocks/images/icon.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style media="screen">
+      .double {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .double p {
+        max-width: 440px;
+      }
+
+      .double div {
+        text-align: center;
+      }
+
+      @media (max-width: 986px) {
+        .double { flex-direction: column; }
+        .double p { margin: 40px auto; }
+      }
+
+      i {
+        font-size: 1.2em;
+      }
+    </style>
+  </head>
+  <body>
+
+    <header>
+      <h1>JavaScript</h1>
+      <h2>core concepts</h2>
+    </header>
+
+    <blockquote cite="https://www.goodreads.com/book/show/23492802-magic-and-loss">
+      <p>[Netscape, 1995] displayed Web pages that were not very lively. You could have a nice cartoon of a monkey on the Web page, but there was no way to make the monkey dance when you moved over it with your mouse. Figuring out how to make that happen was the job of a language developer named Brendan Eich. He sat down and in a few weeks created a language called JavaScript [...] as browsers proliferated and the Web grew from a document-delivery platform into a software-delivery platform, JavaScript became, arguably, the most widely deployed language runtime in the world. If you wrote some JavaScript code, you could run it wherever the Web was—everywhere.</p>
+      <cite>
+        Paul Ford, from <a href="http://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/" target="_blank">What Is Code</a> in Bloomberg Business (2015)
+      </cite>
+    </blockquote>
+
+    <br><br>
+
+    <article>
+      <p>
+         There are loads of different programming languages out there, but they all basically do the same thing: allow you to write programs that get the computer to do what you want it to do. All programming languages contain the same core concepts (variables, functions, loops, conditional statements, etc) but they all have slightly different ways of expressing these concepts, which is to say, they all have different <i>syntax</i> and <i>APIs</i>. Although any solid programming language could be used for anything (whether you're creating a website, or an iPhone app, or a video game, or a robot) some languages have special features that make them better suited for certain contexts or tasks. Different languages also have different communities of developers writing <i>libraries</i> and <i>frameworks</i> for that language.
+      </p>
+      <p>
+         Although JavaScript is not the only programming language we can use on the Internet, it's definitely the most popular, which means there's a large community creating libraries, tutorials and answering questions online. Furthermore, although JavaScript can be used for everything from controlling robots to scripting PhotoShop, it was originally invented as a programming language for the Web specifically, and so it's obviously the natural choice for us.
+      </p>
+      <p>
+         Below you'll find a handful of netnet examples demonstrating the core programming concepts expressed in JavaScript...
+      </p>
+    </article>
+
+    <br><br><br><br>
+
+
+    <section class="double">
+      <div>
+        <h3>the ingredients</h3>
+        <p>If algorithms are like recipes, the data we store within <b>variables</b> are the ingredients</p>
+        <p style="font-size: 1.5em">
+          <a href="https://netnet.studio/?ex=47">declaring variables</a><br>
+          <a href="https://netnet.studio/?ex=50">reassigning variables</a><br>
+          <a href="https://netnet.studio/?ex=51">simple data types</a><br>
+          <a href="https://netnet.studio/?ex=52">data structures: Arrays</a><br>
+          <a href="https://netnet.studio/?ex=53">data structures: Objects</a><br>
+        </p>
+      </div>
+      <div>
+        <h3>the instructions</h3>
+        <p><b>conditional statements</b>, <b>functions</b> (sometimes called methods or routines) and <b>loops</b> are how we "control the flow" of the instructions that make up our algorithmic recipes</p>
+        <p style="font-size: 1.5em">
+          <a href="https://netnet.studio/?ex=55">conditionals (if, else)</a><br>
+          <a href="https://netnet.studio/?ex=56">functions (aka methods)</a><br>
+          <a href="https://netnet.studio/?ex=57">loops (for, while)</a><br>
+        </p>
+      </div>
+    </section>
+
+
+
+    <br><br><br><br><br><br>
+
+    <script src="/js/Averigua.js"></script>
+    <script src="/js/rainbow-text.js"></script>
+    <script src="/js/fancy-chars.js"></script>
+    <script>
+      FancyText.animate(document.querySelector('header > h1'), 200, 0.2)
+
+      Array.from(document.querySelectorAll('h3'))
+        .forEach(h3 => FancyText.animate(h3, 5000, 0.2))
+
+      Array.from(document.querySelectorAll('a'))
+        .filter(a => a.className !== 'button')
+        .forEach(a => RainbowText.hoverShimmer(a))
+    </script>
+  </body>
+</html>

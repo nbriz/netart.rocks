@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Internet Art II</title>
+    <meta name="description" content="a class website for Internet Art II (MAAD 23632) at the University of Chicago">
+    <meta name="author" content="Nick Briz">
+    <meta charset="utf-8">
+
+    <!-- social media stuff -->
+    <meta property="og:title" content="Internet Art I">
+    <meta property="og:url" content="https://netart.rocks/uchicago">
+    <meta property="og:image" content="https://netart.rocks/images/netartdiagram.gif">
+    <meta property="og:description" content="a class website for Internet Art I (MAAD 23632) at the University of Chicago">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:site_name" content="https://netart.rocks/uchicago">
+    <meta name="twitter:site" content="@nbriz">
+
+    <link rel="icon" type="image/png"  href="https://netart.rocks/images/icon.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style media="screen">
+      .center {
+        text-align: center;
+        display: block;
+        width: 100%;
+      }
+
+      article.center a {
+        display: block;
+        font-size: 24px;
+        font-weight: bold;
+        font-style: italic;
+        text-decoration: underline;
+      }
+
+      article.center a:hover {
+        border-bottom: none;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <header>
+      <h1>versioning</h1>
+      <h2>ACT I</h2>
+    </header>
+
+    <blockquote>
+      <p>A new media object is not something fixed once and for all, but something that can exist in different, potentially infinite versions. </p>
+      <cite>
+        <a href="https://en.wikipedia.org/wiki/Lev_Manovich" target="_blank">Lev Manovich</a>
+      </cite>
+    </blockquote>
+
+    <article>
+      <iframe width="800" height="450" src="https://www.youtube.com/embed/knudcIamS8M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+       <a href="https://www.youtube.com/playlist?list=PLoQrXDiSBWYGFfbXdY55DfpyZyZavjSAz" target"_blank"><b style="display:block;margin-top:15px;">view full playlist on YouTube</b></a>
+    </article>
+
+    <br><br>
+
+    <article>
+      <p>
+        We'll be submitting all of our assignments through a platform called <a href="https://github.com/" target="_blank">GitHub</a> this quarter, but before we dive into git (a command line tool for versioning software projects) and GitHub (an online platform for collaborative "open source" coding built on the git command line tool) we should learn a bit about it's history as well as some related new media art theory. Read the notes and watch the videos I put together on the <a href="/uchicago/netart2/open-source.html" target="_blank">Free/Libre and Open Source Software (FLOSS)</a> notes. Then watch my tutorial series on Versioning (below), where I'll cover some new media art theory before diving into a series of git/GitHub tutorials (which will also cover a bit of Internet culture/history). At the end of that series I'll introduce the first assignment: Code Poetry.
+      </p>
+    </article>
+
+    <hr>
+
+    <article class="center">
+      <a href="https://github.com/net-art-uchicago/code-poetry" target="_blank"><img src="/images/computer.gif" alt="retro computer gif" style="width: 100px;"></a>
+      <a href="https://github.com/net-art-uchicago/code-poetry" target="_blank">CodePoetry.Assignment</a>
+    </article>
+
+
+    <br><br><br><br><br><br>
+
+    <script src="/js/Averigua.js"></script>
+    <script src="/js/rainbow-text.js"></script>
+    <script src="/js/fancy-chars.js"></script>
+    <script>
+      FancyText.animate(document.querySelector('header > h1'), 200, 0.2)
+
+      Array.from(document.querySelectorAll('h3'))
+        .forEach(h3 => FancyText.animate(h3, 5000, 0.2))
+
+      Array.from(document.querySelectorAll('a'))
+        .filter(a => a.className !== 'button')
+        .forEach(a => RainbowText.hoverShimmer(a))
+    </script>
+  </body>
+</html>
