@@ -344,11 +344,7 @@ a.button {
   border-radius: 42px;
   border: 4px solid var(--blue);
   animation: rainbow 5s linear infinite;
-  /* transition: all 0.25s; */
-  /* color: transparent;
-  background: linear-gradient(to left, var(--red), var(--red), var(--blue), var(--blue), var(--green), var(--green), var(--red));
-  background-size: 200%;
-  background-clip: text; */
+  text-align: center;
 }
 
 a.button:hover {
