@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Post-Internet</title>
+    <meta name="description" content="a class website for Post-Internet (CP 1022-009) at the School of the Art Institute of Chicago">
+    <meta name="author" content="Nick Briz">
+    <meta charset="utf-8">
+
+    <!-- social media stuff -->
+    <meta property="og:title" content="Post-Internet">
+    <meta property="og:url" content="https://netart.rocks/saic/artware">
+    <meta property="og:image" content="https://netart.rocks/images/vaporwave.gif">
+    <meta property="og:description" content="a class website for Post-Internet (CP 1022-009) at the School of the Art Institute of Chicago">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:site_name" content="https://netart.rocks/saic/post-net">
+    <meta name="twitter:site" content="@nbriz">
+
+    <link rel="icon" type="image/png"  href="https://netart.rocks/images/icon.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" type="image/png"  href="https://netart.rocks/images/icon.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style media="screen">
+      .double {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .double p {
+        max-width: 440px;
+      }
+
+      .double div {
+        text-align: center;
+      }
+
+      @media (max-width: 986px) {
+        .double { flex-direction: column; }
+        .double p { margin: 40px auto; }
+      }
+
+      i {
+        font-size: 1.2em;
+      }
+    </style>
+  </head>
+  <body>
+
+    <header>
+      <h1>Google "Dorks"</h1>
+    </header>
+
+    <br><br>
+
+    <article>
+      <p>
+        Hackers who do "<a href="https://www.tutorialspoint.com/ethical_hacking/ethical_hacking_reconnaissance.htm" target="_blank">recon</a>" using "<a href="https://en.wikipedia.org/wiki/Open-source_intelligence" target="_blank">OSINT</a>" (open-source intelligence) techniques, use Google to find all sorts of information and vulnerabilities on the Internet using special search commands known as "Google Dorks". There's a lot we can learn from these hacker's recon methods to improve our own online research.
+      </p>
+
+      <iframe class="rwd" height="420" src="https://www.youtube.com/embed/lESeJ3EViCo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+      <h3>reseraching "privately"</h3>
+      <p>
+        As we discussed in class, it's important to consider your "threat model" (for online privacy and personal data) when using tools created by corporations with surveillance capitalist business models, don't forget to consider the following when conducting online research:
+      </p>
+      <ul>
+          <li>
+            <b>IP addresses</b> are used by governments or even your Internet service provider (ISP) to keep tabs on your Internet activity and in some cases control what you can and can not do online (blocking certain sites or even entire protocols). There are a couple of common approaches to circumventing this, namely  <a href="https://en.wikipedia.org/wiki/Tor_(anonymity_network)" target="_blank">TOR</a> (The Onion Router) and <a href="https://en.wikipedia.org/wiki/Virtual_private_network" target="_blank">VPNs</a> (Virtual Private Networks). There are loads of VPNs, personally I use <a href="https://protonvpn.com/" target="_blank">Proton VPN</a> but these days there are almost too many options (I haven't used it myself, but it's worth mentioning that Mozilla now also has a <a href="https://vpn.mozilla.org/?utm_source=www.mozilla.org&amp;utm_medium=referral&amp;utm_campaign=homepage&amp;utm_content=card" target="_blank">VPN</a>). I recommend researching VPNs and TOR before making use of them, having a general understanding of how they work is an important prerequisite for using them effectively. Do NOT use a VPN you haven't researched. (we will discuss why in more detail later this semester)
+          </li>
+          <li>
+            <b>Third party cookies</b> are among the most common (though hopefully soon to go extinct) forms of online trackers. The easiest way to block these is to install browser addons/extensions which block trackers like <a href="https://privacybadger.org/" target="_blank">Privacy Badger</a>.
+          </li>
+          <li>
+            While addons are helpful, one of the best measures you can take to protect your online privacy is to avoid using a browser made by surveillance capitalists (like Google's Chrome) and instead use privacy conscious browsers like <a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank">Firefox</a> and <a href="https://brave.com/" target="_blank">Brave</a> (built on much of the same technology as Chrome). These are not only starting to block third party cookies by default, but have also started working in protections against other forms of tracking, including browser fingerprinting.
+          </li>
+          <li>
+          Our <b>web searches</b> reveal a lot about us. When we post something publicly on social media we know others are going to see it. When we send a direct message or email to someone, we assume that's just between us and them. When we search for things online, we're often under the misconception that this is a private moment and behave accordingly. But if you're using Google to search for things, then it's quite the opposite. I've been using <a href="https://duckduckgo.com/" target="_blank">DuckDuckGo</a> for years now and was one of the simplest switches to make. They also have a <a href="https://duckduckgo.com/app" target="_blank">mobile app</a>, but I'd recommend just going into your browser settings and changing the default search engine to DuckDuckGo. In the rare situation where you're not getting the results you want, you can of course still visit Google, but in 99% of cases it's just as good (for me anyways).
+        </li>
+      </ul>
+
+      <h3>Other Online Reserach Tools</h3>
+
+      <p>
+        As you know from having taken Research Studio I, the <a href="http://www.saic.edu/academics/libraries-special-collections/john-flaxman-library" rel="nofollow">SAIC library</a> is a great resource. Not only do they have a great collection of materials and a very friendly staff to help you navigate them, but they are also your connection to various other libraries and institutions throughout the state (via I-Share). That said, there are other online tools available to you on the web which can help in your research, here are some tools/things to consider:
+      </p>
+
+      <ul>
+        <li><b>bookmark what you find</b>: Our online research is generally scattered across various posts and tabs, so it's important to have a system for organizing our links to various sources. This is what browser bookmarks are for. While most browsers have this functionality built in, I suggest using a service like <a href="https://getpocket.com/a/queue/list/" rel="nofollow">Pocket</a>. You should create an account, download the browser plugin for your laptop and download the mobile app for your phone. You never know when/where you are going to come across a post or article relevant to your research topic and you might not always have time right then and there to read it. Use pocket (or something like it) to 'bookmark' relevant links every time we come across one. Pocket allows you to tag your bookmarks, so you should develop a list of tags you can re-use for various articles as a way of categorizing and organizing your sources. Try to evolve a system of tags that you use consistently, try not to have too many or too few tags.</li>
+        <li><b>download what you find:</b>: Bookmarks are great, but bookmarks are subject to "<a href="https://en.wikipedia.org/wiki/Link_rot" rel="nofollow">link rot</a>", which is what you call a link pointing to a website which is no longer there. There's no telling how long an article might be up online, for this reason I always recommend saving a local copy of any important articles. You can do this simply by using the File &gt; Save Page As option in your browser. If that doesn't work, there are also free "web scrappers" you can use to download local copies of larger web sites like <a href="https://ricks-apps.com/osx/sitesucker/index.html" rel="nofollow">sitesucker</a>.</li>
+        <li><b>the Internet Archive</b>: If a site you saved a bookmark to points to a 404 page before you had the chance to save your own copy, the Internet Archive proves a tool called the <a href="https://web.archive.org/" rel="nofollow">Way Back Machine</a>, which lets you visit archives of older sites (they've been saving copies of old web pages since 1996)</li>
+        <li><b>Google Books</b>: You have access to loads of books through the SAIC library and I-Share, but how do you know which books contain the information you need? You can use <a href="https://books.google.com/" rel="nofollow">Google Books</a> to search for keywords inside of books. Google Books lets you preview the pages within a book that contain your search query so you can figure out if the book might be relevant to your research. They won't let you read the entire book though, you'll need to visit the library for that.</li>
+        <li><b>Google Scholar</b>: Similar to Google Books, <a href="https://scholar.google.com/" rel="nofollow">Google Scholar</a> is another tool you can use to search for keywords within academic papers, journals and other scholarly literature.</li>
+        <li>Sometimes your search query is an image not text, say for example you came across a photo in a post and you're trying to track down what book or article it came from. <a href="https://images.google.com/" rel="nofollow">Google Images</a> lets you search by uploading images rather than writing text. Just click the camera icon in the search bar and upload you image.</li>
+      </ul>
+
+    </article>
+
+
+    <br><br><br><br>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <script src="/js/Averigua.js"></script>
+    <script src="/js/rainbow-text.js"></script>
+    <script src="/js/fancy-chars.js"></script>
+    <script>
+      FancyText.animate(document.querySelector('header > h1'), 200, 0.2)
+
+      Array.from(document.querySelectorAll('h3'))
+        .forEach(h3 => FancyText.animate(h3, 5000, 0.2))
+
+      Array.from(document.querySelectorAll('a'))
+        .filter(a => a.className !== 'button')
+        .forEach(a => RainbowText.hoverShimmer(a))
+    </script>
+  </body>
+</html>
