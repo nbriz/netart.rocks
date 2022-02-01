@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Post-Internet</title>
+    <meta name="description" content="a class website for Post-Internet (CP 1022-009) at the School of the Art Institute of Chicago">
+    <meta name="author" content="Nick Briz">
+    <meta charset="utf-8">
+
+    <!-- social media stuff -->
+    <meta property="og:title" content="Post-Internet">
+    <meta property="og:url" content="https://netart.rocks/saic/artware">
+    <meta property="og:image" content="https://netart.rocks/images/vaporwave.gif">
+    <meta property="og:description" content="a class website for Post-Internet (CP 1022-009) at the School of the Art Institute of Chicago">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:site_name" content="https://netart.rocks/saic/post-net">
+    <meta name="twitter:site" content="@nbriz">
+
+    <link rel="icon" type="image/png"  href="https://netart.rocks/images/icon.png">
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <style media="screen">
+      .cntr-block {
+        text-align: center;
+      }
+      .cntr-block a {
+        font-size: 24px;
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      .cntr-block a:hover {
+        border-bottom: none;
+      }
+    </style>
+  </head>
+  <body>
+
+    <header>
+      <h1>Post-Internet</h1>
+      <h2>CP 1022-009 - Spring 2022</h2>
+    </header>
+
+    <article>
+      <blockquote cite="https://www.goodreads.com/book/show/23492802-magic-and-loss">
+        <p>The Web represents a grand emotional, sensory, and intellectual adventure for anyone willing to explore it actively. [...] For artists, ignoring the imperative to grasp the cultural implications of the Internet means risking irrelevance. [...] As human discourse adapts to its new home, everything we do and think as human beings will be and is being shaped by new values. [...] If it’s ever fair to say that anything has “changed everything,” it’s fair to say so about the Internet.</p>
+        <cite>
+          <a href="https://www.goodreads.com/book/show/23492802-magic-and-loss" target="_blank">Virginia Heffernan</a>
+        </cite>
+      </blockquote>
+
+      <h3>course description</h3>
+      <p>
+        In this course we will produce "Internet aware" works that help others see the unique cultural moment we are living in. We will develop digitally literate research practices by learning how computers, the Internet and various digital systems work as well as why they work the way they do by exploring the individuals, organizations and ideas that have shaped the development of these technologies.
+      </p>
+
+      <blockquote cite="https://web.archive.org/web/20190618225330/https://store.mcsweeneys.net/products/information-doesn-t-want-to-be-free">
+        <p>
+          The single most important thing you need in order to have a career in the arts is persistence. The second most important thing you need is talent. The third most important thing is a grounding in how the online world works. Its that Important
+        </p>
+        <cite>
+          <a href="https://web.archive.org/web/20190618225330/https://store.mcsweeneys.net/products/information-doesn-t-want-to-be-free" target="_blank">Cory Doctorow</a>
+        </cite>
+      </blockquote>
+
+    </article>
+
+    <article>
+      <div class="flex" style="margin: 60px 0px;">
+        <a class="button" target="_blank" href="post-internet_syllabus_SP2022.pdf">syllabus</a>
+      </div>
+    </article>
+
+    <article class="cntr-block">
+      <h3>notes</h3>
+      <a href="#">Google Dorks</a>
+      <a href="#">Databendings</a>
+      <a href="#">Analytical Engines</a>
+      <a href="#">WiFi Wizardry</a>
+      <a href="#">Internet Travelog</a>
+      <a href="#">Everything is a Remix</a>
+      <a href="#">Meme Genealogies</a>
+      <a href="#">Artificial Intelligence</a>
+      <a href="#">Surveillance Capitalism</a>
+      <a href="#">The "Metaverse"</a>
+    </article>
+
+    <section class="info-table">
+      <div>
+        <div>where:</div>
+        <div>Sharp 410</div>
+      </div>
+      <div>
+        <div>when:</div>
+        <div>Tues 10AM - 3PM</div>
+      </div>
+      <div>
+        <div>professor:</div>
+        <div>Nick Briz (nb<i></i>riz@uchicago<i></i>.edu)</div>
+      </div>
+    </section>
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <script src="/js/MouseTrails.js"></script>
+    <script src="/js/Averigua.js"></script>
+    <script src="/js/rainbow-text.js"></script>
+    <script src="/js/fancy-chars.js"></script>
+    <script>
+      FancyText.animate(document.querySelector('header > h1'), 200, 0.2)
+
+      Array.from(document.querySelectorAll('h3'))
+        .forEach(h3 => FancyText.animate(h3, 5000, 0.2))
+
+      Array.from(document.querySelectorAll('a'))
+        .filter(a => a.className !== 'button')
+        .forEach(a => RainbowText.hoverShimmer(a))
+
+      const trail = new MouseTrails('rainbow')
+      window.addEventListener('mousemove', (e) => {
+        trail.mouseMoved(e.clientX, e.clientY)
+      })
+    </script>
+  </body>
+</html>
