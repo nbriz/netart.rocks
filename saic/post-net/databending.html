@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Post-Internet</title>
+    <meta name="description" content="a class website for Post-Internet (CP 1022-009) at the School of the Art Institute of Chicago">
+    <meta name="author" content="Nick Briz">
+    <meta charset="utf-8">
+
+    <!-- social media stuff -->
+    <meta property="og:title" content="Post-Internet">
+    <meta property="og:url" content="https://netart.rocks/saic/artware">
+    <meta property="og:image" content="https://netart.rocks/images/vaporwave.gif">
+    <meta property="og:description" content="a class website for Post-Internet (CP 1022-009) at the School of the Art Institute of Chicago">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:site_name" content="https://netart.rocks/saic/post-net">
+    <meta name="twitter:site" content="@nbriz">
+
+    <link rel="icon" type="image/png"  href="https://netart.rocks/images/icon.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" type="image/png"  href="https://netart.rocks/images/icon.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style media="screen">
+      .double {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .double p {
+        max-width: 440px;
+      }
+
+      .double div {
+        text-align: center;
+      }
+
+      @media (max-width: 986px) {
+        .double { flex-direction: column; }
+        .double p { margin: 40px auto; }
+      }
+
+      i {
+        font-size: 1.2em;
+      }
+
+      .image-caption {
+        text-align: center;
+        color: #777;
+      }
+    </style>
+  </head>
+  <body>
+
+    <header>
+      <h1>databending</h1>
+    </header>
+
+    <br><br>
+
+    <article>
+      <p class="image-caption">
+        <img src="images/antonio.gif" alt="hellocatfood glitch art gif">
+        <br>
+        gif by <a href="https://www.hellocatfood.com/about/" target="_blank">hellocatfood</a> (aka Antonio Roberts)
+      </p>
+      <br><br>
+      <h3>Glitch Art</h3>
+      <p>
+        A "glitch" is an unexpected moment in a system that calls attention to that system, glitch art is anytime an artist intentionally leverages that moment, by either recontextualizing or provoking glitches. The keyword here is "intentionally", <a href="https://en.wikipedia.org/wiki/Glitch_art" target="_blank">glitch art</a> is always done on purpose but the impetus behind it varies. For some artists, these are purely formal explorations into the inherent aesthetics of the digital medium. Others are more interested in the glitch's political potential, as a tool for commenting on or questioning the systems which mediate our lives. Some artists are interested in glitch's psychedelic potential, others see the glitch as a means to explore themes of failure, chance, memory, entropy, nostalgia, identity, etc. Below is only a small (some what arbitrary) sampling of work by artists from this community:
+      </p>
+      <ul>
+        <li>
+          <!-- <a href="https://www.jimmyjoeroche.com/" target="_blank">Jimmy Joe Roche</a> -->
+          ...
+        </li>
+      </ul>
+
+      <h3>How To / Why Make Glitch Art</h3>
+      <p>
+        It’s been said that data is the new oil; data is mined and fuels the apps and services we use every day. We hear about risks to our data privacy, online tracking, data leaks, etc… but what is data really? One group of artists well versed in the raw data that makes up our digital world are glitch artists. Glitch artists deploy a variety of different techniques using, or rather misusing, a variety of different tools. At the core of the practice is a technique known as “databending”. We'll be learning these techniques both as a means of creating art and better understanding “data”, the fundamental fabric of the digital medium.
+      </p>
+      <ul>
+        <li>
+          Here you'll find my <a href="http://nickbriz.com/databending101/" target="_blank">databending 101</a> tutorials
+        </li>
+        <li>
+          You can download a copy of <a href="/files/Vernacular-of-File-Formats.pdf">the Vernacular of File Formats</a>, <a href="https://beyondresolution.info/About" target="_blank">Rosa Menkman</a>'s study on compression artifacts of various image file type artifacts.
+        </li>
+        <li>
+          You can access <a href="https://evanmeaney.com/" target="_blank">Evan Meaney</a>'s <a href="http://www.evanmeaney.com/ceibas/interior/ceibasdownloads.html" target="_blank">video compression studies</a> on his site, part of his research for his Ceibas Cycle series.
+        </li>
+        <li>
+          Here you'll <a href="https://www.hellocatfood.com" target="_blank">Antonio Robert's</a> (aka hellocatfood) tutorial on <a href="https://www.hellocatfood.com/databending-using-audacity/" target="_blank">databending with audacity</a>.
+        </li>
+        <li>
+          Here you'll find "<a href="/files/glitch-throws-shade.pdf" target="_blank">Glitch Throws Shade</a>" from <a href="https://www.penguinrandomhouse.com/books/646946/glitch-feminism-by-legacy-russell/" target="_blank">Glitch Feminism: A Manifesto</a> by <a href="https://legacyrussell.com/" target="_blank">Legacy Russell</a>.
+        </li>
+      </ul>
+
+
+      <!-- <iframe class="rwd" height="420" src="https://www.youtube.com/embed/lESeJ3EViCo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+    </article>
+
+
+    <br><br><br><br>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <script src="/js/Averigua.js"></script>
+    <script src="/js/rainbow-text.js"></script>
+    <script src="/js/fancy-chars.js"></script>
+    <script>
+      FancyText.animate(document.querySelector('header > h1'), 200, 0.2)
+
+      Array.from(document.querySelectorAll('h3'))
+        .forEach(h3 => FancyText.animate(h3, 5000, 0.2))
+
+      Array.from(document.querySelectorAll('a'))
+        .filter(a => a.className !== 'button')
+        .forEach(a => RainbowText.hoverShimmer(a))
+    </script>
+  </body>
+</html>
