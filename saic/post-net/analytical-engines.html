@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Post-Internet</title>
+    <meta name="description" content="a class website for Post-Internet (CP 1022-009) at the School of the Art Institute of Chicago">
+    <meta name="author" content="Nick Briz">
+    <meta charset="utf-8">
+
+    <!-- social media stuff -->
+    <meta property="og:title" content="Post-Internet">
+    <meta property="og:url" content="https://netart.rocks/saic/artware">
+    <meta property="og:image" content="https://netart.rocks/images/vaporwave.gif">
+    <meta property="og:description" content="a class website for Post-Internet (CP 1022-009) at the School of the Art Institute of Chicago">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:site_name" content="https://netart.rocks/saic/post-net">
+    <meta name="twitter:site" content="@nbriz">
+
+    <link rel="icon" type="image/png"  href="https://netart.rocks/images/icon.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" type="image/png"  href="https://netart.rocks/images/icon.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style media="screen">
+      .double {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .double p {
+        max-width: 440px;
+      }
+
+      .double div {
+        text-align: center;
+      }
+
+      @media (max-width: 986px) {
+        .double { flex-direction: column; }
+        .double p { margin: 40px auto; }
+      }
+
+      i {
+        font-size: 1.2em;
+      }
+
+      .image-caption {
+        text-align: center;
+        color: #777;
+      }
+    </style>
+  </head>
+  <body>
+
+    <header>
+      <h1>analytica engines</h1>
+      <h3 style="text-align:center">a brief (pre)history of computers</h3>
+    </header>
+
+    <br><br>
+
+    <article>
+      <h3 style="color:var(--blue)">~1804</h3>
+      <p>When it comes to great inventions like the computer, there was never really a single author nor a clear beginning. The computer comes from a long line of calculating tools dating as far back as 2000 BCE. For the sake of starting somewhere we’ll start with the Jacquard loom, which—though not a calculating device itself—sowed the seed for the computer technology that followed.</p>
+      <img src="/images/notes/computers/loom.jpg" alt="Jacquard loom">
+      <h3 style="color:var(--blue)">~1820-1840</h3>
+      <p>
+        There’s nothing inherent to the concept of a computer that requires electricity (it just so happens that electric current flows pretty fast, which makes it useful for doing things really fast). But in theory we can reproduce a computers adding logic/functionality, for example, with other materials (as we'll see later).
+      </p>
+      <img src="/images/notes/computers/babbage_and_lovelace.png" alt="babbage and lovelace">
+      <p>
+        You could also (in theory) create a computer using gears and levers powered by steam, which is exactly what Charles Babbage designed in Victorian Era England, 100 years before the first computers were made. In a sense Babbage was the first computer engineer and his Analytical Engine (had it been completed) the first computer, capable of doing all the key things, as proven/articulated by Ada Lovelace who, in her Notes of the Analytical Engine, described how the Engine could be used to calculate all kinds of things. She detailed the specific instructions necessary for “programming” the Engine, in a sense making her the first computer programmer.
+      </p>
+
+      <img src="/images/notes/computers/analyticalengine.png" alt="analytical engine">
+
+      <blockquote>
+        <p>Again, it [the Analytical Engine] might act upon other things besides number, were objects found whose mutual fundamental relations could be expressed by those of the abstract science of operations, and which should be also susceptible of adaptations to the action of the operating notation and mechanism of the engine . . . Supposing, for instance, that the fundamental relations of pitched sounds in the science of harmony and of musical composition were susceptible of such expression and adaptations, the engine might compose elaborate and scientific pieces of music of any degree of complexity or extent.</p>
+        <cite>
+          Ada Lovelace<br>
+          (Sketch of the Analytical Engine. Bibliotheque Universelle de Geneve. 1842)
+        </cite>
+      </blockquote>
+
+      <h3 style="color:var(--blue)">~1840-1860</h3>
+      <h4>Mathematical Analysis of Logic</h4>
+      <p>
+        In 1847 George Boole published the pamphlet Mathematical Analysis of Logic. He later regarded it as a flawed exposition of his logical system, and wanted An Investigation of the Laws of Thought (1854), on Which are Founded the Mathematical Theories of Logic and Probabilities to be seen as the mature statement of his views. Contrary to widespread belief, Boole never intended to criticize or disagree with the main principles of Aristotle's logic. Rather he intended to systematize it, to provide it with a foundation, and to extend its range of applicability
+      </p>
+
+      <p>
+        'spectacular rags to prestige’ story, Boole was a Victorian era mathematician and logician; he didn’t know it at the time, but his ‘Boolean Algebra’ would lay the foundation for digital computers'
+      </p>
+
+      <b>
+        ... AND ... OR ... NOT ...
+      </b>
+
+      <h3 style="color:var(--blue)">~1880-1900</h3>
+
+      <img src="/images/notes/computers/punchcard.png" alt="punchcard">
+
+
+      <p>
+        American inventor Herman Hollerith ran with the punched card idea as a means of creating machine-readable data storage. He invented the “tabulator” and the “keypunch” interface which used relays and digital counters to tackle the challenge of the US census (the population was growing faster than folks had time to manual tally stuff up). Hollerith’s company eventually became IBM.
+      </p>
+
+      <h3 style="color:var(--blue)">~1930s</h3>
+
+      <p>
+        Hollerith's tabulator isn’t “technically” a computer. This is because it can’t do what a “Turing Machine” can do. A Turing Machine is a hypothetical machine that works as a criteria for what counts as a computer. It was conceptualized by one of the most brilliant mathematical minds in history, Alan Turing in his 1936 paper On Computable Numbers. Big thanks to Alan Turing for guiding us into a world full of computers and free of Nazis (more on that later this year).
+      </p>
+
+      <img src="/images/notes/computers/turing.png" alt="Alan Turing" style="display:block;margin:30px auto">
+
+      <iframe class="rwd" height="420" src="https://www.youtube.com/embed/dNRDvLACg5Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+      <h4>symbolic (logic) Analysis of Circuits</h4>
+
+      <p>
+        A circuit is just a bunch of wires and components (resistors, transistors, diodes, etc.) connected together with electricity running through it, arranged in such a way that allows for simple or complex operations (from dimming a light bulbs to running robots).
+      </p>
+
+      <p>
+        "The real savior of Boolean logic was born a century after Boole: Claude Shannon, A Bell Labs engineer working with telephone switches. In his 1938 thesis, A Symbolic Analysis of Relay Switching Circuits, he laid out Boole's AND, OR, and NOT functions as electrical circuits—the first Logic Gates"
+      </p>
+
+      <p>
+        Claude Shannon is known as "The Father of Information Theory" for his landmark "Mathematical Theory of Communication" published in 1948. In it Shannon defined the limits of data transmission measured in bits per second, paving the way for the digital revolution.
+      </p>
+
+      <iframe class="rwd" height="420" src="https://www.youtube.com/embed/vPKkXibQXGA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+      <p>
+        In his 1937 master's thesis, Shannon laid the groundwork for electronic digital computing and practical digital circuit design by demonstrating the electrical application of Boolean algebra to resovle logical numerical relationships. Shannon built his maze-solving mouse, Theseus, in 1950.
+      </p>
+
+      <h4>
+        German engineer Konrad Zuse, Z1, Z3
+      </h4>
+
+      <img src="/images/notes/computers/z1.jpg" alt="z1 computer">
+
+      <iframe class="rwd" height="420" src="https://www.youtube.com/embed/J98KVfeC8fU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+      <p>
+        Zuse built his first computer (the Z1) with mechanical relays around the same time Claude Shannon && the other folks at Bell Labs were also discovering the computational possibilities of relays (though Bell Labs built experiments, they never quite built an entire computer, for this reason many consider the Z1 the first computer)
+      </p>
+
+      <h4>Thinking Machines</h4>
+
+      <img src="/images/notes/computers/gates.jpg" alt="logic gates">
+
+      <img src="/images/notes/computers/relay.gif" alt="relay gif">
+
+      <b>from relays to gates</b>
+
+      <img src="/images/notes/computers/gates.png" alt="logic gates">
+
+      <b>diagram of a full adder</b>
+
+      <img src="/images/notes/computers/adder.png" alt="logical adder">
+
+      <b>electric full adder</b>
+
+      <img src="/images/notes/computers/fulladder.gif" alt="full adder">
+
+      <p>
+        <b>Arithmetic</b> via an electric 4Bit Adder (made of transistor gates, rather than relay gates or domino gates)
+      </p>
+
+      <img src="/images/notes/computers/adder.gif" alt="transistor addeer">
+
+      <iframe class="rwd" height="420" src="https://www.youtube.com/embed/xISG4nGTQYE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+      <p>
+        <b>Automation</b> via a "clock", oscillations made with transistors
+      </p>
+
+      <img src="/images/notes/computers/clock.png" alt="clock">
+
+      <p>
+        <b>Memory</b> also cheived via transistor circuits
+      </p>
+
+      <iframe class="rwd" height="420" src="https://www.youtube.com/embed/XETZoRYdtkw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+      <p>
+        You could literally put all this stuff together and build your own computer from scratch, hobbyists <a href="http://members.iinet.net.au/~daveb/simplex/ringhome.html" rel="nofollow">do it for fun</a> and lots of them <a href="https://www.youtube.com/watch?v=HyznrdDSSGM&amp;list=PLowKtXNTBypGqImE405J2565dvjafglHU" rel="nofollow">share their process</a>. Of course there’s no real practical reason to do this. Let's instead put all the pieces together, theoretically.
+      </p>
+
+      <img src="/images/notes/computers/process.png" alt="computer process">
+
+      <p>
+        It's helpful to remember, computers don't have to be electric, the concepts can be applied to any type of controllable signal.
+      </p>
+
+      <iframe class="rwd" height="420" src="https://www.youtube.com/embed/OpLU__bhu2w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+      <br><br><br>
+
+      <h3>A Brief History of Computers</h3>
+
+      <p>
+        Moore's Law is the observation by Intel founder Gordon Moore that...
+      </p>
+
+      <blockquote>
+        <p>the number of transistors that can be fitted onto a circuit doubles approximately every two years. This is why the computer you bought last year is now pathetically huge and lumbering compared to the sleek whizzy new one coming out next month."</p>
+        <cite>
+          Padua, Sydney<br>
+          The Thrilling Adventures of Lovelace and Babbage. Pantheon Books. 2015.
+        </cite>
+      </blockquote>
+
+
+      <img src="/images/notes/computers/mooreslaw.png" alt="Moores Law">
+
+      <p>
+        1930’s early digital computing machines using relay’s 1940’s first computers with tubes 1950’s the transistor hits the scene 1960’s integrated circuit’s can hold few transistors 1970’s integrated circuit’s can hold thousands of transistors 1980’s integrated circuit’s can hold tens of thousands of transistors 1990’s integrated circuit’s can hold hundreds of thousands of transistors 2000’s integrated circuit’s can hold millions of transistors
+      </p>
+
+      <p>
+        Today a microprocessor (integrated circuit) that fits in the palm of your hand has got around 5 billion logic gates
+      </p>
+
+      <h3 style="color:var(--blue)">~1943-1945</h3>
+
+      <img src="/images/notes/computers/eniac.gif" alt="eniac">
+
+      <p>
+        Programmers Betty Jean Jennings (left) and Fran Bilas (right) operate ENIAC's main control panel at the Moore School of Electrical Engineering. (U.S.)
+      </p>
+
+      <img src="/images/notes/computers/colossus.jpg" alt="colossus">
+
+      <p>
+        A Colossus Mark 2 computer being operated by Wrens Dorothy Du Boisson (left) and Elsie Booker. (U.K.)
+      </p>
+
+      <h3 style="color:var(--blue)">~1945</h3>
+
+      <p>
+        John von Neumann was one of the key figures in formalizing and defining what would become known as the Von Neumann Architecture, the blueprints for what would be considered “a computer” henceforth. One major advancement from his design and the computers that came before it was the concept of a “stored-program.” A stored-program digital computers is one that keeps it’s program instructions (and it’s data) stored in RAM. The computers which came before this design were re-programmed—by re-setting switches or re-arranging patch cables—every time you wanted to use it. Re-programming the ENIAC could take up to 3 weeks.
+      </p>
+
+      <img src="/images/notes/computers/510px-Von_Neumann_Architecture.png" alt="Von Neumann Architecture">
+
+      <h3 style="color:var(--blue)">~1948</h3>
+
+      <p>
+        It's argued that the first full-blown "stored-program" computer was built in 1948, the Manchestar "Baby" Mark I.
+      </p>
+
+      <iframe class="rwd" height="420" src="https://www.youtube.com/embed/cozcXiSSkwE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+      <br><br><br>
+
+      <h4>"Dream Machines"</h4>
+
+      <h3 style="color:var(--blue)">~1970+</h3>
+
+      <img src="/images/notes/computers/sutherland.jpeg" alt="Ivan Sutherland">
+
+      <p>Ivan Sutherland's early VR system</p>
+      <br><br>
+
+      <img src="/images/notes/computers/sketchpad.jpg" alt="Ivan Sutherland's sketchpad">
+
+      <p>
+        Ivan Sutherland's "Sketch Pad"
+      </p>
+      style="display:block;margin:30px auto"
+
+      <img src="/images/notes/computers/schwartz.jpg" alt="Lillian Schwartz ">
+
+      <p>
+        artist Lillian Schwartz using Sketch Pad
+      </p>
+      style="display:block;margin:30px auto"
+
+      <img src="/images/notes/computers/mother_of_all_demos-full.png" alt="Douglas Engelbart mother of all demos">
+
+      <p>
+        Douglas Engelbart delivers what was later known as The Mother of All Demos in 1968.
+      </p>
+      style="display:block;margin:30px auto"
+
+
+      <img src="/images/notes/computers/sandin.jpg" alt="Dan Sandin Image microprocessor">
+
+      <p>
+        Dan Sandin and his Image Processor
+      </p>
+      <br><br>
+
+      <img src="/images/notes/computers/Tom_Dan.jpg" alt="Tom and Dan" style="display:block;margin:30px auto">
+
+      <p style="text-align:center">Tom De Fanti and Dan Sandin</p>
+      <br><br>
+
+      <img src="/images/notes/computers/starwars.jpg" alt="star wars">
+
+      <p>
+        DeFanti's "GRASS" used in the first Star Wars film (1977)
+      </p>
+      <br><br>
+
+      <img src="/images/notes/computers/evl.jpg" alt="EVL">
+
+      <p>
+        IEVE : Interactive Electronic Visualization Event.
+      </p>
+      <br><br>
+
+      <p>
+        Held in the rotunda of the University of Illinois Circle Campus, Science and Engineering South building, EVL faculty, researcher, technologists, artists and collaborators from the Art Institute of Chicago created an interactive, real-time visualization experience or &ldquo:IEVE: Interactive Electronic Visualziation Event”".
+      </p>
+
+      <p>
+        One of a number of these events, IEVE combined computer graphics, created using Tom DeFanti’s GRASS language; video image processing produced using the Sandin Image Processor; and electronic, synthesized music composed and performed by Robert Snyder.
+      </p>
+
+
+      <iframe class="rwd" height="420" src="https://player.vimeo.com/video/22128748?h=68b963a496" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+
+      <p>
+      RYRAL is a realtime audio video performance by Tom DeFanti (creating computer animation with the GRaphics Symbiosis System or GRASS), Phil Morton ("up in the kitchen"), Dan Sandin (processing video with the Sandin Image Processor), Bob Snyder (performing experimental electronic music on an analog EMU synthesizer) and Rylin Harris (the dancer). This Media Art project was created and performed in April 1976 at the second Electronic Visualization Event (EVE II) at The University of Illinois Chicago.</p>
+
+      <p>
+        RYRAL is provided by the Phil Morton Memorial Research Archive founded by jonCates in 2007. The Phil Morton Archive freely and openly releases materials under Morton's own COPY-IT-RIGHT license, a proto Open Source alternative to copyright. COPY-IT-RIGHT encourages making, sharing, remixing and distributing experimental Media Art.
+      </p>
+
+      <img src="/images/notes/computers/dynabook.jpeg" alt="the Dynabook">
+
+      <p>
+        The Dynabook, a speculative personal computer described in Alan Kay’s 1977 article "<a href="http://www.newmediareader.com/book_samples/nmr-26-kay.pdf" rel="nofollow">Personal Dynamic Media</a>", co-authored with collaborator (and Smalltalk co-inventor) Adele Goldberg
+      </p>
+
+      <br><br>
+
+      <h4>the "Personal Computer"</h4>
+
+      <img src="/images/notes/computers/4004.jpg" alt="Intell 4004">
+
+      <p>
+        "The Intel 4004 is a 4-bit central processing unit (CPU) released by Intel Corporation in 1971. It was the first commercially available microprocessor by Intel" [wikipedia]
+      </p>
+
+
+      <img src="/images/notes/computers/xeroxalto.jpg" alt="XEROX Alto">
+
+      <p>the Xerox Alto and SmallTalk-80</p>
+
+      <iframe class="rwd" height="420" src="https://www.youtube.com/embed/AuXCc7WSczM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+      <br><br><br><br>
+
+      <img src="/images/notes/computers/apple-ii.jpg" alt="apple ii">
+
+      <p>
+      Steve Wozniak "Woz" and his Apple II</p>
+      <br><br>
+
+
+      <img src="/images/notes/computers/kareicons.jpg" alt="Kare icons">
+
+      <p>
+        Icons from the Apple Macintosh
+      </p>
+
+
+      <img src="/images/notes/computers/susankare.jpg" alt="Susan Kare">
+
+      <p>
+      Susan Kare (Designer of the Apple Macintosh graphics)</p>
+
+      <p>
+      ...and now we've got iPhones</p>
+
+    </article>
+
+
+    <br><br><br><br>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <script src="/js/Averigua.js"></script>
+    <script src="/js/rainbow-text.js"></script>
+    <script src="/js/fancy-chars.js"></script>
+    <script>
+      FancyText.animate(document.querySelector('header > h1'), 200, 0.2)
+
+      Array.from(document.querySelectorAll('h3'))
+        .forEach(h3 => FancyText.animate(h3, 5000, 0.2))
+
+      Array.from(document.querySelectorAll('a'))
+        .filter(a => a.className !== 'button')
+        .forEach(a => RainbowText.hoverShimmer(a))
+    </script>
+  </body>
+</html>
