@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>WWW Notes</title>
+    <meta name="author" content="Nick Briz">
+    <meta charset="utf-8">
+
+    <!-- social media stuff -->
+    <meta property="og:title" content="FLOSS Notes">
+    <meta property="og:url" content="https://netart.rocks/notes/open-source">
+    <meta property="og:image" content="https://netart.rocks/images/netartdiagram.gif">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:site_name" content="https://netart.rocks">
+    <meta name="twitter:site" content="@nbriz">
+
+    <link rel="icon" type="image/png"  href="https://netart.rocks/images/icon.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style media="screen">
+      .double {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .double p {
+        max-width: 440px;
+      }
+
+      .double div {
+        text-align: center;
+      }
+
+      @media (max-width: 986px) {
+        .double { flex-direction: column; }
+        .double p { margin: 40px auto; }
+      }
+
+      .hide {
+        display: none;
+      }
+
+      .button {
+        color: var(--blue);
+        border: solid 2px var(--blue);
+        font-family: sans-serif;
+        cursor: pointer;
+        padding: 4px 17px;
+        border-radius: 8px;
+      }
+
+      .button:hover {
+        color: #fff;
+        background: var(--blue);
+      }
+      .flex {
+        align-items: center;
+      }
+      .flex > * {
+        max-width: 75%;
+      }
+    </style>
+  </head>
+  <body>
+
+    <header>
+      <h1>WWW</h1>
+      <h2>the World Wide Web</h2>
+    </header>
+
+    <blockquote cite="https://www.goodreads.com/book/show/23492802-magic-and-loss">
+      <p>What was often difficult for people to understand about the design was that there was nothing else beyond URIs (URLs), HTTP, and HTML. There was no central computer controlling the Web no single network on which these protocols worked, not even an organization anywhere that ran the Web. The Web was not a physical thing that existed in a certain place, it was a space in which information <i>could</i> exist.</p>
+      <cite>
+        Tim Berners-Lee (from <a href="https://en.wikipedia.org/wiki/Weaving_the_Web" target="_blank">Weaving the Web</a>)
+      </cite>
+    </blockquote>
+
+    <br><br>
+
+    <article>
+      <p>The Web is an open and globally decentralized document and application distribution platform. Documents (ie. web pages) and software (ie. web apps), written in HTML, CSS, JavaScript and other languages, are stored on computers (connected to the Internet) all around the world running applications called <a href="https://en.wikipedia.org/wiki/Web_server" rel="nofollow">servers</a>, which wait for <a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol" rel="nofollow">HTTP</a> requests (small packets of data asking for specific files or resources) coming from other applications known as "clients" or "agents" (which are typically <a href="https://en.wikipedia.org/wiki/Web_browser" rel="nofollow">web browsers</a> or <a href="https://en.wikipedia.org/wiki/Web_crawler" rel="nofollow">web crawlers</a>).</p>
+      <p>Anyone can create a website or web app and host their files on their own server running on their own computer connected to the Internet, and anyone else can use any number of web clients to request (ie. access) that website or web app over the Internet. As a platform, the Web has no central server, it's a collection of servers running on computers all over the world, which is what we mean when we say that the web is a "decentralized" platform. You don't need to ask anyone for permission or approval to run a server on the Web, all you need is a computer with an Internet connection, this is why we say the Web is an "open" platform.</p>
+      <p>While no one owns and operates the Web (the platform) itself, the protocols (like HTTP), core languages (HTML and CSS) and JavaScript APIs are designed and maintained by an internatoinal organization called the W3C, or <a href="https://en.wikipedia.org/wiki/World_Wide_Web_Consortium" rel="nofollow">the World Wide Web Consortium</a> which consists of businesses, nonprofit organizations, universities, governmental entities, and individuals (anyone can join). The W3C don't own or control the Web (again, it's an open and decentralized platform), instead they're in charge of <em>describing</em> how it should work. These descriptions take the form of documents known as "specifications" (or "specs" for short) which are used as blue-prints for anyone interested in writing their own web server or web client software, as well as anyone interested in creating their own websites or web apps. If you don't follow the spec, then your client, server, site or app won't be compatible with the platform (ie. it won't work).</p>
+
+      <img src="#" id="html-code">
+      <p class="caption">
+        a simple website, an HTML file (index.html) a CSS file (/css/styles.css) and a few images; opened in the <a href="https://atom.io/" target="_blank">Atom</a> editor
+      </p>
+
+      <br><br><br>
+
+      <h3>"hosting" a website or web app</h3>
+      <p>A web "host" is a service running their own web servers on their own computers that you can use to <em>host</em> the websites or apps you create. While it's totally possible to <a href="https://homebrewserver.club/" rel="nofollow">host your site/app at home</a> by running your own web server on your own computer, it isn't always practical (unless you've got lots of bandwidth, great upload Internet speeds and a computer you don't mind leaving on/connected running your server 24/7). For this reason there exist all sorts of different services for hosting your websites/app s on someone else's computer (aka on "the cloud"). Most of these servers will rent you space on their computers/data centers for a monthly fee, but there are also some "free" hosting providers out there. For example, we'll be using GitHub not only to collaborate on a shared/versioned code base, but also as our app's web host (via their <a href="https://pages.github.com/">GitHub Pages</a> feature).</p>
+
+      <br>
+
+      <img src="/images/notes/web/servers.png" alt="Internet Archive Servers">
+      <p class="caption">
+        a few of the <a href="https://archive.org/" target="_blank">the Internet Archive</a>'s servers; from a short <a href="https://vimeo.com/59207751" target="_blank">documentary</a> about the Archive
+      </p>
+
+      <br><br><br>
+
+      <h3>running a local server</h3>
+      <p>When your working a simple web page or web app you can test and see what it looks like by simply opening up your HTML file a web browser, without the need for a web server. When you view a "local" (ie. on your computer) HTML file in your browser you'll notice that the address bar has a <code>file:///</code> protocol followed by the local path to your HTML file (ie. it's location on your hard drive). That said, in some instances, for security purposes (specifically when your project contains JavaScript code which loads data from other files), your browser will refuse to execute your code. In these circumstances it's necessary to run your own web server locally on your computer for testing. Then, rather than opening your file directly in your browser, you can send an HTTP request (locally on your comptuer, rather than over the Internet) to your server which in tern returns the requested files/resources to your browser. This time the browser will execute the code, because it came from a server (made clear by the <code>http://</code> protocol in the address bar).</p>
+
+
+      <p>There are a number of different servers you can use to host your files locally (you can even <a href="https://www.youtube.com/watch?v=O4g39i_yqyw" rel="nofollow">write your own</a>). Below I've got instructions for a couple of common severs as well as a simple one I made for these purposes. Feel free to use any of these (or any other) servers while locally working and testing your contributions to the class project.</p>
+
+    </article>
+
+    <article>
+      <div class="flex" style="margin: 60px 0px;">
+        <span class="button simple">simple server</span>
+        <span class="button python">python server</span>
+        <span class="button php">php server</span>
+      </div>
+    </article>
+
+    <article class="simple server">
+      <h4>Simple Server</h4>
+      <p>I've written a simple web server (in JavaScript) which you can <a href="/files/simple-web-server.zip">download</a> for Mac, Windows and Linux. When you unzip the download you'll find 3 differnt foldrs for the three differnt versions, choose the one that reflects your system and double-click (or drag+drop into your terminal) the server file. It should open in your terminal (or command prompt) with a message that reads: <em>Enter the path to the folder you want to serve:</em>, type the path to the paintArtware1.0 project folder (or drag+drop your folder into your terminal, it should paste-in that folder's path automatically) and then press Enter.</p>
+      <p>Assuming you've entered a valid file path in the step above, the next message should read: <em>What port would you like to run this server on:</em> enter the port number <code>8000</code> (or any other unused port number you'd like). Assuming you entered a valid (and unused) port number, you should see a message displaying your computer's local IP address as well as the port the server is running on and the path to the folder being served. The terminal message will also list a few different URLs you can type into your browser to access the web app.</p>
+      <img src="" id="simple-server-terminal">
+    </article>
+
+    <article class="python server hide">
+      <h4>Python Server</h4>
+      <p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)" rel="nofollow">Python</a> is a popular programming language which comes with a simple web server module. Most Mac and Linux systems come with the python runtime (the language's command line interpreter) pre-installed (Windows users may need to <a href="https://www.tutorialspoint.com/how-to-install-python-in-windows" rel="nofollow">manually install it</a>). To check which version of the python runtime you have installed (if any) open a terminal (or command prompt) and run: <code>python --version</code></p>
+      <p>Assuming you have python installed, the first step is to change your terminal's current directory to the directory you want to serve (ie. your local paintArtware1.0 folder). You can do this by typing <code>cd</code> (the "change directory" command) followed by space and then the path to the project folder (if you drag+drop a folder into your terminal it should paste-in that folder's path)</p>
+      <p>
+        <code>cd /path/to/folder</code>
+      </p>
+      <p>
+        After you've navigated your terminal into the directory (ie. folder) you want to serve you can run the python web server, this command looks different depending on which version of python you have installed.
+      </p>
+      <p>
+        for python version 2, run: <code>python -m SimpleHTTPServer</code>
+      </p>
+      <p>
+        for python version 3, run: <code>python -m http.server</code>
+      </p>
+      <p>You should then see a message that says something like <em>"Serving HTTP on 0.0.0.0 port 8000 ..."</em>. When you want to quit running your server press Ctrl + C in your terminal.</p>
+    </article>
+
+
+    <article class="php server hide">
+      <h4>php server</h4>
+      <p><a href="https://en.wikipedia.org/wiki/PHP" rel="nofollow">php</a> was, for most of the Web's history, the most popular server side programming language. Like python, it also comes with a simple built-in server we can run from our terminals. Just like with our python server, the first thing you'll need to do is change your terminal's current directory to the directory you want to serve (ie. your local paintArtware1.0 folder). You can do this by typing <code>cd</code> (the "change directory" command) followed by space and then the path to the project folder (if you drag+drop a folder into your terminal it should paste-in that folder's path)</p>
+      <p><code>cd /path/to/folder</code></p>
+      <p>After that, assuming you've got <code>php</code> installed on your computer, you can run the following command:</p>
+      <p><code>php -S localhost:8000</code></p>
+      <p>You should then see a message that says something like <em>"Listening on <a href="http://localhost:8000" rel="nofollow">http://localhost:8000</a> ... Press Ctrl-C to quit."</em></p>
+    </article>
+
+
+
+    <article>
+      <h4>sending HTTP requests to your local server</h4>
+
+      <div class="http" name="req1">
+        <p>
+          <b>1.</b> A server && a client running on the same computer
+        </p>
+        <button type="button" class="next">next step</button>
+        <div class="flex" style="margin: 60px 0px;">
+          <img src="/images/notes/web/server5.png" alt="">
+          <span>...</span>
+          <img src="/images/notes/web/client0.png" alt="">
+        </div>
+      </div>
+
+      <div class="hide http" name="req2">
+        <p>
+          <b>2.</b> A client (FireFox) sends an HTTP request to the local server <code>http://localhost</code> (without specifying a port number the default is <code>http://localhost:80</code>), this is the same as writing <code>http://0.0.0.0:80</code> or the local IP address, which in this particular case is <code>http://192.168.0.15:80</code>.
+        </p>
+        <p>
+          The server receives the HTTP request from the client and because no specific path was specified, it assumes the root directory <code>/</code>. When a directory is requested (rather than a specific HTML file) it assumes <code>index.html</code>.
+        </p>
+        <button type="button" class="next">next step</button>
+        <div class="flex" style="margin: 60px 0px;">
+          <img src="/images/notes/web/server6.png" alt="">
+          <span>⬅⬅⬅</span>
+          <img src="/images/notes/web/client1a.png" alt="">
+        </div>
+      </div>
+
+      <div class="hide http" name="req3">
+        <p>
+          <b>3.</b> the server copies the <code>/index.html</code> file and sends it back to the client as an HTTP response.
+        </p>
+        <button type="button" class="next">next step</button>
+        <div class="flex" style="margin: 60px 0px;">
+          <img src="/images/notes/web/server6.png" alt="">
+          <span>➡➡➡</span>
+          <img src="/images/notes/web/client2.png" alt="">
+        </div>
+      </div>
+
+      <div class="hide http" name="req4">
+        <p>
+          <b>4.</b> the <code>index.html</code> page contains HTML code with paths to other resources, a CSS file as well as a couple of image files. The client (FireFox) makes new HTTP requests for these resources and sends them to the server.
+        </p>
+        <button type="button" class="next">next step</button>
+        <div class="flex" style="margin: 60px 0px;">
+          <img src="/images/notes/web/server7.png" alt="">
+          <span>⬅⬅⬅</span>
+          <img src="/images/notes/web/client2.png" alt="">
+        </div>
+      </div>
+
+      <div class="hide http" name="req5">
+        <p>
+          <b>5.</b> the server sends the requested resources as HTTP responses, when the client (FireFox) receives them it finishes rendering the page.
+        </p>
+        <button type="button" class="next">next step</button>
+        <div class="flex" style="margin: 60px 0px;">
+          <img src="/images/notes/web/server7.png" alt="">
+          <span>➡➡➡</span>
+          <img src="/images/notes/web/client3.png" alt="">
+        </div>
+      </div>
+
+      <!-- <p>Once you've got a server running, you can send it requests from any web client (like a web browser) on your local network. That could mean the same computer you're running the server on, or any other computer on your same WiFi network. There are a few different ways to write that request, but the most common is <code>http://localhost:8000</code>, this assumes you're making the request form the same computer running the sever (ie <code>localhost</code>) to a sever running on port 8000 (ie. <code>:8000</code>). Alternatively you could replace "localhost" with "0.0.0.0". If you want to send a requst to the server from a different computer (on the same network) you'll need to replace "localhost" with the local IP address of the computer running the server.</p> -->
+    </article>
+
+
+    <blockquote cite="https://www.goodreads.com/book/show/23492802-magic-and-loss">
+      <p>In an extreme view, the world can be seen as only connections, nothing else. We think of a dictionary as the repository of meaning, but it defines words only in terms of other words. I like the idea that a piece of information is really defined only by what it's related to, and how it's related. There really is little else to meaning. The structure is everything.</p>
+      <cite>
+        Tim Berners-Lee (from <a href="https://en.wikipedia.org/wiki/Weaving_the_Web" target="_blank">Weaving the Web</a>)
+      </cite>
+    </blockquote>
+
+
+    <br><br><br><br><br><br>
+
+    <script src="/js/Averigua.js"></script>
+    <script src="/js/rainbow-text.js"></script>
+    <script src="/js/fancy-chars.js"></script>
+    <script>
+      FancyText.animate(document.querySelector('header > h1'), 200, 0.2)
+
+      Array.from(document.querySelectorAll('h3'))
+        .forEach(h3 => FancyText.animate(h3, 5000, 0.2))
+
+      Array.from(document.querySelectorAll('a'))
+        .filter(a => a.className !== 'button')
+        .forEach(a => RainbowText.hoverShimmer(a))
+
+      class FakeGif {
+        constructor (ele, pics, fps) {
+          this.img = document.querySelector(ele)
+          this.idx = 0
+          this.pics = pics
+          this.fps = fps
+          this.loop()
+        }
+
+        loop () {
+          setTimeout(() => this.loop(), this.fps)
+          this.img.src = this.pics[this.idx]
+          this.idx++
+          if (this.idx >= this.pics.length) this.idx = 0
+        }
+      }
+
+      const htmlgif = new FakeGif('#html-code', [
+        '/images/notes/web/code0.png',
+        '/images/notes/web/code1.png'
+      ], 3000)
+
+      const servergif = new FakeGif('#simple-server-terminal', [
+        '/images/notes/web/server0.png',
+        '/images/notes/web/server1.png',
+        '/images/notes/web/server2.png',
+        '/images/notes/web/server3.png',
+        '/images/notes/web/server4.png',
+        '/images/notes/web/server5.png'
+      ], 2000)
+
+
+      document.querySelectorAll('.button').forEach(ele => {
+        const t = ele.classList[1]
+        ele.addEventListener('click', () => {
+          document.querySelectorAll('.server')
+            .forEach(ele => ele.classList.add('hide'))
+          console.log(t);
+          document.querySelector(`.server.${t}`).classList.remove('hide')
+        })
+      })
+
+
+      let httpReq = 1
+      document.querySelectorAll('.next').forEach(ele => {
+        let id = Number(ele.parentNode.getAttribute('name').split('req')[1])
+        id = (id >= 5) ? 1 : id + 1
+        const next = document.querySelector(`[name="req${id}"]`)
+        ele.addEventListener('click', () => {
+          document.querySelectorAll('.http')
+            .forEach(ele => ele.classList.add('hide'))
+          next.classList.remove('hide')
+        })
+      })
+
+
+    </script>
+  </body>
+</html>

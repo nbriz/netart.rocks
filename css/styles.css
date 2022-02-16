@@ -397,10 +397,15 @@ hr {
 
 .rwd { width: 100%; }
 
-.grey {
+.grey, .caption {
   color: #888;
   text-align: center;
   display: block;
+}
+
+.caption {
+  font-size: 16px;
+  font-style: italic;
 }
 
 .k {
