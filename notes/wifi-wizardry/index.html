@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>WiFi Wizardry</title>
+    <meta name="author" content="Nick Briz">
+    <meta charset="utf-8">
+
+    <!-- social media stuff -->
+    <meta property="og:title" content="WWW Notes">
+    <meta property="og:url" content="https://netart.rocks/notes/open-source">
+    <meta property="og:image" content="https://netart.rocks/images/netartdiagram.gif">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:site_name" content="https://netart.rocks">
+    <meta name="twitter:site" content="@nbriz">
+
+    <link rel="icon" type="image/png"  href="https://netart.rocks/images/icon.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style media="screen">
+      .double {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .double p {
+        max-width: 440px;
+      }
+
+      .double div {
+        text-align: center;
+      }
+
+      @media (max-width: 986px) {
+        .double { flex-direction: column; }
+        .double p { margin: 40px auto; }
+      }
+
+      .hide {
+        display: none;
+      }
+
+      .button {
+        color: var(--blue);
+        border: solid 2px var(--blue);
+        font-family: sans-serif;
+        cursor: pointer;
+        padding: 4px 17px;
+        border-radius: 8px;
+      }
+
+      .button:hover {
+        color: #fff;
+        background: var(--blue);
+      }
+      .flex {
+        align-items: center;
+      }
+      .flex > * {
+        max-width: 75%;
+      }
+    </style>
+  </head>
+  <body>
+
+    <header>
+      <h1>WiFi Wizardry</h1>
+    </header>
+
+    <article>
+
+      <h3>the Electro Magnetic Spectrum</h3>
+
+      <div class="flex">
+        <div>
+          <img src="/images/notes/wifi/spectrum.jpeg" alt="Electro Magnetic Spectrum">
+        </div>
+        <div>
+          <ul>
+            <li>
+              <a target="_blank" href="https://www.youtube.com/watch?v=lwfJPc-rSXw" rel="nofollow">NASA edu video</a> on the Electro Magnetic Spectrum
+            </li>
+            <li>
+              <a href="/images/notes/wifi/spectrum.gif" target="_blank">diggram of the Electromagnetic Spectrum</a>
+            </li>
+            <li>
+              netnet <a href="https://netnet.studio/?layout=dock-left#code/eJx9UsFu2zAMvecrBO/gGFhVF+gumW1gKIZdBuyw/oAiMQ5bmfIkOYkx9N9HWZ2XAUUvNkU+Pj49qglxttBthNg7M4vfHAgxKN8j7UT9eTkeAftj3Im7uj4dc8pgGK2ad+Jg4ZJTT1OIeJhvtKMIxHDNX/C5qCz2dIMRhnBdeNk0t68CNs1+itGRQNMWibvo0re5zelu0yCNUxRxHqEtvKIeCjEgtcUd/9WlLe7v60KclJ0gx9wSRkUdxzwlRTwkaI9jTPdlnSEKHS+iFQRncUYy7iy/TAbdQ7rDJW6rFeeCZhyjpfagIvwIGq1V0fkrUE//Yb4ppKXak+w5los4htTyU85yG4GO29RjgP0jFdFRteHyYSKdDiLZ8OgIttXreliLTDYwUxmQoFyzf/l6qtZciMrnCXrynq1/xAGqxfxV+D4m5cbpaWCA/DWBn3+CZSq+X/khKShTC+OkMubriVHfMfCegevaon4uP65CE3KlDhYN+HfYl7WW/0xMm3oHnsoLOhO/JeeYHgfr2UIl2u7KtIMHZiM9r5sAye70EHNiAaYBMm3/IT/kt1AvVXq4+Sn9AY6iDkw=" target="_blank">audio frequency</a> demo/sketch
+            </li>
+            <li>
+              United States <a href="/images/notes/wifi/FCC-chart.jpeg" target="_blank">Frequency Allocation</a> chart (<a href="/images/notes/wifi/fcc-chart-anotated.jpg" target="_blank">annotated version</a>)
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <br><br><br><br>
+
+      <img src="/images/notes/wifi/antennas.jpg" alt="Pretty Fly for a WiFi by Roel Roscam Abbing">
+
+      <p>
+        <a href="https://www.roelof.info/pretty-fly-for-a-wi-fi.html" target="_blank">Pretty Fly for a WiFi</a> by Roel Roscam Abbing
+      </p>
+
+      <br><br><br><br>
+
+      <img src="/images/notes/wifi/between-the-poles.png" alt="Between the Poles">
+
+      <p>
+        Between the Poles by <a href="https://nimrodastarhan.com" target="_blank">Nimrod Astarhan</a> (showing in <a href="https://www.ptz.live/" target="_blank">https://ptz.live</a>)
+      </p>
+
+      <br><br><br><br>
+      <br><br><br><br>
+
+      <h3>the terminal</h3>
+      <img src="/images/notes/wifi/terminal.gif" alt="War Games Terminal" style="max-width: 100%;">
+      <p>
+        Jennifer (played by Ally Sheedy) looking at a computer terminal, in much the same way I do, in the 1983 film War Games: <a href="https://www.youtube.com/watch?v=hbqMuvnx5MU" rel="nofollow">movie trailer</a> +++ <a href="https://netart.rocks/files/war-games-clip3.mp4" rel="nofollow">grades hacking clip</a>
+      </p>
+
+      <p>
+        You'll find my in-depth <a href="https://netizen.org/workshops/the-command-line/" target="_blank">terminal notes here</a>. You'll find the WiFi Hacking notes on the netizen.org BBS (<a href="https://en.wikipedia.org/wiki/Bulletin_board_system" target="_blank">Bulletin board system</a>) which you can access via "telnet" in your terminal: <br><code>telnet netizen.org 1337</code> (codename: root)
+      </p>
+
+      <br><br><br><br>
+      <br><br><br><br>
+
+      <h3>WiFi Data</h3>
+
+      <img src="/images/notes/wifi/wifi-data-safari.png" alt="WiFi Data Safari" style="max-width: 100%;">
+
+      <p>
+        <a href="http://nickbriz.work/?portfolio=WiFi-Data-Safari" target="_blank">WiFi Data Safari</a> by Branger_Briz (Nick Briz and Brannon Dorsey) -- <a href="https://player.vimeo.com/video/269679739?color=ff0179&title=0&byline=0&portrait=0&autoplay=1&loop=1" target="_blank">video</a>
+      </p>
+
+      <br><br><br><br>
+      <br><br><br><br>
+
+      <h3>Wireless Jammer Projects</h3>
+
+      <img src="/images/notes/wifi/tv-b-gone.jpg" alt="TV-B-Gone by Mitch Altman" style="max-width: 100%;">
+
+      <p>
+        TV-B-Gone by <a href="https://en.wikipedia.org/wiki/Mitch_Altman" target="_blank">Mitch Altman</a>
+      </p>
+      <br><br><br><br>
+
+      <img src="/images/notes/wifi/lady-ada.png" alt="Wave Bubble by Limor Fried (" style="max-width: 100%;">
+
+      <p>
+        Wave Bubble by <a href="https://en.wikipedia.org/wiki/Limor_Fried" target="_blank">Limor Fried</a> (aka ladyada of <a href="https://www.adafruit.com/" target="_blank">Adafruit</a>) (~2003)
+      </p>
+      <br><br><br><br>
+
+      <img src="/images/notes/wifi/no-network.jpg" alt="No Network by Julian Oliver (2014)" style="max-width: 100%;">
+
+      <p>
+        No Network by <a href="https://julianoliver.com/" target="_blank">Julian Oliver</a> (2014)
+      </p>
+      <br><br><br><br>
+
+      <img src="/images/notes/wifi/log-jammer.png" alt="Log Jammer by Allison Burtch" style="max-width: 100%;">
+
+      <p>
+        Log Jammer by <a href="https://allisonburtch.github.io/" target="_blank">Allison Burtch</a> (2014)
+      </p>
+      <br><br><br><br>
+
+
+
+    </article>
+
+
+
+    <br><br><br><br><br><br>
+
+    <script src="/js/Averigua.js"></script>
+    <script src="/js/rainbow-text.js"></script>
+    <script src="/js/fancy-chars.js"></script>
+    <script>
+      FancyText.animate(document.querySelector('header > h1'), 200, 0.2)
+
+      Array.from(document.querySelectorAll('h3'))
+        .forEach(h3 => FancyText.animate(h3, 5000, 0.2))
+
+      Array.from(document.querySelectorAll('a'))
+        .filter(a => a.className !== 'button')
+        .forEach(a => RainbowText.hoverShimmer(a))
+    </script>
+  </body>
+</html>
