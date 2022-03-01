@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Post-Internet</title>
+    <meta name="description" content="a class website for Post-Internet (CP 1022-009) at the School of the Art Institute of Chicago">
+    <meta name="author" content="Nick Briz">
+    <meta charset="utf-8">
+
+    <!-- social media stuff -->
+    <meta property="og:title" content="Post-Internet">
+    <meta property="og:url" content="https://netart.rocks/saic/artware">
+    <meta property="og:image" content="https://netart.rocks/images/vaporwave.gif">
+    <meta property="og:description" content="a class website for Post-Internet (CP 1022-009) at the School of the Art Institute of Chicago">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:site_name" content="https://netart.rocks/saic/post-net">
+    <meta name="twitter:site" content="@nbriz">
+
+    <link rel="icon" type="image/png"  href="https://netart.rocks/images/icon.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" type="image/png"  href="https://netart.rocks/images/icon.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style media="screen">
+      .double {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .double p {
+        max-width: 440px;
+      }
+
+      .double div {
+        text-align: center;
+      }
+
+      @media (max-width: 986px) {
+        .double { flex-direction: column; }
+        .double p { margin: 40px auto; }
+      }
+
+      i {
+        font-size: 1.2em;
+      }
+
+      .flex > div {
+        width: 50%;
+      }
+    </style>
+  </head>
+  <body>
+
+    <header>
+      <h1>The Internet</h1>
+    </header>
+
+    <br><br>
+
+    <article>
+      <blockquote cite="https://www.youtube.com/watch?v=v8IlNpefM6s">
+        <p>
+          Internet \in"ter*net, n. A deeply misunderstood technology upon which we increasingly depend
+        </p>
+        <cite>
+          <a href="https://www.youtube.com/watch?v=v8IlNpefM6s" target="_blank">Julian Oliver & Danja Vasiliev</a>
+        </cite>
+      </blockquote>
+
+      <h3>local networks</h3>
+
+      <p>
+        Last week we learned that a computer "network" is two or more computers connected together so that they can exchange information. Most "local networks", like the kind we experimented on last week, use the electromagnetic spectrum to connect with each other and share information wirelessly through the air. This is likely the method we're most familiar with, but for various reasons, in certain parts of the world, isn't always the most practical....
+      </p>
+
+      <iframe class="rwd" height="420" src="https://www.youtube.com/embed/fTTno8D-b2E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+      <iframe class="rwd" height="420" src="https://www.youtube.com/embed/lEplzHraw3c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <br><br>
+
+      <p>
+        Inspired by these sorts of networks artists like Aram Bartholl, Dennis de Bel and Roel Roscam Abbing have created their own "offline" network projects.
+      </p>
+
+      <div class="flex" style="margin: 60px 0px;">
+        <div>
+          <img src="/images/notes/the-net/meshenger2.jpg" alt="Meshenger">
+          <p>
+            <a href="https://www.roelof.info/meshenger.html" target="_blank">Meshenger</a> by Dennis de Bel and Roel Roscam Abbing,
+          </p>
+        </div>
+        <div>
+          <img src="/images/notes/the-net/deaddrops.jpeg" alt="Dead Drops">
+          <p>
+            <a href="https://www.youtube.com/watch?v=hwohadcUv4A" target="_blank">Dead Drops</a> (a peer-2-peer "offline" network) by Aram Bartholl
+          </p>
+        </div>
+      </div>
+
+      <h3>a network of networks</h3>
+
+      <blockquote cite="https://www.nytimes.com/2016/06/12/books/review/virginia-heffernans-magic-and-loss.html">
+        <p>
+          The Internet is the great masterpiece of human civilization. As an artifact it challenges the pyramid, the aqueduct, the highway, the novel, the newspaper, the nation-state, the Magna Carta, Easter Island, Stonehenge, agriculture, the feature film, the automobile, the telephone, the telegraph, the television, the Chanel suit, the airplane, the pencil, the book, the printing press, the radio, the realist painting, the abstract painting, the Pill, the washing machine, the skyscraper, the elevator, and cooked meat. As an idea it rivals monotheism
+        </p>
+        <cite>
+          <a href="https://www.nytimes.com/2016/06/12/books/review/virginia-heffernans-magic-and-loss.html" target="_blank">Virginia Heffernan</a>
+        </cite>
+      </blockquote>
+
+      <p>
+        the Internet is a network of networks which spans the globe. Rather than using WiFi or cats, these networks are predominantly connected together using cables. When you send an email, share a post on social media, watch a stream or visit a webpage data is being sent back and fourth between your computer and another which may be halfway across the planet.
+      </p>
+
+      <img src="/images/notes/the-net/globe.png" alt="the globe">
+      <p class="grey">
+        <i>Interactive <a href="https://globe.gl/example/submarine-cables/" target="_blank">3D map</a> of the Internet</i>
+      </p>
+
+      <p>
+        Visit a website in your browser, right-mouse click the page and "View Source." This is the HTML code, the file itself, that just traveled the world to reach your computer, but where did this data come from? Let's map the journey it took across the Internet...
+      </p>
+
+      <h3>IP Addresses</h3>
+
+      <p>
+        As we disucssed last week, when you sign on to a local WiFi (or ethernet) network the router assigns you a "local" IP address, the router itself has a public IP address, this address is a unique address on the Internet. When your request packets leave your local network, your IP address is swapped with your router's address, this way the response knows to find it's way back to you. If you'd like to see what your public IP address is (ie. your router's IP address) do a web search for "<a href="https://duckduckgo.com/?q=what%27s+my+ip+address&t=canonical&atb=v137-1&ia=answer" target="_blank">what's my IP address</a>"
+      </p>
+
+      <p>
+        Every computer connected to the Internet has an IP addresses, including the computers running the servers which host the files, and other data, we experience on our devices, like the HTML file we just looked at when we viewed the source of a website.
+      </p>
+
+      <p>
+        We rarely type IP address of these other computers into our browser address bars, this is because a server could optionally register a "domain name" on the Internet's Domain Name System (DNS). This is like a giant phone book (or books) for the Internet that match names to numbers. Here you can find a list of all the <a href="https://www.iana.org/domains/root/servers" rel="nofollow">The Root Servers</a> for the DNS.
+      </p>
+
+      <img src="/images/notes/the-net/url-diagram.svg" alt="URL">
+
+      <p>
+        You can look up any domain name's IP address by using the <code>nslookup</code> command in your terminal. If you're using a Mac or Linux computer, open your <b>Terminal</b> application (or the <b>Command Prompt</b> on Windows) and run <code>nslookup example.com</code> replacing "example.com" with your website.
+      </p>
+
+      <h3>locating the server</h3>
+
+      <p>
+        Once you know your destination IP address, you'll need to map that to a physical address. Do a web search for "IP address to location" or "IP to geo" and you'll come across various different services that can translate an IP address into GPS coordinates. I prefer to use <a href="https://ip-api.com/" target="_blank">https://ip-api.com/</a> because it not only gives me the GPS coordinates, but also tells me the name of the organization who owns that IP address (a helpful piece of information when creating your travelogue). Use an online mapping service to navigate to those GPS coordinates and try to find where exactly the site is hosted. The GPS coordinates aren't always precise, it'll get you to the general area, but you'll likely need to search the map for "data centers" in the area to try and find the building where your identified organization (hosting the website) is a tenant at. Large data centers often (though not always) have many different companies renting space in the data center for their servers. This means the building your looking for might not have the same name as the organization for which the IP address belongs.
+      </p>
+
+      <p>
+        It may be in a part of the world you hadn't expected, having traveled the distance to your computer faster than any boat, train or plane could have. The speed of travel can often make the Internet feel smaller than it is, everywhere and nowhere. Artists like James Bridle and Charles Broskoski have created projects that help bring this to light, and raise questions about the Internet which are only possible when we <i>see</i> it for what it actually is.
+      </p>
+
+      <div class="flex" style="margin: 60px 0px;">
+        <div>
+          <img src="/images/notes/the-net/citizen-ex.png" alt="Citizen Ex">
+          <p>
+            <a href="https://jamesbridle.com/works/citizen-ex" target="_blank">Citizen Ex</a> by James Bridle
+          </p>
+        </div>
+        <div>
+          <img src="/images/notes/the-net/directionstolastvisitor.png" alt=""Directions ot Last Visitor" by Charles Broskoski">
+          <p>
+            <a href="/images/notes/the-net/directionstolastvisitor.png" target="_blank">Directions ot Last Visitor</a> by Charles Broskoski
+          </p>
+        </div>
+      </div>
+
+      <h3>tracing the data packet's journey</h3>
+
+      <blockquote cite="https://www.goodreads.com/book/show/23492802-magic-and-loss">
+        <p>On a sunny morning at 7:45:03, one Internet packet is born. 60 bytes weight, with just one simple mission in life – to get to the place called 173.252.120.6. Even though this does not sound like an exciting mission in life, things that happen in the next 1 second are pretty exciting. His journey starts with a fast 7ms jump, 5 meters away to the box called home router. Over the attic, where he passes through the switch where all the cables from the building meet, he jumps down to the street and into the underground cable that brings him to the main city router in Novi Sad. With a speed of 30.600.000 km/h he  runs for 10 ms to Belgrade, to the SBB TelePark building.</p>
+        <cite>
+          <a href="https://labs.rs/en/packets/" target="_blank">SHARE LAB</a>
+        </cite>
+      </blockquote>
+
+      <p>
+        Next we'll need to chart the journey from our IP address to the IP address of the computer hosting the requested website. On a Mac or Linux computer, open your <b>Terminal</b> again (or the <b>Command Prompt</b> on Windows) and run <code>traceroute -I 255.255.255.255</code> (or <code>tracert 255.255.255.255</code> on Windows), replacing "255.255.255.255" with your destination's IP address.
+      </p>
+
+      <img src="/images/notes/the-net/traceroute.png" alt="traceroute">
+
+      <p>
+        The traceroute application will start to list the IP addresses of each "hop" (or router) your packet takes on it's journey. Once you have your list of hops, look up each IP address like you did before to find the GPS coordinates of each and find them on the map. The IP addresses along the way are likely going to be <a href="https://www.internetexchangemap.com/" target="_blank">Internet exchange points</a> or "colocation centers", or "carrier hotels". These are all names for large data centers where different networks meet and connect with each other to exchange Internet traffic. Use those terms (in addition to "data center") to try and find the buildings (near the GPS coordinates) where the hops might have taken place.
+      </p>
+
+      <p>
+        It's important to note that the traceroute application isn't perfect. It doesn't actually trace a direct route so much as send "pings" (a tiny packet to a router that echos back) to and from each router along the path. Because your packet doesn't necessarily take the same exact journey each time (every new Web request finds the quickest path across the Internet to it's destination at that moment) the list of IP address returned by the traceroute in a way reflects a combination of alternative routes the packet may have taken. So, what you'll need to do is run the traceroute a few times (maybe 4 or 5) keeping track of the list of IP addresses and their corresponding GPS coordinates. Compare the different results, disregard any anomolies (IP addresses that only ever showed up once) and make your best guess as to what a likely journey may have been.
+      </p>
+
+      <p>
+        Between each "hop", each stop at along the packet's journey, the data traveled across cables, initially probably the cables of your local Internet service provider (or ISP), like Comcast for example...
+      </p>
+
+      <img src="/images/notes/the-net/comcastnetwork.jpg" alt="comcast">
+
+      <p>
+        If there's ever a hop between two different continents, then it's likely your packet fount it's way to the shoreline, likke this one in Canada...
+      </p>
+
+      <img src="/images/notes/the-net/manwhole.jpg" alt="coastline landing cable">
+
+      <p class="grey">
+        <i>"This modest indentation on the Canadian coastline is a major Internet landmark, a sort of Ellis Island of the Web: It’s where a submarine cable owned by Hibernia Atlantic comes ashore."--<a href="https://www.andrewblum.net/2009/netscapes-wired-magazine/" target="_blank">Andrew Blum</a></i>
+      </p>
+
+      <p>
+         ...before taking a journey through an under sea cable. Use this map of <a href="https://www.submarinecablemap.com/" target="_blank">submarine cables</a> to try and identify which one.
+      </p>
+
+      <img src="/images/notes/the-net/cubacable.jpg" alt="comcast">
+
+      <p class="grey">
+        <i>This undersea cable its on its way to <a href="https://runrun.es/runrunes-de-bocaranda/runrunes/23374/la-corrupcion-cubana-en-empresas-bajo-las-ordenes-de-ramiro-valdes-salpicaria-a-venezuela-y-su-cable-de-fibra-a-cuba/" target="_blank">Cuba from Venezuela </a></i>
+      </p>
+
+      <p>
+        After traveling across the ocean at nearly the speed of light, our packet of data make landfall on another shoreline, here's a photo of me (^__^) when i stumbled upon an Internet landing cable on the shore of St. Thomas in the Caribbean...
+      </p>
+
+      <img src="/images/notes/the-net/stthomas.png" alt="St. Thomas landing cable">
+
+      <p>
+        Artists like Ingrid Burrington and Trevor Paglen have researched these cables, their history and their politics to better understand, and help others <i>see</i> this network we so heavily depend on...
+      </p>
+
+      <img src="/images/notes/the-net/networks-of-ny.png" alt="Networks of New York">
+
+      <p class="grey">
+        <i><a href="https://www.mhpbooks.com/books/networks-of-new-york/" target="_blank">Networks of New York</a>: An Internet Infrastructure Field Guide (2015) by Ingrid Burrington</i>
+      </p>
+
+      <br><br>
+
+      <iframe class="rwd" height="420" src="https://www.youtube.com/embed/h7guR5ei30Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+    </article>
+
+
+    <br><br><br><br>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <script src="/js/Averigua.js"></script>
+    <script src="/js/rainbow-text.js"></script>
+    <script src="/js/fancy-chars.js"></script>
+    <script>
+      FancyText.animate(document.querySelector('header > h1'), 200, 0.2)
+
+      Array.from(document.querySelectorAll('h3'))
+        .forEach(h3 => FancyText.animate(h3, 5000, 0.2))
+
+      Array.from(document.querySelectorAll('a'))
+        .filter(a => a.className !== 'button')
+        .forEach(a => RainbowText.hoverShimmer(a))
+    </script>
+  </body>
+</html>
