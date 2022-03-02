@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>APIs</title>
+    <meta name="author" content="Nick Briz">
+    <meta charset="utf-8">
+
+    <!-- social media stuff -->
+    <meta property="og:title" content="WWW Notes">
+    <meta property="og:url" content="https://netart.rocks/notes/open-source">
+    <meta property="og:image" content="https://netart.rocks/images/netartdiagram.gif">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:site_name" content="https://netart.rocks">
+    <meta name="twitter:site" content="@nbriz">
+
+    <link rel="icon" type="image/png"  href="https://netart.rocks/images/icon.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style media="screen">
+      .double {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .double p {
+        max-width: 440px;
+      }
+
+      .double div {
+        text-align: center;
+      }
+
+      @media (max-width: 986px) {
+        .double { flex-direction: column; }
+        .double p { margin: 40px auto; }
+      }
+
+      .hide {
+        display: none;
+      }
+
+      .button {
+        color: var(--blue);
+        border: solid 2px var(--blue);
+        font-family: sans-serif;
+        cursor: pointer;
+        padding: 4px 17px;
+        border-radius: 8px;
+      }
+
+      .button:hover {
+        color: #fff;
+        background: var(--blue);
+      }
+      .flex {
+        align-items: center;
+      }
+      .flex > * {
+        max-width: 75%;
+      }
+
+      ul {
+        margin-bottom: 50px;
+      }
+      li {
+        margin-bottom: 0px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <header>
+      <h1>APIs</h1>
+      <h2>They Myth of Writing Code from "Scratch"</h2>
+    </header>
+
+    <blockquote cite="https://www.goodreads.com/book/show/23492802-magic-and-loss">
+      <p>I have invented nothing new. I simply assembed the discoveries of other men behind whom were centuries of work.</p>
+      <cite>
+        Henry Ford
+      </cite>
+    </blockquote>
+
+    <br><br>
+
+    <article>
+      <p>In the JavaScript world it's not uncommon to hear a developer ask another developer <i>"did you build that from scratch or did you use any libraries?"</i>, while this is a fairly reasonable question, no software developer ever really builds anything from <i>"scratch"</i>, we're always building on top of systems someone else made. Even if a JavaScript developer isn't using any frameworks or libraries, they are most certainly using Web APIs built into the browser. These are APIs designed by working groups and implemented by the developers behind any given browser. The folks who built those browsers may have used other libraries or frameworks, if not they most certainly used APIs provided by the operating system (Linux, Windows or Mac). Those operating systems were developed by other developers, themselves building on the work of others who developed device drivers and kernels by other folks who wrote their code to conform to the hardware created by another group of engineers who are themselves building on the designs of the folks that came before them. Writing software is always, consciously or not, a collaborative effort.</p>
+
+      <h3>"Vanilla" JavaScript</h3>
+
+      <p>When someone says they wrote something in "vanilla" JavaScript it typically means they didn't rely on any external dependencies, like libraries or frameworks, to write their code. That said, JavaScript, like most programming languages, comes with a built-in "standard library" which is part of the language itself. This includes built-in objects, for example the <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math" rel="nofollow">Math</a> and <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" rel="nofollow">Date</a> objects (here's a <a target="_blank" href="https://netnet.studio/?c=R&amp;layout=dock-left" rel="nofollow">demo of the Date object</a>). These objects, and every other aspect of the language itself, are designed and maintained by a group of folks at <a target="_blank" href="https://en.wikipedia.org/wiki/Ecma_International" rel="nofollow">Ecma International</a>, a nonprofit standards organization. But JavaScript (aka ECMAScript) is just an idea, a "specification" or description of how the language is supposed to look like and how it's supposed to work. Languages can't actually be used without a program capable of converting it into machine code the computer can actually run. These programs go by a few different names, "compilers", "interpreters", "run-times", etc. One example is <a target="_blank" href="https://nodejs.org/en/" rel="nofollow">node.js</a>, a JIT (or "<a target="_blank" href="https://hacks.mozilla.org/2017/02/a-crash-course-in-just-in-time-jit-compilers/" rel="nofollow">just-in-time</a>" compiler).</p>
+
+      <hr>
+
+      <h3>API</h3>
+
+      <p>
+        An API (or <a target="_blank" href="https://en.wikipedia.org/wiki/API" rel="nofollow">Application Programming Interface</a>) is a code-based interface (as opposed to a graphical interface) that gives a programmer/developer access to resoucres, data or some functionality another programmer/developer wrote. It's a very broad term that can be used to describe all sorts of code-based interfaces created by devs for other devs.
+      </p>
+
+      <hr>
+
+      <h3>Web APIs</h3>
+
+      <p>Web browsers have JavaScript compilers built into them, but they also include a large collection APIs not included in JavaScript's "standard library". In the case of Web APIs, these are often JavaScript objects and functions that you have direct access to in your code (assuming that code is running in a web browser).</p>
+
+      <h5>the DOM</h5>
+
+      <p>
+        The most fundamental of these is likely the <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction" rel="nofollow">DOM API</a> which provides a set of objects and functions for manipulating a web page's HTML and CSS. For those curious to learn more about it, I've got an <a target="_blank" href="https://www.youtube.com/watch?v=2hAc4xiiMwI" rel="nofollow">intro video tutorial to the DOM API</a> (~1hr), as well as a couple netnet examples:
+      </p>
+      <ul>
+        <li>
+          <a target="_blank" href="https://netnet.studio/?ex=58" style="">the DOM basics</a>
+        </li>
+        <li>
+          <a target="_blank" href="https://netnet.studio/?ex=63" style="">removing/replacing elements</a>
+        </li>
+        <li>
+          <a target="_blank" href="https://netnet.studio/?ex=64" style="">creating/adding elements</a>
+        </li>
+      </ul>
+
+      <p>
+        The DOM also provides us with an API for creating <a href="https://developer.mozilla.org/en-US/docs/web/api/eventlistener" target="_blank">EventListeners</a> which is core to <b>event-driven programming</b>, a <i>"programming paradigm in which the flow of the program is determined by events such as user actions, sensor outputs, or message passing from other programs or threads"</i>. I have another tutorial on <a target="_blank" href="https://www.youtube.com/watch?v=xdvlxUK3ZwI" rel="nofollow">Event Based Programming with the DOM API</a> (~1hr) as well as a few netnet examples for those curious to learn more:
+      </p>
+
+      <ul>
+          <li>
+            <a target="_blank" href="https://netnet.studio/?layout=dock-left#code/eJyNUstOwzAQPJOvWIVKSVGUSki9tT2AEBc48QP1K4nV1C72hiqq+u+snbqAkBCXKPbOzM6sd8WtHDfZTQaw4gOiNaDlOudo8o1jRto98BaE7a1bLSbAhrAB7oXTBwyneAZCGY/AYQ3SimGvDNbvg3Ljm+qVQOvK4pZ0i3kW0c1gBGrqN7V5eIZyDqdYSlKOpF4ZdvUEofod3C+XPzDtPzD8T8zVbBhF7XHsVc2Z2LXODkY+hujE37qWl7OTO1cwO7Xxy8/zbdQ4f81gsYCjAsEMMCkhVx8kDL32qIxyPge0wMwINJHQEii+HVxiHlirgI8weG1awE4lnC+C3FMQe7loUYi9ws7KKrE1ArKd8hMxNjZsr6BkHhh4dCQ6D+6OjEpkZLKV6A3FJKTGwkPjqATMtXEwFVmWUTXq2Sb+p/f7FjsJu8HAsVOGcAwvVhrtyFpq4BW9jEzU1KiOF7z+lbUQvRa7orruStyh1SKtYEa7Gfb4E2hW3dk=" style="">click event (basic)</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://netnet.studio/?layout=dock-left#code/eJyVUk1PwkAQPcOvmOChNBFQj1C4GG968he0u2NZaXfW/cA2hv/udMHSxBA0aZru9L15b95O5nxb4WYMwM9Njc7lJc4KauCLCwB1bkull/BwZ5oVV0YFWYl2CfemAUeVklBUuditItrkUipdnuEAIlhHjDektEfbFQ+dWrY4KWcFyXYzHnExM6DkejJwMeEfoy3t0UJ85VqCqJTYQY0dYWE2UaX7dsIq4/szS5N2HgysQZIINWo//who21esUHiy02Q4cJKyVOS9BS28Ih0lX44ImKanRHjKucfGPxLPoz13T1oKFt4Di0WrKI9m/RY5EZuXNjfbJJIPZ3dnleD/InIhhct9JX3qP7o/mjeW0Wy+I0KcqabgEIrgPenLQsH8SyboWTTPSmeRX93NnHfpac/kZ+W4B/J1RWSXQHI7vJv0CiH4Dt+nfAXeTc/4QXpXCMEwvM8g7fdx8bOQvOtxx78BwmIO+A==" style="">other events</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://netnet.studio/?layout=dock-left#code/eJyVVE1v2zAMPae/gsgGOMESJ91uWZrbgB1aYMB6aG+VbdpWK4uaJCcxivz3UbYbx9h6KGAIFj/eeyJFbZ1vFO6uAPhLKGvglX8AKmELqTew/t5uS5RF6TdwvV7vy86USWeUaDaQKzx2pufaeZk3y5S0R83hKa9oO6dQstBL6bFyl45TR/2pQudEgcuEjq2ESUI2Q8uU5giOlMwgUSJ96cCMyDKpiw18XZue/CAzX27g2/pseRN9YUoYobBU64xFKmJ4I/XLWcd21ZdjG0qxu5qwcWtAZjfTC31TdkxK2qOFdqkwhK3MrqUI/y610vjzHoAr4jwYuIGM0rri08d/arTNb1SYerKz6LIA0ZwJ2ry81qmXpMGVdLij2uEvcrK1zHDe9wpgtYJDiRrEkCAdpEIp5LI1IDTgnklBScedQTvkSZYlnEMHvsQ+ipJnVgWis+XSsvYhg29GewKQ2hNHCH9mXYCM9ghpSY7VsDdIGDJ9yap68ClOF4Gh5hg+HiLDtXRGWAYv0Ul3wZlwpeMRQLhkQmoHijwbczCWDFov+ShD4uxQyrSEhjoePBru+pkrtIUUzvv4fhsrKmYjo4fqyL3DOFWSxT2MXc2F63HkMiGLU5dgYspzh/4Wcz8OCdkMMYTck+kjTCw1N+vn/d0tBz1Vof8PobOfX6vjicFzS1V7EMWwoQZdAQtcwNN/ML4wSFePFsO8h8FevoXxOxDRNrG76OO+Tv9jr78ZcXsyH5f/DsRI/WmYQRPzo/EjXPDbfgpmUSup4rsVLf4dsfl5nldvA80vRPsy/AVUVpcq">the event object</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://netnet.studio/?layout=dock-left#code/eJxtUtFu2zAMfE6/gkgHJAEaO3vNEr8MAwq0e9o+oIpEx1wUSRXlpkaRfx9lO1kKDDAM6U53OpLacOosVncA8u286eBDFgBHFffk1rD61m8bpH2T1vB1tXprBsgQB6u6NdQW3wfoT8uJ6m6pvUvo5LiWP8aBVJb2bkkJj3xLnIeri4hmvFp76+MaBLjym3KMuckRq7uJgJsAZLbTIzKrPS53/n0qxCREAUDBATvwDjrfxrzeeRVNVpWh6m/Ja9aRQrruAerW6UQi613QPInJHBdjsBzNcQINW8BCTL97g5+Yw4X5hAZBjdftUYouXluM3S+0qJOP89n9Tf7ZYpSFgpzD+Pj757NIX6SqyUQKkVSM0qbUoGQPyoG2ink7lVZNqy8fh7P0SeAqF/wwegGcGtINEGdURmP+L9YXcZGve+nV53+dKUs4IWiRKcselDGAb1IPWGKZNUaG5PtkJ3LGn4ASo60v2qiEisKLgZxTwAE11aRBOpH70h8cpIWY/8jez6P1fCbJ+4nMHm4ms7jOsbwMUh5K/0D+Asc42RM=">keyboard events</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://netnet.studio/?layout=dock-left#code/eJyNVk1v4zYQPce/YrBIIbt1ZDdALqmTy2IPBVqg2NP2FlocSdylSIGkIquB/3uHpD4TBxvAMGxy3nDmzZshD9Z1Eh9XAPQ5at7BC/0AKFEUpbuH3/f75/KPsFQxUwh1D/v4lwtbS9bdQy7xFJe+N9aJvLvJtHKoCJ3RN5q4yaQo1I1wWNnlRtYYqw2tGW1tyURYPseIuHjuAxqsai0G6Hm1Ouz6+A8+9j6NQ/2YSZH9AKa6tkSDoBW4UlioWYHgNB2FzCEwyITJJB529eNqdXWwmRG1e1xdXe12EUCfSnsHBiRaS4sIllUIhimuq88BHuIjRN6ozAk6Kze6Cqa1EYTEE6tqiVtohSvBaoJnJVMF2jRNA3hEzt3CGjd98pS+VtYFOh6A66ypiMA0pvFFov+3Tmg32SzsrfgPCfA3c2UaXa838KsvKvwGd/velnBpoDFtBacIH+Dp+sVDz/Xp6Y1NVMZPjI7acDRklNzWJ0pZCg5tScVP3jH9yrhorAfc7X9JqAK+BKF2fyYVNFaoIjCKz5Qq6ON3zJyvZN1I6Td6twQioRhvU+nGUgW0FYFZyh78gitZBEqWzVDedxQD9JJpDLkgAEmAVhS0ZOBVtSD4RBFjSut04je4iYTv4HZh1M2M/n1rNFExBks0sCOx1lwiTGLe03+6yL3TddzuZtsxEnNBDLd3dwub4gM2xw/YZFpqf96TKY7r6xdz3sL1SxG+j+fNBcmw7EdhdKP45x4ZPEwlCmVpMaGCT/0b+jyIYjKUwtL4Ifnl5GYqbGLn5l6OWTmBWuH9hraMrUujghBTVH1CTk+YirmsjIrS+eykFL4SOegPZwpK9kzqnVCMxgJyzIVCPnV+W3qxKT9bWn86DRtmYSnQGPiQHkVnkbjmQIM5DITt2DETjmMmmRnaZzxOOIsy90f45cFBOuGOmLHYL9QAI6wkgNIhzG3oCEasCTeLkxL+xJRWne+/EfhpVm7G+RefyF99HusklCXZhoH38DjOPJgmnZ/uH9JJHAHe35Cyn5mhuEpTmZTswBlRFKE6ws5hS3q3cGyczy2AmbR6BsQ5zgf3Slxri9QlKHW7mTGJdoGjyKjIVDChrOA4aCjcwms6rsV+FzDPad5dTPGoaWL7kTbcTE5UuNmGEWdiMK/zDHVT/TRcjlSvKZof/xhN+me+cuvNHOpJ8HJ/wzDXaFXiIk+5MPhzksZdTN8787yZdTWzjornSeE8jGeFbTjb6ZG3QWYL3bC6RlJLKSRfk330eQ7fw9VNAZluuADidOGx8NS9VAJPjG7VK4mM8MhJvNNjLK/HRl/b4QESJseAHr0H0zTojtJUSDGE10LLOu8gxBVJ13Z8dcSgrZdJ6HBhaPiG2y2N40AklEHlSeDBYgAu3hpjh8/IvFCuV8S+28lz35uBaXqs9Q+swy481/4HPuVGxQ==" style="">multiple click events</a>
+          </li>
+      </ul>
+      <p>
+        There are many ways to create animations in the browser besides JavaScript, like <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/animate" target="_blank">SVG animations</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations" target="_blank">CSS animations</a>, but JavaScript is likely the most flexible and expressive ways to approach generative/interactive animations in the browser. The following netnet examples make use of the DOM API to demonstrate a few <b>generative animation</b> core concepts:
+      </p>
+
+      <ul>
+        <li>
+          <a target="_blank" href="https://netnet.studio/?ex=59" style="">animation loop</a> (recursive function)
+        </li>
+        <li>
+          <a target="_blank" href="https://netnet.studio/?ex=66" style="">DVD logo bounce</a>
+        </li>
+        <li>
+          <a target="_blank" href="https://netnet.studio/?layout=dock-left#code/eJx1Vl2P2zYQfI5/xSItYLlxbKco+tD6DmiLAi2QPl2Bnt9CSyuZgESqJOWPBvffO0tRknVBgDvA0nKXM7OzpPY+3Gp+XBDh7xuvK0Of8YuotV4Hbc1PpI7e1l3gn/H+ZbHYb1PKYn+0xe1x8Qbv97qpSBcPb6XC21Ru73On2/AY6223dGLH9OfyzJQ7FbggRWfltDrWTEG5ioM2FYUTk25UxcQ1N2wCANgzD0UuLAUqi9fkOXQtndndyOtGq9pRsLFArXwgvqqmRe3McckSGmqEk5qipXXUWCArOChde7KGLliw9NhFAOFZkK9idm4NKle6pAcqbN4JwM2/HSA8AW4erMuWUcblKmpAVHOg65pua7qs6STbd6bgUhsIUNX2qOpRBT8m5CjL7nmdfhzWZMsSdJ+HH4dxqVOF7jzgaGPY/aOLgE3ohzEOOYJCeBffzHqhl3WNXjCaMapZdiaXvkMDnZ/oorHEmvpGrjNDsjU5r6POjY0dmnqmPdVWFeCWqUppQ19qz9Q6PmsL0F/pQS/1iKQHlq2SM2lQ5zXn72P4TZJsiP7BujqFMUyDkoijjZvLLHmIHlL09DoZDJQphIWhI1cgKISUAXvBmlb1z5z1RDA0Mz4pOmMUbVW20scPu90OO/64SzHA+Vs3bLuQpcy1rFxNiPoWO4auHuR9wlRB2Qv+lHTIjhNNd1QguXhZOQtTwgO9dliqYWv69Ub5CXXQVhmHKe+s6g4oUDzFpw1FncFS5gthxDxlXC3b+hYdkhFL+8e5jHujdYJGu7zmlNqTfAcjb3Yf7suVz+I6qSn/1x5cv81Qbk0aT3o03JQeiUleYp7QteLlLPlsRY02cOtJ1TE6ZXv9X9zJdk4IoVRvpyx5bLUW4VWeg16ILp+llyoPPcrfnp7G/vjh4PNoaQ31cN6lYy3YdsquucRBYR08jiNOIS7lVXSkdonQamawKNbDOD/vh1mYivbnQi8J8DZdrSJuaQV+y5jGW2HKgAk6z/QXAGy8Nlns00oQ56qWHDhh0uc6JY5+zKJRonkGH8auraQ2EAQtZ4QOU+rxFkumo69vuGxMhfZB4XSi0tnm3k+w5WxeiIuKh273PhtnJaEVCs6GiN+s5hVUUcRlUdDszj9xN+E50hs6cIXwr0X6bqDwLlaaITSCR2baFl3OPRevGtxtttL5XN/bekrla85tmLUlt37YUcMGrAph/grMa6McRqMcRqMc0qLbwOWu8pzLYTEh6tpCQMa5Gno+DQ1GBhMjD4YvfS99ypUTOH5sbKLXH+jTt5+vL+310xdxDEYfvo3hl+m+i+s4/BKC00d8yWRL7/LlmpbxzvJbuZDd+8jcdfGM3u424tfVV9JVHSQdd6Z8MIELhsR1yI6fNblFubtcmOX3M5T8CHMypjVbyhWJAvFik3X4pkqfSvtt/Kj6H6LQ/+4=" style="">circular motion</a>
+        </li>
+        <li>
+          <a target="_blank" href="https://netnet.studio/?layout=dock-left#code/eJx1VVFv0zAQfqa/4jSQkkJoOyR4gG4SD0ggwRNIrG9zk0tywrGD7TStpv13zo6TrBuT8pD4u/vu7rvzZWvdSeL1AoCfl5YqBXf8BtBqS460+ghib7XsHH7i8/vFYruOLovtXhen68ULPt9SUwEVVxee4SLSbW1uqHXXgW+9hhoNwrfkgJAb4bAAAQdhSOwlghOmQkeqAlcjUCMqBJTYoHKcgD7gSNKjJ6g0H4NF17VwQHMCSw0JacDpQCCFdYBH0bTMnRos0UMjh6vFjJbaQKM5swKdIGlBK+jZILEcxSfE3z7zZfDOtWLmikq4gkLnnU9w9bfjFH5yurnTJk2CjMkyaAAg0cExg1MGfQa1D9+pAktSLEAl9V7ISQU7OeRMi+Ymiy+7DHRZcrk348tuMjWioM5yOpvpiBVwYjo5k58SKVl+ZP0nActO5b7VXDblNfTEJlrJE5hOjc5a5ZgFaRsdmjK3iSxILQouJxWVIAVP5UZoDR5Ic57PyD6oO2UyJJYu4zDCKAgXRUqh+U2FYy3hXYBfRJVG9CtSVbsJhlE8xrlzq/7MeUR3Ea0fO3MFQhW+CgV7rLhAX5BQXL3PNVoN35gOhfA9OasnomcVhUkqW9+6y81mwxE/bCLG6fyiBnXn0uiZecvlnBHP+dzFlgxPUaNDKGJaFAVXxVBOJu+kMBHMZoLe37k/OPSAe8HTZ0NhVjRMKittyNWNt+uN5jhD3TPB2RXz3Xwci8EcWzfctt4T+IztAwofLo7vQcguxBBFEfbOeJOHWQ5wdBxO3vB4rzbv41lkCYeX8exMZ+6xb/84Rm/HkYhGR8Z+CFevLKk0BFjC64k1eD/DuptYdxPrLhqdRtZc2/+z7hazGl1b+H6G2xKXr2+i7kzYNz23I3wo7Ac9bPT1Uxt28kpi6Tjm7au74317vH2CO90O8GmC7+cdEezQfXbO0J4XfppYkycZJOGe27XfW+ZtqNx0Ya7XmxU7Jctn3IV03p0n1P9XwkCWpmPvsP1zzXQPfLnzXw6s5HfiAeZbnCZ+rTBBWAbejn898Y+yXYd/zz+IzhNP">spirallling motion</a>
+        </li>
+      </ul>
+
+      <h5>Other "creative" Web APIs</h5>
+
+      <p>There are also loads of APIs of particular interest to artists. For example the <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API" rel="nofollow">Canvas API</a> gives you access to a series of functions for creating algorithmic/generative 2D graphics (to learn more check out MDN's <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial" rel="nofollow">Canvas tutorial</a> or Josh Marinacci's <a target="_blank" href="https://joshondesign.com/p/books/canvasdeepdive/toc.html" rel="nofollow">HTML5 Canvas Deep Dive</a>), while the <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API" rel="nofollow">WebGL API</a> (an API closely resembling <a target="_blank" href="https://en.wikipedia.org/wiki/OpenGL" rel="nofollow">OpenGL</a>) can be used to generate 3D graphics (I wouldn't recommend trying to write too much WebGL from scratch, but here's an <a target="_blank" href="https://developer.mozilla.org/en-US/docs/web/api/webgl_api/tutorial/getting_started_with_webgl" rel="nofollow">introduction to WebGL</a> if you're curious). There's also a <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API" rel="nofollow">Web Audio API</a> which can be used to create algorithmic/generative audio (checkout my series of <a target="_blank" href="https://netart.rocks/notes/web-audio/" rel="nofollow">interactive notes on the Web Audio API</a> to learn more). There are loads more Web APIs (too many to mention here), you can find a <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API" rel="nofollow">full list of Web APIs</a> on MDN.</p>
+
+      <hr>
+
+      <h3>REST APIs</h3>
+
+      <p>
+        As discussed in the <a href="/notes/world-wide-web/">World Wide Web</a> notes, when we visit a website our browser makes an HTTP request for that HTML as well as subsequent HTTP requests any assets (fonts, images, videos, etc) linked in the HTML page. The difference between a web "page" and a web "app" is the ability to dynamically change the content of our site through user interaction and other events (using the DOM API). We can use a couple of other Web APIs to create our own HTTP requests and dynamically load data from our own server or from servers hosted elsewhere on the web. These are the core technologies that ushered in the era of Web 2.0, sometimes grouped under the label <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX" target="_blank">Ajax</a> (or Asynchronous JavaScript).
+      </p>
+
+      <p>
+        The most modern approach to making custom HTTP requests in your JavaScript is using the web browser's <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API" target="_blank">Fetch API</a>, and what it is most often used for is interfacing with <a target="_blank" href="https://apilist.fun" rel="nofollow">other 3rd party REST APIs</a> hosted on other servers elsewhere on the Web. A 3rd party (meaning operated by someone else) REST API is usually what folks are talking about when you hear them refer to things like the "YouTube API" or the "Twitter API". These are APIs written by other companies or organizations which give other developers access to data or resources hosted on their servers. The way we use these APIs is sending HTTP requests to their servers requesting specific data which the server then sends back to us, usually in a format known as <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a>.
+      </p>
+
+      <p>
+        I've got a tutorial on making <a target="_blank" href="https://www.youtube.com/watch?v=MbbGJAGLSU0" rel="nofollow">HTTP Requests</a> (~30mins) in JavaScript (using old and new methods) as well as how to use these methods to <a target="_blank" href="https://www.youtube.com/watch?v=8CeyA1qpPmw" rel="nofollow">request data from REST APIs</a> (~1hr), as well as a few netnet examples demoing the basics:
+      </p>
+
+      <ul>
+        <li>
+          <a target="_blank" href="https://netnet.studio/?ex=60">XMLHttpRequest</a> (old way)
+        </li>
+        <li>
+          <a target="_blank" href="https://netnet.studio/?ex=61" style="">Fetch API: <i style="font-size:22px;">then(callback)</i></a> (newer way)
+        </li>
+        <li>
+          <a target="_blank" href="https://netnet.studio/?ex=62" style="">Fetch API: <i style="font-size:22px;">async/await</i></a> (newest way)
+        </li>
+      </ul>
+
+      <hr>
+
+      <h3>Libraries</h3>
+
+      <p>
+        <b>(aka "packages", aka "modules", aka "dependencies")</b>
+      </p>
+
+      <p>When a developer writes an application using any number of Web APIs that's still generally considered "vanilla" JavaScript. It's usually when they've included a JS library into their project that they can no longer make this claim. A library is a collection of objects or functions another individual or group created for solving a set of related tasks. These are often built on top of Web APIs in the interest of making these APIs even easier to work with by either "abstracting" some of it's functionality into "higher level" functions and/or adding more functionality to them.</p>
+
+      <p>
+        <b>importing libraries</b>
+      </p>
+
+      <p>
+        Libraries are not built into the browser, instead they're stored in their own .js files, which you can include (or import) in your project a number of different ways. On the web, we traditionally do this by including a <code>&lt;script src="path/to/library.js"&gt;&lt;/script&gt;</code> tag in our HTML page with it's <code>src</code> attribute pointing to the .js file. This can be a file locally hosted in your project, or hosted on a server somewhere else (like a <a target="_blank" href="https://en.wikipedia.org/wiki/Content_delivery_network" rel="nofollow">CDN</a>). Another method is to use the <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import" rel="nofollow">import</a> statement to include a library directly in your JavaScript code. When you're writing JavaScript code outside of the browser using node.js you can use the <code>require(path/to/library.js)</code> function to import libraries (also known as "modules" in node.js lingo).
+      </p>
+
+      <p>
+        <b>the source code: inside the library</b>
+      </p>
+      <p>
+        If you were to open up one these libraries (by viewing the .js file itself in your code editor or in a browser) you'll see all the code the developers behind the library wrote, check out the <a target="_blank" href="https://raw.githubusercontent.com/mrdoob/three.js/dev/build/three.js" rel="nofollow">code behind the three.js</a> library for example, although it's much more common to find this code "minified" (often designated by the .min.js in the file name's extension) or "compressed" to make the file size smaller and more efficient (as is the case with the <a target="_blank" href="https://github.com/mrdoob/three.js/blob/dev/build/three.min.js">three.min.js</a> file). With large libraries like three.js, it's common to actually separate the source code into numerous different <a target="_blank" href="https://github.com/mrdoob/three.js/tree/dev/src">files and folders</a> to make them easier to work on and collaborate, before "building" or "compiling" all that code into a single file for distribution and use by others.
+      </p>
+
+      <p>
+        <b>always read the documentation</b>
+      </p>
+
+      <p>It takes a fairly experienced coder to be able to read through the source code of another JavaScript library and be able to understand how it works. This is why the developers behind most libraries also spend time to write "documentation", which usually explain what you need to do to get started using the library as well as a list of all the objects and/or functions built into it. Because of the fact that you (as the user of the library) only ever concern yourself with these functions (there's no need to look a the source code unless you plan on contributing to the library itself) we also often refer to a libraries external functions as it's "API". Some libraries don't have great documentation, but others go above and beyond to include tutorials, examples and more.</p>
+
+      <p>
+        Below are some exapmles of JavaScript libraries popular among artists...
+      </p>
+
+      <h5>Tone.js</h5>
+
+      <p>The Web Audio API, for example, can be used to generate sounds, but it has no concept of "music" (things like "notes" and "rythms"), this is why <a target="_blank" href="https://yotammann.info/about" rel="nofollow">Yotam Mann</a> (with help from <a target="_blank" href="https://github.com/Tonejs/Tone.js/graphs/contributors">dozens of other</a> folks) created <a target="_blank" href="https://tonejs.github.io/" rel="nofollow">Tone.js</a> a JavaScript library built on top of the Web Audio API with functions for creating the kinds of instruments and effects you might find in music applications. Here's a netnet example of a <a href="https://netnet.studio/#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" target="_blank">basic Tone.js sketch</a>.
+      </p>
+
+      <h5>three.js</h5>
+
+      <p>
+        Another example is <a target="_blank" href="https://threejs.org/" rel="nofollow">three.js</a> a library built on top of the WebGL API created by <a target="_blank" href="https://twitter.com/mrdoob" rel="nofollow">mr.doob</a> (aka Ricardo Cabello, with help from <a target="_blank" href="https://github.com/mrdoob/three.js/graphs/contributors">over a thousand other folks</a>). If you want to create a <a target="_blank" href="https://mdn.github.io/webgl-examples/tutorial/sample5/" rel="nofollow">spinning cube</a> with WebGL, you'll have to write <a target="_blank" href="https://github.com/mdn/webgl-examples/blob/gh-pages/tutorial/sample5/webgl-demo.js">hundreds of lines of code</a>, but to do the same thing with three.js only takes a couple dozen lines, here's a <a href="<a target="_blank" href="https://netnet.studio/?c=Q&amp;layout=dock-left">basic three.js example</a> in netnet.
+      </p>
+
+      <h5>hydra</h5>
+
+      <p>
+        Similar to how Tone.js abstracts the Web Audio API for the specific purpose of using it to create musical works, three.js abstracts the WebGL API for the specific purpose of creating 3D scenes, but the WebGL API can be used to do other stuff as well, like process video and other realtime video effects. Another library that abstracts the WebGL API (as well as another Web API called <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API" target="_blank">WebRTC</a>) for these realtimme video purposes is <a href="https://hydra.ojack.xyz" target="_blank">Hydra</a> by <a href="https://ojack.xyz/" target="_blank">Olivia Jack</a> (and a couple dozen <a href="https://github.com/hydra-synth/hydra/graphs/contributors" target="_blank">other folks</a>). You can learn more about it on their <a href="https://github.com/hydra-synth/hydra#Getting-Started" target="_blank">GitHub</a> as well as the <a href="https://hydra-book.glitch.me/#/" target="_blank">Hydra Book</a> and this simple <a href="https://ojack.xyz/hydra-functions/" target="_blank">functions reference page</a>. Hydra is predominently used as a realtime performance tool and so it's most commonly <i>performed</i> with using the online <a href="https://hydra.ojack.xyz" target="_blank">Hydra editor</a>, but like any JavaScript library you can incorporate it into anything you make on the Web yourself,
+        here's <a href="https://netnet.studio/?c=V&layout=dock-left">basic hydra example</a> in netnet which demonstrates this.
+      </p>
+
+      <h5>p5.js</h5>
+
+      <p>
+        Some libraries actually build on a number of different Web APIs, one of the most popular examples is the <a target="_blank" href="https://p5js.org/" rel="nofollow">p5.js</a> library (created by <a target="_blank" href="https://lauren-mccarthy.com/Info" rel="nofollow">Lauren McCarthy</a> with help from <a target="_blank" href="https://github.com/processing/p5.js/graphs/contributors">hundreds more</a>) is most known as a library built on the Canvas API, but it also includes functions built on the DOM, WebGL, Web Audio and other APIs. In some ways, p5.js is really more of a "framework"...
+      </p>
+
+      <hr>
+
+      <h3>Frameworks</h3>
+
+      <p>A framework is similar to a library, but is usually a bit more ambitious in scope and often tend to be a bit more opinionated. Like a library, a framework is usually contained in a .js file you need to import/include in your project before you can use it. Like libraries, it's code is written/maintained by a group of developers which often accompany their code with documentation.</p>
+
+      <p>
+        Frameworks, however, tend to be a bit bigger (sometimes built on other libraries) and more <em>specific</em> in terms of their purpose. A library like Tone.js can be used to create anything having to do with music, that could be a generative album, a video game, an interactive sound installation, a digital instrument used for live performance or even an entire DAW (<a target="_blank" href="https://en.wikipedia.org/wiki/Digital_audio_workstation" rel="nofollow">digital audio workstation</a>). A framework is usually designed to output something much more specific like a particularly type of application for example.
+      </p>
+
+      <p>
+        Unlike libraries, a framework usually requires that you organize your code a particular way. It may require that you give your files specific names and organize them into specific folders with specific directory structures. It might also come with additional tools and scripts for testing, compiling and even distributing the work you make with it. These days it's very common to use any number of popular JavaScript frameworks to build an application, including <a target="_blank" href="https://en.wikipedia.org/wiki/AngularJS" rel="nofollow">AngularJS</a>, <a target="_blank" href="https://en.wikipedia.org/wiki/Vue.js" rel="nofollow">Vue.js</a>, <a target="_blank" href="https://en.wikipedia.org/wiki/React_(JavaScript_library)" rel="nofollow">React</a> and <a href="https://en.wikipedia.org/wiki/Comparison_of_JavaScript-based_web_frameworks" rel="nofollow">many others</a>.
+      </p>
+
+      <h5>A-Frame</h5>
+      <p>
+        For example <a target="_blank" href="https://aframe.io/" rel="nofollow">A-Frame</a>, is a framework for creating VR applications in HTML code (originally created by the Mozilla VR team, and now maintained by Diego Marcos, Kevin Ngo, Don McCurdy and <a target="_blank" href="https://github.com/aframevr/aframe/graphs/contributors">hundreds of others</a>) it's itself built on top of the three.js library (which itself can be used to create a VR application, but can also be used to create anything having to do with 3D graphics). I've created a series of examples as part of an <a href="https://nbriz.github.io/webvr-workshop/" target="_blank">A-Frame workshop</a>.
+      </p>
+
+      <p>
+        You might also see libraries and frameworks referred to as "dependencies", because when we use libraries to create something, our work is <em>dependent</em> on that library in order to run. Like A-Frame, some libraries are themselves dependent on other libraries, and so even when a developer only imports a handful of libraries themselves, the reality is their project may be dependent on dozens of libraries. Most of the applications we use on the Internet are dependent on dozens if not hundreds of libraries* (<em>I have no evidence for this claim, this is just my personal experience</em>)
+      </p>
+
+      <hr>
+
+      <p>
+        Whether we're using popular coding frameworks or plain "vanilla" JavaScript, like all cultural production, we're always building on the works that came before us. When asked by a music journalist how he felt about others "copying" his style and "stealing" some of his "signature" moves, John Coltrane responded...
+      </p>
+
+      <blockquote cite="https://www.goodreads.com/book/show/23492802-magic-and-loss">
+        <p>...it's a big reservoir man that we all dip out of, you know [...] some of those things on there are really direct influences of listening to this cat, you see, and I don't know who he's been listening to.</p>
+        <cite>
+          John Coltrane
+        </cite>
+      </blockquote>
+
+      <p>
+        ...like Jazz, JavaScript is a big a big reservoir that all coders dip out of. All programmers copy. The difference between a novice and an experience programmer is knowing how/where/when to copy+paste effectively.
+      </p>
+
+
+
+    </article>
+
+
+    <br><br><br><br><br><br>
+
+    <script src="/js/Averigua.js"></script>
+    <script src="/js/rainbow-text.js"></script>
+    <script src="/js/fancy-chars.js"></script>
+    <script>
+      FancyText.animate(document.querySelector('header > h1'), 200, 0.2)
+
+      Array.from(document.querySelectorAll('a'))
+        .filter(a => a.className !== 'button')
+        .forEach(a => RainbowText.hoverShimmer(a))
+    </script>
+  </body>
+</html>
