@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Post-Internet</title>
+    <meta name="description" content="a class website for Post-Internet (CP 1022-009) at the School of the Art Institute of Chicago">
+    <meta name="author" content="Nick Briz">
+    <meta charset="utf-8">
+
+    <!-- social media stuff -->
+    <meta property="og:title" content="Post-Internet">
+    <meta property="og:url" content="https://netart.rocks/saic/artware">
+    <meta property="og:image" content="https://netart.rocks/images/vaporwave.gif">
+    <meta property="og:description" content="a class website for Post-Internet (CP 1022-009) at the School of the Art Institute of Chicago">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:site_name" content="https://netart.rocks/saic/post-net">
+    <meta name="twitter:site" content="@nbriz">
+
+    <link rel="icon" type="image/png"  href="https://netart.rocks/images/icon.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" type="image/png"  href="https://netart.rocks/images/icon.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style media="screen">
+      .double {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .double p {
+        max-width: 440px;
+      }
+
+      .double div {
+        text-align: center;
+      }
+
+      @media (max-width: 986px) {
+        .double { flex-direction: column; }
+        .double p { margin: 40px auto; }
+      }
+
+      i {
+        font-size: 1.2em;
+      }
+
+      .image-caption {
+        text-align: center;
+        color: #777;
+      }
+    </style>
+  </head>
+  <body>
+
+    <header>
+      <h1>wikipeida</h1>
+    </header>
+
+    <br><br>
+
+    <article>
+      <h4>Before Class...</h4>
+      <ul>
+        <li>
+          create a <a href="https://en.wikipedia.org/w/index.php?title=Special:CreateAccount" target="_blank">wikipedia account</a>
+        </li>
+        <li>
+          read pages 7-10 of the <a href="https://upload.wikimedia.org/wikipedia/commons/c/cf/AFQuickGuideforEditingWikipedia_January2020.pdf" target="_blank">ART+FEMINISM: Quick Guide for Editing on Wikipedia</a>
+        </li>
+      </ul>
+      <!-- <iframe class="rwd" height="420" src="https://www.youtube.com/embed/lESeJ3EViCo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+    </article>
+
+
+    <br><br><br><br>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <script src="/js/Averigua.js"></script>
+    <script src="/js/rainbow-text.js"></script>
+    <script src="/js/fancy-chars.js"></script>
+    <script>
+      FancyText.animate(document.querySelector('header > h1'), 200, 0.2)
+
+      Array.from(document.querySelectorAll('h3'))
+        .forEach(h3 => FancyText.animate(h3, 5000, 0.2))
+
+      Array.from(document.querySelectorAll('a'))
+        .filter(a => a.className !== 'button')
+        .forEach(a => RainbowText.hoverShimmer(a))
+    </script>
+  </body>
+</html>
