@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Internet Art II</title>
+    <meta name="description" content="a class website for Internet Art II (MAAD 23632) at the University of Chicago">
+    <meta name="author" content="Nick Briz">
+    <meta charset="utf-8">
+
+    <!-- social media stuff -->
+    <meta property="og:title" content="Internet Art II">
+    <meta property="og:url" content="https://netart.rocks/uchicago">
+    <meta property="og:image" content="https://netart.rocks/images/netartdiagram.gif">
+    <meta property="og:description" content="a class website for Internet Art II (MAAD 23632) at the University of Chicago">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:site_name" content="https://netart.rocks/uchicago">
+    <meta name="twitter:site" content="@nbriz">
+
+    <link rel="icon" type="image/png"  href="https://netart.rocks/images/icon.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style media="screen">
+      .double {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .double p {
+        max-width: 440px;
+      }
+
+      .double div {
+        text-align: center;
+      }
+
+      @media (max-width: 986px) {
+        .double { flex-direction: column; }
+        .double p { margin: 40px auto; }
+      }
+    </style>
+  </head>
+  <body>
+
+
+    <article>
+      <h3>Libraries</h3>
+
+      <p>
+        <b>(aka "packages", aka "modules", aka "dependencies")</b>
+      </p>
+
+      <p>When a developer writes an application using any number of Web APIs that's still generally considered "vanilla" JavaScript. It's usually when they've included a JS library into their project that they can no longer make this claim. A library is a collection of objects or functions another individual or group created for solving a set of related tasks. These are often built on top of Web APIs in the interest of making these APIs even easier to work with by either "abstracting" some of it's functionality into "higher level" functions and/or adding more functionality to them.</p>
+
+      <p>
+        <b>importing libraries</b>
+      </p>
+
+      <p>
+        Libraries are not built into the browser, instead they're stored in their own .js files, which you can include (or import) in your project a number of different ways. On the web, we traditionally do this by including a <code>&lt;script src="path/to/library.js"&gt;&lt;/script&gt;</code> tag in our HTML page with it's <code>src</code> attribute pointing to the .js file. This can be a file locally hosted in your project, or hosted on a server somewhere else (like a <a target="_blank" href="https://en.wikipedia.org/wiki/Content_delivery_network" rel="nofollow">CDN</a>). Another method is to use the <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import" rel="nofollow">import</a> statement to include a library directly in your JavaScript code. When you're writing JavaScript code outside of the browser using node.js you can use the <code>require(path/to/library.js)</code> function to import libraries (also known as "modules" in node.js lingo).
+      </p>
+
+      <p>
+        <b>the source code: inside the library</b>
+      </p>
+      <p>
+        If you were to open up one these libraries (by viewing the .js file itself in your code editor or in a browser) you'll see all the code the developers behind the library wrote, check out the <a target="_blank" href="https://raw.githubusercontent.com/mrdoob/three.js/dev/build/three.js" rel="nofollow">code behind the three.js</a> library for example, although it's much more common to find this code "minified" (often designated by the .min.js in the file name's extension) or "compressed" to make the file size smaller and more efficient (as is the case with the <a target="_blank" href="https://github.com/mrdoob/three.js/blob/dev/build/three.min.js">three.min.js</a> file). With large libraries like three.js, it's common to actually separate the source code into numerous different <a target="_blank" href="https://github.com/mrdoob/three.js/tree/dev/src">files and folders</a> to make them easier to work on and collaborate, before "building" or "compiling" all that code into a single file for distribution and use by others.
+      </p>
+
+      <p>
+        <b>always read the documentation</b>
+      </p>
+
+      <p>It takes a fairly experienced coder to be able to read through the source code of another JavaScript library and be able to understand how it works. This is why the developers behind most libraries also spend time to write "documentation", which usually explain what you need to do to get started using the library as well as a list of all the objects and/or functions built into it. Because of the fact that you (as the user of the library) only ever concern yourself with these functions (there's no need to look a the source code unless you plan on contributing to the library itself) we also often refer to a libraries external functions as it's "API". Some libraries don't have great documentation, but others go above and beyond to include tutorials, examples and more.</p>
+
+      <p>
+        Below are some exapmles of JavaScript libraries popular among artists...
+      </p>
+
+      <h5>Tone.js</h5>
+
+      <p>The Web Audio API, for example, can be used to generate sounds, but it has no concept of "music" (things like "notes" and "rythms"), this is why <a target="_blank" href="https://yotammann.info/about" rel="nofollow">Yotam Mann</a> (with help from <a target="_blank" href="https://github.com/Tonejs/Tone.js/graphs/contributors">dozens of other</a> folks) created <a target="_blank" href="https://tonejs.github.io/" rel="nofollow">Tone.js</a> a JavaScript library built on top of the Web Audio API with functions for creating the kinds of instruments and effects you might find in music applications. Here's a netnet example of a <a href="https://netnet.studio/#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" target="_blank">basic Tone.js sketch</a>.
+      </p>
+
+      <h5>three.js</h5>
+
+      <p>
+        Another example is <a target="_blank" href="https://threejs.org/" rel="nofollow">three.js</a> a library built on top of the WebGL API created by <a target="_blank" href="https://twitter.com/mrdoob" rel="nofollow">mr.doob</a> (aka Ricardo Cabello, with help from <a target="_blank" href="https://github.com/mrdoob/three.js/graphs/contributors">over a thousand other folks</a>). If you want to create a <a target="_blank" href="https://mdn.github.io/webgl-examples/tutorial/sample5/" rel="nofollow">spinning cube</a> with WebGL, you'll have to write <a target="_blank" href="https://github.com/mdn/webgl-examples/blob/gh-pages/tutorial/sample5/webgl-demo.js">hundreds of lines of code</a>, but to do the same thing with three.js only takes a couple dozen lines, here's a <a href="<a target="_blank" href="https://netnet.studio/?c=Q&layout=dock-left">basic three.js example</a> in netnet.
+      </p>
+
+      <h5>hydra</h5>
+
+      <p>
+        Similar to how Tone.js abstracts the Web Audio API for the specific purpose of using it to create musical works, three.js abstracts the WebGL API for the specific purpose of creating 3D scenes, but the WebGL API can be used to do other stuff as well, like process video and other realtime video effects. Another library that abstracts the WebGL API (as well as another Web API called <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API" target="_blank">WebRTC</a>) for these realtimme video purposes is <a href="https://hydra.ojack.xyz" target="_blank">Hydra</a> by <a href="https://ojack.xyz/" target="_blank">Olivia Jack</a> (and a couple dozen <a href="https://github.com/hydra-synth/hydra/graphs/contributors" target="_blank">other folks</a>). You can learn more about it on their <a href="https://github.com/hydra-synth/hydra#Getting-Started" target="_blank">GitHub</a> as well as the <a href="https://hydra-book.glitch.me/#/" target="_blank">Hydra Book</a> and this simple <a href="https://ojack.xyz/hydra-functions/" target="_blank">functions reference page</a>. Hydra is predominently used as a realtime performance tool and so it's most commonly <i>performed</i> with using the online <a href="https://hydra.ojack.xyz" target="_blank">Hydra editor</a>, but like any JavaScript library you can incorporate it into anything you make on the Web yourself,
+        here's <a href="https://netnet.studio/?c=V&layout=dock-left">basic hydra example</a> in netnet which demonstrates this.
+      </p>
+
+      <h5>p5.js</h5>
+
+      <p>
+        Some libraries actually build on a number of different Web APIs, one of the most popular examples is the <a target="_blank" href="https://p5js.org/" rel="nofollow">p5.js</a> library (created by <a target="_blank" href="https://lauren-mccarthy.com/Info" rel="nofollow">Lauren McCarthy</a> with help from <a target="_blank" href="https://github.com/processing/p5.js/graphs/contributors">hundreds more</a>) is most known as a library built on the Canvas API, but it also includes functions built on the DOM, WebGL, Web Audio and other APIs. In some ways, p5.js is really more of a "framework"...
+      </p>
+
+      <hr>
+
+      <h3>Frameworks</h3>
+
+      <p>A framework is similar to a library, but is usually a bit more ambitious in scope and often tend to be a bit more opinionated. Like a library, a framework is usually contained in a .js file you need to import/include in your project before you can use it. Like libraries, it's code is written/maintained by a group of developers which often accompany their code with documentation.</p>
+
+      <p>
+        Frameworks, however, tend to be a bit bigger (sometimes built on other libraries) and more <em>specific</em> in terms of their purpose. A library like Tone.js can be used to create anything having to do with music, that could be a generative album, a video game, an interactive sound installation, a digital instrument used for live performance or even an entire DAW (<a target="_blank" href="https://en.wikipedia.org/wiki/Digital_audio_workstation" rel="nofollow">digital audio workstation</a>). A framework is usually designed to output something much more specific like a particularly type of application for example.
+      </p>
+
+      <p>
+        Unlike libraries, a framework usually requires that you organize your code a particular way. It may require that you give your files specific names and organize them into specific folders with specific directory structures. It might also come with additional tools and scripts for testing, compiling and even distributing the work you make with it. These days it's very common to use any number of popular JavaScript frameworks to build an application, including <a target="_blank" href="https://en.wikipedia.org/wiki/AngularJS" rel="nofollow">AngularJS</a>, <a target="_blank" href="https://en.wikipedia.org/wiki/Vue.js" rel="nofollow">Vue.js</a>, <a target="_blank" href="https://en.wikipedia.org/wiki/React_(JavaScript_library)" rel="nofollow">React</a> and <a href="https://en.wikipedia.org/wiki/Comparison_of_JavaScript-based_web_frameworks" rel="nofollow">many others</a>.
+      </p>
+
+      <h5>A-Frame</h5>
+      <p>
+        For example <a target="_blank" href="https://aframe.io/" rel="nofollow">A-Frame</a>, is a framework for creating VR applications in HTML code (originally created by the Mozilla VR team, and now maintained by Diego Marcos, Kevin Ngo, Don McCurdy and <a target="_blank" href="https://github.com/aframevr/aframe/graphs/contributors">hundreds of others</a>) it's itself built on top of the three.js library (which itself can be used to create a VR application, but can also be used to create anything having to do with 3D graphics). I've created a series of examples as part of an <a href="https://nbriz.github.io/webvr-workshop/" target="_blank">A-Frame workshop</a>.
+      </p>
+
+      <p>
+        You might also see libraries and frameworks referred to as "dependencies", because when we use libraries to create something, our work is <em>dependent</em> on that library in order to run. Like A-Frame, some libraries are themselves dependent on other libraries, and so even when a developer only imports a handful of libraries themselves, the reality is their project may be dependent on dozens of libraries. Most of the applications we use on the Internet are dependent on dozens if not hundreds of libraries* (<em>I have no evidence for this claim, this is just my personal experience</em>)
+      </p>
+    </article>
+
+
+    <br><br><br><br><br><br>
+
+    <script src="/js/Averigua.js"></script>
+    <script src="/js/rainbow-text.js"></script>
+    <script src="/js/fancy-chars.js"></script>
+    <script>
+      // FancyText.animate(document.querySelector('header > h1'), 200, 0.2)
+      //
+      // Array.from(document.querySelectorAll('h3'))
+      //   .forEach(h3 => FancyText.animate(h3, 5000, 0.2))
+      //
+      // Array.from(document.querySelectorAll('a'))
+      //   .filter(a => a.className !== 'button')
+      //   .forEach(a => RainbowText.hoverShimmer(a))
+    </script>
+  </body>
+</html>
