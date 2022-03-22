@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Post-Internet</title>
+    <meta name="description" content="a class website for Post-Internet (CP 1022-009) at the School of the Art Institute of Chicago">
+    <meta name="author" content="Nick Briz">
+    <meta charset="utf-8">
+
+    <!-- social media stuff -->
+    <meta property="og:title" content="Post-Internet">
+    <meta property="og:url" content="https://netart.rocks/saic/artware">
+    <meta property="og:image" content="https://netart.rocks/images/vaporwave.gif">
+    <meta property="og:description" content="a class website for Post-Internet (CP 1022-009) at the School of the Art Institute of Chicago">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:site_name" content="https://netart.rocks/saic/post-net">
+    <meta name="twitter:site" content="@nbriz">
+
+    <link rel="icon" type="image/png"  href="https://netart.rocks/images/icon.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" type="image/png"  href="https://netart.rocks/images/icon.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style media="screen">
+      .double {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .double p {
+        max-width: 440px;
+      }
+
+      .double div {
+        text-align: center;
+      }
+
+      @media (max-width: 986px) {
+        .double { flex-direction: column; }
+        .double p { margin: 40px auto; }
+      }
+
+      i {
+        font-size: 1.2em;
+      }
+    </style>
+  </head>
+  <body>
+
+    <header>
+      <h1>Everything is a Remix</h1>
+    </header>
+
+    <br><br>
+
+    <article>
+
+      <iframe class="rwd" height="420" src="https://www.youtube.com/embed/MZ2GuvUWaP8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+      <iframe class="rwd" height="420" src="https://www.youtube.com/embed/HhMar_eYnNY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+      <iframe class="rwd" height="420" src="https://www.youtube.com/embed/wq5D43qAsVg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+      <iframe class="rwd" height="420" src="https://www.youtube.com/embed/yAmmtCJxJJY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    </article>
+
+
+    <br><br><br><br>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <script src="/js/Averigua.js"></script>
+    <script src="/js/rainbow-text.js"></script>
+    <script src="/js/fancy-chars.js"></script>
+    <script>
+      FancyText.animate(document.querySelector('header > h1'), 200, 0.2)
+
+      Array.from(document.querySelectorAll('h3'))
+        .forEach(h3 => FancyText.animate(h3, 5000, 0.2))
+
+      Array.from(document.querySelectorAll('a'))
+        .filter(a => a.className !== 'button')
+        .forEach(a => RainbowText.hoverShimmer(a))
+    </script>
+  </body>
+</html>
