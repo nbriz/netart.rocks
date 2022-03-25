@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Internet Travelogue</title>
+    <meta name="description" content="A journey to the center of the Internet, with artistic observations along the way">
+    <meta name="author" content="Nick Briz">
+    <meta charset="utf-8">
+
+    <!-- social media stuff -->
+    <meta property="og:title" content="Post-Internet">
+    <meta property="og:url" content="https://netart.rocks/saic/artware">
+    <meta property="og:image" content="https://netart.rocks/images/vaporwave.gif">
+    <meta property="og:description" content="A journey to the center of the Internet, with artistic observations along the way">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:site_name" content="https://netart.rocks/saic/post-net">
+    <meta name="twitter:site" content="@nbriz">
+
+    <link rel="icon" type="image/png"  href="https://netart.rocks/images/icon.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" type="image/png"  href="https://netart.rocks/images/icon.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style media="screen">
+      .double {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .double p {
+        max-width: 440px;
+      }
+
+      .double div {
+        text-align: center;
+      }
+
+      @media (max-width: 986px) {
+        .double { flex-direction: column; }
+        .double p { margin: 40px auto; }
+      }
+
+      i {
+        font-size: 1.2em;
+      }
+
+      .flex > div {
+        width: 50%;
+      }
+
+      .bold-step {
+        font-size: 32px;
+        line-height: 1.7;
+        font-family: "ivar-text", "Georgia", serif;
+      }
+    </style>
+  </head>
+  <body>
+
+    <header>
+      <h1>The Internet</h1>
+    </header>
+
+    <br><br>
+
+    <article>
+      <blockquote cite="https://www.youtube.com/watch?v=v8IlNpefM6s">
+        <p>
+          Internet \in"ter*net, n. A deeply misunderstood technology upon which we increasingly depend
+        </p>
+        <cite>
+          <a href="https://www.youtube.com/watch?v=v8IlNpefM6s" target="_blank">Julian Oliver & Danja Vasiliev</a>
+        </cite>
+      </blockquote>
+
+      <p>
+        The Internet is often described as a "cloud", an amorphous entity that is everywhere and nowhere at the same time. This sort of magical thinking does us a disservice as <a href="https://en.wikipedia.org/wiki/Netizen" target="_blank">netizens</a>. If we hope to do meaningful work on/about the Internet that also speaks to living in a world mediated by the Internet, it would help if we knew what the Internet really <i>is</i>.
+      </p>
+
+      <p>
+        We can approach answering this question from a number of different vector views: its politics, its culture, its history (see links/references at the end of these notes for more) etc. In this lesson we'll be exploring the Internet's infrastructure and technical protocols, in the interest of understanding what it <i>literally</i> is. The Internet is actually a very real, very physical thing. You can touch it, you can smell it, it has a "delicious old odor" as <a href="https://en.wikipedia.org/wiki/Leonard_Kleinrock" target="_blank">Leonard Kleinrock</a> put it. The Internet exists in time and space, in this workshop we'll illustrate this by following a piece of our data&mdash;an Internet packet&mdash;on its journey from our computer to a server elsewhere on the Internet. Along the way we'll make various cultural, political and aesthetic observations and reference works by artists, activists and hackers informed by these perspective.
+      </p>
+
+      <br>
+
+      <img src="/images/notes/the-net/globe.png" alt="the globe">
+      <p class="grey">
+        <i>Interactive <a href="https://globe.gl/example/submarine-cables/" target="_blank">3D map</a> of the Internet</i>
+      </p>
+
+      <blockquote cite="https://www.nytimes.com/2016/06/12/books/review/virginia-heffernans-magic-and-loss.html">
+        <p>
+          The Internet is the great masterpiece of human civilization. As an artifact it challenges the pyramid, the aqueduct, the highway, the novel, the newspaper, the nation-state, the Magna Carta, Easter Island, Stonehenge, agriculture, the feature film, the automobile, the telephone, the telegraph, the television, the Chanel suit, the airplane, the pencil, the book, the printing press, the radio, the realist painting, the abstract painting, the Pill, the washing machine, the skyscraper, the elevator, and cooked meat. As an idea it rivals monotheism
+        </p>
+        <cite>
+          <a href="https://www.nytimes.com/2016/06/12/books/review/virginia-heffernans-magic-and-loss.html" target="_blank">Virginia Heffernan</a>
+        </cite>
+      </blockquote>
+
+      <h3>local networks</h3>
+
+      <p>
+        The Internet is a network of computer networks. A computer network is 1 or more computers (laptops, phones, tablets, servers, smart fridges, etc) connected together via physical cables or wireless signals such that they can exchange data. There are a few different ways of creating computer networks but the most common is by using a network <a href="https://en.wikipedia.org/wiki/Router_(computing)" target="_blank">router</a>.
+      </p>
+
+      <p>
+        Unless you're on a desktop computer connected to an <a href="https://en.wikipedia.org/wiki/Ethernet" target="_blank">ethernet cable</a>, it's most likely that you're connected to your local network (through a router) over WiFi. Data sent to and from the network's router is transmitted over the air, through the <a href="https://en.wikipedia.org/wiki/Electromagnetic_spectrum" target="_blank">electromagnetic spectrum</a>. These are frequencies of light, invisible to our eye, which can be transmitted and detected by the WiFi antennas in our devices and router.
+      </p>
+
+      <div class="flex">
+        <div>
+          <img src="/images/notes/wifi/spectrum.jpeg" alt="Electro Magnetic Spectrum">
+        </div>
+        <div>
+          <ul>
+            <li>
+              <a target="_blank" href="https://www.youtube.com/watch?v=lwfJPc-rSXw" rel="nofollow">NASA edu video</a> on the Electro Magnetic Spectrum
+            </li>
+            <li>
+              <a href="/images/notes/wifi/spectrum.gif" target="_blank">diggram of the Electromagnetic Spectrum</a>
+            </li>
+            <li>
+              netnet <a href="https://netnet.studio/?layout=dock-left#code/eJx9UsFu2zAMvecrBO/gGFhVF+gumW1gKIZdBuyw/oAiMQ5bmfIkOYkx9N9HWZ2XAUUvNkU+Pj49qglxttBthNg7M4vfHAgxKN8j7UT9eTkeAftj3Im7uj4dc8pgGK2ad+Jg4ZJTT1OIeJhvtKMIxHDNX/C5qCz2dIMRhnBdeNk0t68CNs1+itGRQNMWibvo0re5zelu0yCNUxRxHqEtvKIeCjEgtcUd/9WlLe7v60KclJ0gx9wSRkUdxzwlRTwkaI9jTPdlnSEKHS+iFQRncUYy7iy/TAbdQ7rDJW6rFeeCZhyjpfagIvwIGq1V0fkrUE//Yb4ppKXak+w5los4htTyU85yG4GO29RjgP0jFdFRteHyYSKdDiLZ8OgIttXreliLTDYwUxmQoFyzf/l6qtZciMrnCXrynq1/xAGqxfxV+D4m5cbpaWCA/DWBn3+CZSq+X/khKShTC+OkMubriVHfMfCegevaon4uP65CE3KlDhYN+HfYl7WW/0xMm3oHnsoLOhO/JeeYHgfr2UIl2u7KtIMHZiM9r5sAye70EHNiAaYBMm3/IT/kt1AvVXq4+Sn9AY6iDkw=" target="_blank">audio frequency</a> demonstration
+            </li>
+            <li>
+              United States <a href="/images/notes/wifi/FCC-chart.jpeg" target="_blank">Frequency Allocation</a> chart (<a href="/images/notes/wifi/fcc-chart-anotated.jpg" target="_blank">annotated version</a>)
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <p>
+        When you connect to a router managing a local network, it assigns you an Internet Protocol address, or IP address. If you are currently connected to a network you can find your local IP address by following these instructions for <a href="https://support.microsoft.com/en-us/windows/find-your-ip-address-in-windows-f21a9bbc-c582-55cd-35e0-73431160a1b9" target="_blank">Window</a>, <a href="https://www.hellotech.com/guide/for/how-to-find-ip-address-on-mac" target="_blank">Mac</a> or <a href="https://phoenixnap.com/kb/how-to-find-ip-address-linux" target="_blank">Linux</a>.
+      </p>
+
+      <p>
+        You can send <b>HTTP</b> requests (aka web requests) using a web "client", like your web browser, by entering a <b>URL</b> beginning with the IP address of another computer on your local network running a web "server".
+      </p>
+
+      <b class="bold-step">
+        You can send a request for a specific file by specifying the file's "path" in the URL following the destination computer's IP address.
+      </b>
+
+      <p>
+        Assuming the computer you sent this HTTP request is running a server, it will then send that file, in the form of an HTTP response, over the air to the router which will pass it along to your computer which will display it in your browser. If the <b>URL</b> generating your <b>HTTP</b> request contained a path to an <b>HTML</b> file, then your browser will "render" (aka display) the HTML code in that file as a web page (we'll discuss HTML in a bit more depth in another lesson).
+      </p>
+
+      <hr>
+
+      <a href="https://allisonburtch.github.io/log-jammer/" target="_blank">
+        <img src="/images/notes/wifi/log-jammer.png" alt="Log Jammer by Allison Burtch" style="max-width: 100%;">
+      </a>
+
+      <p>
+        Today, nearly everywhere we go, we're surrounded by data floating through the electromagnetic spectrum all around us. The devices we carry in our pockets, whether we're actively using them or not, are in constant communication with the Internet, persistently sending and receiving data through the air, whether at home, at work, riding the train or strolling through the park. This is why artist Allison Burtch created the <a href="https://allisonburtch.github.io/log-jammer/" target="_blank">Log Jammer</a>, a log which contains a custom computer and antenna which Burtch created which "jams" all the wireless communication in the area, to provide "a safe space in the woods, a right to be alone".
+      </p>
+
+      <p>
+        In my <a href="http://localhost:8000/notes/wifi-wizardry/" target="_blank">WiFi Wizardry notes</a>, you can explore other projects like this one by artists exploring the data floating all around us and engaging with the electromagnetic spectrum as an artistic medium.
+      </p>
+
+      <hr>
+
+      <p>
+        Our local network, and by extension all of our computers, become a part of the Internet the moment our router connects to a cable that is itself connected to the rest of the Internet, usually provided to us by our <a href="https://en.wikipedia.org/wiki/Internet_service_provider" target="_blank">Internet Service Provider</a>, or ISP. But not all local networks are connected to the Internet, some remain "offline".
+      </p>
+
+      <p>
+        It's easy for many of us to take our connection to the Internet for granted, but only ~50% of the planet have access to the Internet. The gap between those with and without access is often referred to as the <a href="https://en.wikipedia.org/wiki/Digital_divide" target="_blank">digital divide</a>. But this doesn't mean that the other half of the world is devoid of computer networks. In countries like Cuba, where Internet access is limited/restricted due to economic and political reasons, enterprising netizens have taken it upon themselves to build their own local networks.
+      </p>
+
+      <iframe class="rwd" height="420" src="https://www.youtube.com/embed/fTTno8D-b2E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+      <iframe class="rwd" height="420" src="https://www.youtube.com/embed/lEplzHraw3c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <br><br>
+
+      <p>
+        Inspired by these sorts of DIY networks, artists like Aram Bartholl, Dennis de Bel and Roel Roscam Abbing have created their own "offline" network projects.
+      </p>
+
+      <div class="flex" style="margin: 60px 0px;">
+        <div>
+          <img src="/images/notes/the-net/meshenger2.jpg" alt="Meshenger">
+          <p>
+            <a href="https://test.roelof.info/meshenger.html" target="_blank">Meshenger</a> by Dennis de Bel and Roel Roscam Abbing,
+          </p>
+        </div>
+        <div>
+          <img src="/images/notes/the-net/deaddrops.jpeg" alt="Dead Drops">
+          <p>
+            <a href="https://www.youtube.com/watch?v=hwohadcUv4A" target="_blank">Dead Drops</a> (a peer-2-peer "offline" network) by Aram Bartholl
+          </p>
+        </div>
+      </div>
+
+      <h3>a network of networks</h3>
+
+      <p>
+        As mentioned earlier, the Internet is a network of networks. It happens to be the largest network humanity has ever produced, wrapping itself around the entire planet. Rather than using WiFi or cats to transfer data between routers and computers, these networks are predominantly connected together using cables. When you send an email, share a post on social media, watch a stream or visit a web page, data is being sent back and fourth (nearly at the speed of light) between your computer and another which may be halfway across the planet.
+      </p>
+
+      <b class="bold-step">
+        Visit any website in your browser, right-mouse click the page and "View Source." This is the HTML code, the file itself, that just traveled the world to reach your computer, but where did this data come from? Let's map the journey it took across the Internet...
+      </b>
+
+      <p>
+        As mentioned earlier, when you sign on to a local WiFi (or ethernet) network the router assigns you a "local" IP address, the router itself has a public IP address, this address is a unique address on the Internet. When your request packets travel over the air from your computer over to your router, the IP address in that data packet changes from your local IP address to your router's public IP address, this way the HTTP response sent back from the server knows to find it's way back to you over the Internet. If you'd like to see what your public IP address is (ie. your router's IP address) do a web search for "<a href="https://duckduckgo.com/?q=what%27s+my+ip+address&t=canonical&atb=v137-1&ia=answer" target="_blank">what's my IP address</a>"
+      </p>
+
+      <p>
+        Every computer connected to the Internet has an IP addresses, including the computers running the servers which host the files, and other data, we experience on our devices, like the HTML file we just looked at when we viewed the source of a website.
+      </p>
+
+      <img src="/images/notes/the-net/url-diagram.svg" alt="URL">
+
+      <p>
+        We rarely type IP address of these other computers into our browser address bars, this is because a server could optionally register a "domain name" on the Internet's <a href="https://en.wikipedia.org/wiki/Domain_Name_System" target="_blank">Domain Name System</a> (DNS). This is like a giant phone book (or books) for the Internet that match names to numbers. Here you can find a list of all the <a href="https://www.iana.org/domains/root/servers" target="_blank">The Root Servers</a> for the DNS.
+      </p>
+
+      <b class="bold-step">
+        You can look up any domain name's IP address by using the <code>nslookup</code> command in your terminal.
+      </b>
+
+      <p>
+        If you're using a Mac or Linux computer, open your <b>Terminal</b> application (or the <b>Command Prompt</b> on Windows) and run <code>nslookup example.com</code> replacing "example.com" with your website.
+      </p>
+
+      <b class="bold-step">
+        Once you know your destination IP address, you can use that to find the server's physical location.
+      </b>
+
+      <p>
+        Do a web search for "IP address to location" or "IP to geo" and you'll come across various different services that can translate an IP address into GPS coordinates. I prefer to use <a href="https://ip-api.com/" target="_blank">https://ip-api.com/</a> because it not only gives me the GPS coordinates, but also tells me the name of the organization who owns that IP address (a helpful piece of information when creating your travelogue). Use an online mapping service to navigate to those GPS coordinates and try to find where exactly the site is hosted. The GPS coordinates aren't always precise, it'll get you to the general area, but you'll likely need to search the map for "data centers" in the area to try and find the building where your identified organization (hosting the website) is a tenant at. Large data centers often (though not always) have many different companies renting space in the data center for their servers. This means the building your looking for might not have the same name as the organization for which the IP address belongs.
+      </p>
+
+
+      <div class="flex" style="margin: 60px 0px;">
+        <div>
+          <img src="/images/notes/the-net/citizen-ex.png" alt="Citizen Ex">
+          <p>
+            <a href="https://jamesbridle.com/works/citizen-ex" target="_blank">Citizen Ex</a> by James Bridle
+          </p>
+        </div>
+        <div>
+          <img src="/images/notes/the-net/directionstolastvisitor.png" alt=""Directions ot Last Visitor" by Charles Broskoski">
+          <p>
+            <a href="/images/notes/the-net/directionstolastvisitor.png" target="_blank">Directions ot Last Visitor</a> by Charles Broskoski
+          </p>
+        </div>
+      </div>
+
+      <p>
+        The sever hosting the web page you requested may be in a part of the world you hadn't expected, having traveled the distance to your computer faster than any boat, train or plane could have. The speed of travel can often make the Internet feel smaller than it is, everywhere and nowhere. Artists like James Bridle and Charles Broskoski (linked above) have created projects that help bring this to light, and raise questions about the Internet which are only possible when we <i>see</i> it for what it actually is.
+      </p>
+
+      <blockquote cite="https://www.goodreads.com/book/show/23492802-magic-and-loss">
+        <p>On a sunny morning at 7:45:03, one Internet packet is born. 60 bytes weight, with just one simple mission in life – to get to the place called 173.252.120.6. Even though this does not sound like an exciting mission in life, things that happen in the next 1 second are pretty exciting. His journey starts with a fast 7ms jump, 5 meters away to the box called home router. Over the attic, where he passes through the switch where all the cables from the building meet, he jumps down to the street and into the underground cable that brings him to the main city router in Novi Sad. With a speed of 30.600.000 km/h he  runs for 10 ms to Belgrade, to the SBB TelePark building.</p>
+        <cite>
+          <a href="https://labs.rs/en/packets/" target="_blank">SHARE LAB</a>
+        </cite>
+      </blockquote>
+
+      <hr>
+
+      <b class="bold-step">
+        Next we'll chart the journey from our IP address to the IP address of the computer hosting the website we requested.
+      </b>
+
+      <p>
+        On a Mac or Linux computer, open your <b>Terminal</b> again (or the <b>Command Prompt</b> on Windows) and run <code>traceroute -I 255.255.255.255</code> (or <code>tracert 255.255.255.255</code> on Windows), replacing "255.255.255.255" with your destination's IP address.
+      </p>
+
+      <img src="/images/notes/the-net/traceroute.png" alt="traceroute">
+
+      <p>
+        The traceroute application will start to list the IP addresses of each "hop" (or router) your packet takes on it's journey. Once you have your list of hops, look up each IP address like you did before to find the GPS coordinates of each and find them on the map.
+      </p>
+
+      <p>
+        It's important to note that the traceroute application isn't perfect. It doesn't actually trace a direct route so much as send "pings" (a tiny packet to a router that echos back) to and from each router along the path. Because your packet doesn't necessarily take the same exact journey each time (every new Web request finds the quickest path across the Internet to it's destination at that moment) the list of IP address returned by the traceroute in a way reflects a combination of alternative routes the packet may have taken. So, what you'll need to do is run the traceroute a few times (maybe 4 or 5) keeping track of the list of IP addresses and their corresponding GPS coordinates. Compare the different results, disregard any anomolies (IP addresses that only ever showed up once) and make your best guess as to what a likely journey may have been.
+      </p>
+
+      <p>
+        Between each "hop", each stop at along the packet's journey, the data travels across cables, initially probably the cables of your local Internet service provider (or ISP), like Comcast for example...
+      </p>
+
+      <img src="/images/notes/the-net/comcastnetwork.jpg" alt="comcast">
+
+      <p>
+        As mentioned earlier, not everyone on the planet has access to the Internet for a variety of reasons. In this country, the reason is often financial. Unlike other utilities and services the public depends on, access to the Internet in the United States is almost entirely handled by private corporations. The profit motive driving the expansion of these networks often disincentivizes those companies from connecting parts of the country which are more rural or poor. This has the effect of negatively impacting already marginalized community, because "having a slow connection can mean increased health risks, a limited education or having less money".
+      </p>
+
+      <iframe class="rwd" height="420" src="https://www.youtube.com/embed/n54-eEvoMpg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+      <p>
+        Fortunately, there are efforts like the Equitable Internet Initiative in Detroit which take a community focused approach to closing the digital divide through community owned and operated ISPs.
+      </p>
+
+      <iframe class="rwd" height="420" src="https://www.youtube.com/embed/1B0u6nvcTsI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+      <hr>
+
+      <p>
+        Unless the website you've requested is on a computer connected to the same ISP you're connected to, your request packet will likely need to hop from your ISP's network onto another network.
+      </p>
+
+      <b class="bold-step">
+        Many of the subsequent IP addresses along the way are likely going to be <a href="https://www.internetexchangemap.com/" target="_blank">Internet exchange points</a> or "colocation centers", or "carrier hotels".
+      </b>
+
+      <p>
+        These are all names for different types of large data centers where different networks (like your ISP) meet and connect with each other to exchange Internet traffic. Use those terms (in addition to "data center") to try and find the buildings (near the GPS coordinates) where the hops might have taken place.
+      </p>
+
+      <iframe class="rwd" height="420" src="https://www.youtube.com/embed/C5w0UwvZrhM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+      <p>
+        At this point in our data packet's journey it has likely traveled through a handful of networks owned and operated by different individuals and organizations. It started on your local network, operated by whoever owns the WiFi router you're connected to, before being passed along to your ISP, which might be your university, or maybe a non-profit (like the Equitable Internet Initiative) but is most likely a private company running  sub-par equipment and providing the minimal viable service like Comcast, Verizon or AT&T. If there's ever a hop between two different continents, then it's likely your packet fount it's way to a shoreline, like this one in Canada...
+      </p>
+
+      <img src="/images/notes/the-net/manwhole.jpg" alt="coastline landing cable">
+
+
+      <p class="grey">
+        <i>"This modest indentation on the Canadian coastline is a major Internet landmark, a sort of Ellis Island of the Web: It’s where a submarine cable owned by Hibernia Atlantic comes ashore."--<a href="https://www.andrewblum.net/2009/netscapes-wired-magazine/" target="_blank">Andrew Blum</a></i>
+      </p>
+
+      <br><br>
+
+      <iframe class="rwd" height="420" src="https://www.youtube.com/embed/iMAThVcqzuk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+      <p>
+        Like the previous hops in our data packet's journey, these landing point stations are also owned and operated by yet another set of organizations. It's at these "landing points" that our data packet leaves the "dry" network and hops onto a "wet" network. These are transoceanic networks made of <a href="https://en.wikipedia.org/wiki/Fiber-optic_cable" target="_blank">fiber-optic cables</a> many miles long, resting on the ocean floor. A significantly large portion of our Internet data travels through the ocean.
+      </p>
+
+
+      <img src="/images/notes/the-net/cubacable.jpg" alt="comcast">
+
+      <p class="grey">
+        <i>This undersea cable called <a href="https://www.submarinecablemap.com/submarine-cable/alba-1" target="_blank">Alba-1</a> is on its way to <a href="https://runrun.es/runrunes-de-bocaranda/runrunes/23374/la-corrupcion-cubana-en-empresas-bajo-las-ordenes-de-ramiro-valdes-salpicaria-a-venezuela-y-su-cable-de-fibra-a-cuba/" target="_blank">Cuba from Venezuela </a></i>
+      </p>
+
+      <p>
+        These subsea cables are incredibly expensive to create and install, it can takes months and cost millions of dollars. There are many different private and state owned companies producing this pivotal part of the Internet, like <a href="https://en.wikipedia.org/wiki/Tata_Communications" target="_blank">Tata Communications</a> which created one of the first subsea networks that circumnavigates the world, a fiber-optic belt wrapped around the entire planet. Because these cables are so expensive to produce, they're often joint ventures between a handful of companies. The video below documents the creation of the <a href="https://www.submarinecablemap.com/submarine-cable/monet" target="_blank">Monet</a> cable system, a collectively owned by Algar Telecom, Angola Cables, Antel Uruguay and Google.
+      </p>
+
+      <iframe class="rwd" height="420" src="https://www.youtube.com/embed/H9R4tznCNB0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+      <br><br>
+      <br><br>
+
+      <b class="bold-step">
+        Use this map of <a href="https://www.submarinecablemap.com/" target="_blank">submarine cables</a> to try and identify which undersea Internet cable your packet crossed.
+      </b>
+
+      <p>
+        After traveling across the ocean at nearly the speed of light through <a href="https://en.wikipedia.org/wiki/Fiber-optic_cable" target="_blank">fiber-optic cables</a>, our packet of data makes landfall on another shoreline, here's a photo of me (^__^) when i stumbled upon an Internet landing cable on the shore of St. Thomas in the Caribbean...
+      </p>
+
+      <img src="/images/notes/the-net/stthomas.png" alt="St. Thomas landing cable">
+
+      <hr>
+
+      <iframe class="rwd" height="420" src="https://www.youtube.com/embed/h7guR5ei30Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+      <p>
+        Artists like Ingrid Burrington and Trevor Paglen have researched these cables, their history and their politics to better understand, and help others <i>see</i> this network we so heavily depend on...
+      </p>
+
+      <img src="/images/notes/the-net/networks-of-ny.png" alt="Networks of New York">
+
+      <p class="grey">
+        <i><a href="https://www.mhpbooks.com/books/networks-of-new-york/" target="_blank">Networks of New York</a>: An Internet Infrastructure Field Guide (2015) by Ingrid Burrington</i>
+      </p>
+
+      <br><br>
+
+      <br><br>
+            <br><br>
+                  <br><br>
+
+      <hr>
+
+      <h3 id="extra-research">some histories</h3>
+
+      <p>
+        Having learned what the Internet literally is, physically, you may want to consider how it got to be this way in the first place. Before the first ISPs incorporated, before Tata built a cable that hugs the planet. We now know what the Internet is made of, and where it's located, but when and how did it come into existence?
+      </p>
+      <p>
+        Maybe it started in "deep military secrecy" within a "Cold War think-tank" as science fiction writer Bruce Sterling writes in his "<a href="http://sodacity.net/system/files/Bruce_Sterling_A_Short_History_of_the_Internet.pdf" target="_blank">Short History of the Internet</a>". Or maybe "ground zero" for the "birth place of the Internet" was actually a dingy university classroom in California, as filmmaker Werner Herzog narrates in his existential documentary "<a href="https://en.wikipedia.org/wiki/Lo_and_Behold%2C_Reveries_of_the_Connected_World" target="_blank">Lo and Behold, Reveries of the Connected World</a>." Or maybe it didn't happen in the United States at all? Maybe it started in a <a href="https://en.wikipedia.org/wiki/Donald_Davies" target="_blank">British Laboratory</a>? Or maybe it was a <a href="https://en.wikipedia.org/wiki/CYCLADES" target="_blank">French Laboratory</a>?
+      </p>
+      <p>
+        <b>Where did the Internet come from? When was it created? Who created it? And, perhaps most importantly, Why? To answer these questions...</b>
+      </p>
+      <ul>
+        <li>Watch the first 10mins of Werner Herzog's documentary <a href="https://www.youtube.com/watch?v=q3g3hqNJqpQ" target="blank">Lo and Behold, Reveries of the Connected World</a> (You may need to pay to view the entire doc on YouTube, but I've uploaded an excerpt of the <a href="https://netizen.org/classes/files/lo-10.mp4" target="_blank">first 10mins here</a>)</li>
+        <li>Read the History Channel's very brief article <a href="http://www.history.com/topics/inventions/invention-of-the-internet" target="blank">The Invention of the Internet</a> as well as Bruce Sterling's <a href="http://sodacity.net/system/files/Bruce_Sterling_A_Short_History_of_the_Internet.pdf" target="blank">A Short History of the Internet </a> (written in 1993 just before the explosion of the World Wide Web)</li>
+        <li>Watch my (18mins) video <a href="https://www.youtube.com/watch?v=wr6ootvAsl8" target="blank">The Internet: invented for nuclear war?</a></li>
+        <ul>
+          <li>For those looking to deep dive, check out this documentary from 1972 (just as the Internet was being invented) called <a href="https://archive.org/details/ComputerNetworks_TheHeraldsOfResourceSharing" target="blank">Computer Networks - The Heralds Of Resource Sharing</a>, and for an even deeper dive into primary sources check out J.C.R. Licklider's <a href="http://worrydream.com/refs/Licklider%20-%20Man-Computer%20Symbiosis.pdf" target="blank">Man-Computer Symbiosis</a> as well as <a href="https://archive.computerhistory.org/resources/text/Oral_History/Taylor_Robert/102702015.05.01.acc.pdf" target="blank">Bob Taylor's</a> and <a href="https://ethw.org/Oral-History:Paul_Baran" target="blank">Paul Bran's</a> oral histories.</li>
+        </ul>
+      </ul>
+
+    </article>
+
+
+    <br><br><br><br>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <script src="/js/Averigua.js"></script>
+    <script src="/js/rainbow-text.js"></script>
+    <script src="/js/fancy-chars.js"></script>
+    <script>
+      FancyText.animate(document.querySelector('header > h1'), 200, 0.2)
+
+      Array.from(document.querySelectorAll('h3'))
+        .forEach(h3 => FancyText.animate(h3, 5000, 0.2))
+
+      Array.from(document.querySelectorAll('a'))
+        .filter(a => a.className !== 'button')
+        .forEach(a => RainbowText.hoverShimmer(a))
+    </script>
+  </body>
+</html>
