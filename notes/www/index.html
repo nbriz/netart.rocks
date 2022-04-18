@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Digitizing Human Rights</title>
+    <meta name="author" content="Nick Briz">
+    <meta charset="utf-8">
+
+    <!-- social media stuff -->
+    <meta property="og:title" content="FLOSS Notes">
+    <meta property="og:url" content="https://netart.rocks/notes/digitizing-human-rights">
+    <meta property="og:image" content="https://netart.rocks/images/netartdiagram.gif">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:site_name" content="https://netart.rocks">
+    <meta name="twitter:site" content="@nbriz">
+
+    <link rel="icon" type="image/png"  href="https://netart.rocks/images/icon.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style media="screen">
+      .double {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .double p {
+        max-width: 440px;
+      }
+
+      .double div {
+        text-align: center;
+      }
+
+      @media (max-width: 986px) {
+        .double { flex-direction: column; }
+        .double p { margin: 40px auto; }
+      }
+
+      .b-frame {
+        border: 2px solid #c2c1db;
+        border-radius: 15px 15px 0 0;
+        border-top: 30px solid #c2c1db;
+        box-shadow:
+          0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+          0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+          0 12.5px 10px rgba(0, 0, 0, 0.06),
+          0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+          0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+          0 100px 80px rgba(0, 0, 0, 0.12);
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <header>
+      <h1>the World Wide Web</h1>
+    </header>
+
+    <blockquote cite="https://www.goodreads.com/book/show/23492802-magic-and-loss">
+      <p>What was often difficult for people to understand about the design was that there was nothing else beyond URIs (URLs), HTTP, and HTML. There was no central computer controlling the Web no single network on which these protocols worked, not even an organization anywhere that ran the Web. The Web was not a physical thing that existed in a certain place, it was a space in which information <i>could</i> exist.</p>
+      <cite>
+        Tim Berners-Lee (from <a href="https://en.wikipedia.org/wiki/Weaving_the_Web" target="_blank">Weaving the Web</a>)
+      </cite>
+    </blockquote>
+
+    <article>
+      <p>The Web is an open and globally decentralized document and application distribution platform. Documents (ie. web pages) and software (ie. web apps), written in HTML, CSS, JavaScript and other languages, are stored on computers (connected to the Internet) all around the world running applications called <a href="https://en.wikipedia.org/wiki/Web_server" target="_blank">servers</a>, which wait for <a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol" target="_blank">HTTP</a> requests (small packets of data asking for specific files or resources) coming from other applications known as "clients" or "agents" (which are typically <a href="https://en.wikipedia.org/wiki/Web_browser" target="_blank">web browsers</a> or <a href="https://en.wikipedia.org/wiki/Web_crawler" target="_blank">web crawlers</a>).</p>
+      <p>Anyone can create a website or web app and host their files on their own server running on their own computer connected to the Internet, and anyone else can use any number of web clients to request (ie. access) that website or web app over the Internet. As a platform, the Web has no central server, it's a collection of servers running on computers all over the world, which is what we mean when we say that the web is a "decentralized" platform. You don't need to ask anyone for permission or approval to run a server on the Web, all you need is a computer with an Internet connection, this is why we say the Web is an "open" platform.</p>
+      <p>While no one owns and operates the Web (the platform) itself, the protocols (like HTTP), core languages (HTML and CSS) and JavaScript APIs are designed and maintained by an internatoinal organization called the W3C, or <a href="https://en.wikipedia.org/wiki/World_Wide_Web_Consortium" target="_blank">the World Wide Web Consortium</a> which consists of businesses, nonprofit organizations, universities, governmental entities, and individuals (anyone can join). The W3C don't own or control the Web (again, it's an open and decentralized platform), instead they're in charge of <em>describing</em> how it should work. These descriptions take the form of documents known as "specifications" (or "specs" for short) which are used as blue-prints for anyone interested in writing their own web server or web client software, as well as anyone interested in creating their own websites or web apps. If you don't follow the spec, then your client, server, site or app won't be compatible with the platform (ie. it won't work).</p>
+
+      <br><br><br>
+
+      <h3>Web Clients (aka "browsers")</h3>
+      <h4>the apps we use to access the Web</h4>
+
+      <p>
+        As mentioned earlier, a web client is an application that can send HTTP requests to web servers and render the code it gets back. Some web clients are designed only to send requests to specific servers (like most of the social media apps you have on your phone for example), while others can send requests to any server you specify (like any web browser for example), usually in the form of a URL or "web address".
+      </p>
+
+      <br>
+
+      <img src="/images/notes/web/client0.png" alt="Firefox Web Browser">
+      <p class="caption">
+        <a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank">Firefox</a> is a free and open-source web browser developed by the <a href="https://foundation.mozilla.org/en/" target="_blank">Mozilla Foundation</a>, a non-profit working to ensure the internet remains a public resource that is open and accessible to us all.
+      </p>
+
+      <br><br><br>
+
+      <h3>Code Editor</h3>
+      <h4>creating the Web</h4>
+
+      <p>
+        A website and web app consists of a series of files, some of these are "assets" (like individual images, videos, fonts, etc) while other files are written in code. We can use all sorts of different coding languages to create a website or web app, but the most fundamental is HTML (Hypertext Markup Language). HTML is the language we use to <i>structure</i> our site's content (whether that's text and/or other media assets). When we want to change the way our HTML files look, we use another language called CSS (Cascading Style Sheets). CSS code allows us to change a websites's <i>style</i> describe the layout and aesthetic we want. HTML and CSS can do a lot on their own, including some basic interactivity and animation, but when we really want to bring a website or app to life with even more interactive or generative <i>dynamics</i> we use JavaScript, the Web's de facto programming language.
+      </p>
+
+      <p>
+        Like all human languages, these coding languages have their own vocabulary and syntax. When you become literate in these languages you can use them to express and create anything you've ever seen on a computer screen. Like any other human language, coding languages are just text and so you can use any application capable of typing text to write code. That said, special programs called code editors make it a little easier to do so by adding special features like code hinting (aka auto-complete), syntax highlighting (adding colors to different parts of our code to make it easer to read/write) and shortcut keys. A few popular contemporary code editors include <a href="http://www.sublimetext.com/" target="_blank">Sublime</a>, <a href="https://atom.io/" target="_blank">Atom</a> and <a href="https://code.visualstudio.com/" target="_blank">VS Code</a>.
+      </p>
+
+      <br>
+
+      <img class="b-frame" src="/images/notes/netnet-editor.gif" alt="netnet.studio code editor">
+      <br><br><br><br>
+      <p class="caption">
+        <a href="https://netizen.org/netnet/" target="_blank">netnet.studio</a> is an online code playground for exploring the Web's creative potential, created by the folks at <a href="https://netizen.org/" target="_blank">netizen.org</a>
+      </p>
+
+      <br>
+
+      <p>
+        If you already know how to code and have experience hosting your work on GitHub, feel free to use your preferred editor. If you're new to code, we'll be using a friendly code editor I co-created called <a href="https://netnet.studio/" target="_blank">netnet.studio</a> whicih includes a few other helpful features for beginners including reatltime editing, friendly error messages and built in references and guides. You can learn more about how to use netnet.studio as a code editor <a href="https://github.com/netizenorg/netnet.studio/wiki/Sketching" target="_blank">here</a>.
+      </p>
+
+      <p>
+        There are lots of great <a href="https://www.amazon.com/HTML-CSS-Design-Build-Websites/dp/1118008189" target="_blank">books</a>, <a href="https://www.youtube.com/watch?v=PlxWf493en4" target="_blank">videos</a> and other <a href="https://developer.mozilla.org/en-US/docs/Web/Tutorials" target="_blank">tutorials</a> online you can use to learn more about HTML and CSS. netnet.studio also contains interactive tutorials (geared towards artists) you can explore (linked below) as well as interactive demos/examples, including a high level overview of all the basics of <a href="https://netnet.studio/?ex=48" target="_blank">HTML</a> and <a href="https://netnet.studio/?ex=49" target="_blank">CSS</a>.
+      </p>
+
+      <ul>
+        <li>
+          <a href="https://netnet.studio/?tutorial=what-is-code" target="_blank">What is Code?</a> and what it means to write it
+        </li>
+        <li>
+          <a href="https://netnet.studio/?tutorial=html-crash-course" target="_blank">HTML Crash Course</a> (Hypertext Markup Language)
+        </li>
+        <li>
+          <a href="https://netnet.studio/?tutorial=net-art-1" target="_blank">net.art (part 1)</a> when artists discovered HTML
+        </li>
+        <li>
+          <a href="https://netnet.studio/?tutorial=net-art-2" target="_blank">net.art (part 2)</a> from ASCII Art to Form Art
+        </li>
+        <li>
+          <a href="https://netnet.studio/?tutorial=css-crash-course" target="_blank">CSS Crash Course</a> (Cascading Style Sheets)
+        </li>
+        <li>
+          <a href="https://netnet.studio/?tutorial=css-art-1" target="_blank">CSS Art (part1)</a> Irrational Virtuosos
+        </li>
+        <li>
+          <a href="https://netnet.studio/?tutorial=css-art-2" target="_blank">CSS Art (part 2)</a> Irrational Virtuosos
+        </li>
+      </ul>
+
+      <br><br><br>
+
+      <h3>Web Servers</h3>
+      <h4>publishing to the Web</h4>
+
+      <p>A web "host" is a service running their own web servers on their own computers that you can use to <em>host</em> the websites or apps you create. While it's totally possible to <a href="https://homebrewserver.club/" target="_blank">host your site/app at home</a> by running your own web server on your own computer, it isn't always practical (unless you've got lots of bandwidth, great upload Internet speeds and a computer you don't mind leaving on/connected running your server 24/7). For this reason there exist all sorts of different services for hosting your websites/app s on someone else's computer (aka on "the cloud"). Most of these servers will rent you space on their computers/data centers for a monthly fee, but there are also some "free" hosting providers out there.</p>
+
+      <br>
+
+      <img src="/images/notes/web/servers.png" alt="Internet Archive Servers">
+      <p class="caption">
+        a few of the <a href="https://archive.org/" target="_blank">the Internet Archive</a>'s servers; from a short <a href="https://vimeo.com/59207751" target="_blank">documentary</a> about the Archive
+      </p>
+
+      <br>
+
+      <p>
+        One place we can publish (or "host") our documents for free is <a href="https://github.com/" target="_blank">GitHub</a>, a platform created to facilitate "open source" development, where coders can share their code and collaborate with each other. Developers share their source code openly this way for a variety of reasons, some are practical some are ideological, but some developers and corporations prefer to keep their code secret. When the code used to create a site or application is kept secret it's known as "proprietary" software. In the interest of transparency, accessibility and to open the door for future participation, the documents we'll produce will be open source. Though GitHub isn't the only platform for sharing open source code, it's unquestionably the most popular (at the time of this writing) and additionally provides the ability to run a free Web server which we can use to "host" our documents online.
+      </p>
+
+      <p>
+        To learn more about the history of "open source" culture, refer to my <a href="/notes/open-source/" target="_blank">FLOSS notes</a> (Free/Libre Open Source Software)
+      </p>
+
+    </article>
+
+    <blockquote cite="https://www.goodreads.com/book/show/23492802-magic-and-loss">
+      <p>In an extreme view, the world can be seen as only connections, nothing else. We think of a dictionary as the repository of meaning, but it defines words only in terms of other words. I like the idea that a piece of information is really defined only by what it's related to, and how it's related. There really is little else to meaning. The structure is everything.</p>
+      <cite>
+        Tim Berners-Lee (from <a href="https://en.wikipedia.org/wiki/Weaving_the_Web" target="_blank">Weaving the Web</a>)
+      </cite>
+    </blockquote>
+
+
+
+    <br><br><br><br><br><br>
+
+    <script src="/js/Averigua.js"></script>
+    <script src="/js/rainbow-text.js"></script>
+    <script src="/js/fancy-chars.js"></script>
+    <script>
+      FancyText.animate(document.querySelector('header > h1'), 200, 0.2)
+
+      Array.from(document.querySelectorAll('h3'))
+        .forEach(h3 => FancyText.animate(h3, 5000, 0.2))
+
+      Array.from(document.querySelectorAll('a'))
+        .filter(a => a.className !== 'button')
+        .forEach(a => RainbowText.hoverShimmer(a))
+    </script>
+  </body>
+</html>
