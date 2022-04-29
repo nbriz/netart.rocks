@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Internet Artware</title>
+    <meta name="description" content="a class website for Internet Artware (PROFPRAC 3900) at the School of the Art Institute of Chicago">
+    <meta name="author" content="Nick Briz">
+    <meta charset="utf-8">
+
+    <!-- social media stuff -->
+    <meta property="og:title" content="Internet Artware">
+    <meta property="og:url" content="https://netart.rocks/saic/artware">
+    <meta property="og:image" content="https://netart.rocks/images/artware.gif">
+    <meta property="og:description" content="a class website for Internet Artware (PROFPRAC 3900) at the School of the Art Institute of Chicago">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:site_name" content="https://netart.rocks/saic/artware">
+    <meta name="twitter:site" content="@nbriz">
+
+    <link rel="icon" type="image/png"  href="https://netart.rocks/images/icon.png">
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <style media="screen">
+      .sketch {
+        border-bottom: solid 2px var(--red)
+      }
+
+      i {
+        border-left: 4px solid #efefef;
+        display: block;
+        padding-left: 10px;
+      }
+
+      b {
+        font-style: italic;
+      }
+
+      ol {
+        font-family: "ivar-text", "Georgia", serif;
+        font-size: 18px;
+        line-height: 1.7;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>git</h1>
+      <h2>basics</h2>
+    </header>
+
+    <article>
+
+
+      <p>
+        For more in-depth notes on the Open Source movement as well as video tutorials demonstrating different git workflows follow the links in the <a href="portfolio.html">GitHub Portfolio notes</a>. This page is a high-level overview of some of the core steps for getting work on GitHub. Specifically, these are notes for students working on non-web projects and/or using tools/editors/apps different from those I cover in the GitHub tutorial videos (that said, these steps would work for anyone working on any sort of creative coding project).
+      </p>
+
+      <h4>create a GitHub repo</h4>
+
+      <p>
+        Create a new repository (aka "repo") on your GitHub account for your project by pressing the green "New" button (found throughout the GitHub interface) or by navigating directly to <a href="https://github.com/new" target="_blank">https://github.com/new</a>
+      </p>
+
+      <p>
+        Make sure your repo is Public (if it's Private it can't really function as a "portfolio" piece) and make sure you <span style="font-style:italic">initiatlize</span> your repo with a README file in it.
+      </p>
+
+      <h4>create a local copy of your repo</h4>
+
+      <p>
+        <i>
+          <b>NOTE</b>: these notes assume a *nix terminal (Mac/Linux), but there are numerious ways to do this on Windows as well (for example see <a href="https://gitforwindows.org/" target="_blank">git for Windows</a>)
+        </i>
+      </p>
+
+      <p>
+        Open a terminal and navigate to the folder where you want to clone/download your repository to by typing <code>cd</code> and dragging+dropping the folder into your terminal so that it prints out it's path and then press <b>enter</b>
+      </p>
+
+      <p>
+        1. <code>cd /path/to/folder</code>
+      </p>
+
+      <p>
+        <i>
+          <b>NOTE</b>: Keep in mind that your repository is itself a folder, so you don't need to <code>cd</code> into a new folder for that project, but rather the folder you want to keep your projects in.
+        </i>
+      </p>
+
+      <p>
+        Next, download a copy of your GitHub repo "locally" to your computer by "cloning" it. To do this, click on the green "Code" button on your GitHub repo and copy the HTTPS .git URL. Then in your terminal type <code>git clone</code> followed by your copied .git URL.
+      </p>
+
+      <p>
+        2. <code>git clone https://github.com/username/project.git</code>
+      </p>
+
+      <p>
+        <i>
+          <b>NOTE</b>: if you download a zip file of your repo, it will not include the git metadata which you'll need in order to push/pull changes between your local repo and your remote repo on GitHub, so it's important you "clone" your repo (rather than simply press the download button)
+        </i>
+      </p>
+
+      <h4>adding files to your local repo</h4>
+
+      <p>
+        Once you have your GitHub repo cloned locally to your local computer, you can move (or copy) your project files into the repository (the cloned repo folder), at which point you can use git in the terminal to <span style="font-style:italic">add</span> the new files to your "stage", then <span style="font-style:italic">commit</span> those staged additions and lastly <span style="font-style:italic">push</span> (ie. upload) those comitted additions to your GitHub repo.
+      </p>
+
+      <ol>
+        <li>
+          <code>cd /path/to/local/repository</code> (if you're haven't already, make sure ou navigate into your repository's folder to use the following git commands)
+        </li>
+        <li>
+          <code>git add .</code> (the <code>.</code> here means you want to add "all" of the new files to your stage, but you can alternatively add specific files one at a time)
+        </li>
+        <li>
+          <code>git commit -m "comment about what you added"</code>
+        </li>
+        <li>
+          <code>git push</code> (to upload your changes to your GitHub repo, after runnign this command it's a good idea to open your GitHub repo in your browser and refresh the page to ensure the files were uploaded)
+        </li>
+      </ol>
+
+      <p>
+        <i>
+          <b>NOTE</b>: Everytime you make updates to the files (or add new files) in your local repo, you'll need to go through the steps above to get your updates uploaded to your GitHub repo.
+        </i>
+      </p>
+
+      <h4>update your README file</h4>
+
+      <p>
+        It's an open source development convention to include a README file in the root directory (main folder) of your project. This file is essentially an "info" page which describes what this project is about (and often might also include info regarding how to run the code, how to use it, how to contribute to it, etc). This README file is writen in a simple markup language called "markdown" (with a <code>.md</code> extention), you can learn more about markdown syntax in this <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Markdown Cheatsheet</a>
+      </p>
+
+      <p>
+        For the purposes of our code portfolio, we want to use our README to document our project, it should include a title as well as a short description (roughly 1 paragraph) about the sketch or project.
+      </p>
+
+      <p>
+        It's also a good idea to include some images (like a screenshot of your project). To embed an image in your README you'll need to include the image file in your project's repo and then link to it in your README file using this markdown syntax: <code>[alt text](path/to/imagefile.png)</code>
+      </p>
+
+      <p>
+        If your repo is a web based project or sketch it would be wise to enable GitHub pages by clicking on the <b>Settings tab</b> of your repo and scrolling down to the <b>GitHub Pages</b> section. Then <b>select the main branch</b> source and click on the <b>Save</b> button. This will generate a URL you can share with the public to view your work accessible on the open Web. You should include this link in your README as well.
+      </p>
+
+    </article>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <script src="/js/Averigua.js"></script>
+    <script src="/js/rainbow-text.js"></script>
+    <script src="/js/fancy-chars.js"></script>
+    <script>
+      FancyText.animate(document.querySelector('header > h1'), 200, 0.2)
+
+      Array.from(document.querySelectorAll('a'))
+        .filter(a => a.className !== 'button')
+        .forEach(a => RainbowText.hoverShimmer(a))
+    </script>
+  </body>
+</html>
