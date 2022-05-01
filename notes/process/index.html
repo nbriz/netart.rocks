@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Digitizing Human Rights</title>
+    <meta name="author" content="Nick Briz">
+    <meta charset="utf-8">
+
+    <!-- social media stuff -->
+    <meta property="og:title" content="FLOSS Notes">
+    <meta property="og:url" content="https://netart.rocks/notes/digitizing-human-rights">
+    <meta property="og:image" content="https://netart.rocks/images/netartdiagram.gif">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:site_name" content="https://netart.rocks">
+    <meta name="twitter:site" content="@nbriz">
+
+    <link rel="icon" type="image/png"  href="https://netart.rocks/images/icon.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style media="screen">
+
+      :root {
+        --code-text: #38383d;
+        --code-meta: #7E7E7F;
+        --code-tag: #0078f0;
+        --code-tag-bracket: #38383d;
+        --code-attribute: #de3ed9;
+        --code-string: #0252cd;
+      }
+
+      code {
+        border-radius: 6px;
+        padding: 1px 8px;
+        border: 1px solid var(--code-tag);
+        color: var(--code-tag);
+        font-size: 17px;
+      }
+
+      h2 {
+        padding-top: 20px;
+      }
+
+      video {
+        width: 100%;
+        border: 1px solid black;
+      }
+
+      .step {
+        font-size: 24px;
+        border-bottom: 2px solid black;
+        padding-top: 60px;
+        display: inline-block;
+      }
+
+      .note {
+        border-left: 4px solid #efefef;
+        display: block;
+        padding-left: 10px;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <header>
+      <h1>workflow</h1>
+      <h2>collaborative coding process</h2>
+    </header>
+
+    <hr>
+
+    <article>
+
+      <h3>WWW: Platform and Tools</h3>
+      <p>
+        There are numerous different ways of producing digital documents and applications. There are various different coding languages you could use to create them and various different platforms you can publish them on. We've chosen to work with technologies that reflect the values we're aiming to articulate through our work. The platform we've chosen to publish our documents on is the World Wide Web, <a href="/notes/travelogue/">the Internet</a>'s original hypermedia platform. Unlike other corporately controlled platforms, the Web is an open, permission-less and decentralized virtual space owned and operated by the people (anyone interested in participating). As explained in our class workshop (and documented in <a href="/notes/www">the World Wide Web notes</a>) we need 3 different types of applications to participate in creating the Web:
+      </p>
+      <ul>
+        <li>
+          <b>A Web Browser</b>: you can use any web browser to access documents/apps on the Web (you could even make your own browser if you felt so compelled). I'm recommending we use <a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank">Firefox</a> because, as mentioned earlier, we should choose technology that reflects our values in addition to the fact that Firefox has very helpful developer tools some other default browsers (like Safari and Internet Explorer) do not.
+        </li>
+        <li>
+          <b>A Code Editor</b>: there are many different coding languages and many different editors we could use to write them with. The languages we use to create things for the Web are <a href="/notes/html">HTML</a> (to structure our documents/apps), <a href="/notes/css">CSS</a> (to change their layout, look and feel) and <a href="/notes/js-basics">JavaScript</a> (to add interactive and generative mechanics). While we can use any code editor to write these languages, I'm recommending we use <a href="https://netnet.studio/" target="_blank">netnet.studio</a>, an online editor (meaning we can access it through our browser rather than having to download/isntall it) which I created with my collaborators at netizen.org aimed at making web coding easier for beginners (in particular for artists looking to experiment with the digital medium).
+        </li>
+        <li>
+          <b>A Web Server</b>: these are the apps that run 24/7 on a computer connected to the Internet listening for HTTP requests coming from other web browsers on devices around the world. When someone enters a URL in their browser, it sends a request over the Internet to the server "hosting" that site's files (HTML, CSS, images, videos, etc). When a server receives the request, it copies the files and sends them back to the browser over the Internet. While we can download and run any number of servers (just like browsers) and host our files on our own computers, this isn't always the most practical way of publishing our work on the Web. This is because a server needs to be running all the time on a computer which is always on and connected to the Internet (you never know when someone is going to "visit" your website). For this reason, most folks publish their work to "the cloud", which just means other people's computers which are running servers 24/7. Here again there are numerous options, we'll be using <a href="https://github.com/" target="_blank">GitHub</a> to host and serve our files, partly because its free but mostly because it also provides a structure for us to work collaboratively on our "open source" project.
+        </li>
+      </ul>
+    </article>
+
+    <hr>
+
+    <article>
+      <h3>Open Source Collaboration</h3>
+
+      <p>
+        When a group of coders (whether only a couple or thousands) work on a the same code base it's common to use special tools and follow established processes specifically designed for collaborative coding. These open source tools enable a sort of <i>organized anarchy</i>, a way of facilitating open and distributed collaboration with adaptable structures, while also ensuring nothing is lost and everything is properly attributed. Here again we're choosing to use tools that reflect our shared goals and values, specifically we're using <a href="https://git-scm.com/" target="_blank">git</a>, the open source world's defacto software for managing these sorts of collaborations. Because git is a command line tool (ie. a terminal app, which can be a little tricky for beginners to get a handle on) we won't be engaging with it directly, instead we'll be interfacing with it through graphical applications, netnet.studio and GitHub.
+      </p>
+
+      <p>
+        There are all sorts of different workflows developers implement when collaborating on open source projects using git, below are the steps I covered in class which I'm suggesting we follow for the purposes of our project.
+      </p>
+
+      <b id="fork" class="step">1. "fork" the original document</b>
+
+      <p>
+        When you want to make a contribution (ie. add or edit one of our documents) you'll first need to create a "fork" of that particular document. The "original" documents belong to the class account (which i exclusively control) which means you can't directly edit the code or content in these documents. A fork is a way of making a copy of the original document which retains a connection to the original (in the git metadata) except that only you have permission to edit.
+      </p>
+
+      <p>
+        To fork a project you'll need to be logged into your GitHub account on netnet. Visit the document directly in netnet.studio, for example our preamble can be accessed via: <a href="https://netnet.studio/?gh=net-art-uchicago/Digitizing-Human-Rights" target="_blank">https://netnet.studio/?gh=net-art-uchicago/Digitizing-Human-Rights</a> then let netnet know you'd like to "fork" the project when it asks. When you see the project and filename (Digitizing-Human-Rights/index.html) appear on the top of netnet's editor that means you're now working on your "fork" of the project and you can start editing it.
+      </p>
+
+      <video src="dhr-process-1.mp4" controls></video>
+      <p class="caption">
+        you can fork original document directly on netnet.studio...
+      </p>
+
+      <p>
+        Alternatively, you could also fork the project by visiting that document's GitHub repository and clicking on the "Fork" button (you'll need to be logged into your GitHub account for this to work). For example, our preamble's repository is here: <a href="https://github.com/net-art-uchicago/Digitizing-Human-Rights" target="_blank">https://github.com/net-art-uchicago/Digitizing-Human-Rights</a>
+      </p>
+
+      <video src="dhr-process-2.mp4" controls></video>
+      <p class="caption">
+        ...or, you can original document on GitHub...
+      </p>
+
+      <p>
+        Then you can visit netnet.studio (refresh it if you had the page previously open) and assuming you're logged into your GitHub account on netnet, open your newly forked project by either using the shortcut key (CMD+O on Mac or Ctrl+O on Windows/Linux) or searching for the openProject() function in the search bar or in the Functions Menu > my project menu.
+      </p>
+
+      <video src="dhr-process-3.mp4" controls></video>
+      <p class="caption">
+        ...and then open it on netnet.studio
+      </p>
+
+      <br><br>
+
+      <p>
+        <i class="note">
+          <b>NOTE</b>: though we're using our "forks" to contribute back to the original document (explained below), forks can actually be utilized in a variety of different ways. For example, say you didn't agree with the direction our group project was going, you could use your fork to take it in an entirely different direction, others can then fork your repository (instead of the original document) and work towards whatever new direction you choose to take the document in (without needing permission from the original document's creator, ie. me).
+        </i>
+      </p>
+
+      <b id="edit" class="step">2. edit your forked document</b>
+
+      <p>
+        Once you have your fork open in netnet.studio you can edit, delete or add whatever code and/or content you'd like. Dont' forget to save your progress as you work, to do this you can use the cortcut key (CMD+S on Mac, or Ctrl+S on Windows/Linux) or by searching for the saveProject() function in the search bar or in the Functions Menu > my project menu.
+      </p>
+
+      <video src="dhr-process-4.mp4" controls></video>
+      <p class="caption">
+        save and publish your changes as you work on your fork
+      </p>
+
+      <p>
+        Unlike a normal "save" button, we're not writing over the data that was there before, instead we're creating a new "commit", which in git-lingo means a new "version" in the history of our document's evolution. Git allows us to travel backwards and forwards in time to see (and potentially revert to) previous versions of our project (rather than simply saving over them). For this reason, netnet will ask you to leave a small message every time you make a change, this gets saved to the document's git metadata. This way when we explore the various changes/versions of any given document we can see not only who made which contributions, but also when they made those changes as well as this comment regarding what they changed. You can view the commits in our GitHub repository's <a href="https://github.com/net-art-uchicago/Digitizing-Human-Rights/pulse" target="_blank">"Insights" tab</a>, where you can find a list of <a href="https://github.com/net-art-uchicago/Digitizing-Human-Rights/graphs/contributors" target="_blank">contributors</a> as well as the history of <a href="https://github.com/net-art-uchicago/Digitizing-Human-Rights/network" target="_blank">various forks and commits made</a>.
+      </p>
+
+      <p>
+        You can find a review of how to write HTML and CSS as well as a series of interactive examples and links to other resources in the notes below.
+        <ul>
+          <li><a href="/notes/html">HTML Review + Examples</a></li>
+          <li><a href="/notes/css">CSS Review + Examples</a></li>
+        </ul>
+      </p>
+
+      <b id="contribute" class="step">3. "contribute" back to the original document</b>
+
+      <p>
+        Once you've made an edit in your forked copy (which you've also saved/comitted) which you'd like to submit back to the original document you can open a "Pull Request". A Pull Request (or PR) creates a page on GitHub (a temporary forum for conversation) declaring your request that the owner of the original document (ie. me) "pull" the changes you've made in your fork back into the original. To do this, visit the original document's repository on GitHub and click on the "Pull requests" tab. Make sure that you are "comparing across forks" and that the arrow is pointing <i>from</i> your forked project and into the original on the class GitHub account, then press the green "Create pull request" button to initiate the request.
+      </p>
+
+      <video src="dhr-process-5.mp4" controls></video>
+      <p class="caption">
+        when you're ready to contribute your changes back to the original document, create a "Pull request" (PR)
+      </p>
+
+      <p>
+        Here I will have a chance to review your contribution for potential coding mistakes or other issues and if I find any I will leave a comment in the PR page itself, after which point you can continue to work on your fork to address the comments/issues raised in the PR page's discussion. You <b>do not need to create a new PR while one is already open</b>, when you edit your document and save it on netnet, it will automatically update the PR page to reflect the changes you've made.
+      </p>
+
+      <p>
+        Once you've addressed all my comments, I'll accept the PR by "merging" it into the original document, at which point the PR page will be closed and your credited contributions will be added to the original document.
+      </p>
+
+    </article>
+
+    <br><br><br><br><br><br>
+
+    <script src="/js/Averigua.js"></script>
+    <script src="/js/rainbow-text.js"></script>
+    <script src="/js/fancy-chars.js"></script>
+    <script>
+      FancyText.animate(document.querySelector('header > h1'), 200, 0.2)
+
+      Array.from(document.querySelectorAll('h3'))
+        .forEach(h3 => FancyText.animate(h3, 5000, 0.2))
+
+      Array.from(document.querySelectorAll('a'))
+        .filter(a => a.className !== 'button')
+        .forEach(a => RainbowText.hoverShimmer(a))
+    </script>
+  </body>
+</html>

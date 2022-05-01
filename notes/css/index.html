@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Digitizing Human Rights</title>
+    <meta name="author" content="Nick Briz">
+    <meta charset="utf-8">
+
+    <!-- social media stuff -->
+    <meta property="og:title" content="FLOSS Notes">
+    <meta property="og:url" content="https://netart.rocks/notes/digitizing-human-rights">
+    <meta property="og:image" content="https://netart.rocks/images/netartdiagram.gif">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:site_name" content="https://netart.rocks">
+    <meta name="twitter:site" content="@nbriz">
+
+    <link rel="icon" type="image/png"  href="https://netart.rocks/images/icon.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style media="screen">
+
+      :root {
+        --code-text: #38383d;
+        --code-meta: #7E7E7F;
+        --code-tag: #0078f0;
+        --code-tag-bracket: #38383d;
+        --code-attribute: #de3ed9;
+        --code-string: #0252cd;
+        --code-property: #0078f0;
+        --code-keyword: #de3ed9;
+      }
+
+      code {
+        border-radius: 6px;
+        padding: 1px 8px;
+        border: 1px solid var(--code-tag);
+        color: var(--code-tag);
+        font-size: 17px;
+      }
+
+      h2 {
+        padding-top: 20px;
+      }
+
+      iframe {
+        width: 100vw;
+        /* height: 50vh; */
+        border: 1px solid black;
+        border-left: none;
+        border-right: none;
+      }
+
+      .pad {
+        padding-left: 20px;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <header>
+      <h1>CSS</h1>
+      <h2>Cascading Stylesheets</h2>
+    </header>
+
+
+    <article>
+      <p>
+        Cascading Style Sheets, or CSS, was a language introduced to the Web in the mid 90s for the purpose of separating a webpage's "form" or "presentation" from it's "structure" or "content". Initially it handled things like layout, color changes and typography, but today in the era of CSS3, it has evolved to become a much more expressive language capable of creating interactive effects and animations.
+      </p>
+
+      <p>
+        Table of Contents:
+        <ol>
+          <li>
+            <a href="#rules">CSS Rules</a>
+          </li>
+          <li>
+            <a href="#include">Including CSS to your page</a>
+          </li>
+          <li>
+            <a href="#selectors">CSS Selectors</a>
+          </li>
+          <li>
+            <a href="#examples">CSS exmapes</a>
+          </li>
+        </ol>
+      </p>
+
+      <br><br><br>
+      <br><br><br>
+      <br><br><br>
+
+      <h2 id="rules">CSS Rules</h2>
+
+      <p>
+        You can apply a set of CSS delcarations to multiple elements at once using CSS rules. A CSS "rule" contains two parts, a <b>selector</b> which specifies which element(s) the rules will be applied to and a <b>declaration block</b>, surrounded by <code>{</code> curly brackets <code>}</code>, which specifies how the element should be styled.
+      </p>
+      <br>
+
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 852 244" xml:space="preserve" style="width:100%;margin:8px auto 30px auto;display:block;">
+        <defs
+           id="defs16" />
+        <sodipodi:namedview
+           pagecolor="#ffffff"
+           bordercolor="#666666"
+           borderopacity="1"
+           objecttolerance="10"
+           gridtolerance="10"
+           guidetolerance="10"
+           inkscape:pageopacity="0"
+           inkscape:pageshadow="2"
+           inkscape:window-width="3440"
+           inkscape:window-height="1376"
+           id="namedview14"
+           showgrid="false"
+           showguides="true"
+           inkscape:guide-bbox="true"
+           inkscape:zoom="2.3371041"
+           inkscape:cx="353.41441"
+           inkscape:cy="100.91874"
+           inkscape:window-x="2560"
+           inkscape:window-y="27"
+           inkscape:window-maximized="1"
+           inkscape:current-layer="svg1071">
+          <sodipodi:guide
+             position="406.48596,79.157792"
+             orientation="0,1"
+             id="guide823"
+             inkscape:locked="false" />
+          <sodipodi:guide
+             position="519.01839,56.908034"
+             orientation="0,1"
+             id="guide825"
+             inkscape:locked="false" />
+          <sodipodi:guide
+             position="540.41238,36.369796"
+             orientation="0,1"
+             id="guide827"
+             inkscape:locked="false" />
+          <sodipodi:guide
+             position="92.849951,238.32914"
+             orientation="1,0"
+             id="guide847"
+             inkscape:locked="false" />
+          <sodipodi:guide
+             position="756.06388,208.37754"
+             orientation="1,0"
+             id="guide849"
+             inkscape:locked="false" />
+          <sodipodi:guide
+             position="320.05421,160.0271"
+             orientation="0,1"
+             id="guide1269"
+             inkscape:locked="false" />
+          <sodipodi:guide
+             position="357.27976,203.24298"
+             orientation="0,1"
+             id="guide1271"
+             inkscape:locked="false" />
+          <sodipodi:guide
+             position="394.9332,183.13262"
+             orientation="0,1"
+             id="guide1273"
+             inkscape:locked="false" />
+        </sodipodi:namedview>
+        <metadata
+           id="metadata1077">
+          <rdf:RDF>
+            <cc:Work
+               rdf:about="">
+              <dc:format>image/svg+xml</dc:format>
+              <dc:type
+                 rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+              <dc:title></dc:title>
+            </cc:Work>
+          </rdf:RDF>
+        </metadata>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill-opacity:1;stroke:none"
+           x="261.96558"
+           y="144.01297"
+           id="text1626"><tspan
+             sodipodi:role="line"
+             id="tspan1624"
+             x="261.96558"
+             y="144.01297"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:74.66666412px;font-family:FreeSans;-inkscape-font-specification:'FreeSans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill-opacity:1;fill:var(--code-property);">color</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill-opacity:1;stroke:none"
+           x="170.34052"
+           y="144.02258"
+           id="text1626-7"><tspan
+             sodipodi:role="line"
+             id="tspan1624-6"
+             x="170.34052"
+             y="144.02258"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:74.66666412px;font-family:FreeSans;-inkscape-font-specification:'FreeSans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill-opacity:1;fill:var(--code-tag)">a</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill-opacity:1;stroke:none"
+           x="680.07092"
+           y="144.035"
+           id="text1626-7-8"><tspan
+             sodipodi:role="line"
+             id="tspan1624-6-4"
+             x="680.07092"
+             y="144.035"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:74.66666412px;font-family:FreeSans;-inkscape-font-specification:'FreeSans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill-opacity:1;fill:var(--code-text)">}</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:18.43792725px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill-opacity:1;stroke:none;stroke-width:0.4609482"
+           x="539.54401"
+           y="238.05511"
+           id="text1626-2"><tspan
+             sodipodi:role="line"
+             id="tspan1624-5"
+             x="539.54401"
+             y="238.05511"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.66666603px;font-family:FreeSans;-inkscape-font-specification:'FreeSans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill-opacity:1;stroke-width:0.4609482;fill:var(--code-meta)">value</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill-opacity:1;stroke:none"
+           x="229.85806"
+           y="145.45761"
+           id="text1626-7-1"><tspan
+             sodipodi:role="line"
+             id="tspan1624-6-2"
+             x="229.85806"
+             y="145.45761"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:74.66666412px;font-family:FreeSans;-inkscape-font-specification:'FreeSans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill-opacity:1;fill:var(--code-text)">{</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill-opacity:1;stroke:none"
+           x="423.22174"
+           y="143.89267"
+           id="text1626-3"><tspan
+             sodipodi:role="line"
+             id="tspan1624-9"
+             x="423.22174"
+             y="143.89267"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:74.66666412px;font-family:FreeSans;-inkscape-font-specification:'FreeSans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill-opacity:1;fill:var(--code-text)">:           ;</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill-opacity:1;stroke:none"
+           x="461.44827"
+           y="144.26247"
+           id="text1626-0"><tspan
+             sodipodi:role="line"
+             id="tspan1624-8"
+             x="461.44827"
+             y="144.26247"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:74.66666412px;font-family:FreeSans;-inkscape-font-specification:'FreeSans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill-opacity:1;fill:var(--code-keyword)">green</tspan></text>
+        <path
+           style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stroke:var(--code-meta)"
+           d="m 269.99225,170.84221 v 22.24976 h 142.91191"
+           id="path1275"
+           inkscape:connector-curvature="0" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stroke:var(--code-meta)"
+           d="M 412.90416,193.09197 V 170.84221"
+           id="path1277"
+           inkscape:connector-curvature="0" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stroke:var(--code-meta)"
+           d="M 341.87609,193.09197 V 213.6302"
+           id="path1279"
+           inkscape:connector-curvature="0" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stroke:var(--code-meta)"
+           d="m 463.39399,170.84221 v 22.24976"
+           id="path1281"
+           inkscape:connector-curvature="0" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stroke:var(--code-meta)"
+           d="m 463.39399,193.09197 h 192.1181 v -22.24976"
+           id="path1283"
+           inkscape:connector-curvature="0" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stroke:var(--code-meta)"
+           d="M 570.79186,193.09197 V 213.6302"
+           id="path1285"
+           inkscape:connector-curvature="0" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stroke:var(--code-meta)"
+           d="M 248.17037,74.40078 V 51.29526"
+           id="path1287"
+           inkscape:connector-curvature="0" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stroke:var(--code-meta)"
+           d="m 248.17037,51.29526 h 437.7212 v 23.10552"
+           id="path1289"
+           inkscape:connector-curvature="0" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stroke:var(--code-meta)"
+           d="M 465.10551,51.29526 V 31.1849"
+           id="path1291"
+           inkscape:connector-curvature="0" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stroke:var(--code-meta)"
+           d="M 162.1665,74.40078 V 51.29526"
+           id="path1293"
+           inkscape:connector-curvature="0" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stroke:var(--code-meta)"
+           d="m 162.1665,51.29526 h 56.90804"
+           id="path1295"
+           inkscape:connector-curvature="0" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stroke:var(--code-meta)"
+           d="M 219.07454,51.29526 V 74.40078"
+           id="path1297"
+           inkscape:connector-curvature="0" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stroke:var(--code-meta)"
+           d="M 192.54598,51.29526 V 31.1849"
+           id="path1299"
+           inkscape:connector-curvature="0" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:18.43792725px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill-opacity:1;stroke:none;stroke-width:0.4609482"
+           x="146.06828"
+           y="25.713737"
+           id="text1626-2-3"><tspan
+             sodipodi:role="line"
+             id="tspan1624-5-1"
+             x="146.06828"
+             y="25.713737"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.66666603px;font-family:FreeSans;-inkscape-font-specification:'FreeSans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill-opacity:1;stroke-width:0.4609482;fill:var(--code-meta)">selector</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:18.43792725px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill-opacity:1;stroke:none;stroke-width:0.4609482"
+           x="364.78464"
+           y="26.358467"
+           id="text1626-2-0"><tspan
+             sodipodi:role="line"
+             id="tspan1624-5-0"
+             x="364.78464"
+             y="26.358467"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.66666603px;font-family:FreeSans;-inkscape-font-specification:'FreeSans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill-opacity:1;stroke-width:0.4609482;fill:var(--code-meta)">declaration block</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:18.43792725px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill-opacity:1;stroke:none;stroke-width:0.4609482"
+           x="293.04999"
+           y="235.75046"
+           id="text1626-2-5"><tspan
+             sodipodi:role="line"
+             id="tspan1624-5-03"
+             x="293.04999"
+             y="235.75046"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.66666603px;font-family:FreeSans;-inkscape-font-specification:'FreeSans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill-opacity:1;stroke-width:0.4609482;fill:var(--code-meta)">property</tspan></text>
+      </svg>
+
+      <p>
+        The declaration is split in two parts, the <b>property</b> which indicates the aspect of the element you want to change (ex: color, font, width, border) followed by a <code>:</code> (colon) and then the <b>value</b> (the setting you want to use for that specific property) followed by a <code>;</code> (semi-colon). Check out MDN's <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Properties_Reference" target="_blank">Common CSS Properties Reference</a> or CSS Trick's <a href="https://css-tricks.com/almanac/properties/">CSS Almanac</a> for a more exhaustive list of CSS properties.
+      </p>
+      <br>
+
+      <br><br><br>
+      <br><br><br>
+      <br><br><br>
+
+      <h2 id="include">Including CSS to your page</h2>
+      <p>
+        There are a few ways you can add CSS code to your HTML page, one way is to create a <code>&lt;style&gt;</code> element, which is an element that takes CSS code as it's contents.
+      </p>
+
+      </article>
+
+      <iframe src="https://netizenorg.github.io/netitor/#code/eJxVy8sKgzAQRuF15yl+0q3gXtO8S2jHCw0zkIkUkb67BkRwdxbf8VbWxIEeBERseGvS3GHMzNLjT+TbU9DEmTHbwXzElHl4uacLaZYvikL0V4FvY2goygcXFy1H36bFOLEZ6lwP2gEHECpl" width="" height="320"></iframe>
+
+      <br><br><br>
+      <br><br><br>
+      <br><br><br>
+
+      <article>
+
+      <h2 id="selectors">CSS Selectors</h2>
+
+      <p>
+        The example above uses a type selector, which means it will apply the rules to every <code>&lt;a&gt;</code> tag on the page. You can apply the same rule to multiple elements by including them in a comma separated list within the selector, like this <code>h1, h2, h3</code> for example:
+      </p>
+
+      </article>
+
+      <iframe src="https://netizenorg.github.io/netitor/#code/eJyzKS6pzEm14+LkUlDIMNRRyDACYmOFaoXk/Jz8IiuFotQUa4VaLi4bfahCLpsMQzuP1MSUnMy8VBt9IAcoYmyXVKkLFTC24wIAAM8YRA==" width="" height="320"></iframe>
+
+
+      <article>
+
+        <br><br>
+
+      <p>
+        There are many other kinds of selectors which give you different ways of targeting specific elements to apply your CSS rules to. The most common selector is likely to be the class selector which targets any element whose class attribute’s value matches that of the class name.
+      </p>
+
+    </article>
+
+    <br><br>
+
+    <iframe src="https://netizenorg.github.io/netitor/#code/eJxtjk0OgjAUhNf2FBP2xcS4QmTjFbzAE1p4SWmbvpKIxruLhIUmLufnm0wteXamUUB5414n0+G5CKANLqQKl8SjBH9aPRt81sIPU+FwjPcv09LIbq4g5EWLSWw/4UvV+21f1bFRu+vAgkiJ+kRxwEACzoLOWJpcxtqVcqHiSqB1JHIutmfF/4V2khzGH/gN2v5ECg==" width="" height="510"></iframe>
+
+
+    <article>
+      <p>
+        There are a number of <a href="https://css-tricks.com/almanac/selectors/" target="_blank">different kinds of selectors</a> and thus a number of ways to specify which elements on a page you want to apply a CSS rule to, The most common are:
+        <ul>
+          <li>
+            <b>Universal Selector</b>: <code>* { }</code><br> this rule will apply to all elements on a page
+          </li>
+          <br>
+          <li>
+            <b>Type Selector</b>: <code>p { }</code><br> this rule will apply to all elements of the specified type (in this case <i>&lt;p&gt;</i>)
+          </li>
+          <br>
+          <li>
+            <b>Class Selector</b>: <code>.stuff { }</code><br> this rule will apply to all elements with a class attribute that matches it (for example <i>&lt;div class="stuff"&gt;</i>), you can mix type/class selectors like this <i>p.stuff { }</i>, that will only target <i>&lt;p&gt;</i> tags with a <i>class="stuff"</i>
+          </li>
+          <br>
+          <li>
+            <b>ID Selector</b>: <code>#info { }</code><br> this rule will apply to all elements with an <i>id</i> attribute that matches it (for example <i>&lt;div id="info"&gt;</i>)
+          </li>
+          <br>
+        </ul>
+      </p>
+    </article>
+
+      <br><br><br>
+      <br><br><br>
+      <br><br><br>
+
+      <article>
+        <h2 id="examples">CSS Examples</h2>
+        <p>
+          You can <a href="https://netnet.studio/?ex=49" target="_blank">review all the core concepts with netnet</a> in its editor, I've also got a hypermedia <a href="https://netnet.studio/?tutorial=css-crash-course" target="_blank">CSS Crash Course tutorial</a> you can watch/interact with. There are also loads of great <a href="https://htmlandcssbook.com/" target="_blank">books</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">online tutorials</a> if you'd like to dive deeper. Below are some (interactive) examples of different CSS snippets you might want to make use of in your documents. You can edit any of these examples to experiment with it as well as double click any piece of code to learn more about it.
+        </p>
+      </article>
+
+      <br><br><br>
+
+      <p>
+        <b class="pad">changing our body's styles</b>
+      </p>
+
+      <iframe src="https://netizenorg.github.io/netitor/#code/eJxFj8FuwyAQRM/hK0a+tI3ScG8tH9pLD8kp+QGMtzbNGiwDsqKq/17AriohYGZ22Uftw52pEXIvroPxSEtBu3EkGw74ij6AzY3wcT2fkt/RAcLFGe+XS5HQykKxdzBWc8zG2uyPYi8F0Lruju90QUrYzS9YBhPotTit0rd+dtF2z1vYcrJy+CNqubGJOj/SiF2y66lJ++6NtIqeEDJzNVUgpjx14x8Md3CfyKRVbq7KuL+ix5GUNbaHCQ/pyxYthYXIrtpNVEJluxWbnc86qN4/pRIshvn/tAPNSZTWAuyPyKByyuSyoP8CKpdxLQ==" height="620"></iframe>
+
+      <br><br><br>
+
+      <p>
+        <b class="pad">hover state changes</b>
+      </p>
+
+      <iframe src="https://netizenorg.github.io/netitor/#code/eJxlkMFOwzAQRM/1V4xyASrawKEIQtozv8AJbZNtbNX1Rva2pSD+HSetUCUuc/CbXc9snfTkeWUAwndWoBEvsULs1rcvi3s8Lp6zPD3cvY5U+VNnLTcSSZ2ECkECn9FGgs6O7DqrFdbi2+H5x5hyCjN5lz0aCqC2BXnlGPL8gTF+n/JsRKbsecdBb5KZFFYOHItsIGWoZHxCyoZGJc7xNlCMopbhXdiaSXYlZhwtKSz1PYc0N9NyKFeN6y4V/5XYh5Zj3nFp0uxjGm7wJbKbuXBVb4xbwSl515z7AaYuL1c09jqWS2OuHN7UBBt5syysap+qsjy6reu5dTSX2BVQih3rsvhYewrbYvWH65JWv0QThow=" height="730"></iframe>
+
+      <p>
+        <b class="pad">styling an img element</b>
+      </p>
+
+      <iframe src="https://netizenorg.github.io/netitor/#code/eJx1UMtugzAQPIevGHFKcgipVC4E8i+Ls8BKxrbsTZuk6r8XKJHSQyUf7J3Xeuqkd8vnDJjOoZcOX9lmU+xhBnI9J+jAkJF6RpIHY19MPOBTLjpUeDsew+30KwiWDL/QxYGQAhvpxEwXr/BuwcMMr0bBJ1HxrgK1ydur8mmZqw8VysV9flru9G9c9Er6mkdoRZ+2GsmlzsexWonb9/LC/W4Vt/Ya/5N2YpVjtXC2Zbjt5g2+54LqYi0rq2XsYSyl1ORTZzlSNE1u/BimD8TDMiKrTU74EKdzxhOEGO/y8w9bInEe" height="590"></iframe>
+
+      <p>
+        <b class="pad">transitiong styles on hover</b>
+      </p>
+
+      <iframe src="https://netizenorg.github.io/netitor/#code/eJx9UUFuwjAQPMMrRj4BBwhVuYTAX0yySSw5tmUvkKjq37s1USmHVrJka3Z2Z3ZcJZ4snZeAnG1nWnzIA7ibhvsS+6II4zEjwSfDxrsS+pK8vTI9cPahxOGHZqnllz6O2qXWx6FE9KyZVu+Hhrr1o9oayxRLXOw1rg5hnOHdZrlY6KYxroOGyjOyukKIPlDkCQMJCO5JqJfo74mi2LYW2plBdOSekNdD3WvXUYIwV2IFNOoh/MLZz0TvoHp/o6jW2cdmJy1Pddld5u/Tt8nPZ2ZlbnlN7u2/BIo/AijmAPLsajf/zbIyQ4fa6pROSuQUUqxPqvZDkF+I2wxpyyelcTOOdSebzUWYWkI7fwHnMJSw" height="640"></iframe>
+
+
+    <br><br><br><br><br><br>
+
+    <script src="/js/Averigua.js"></script>
+    <script src="/js/rainbow-text.js"></script>
+    <script src="/js/fancy-chars.js"></script>
+    <script>
+      FancyText.animate(document.querySelector('header > h1'), 200, 0.2)
+
+      Array.from(document.querySelectorAll('h3'))
+        .forEach(h3 => FancyText.animate(h3, 5000, 0.2))
+
+      Array.from(document.querySelectorAll('a'))
+        .filter(a => a.className !== 'button')
+        .forEach(a => RainbowText.hoverShimmer(a))
+    </script>
+  </body>
+</html>
