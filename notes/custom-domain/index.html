@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Custom Domains</title>
+    <meta name="author" content="Nick Briz">
+    <meta charset="utf-8">
+
+    <!-- social media stuff -->
+    <meta property="og:title" content="FLOSS Notes">
+    <meta property="og:url" content="https://netart.rocks/notes/digitizing-human-rights">
+    <meta property="og:image" content="https://netart.rocks/images/netartdiagram.gif">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:site_name" content="https://netart.rocks">
+    <meta name="twitter:site" content="@nbriz">
+
+    <link rel="icon" type="image/png"  href="https://netart.rocks/images/icon.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style media="screen">
+
+      :root {
+        --code-text: #38383d;
+        --code-meta: #7E7E7F;
+        --code-tag: #0078f0;
+        --code-tag-bracket: #38383d;
+        --code-attribute: #de3ed9;
+        --code-string: #0252cd;
+      }
+
+      code {
+        border-radius: 6px;
+        padding: 1px 8px;
+        border: 1px solid var(--code-tag);
+        color: var(--code-tag);
+        font-size: 17px;
+      }
+
+      h2 {
+        padding-top: 20px;
+      }
+
+      iframe {
+        width: 100vw;
+        /* height: 50vh; */
+        border: 1px solid black;
+        border-left: none;
+        border-right: none;
+      }
+
+      .pad {
+        padding-left: 20px;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <header>
+      <h1>Custom Domains</h1>
+      <h2>on GitHub Pages</h2>
+    </header>
+
+
+    <article>
+      <p>
+        There are numerous different ways to "host" your projects on the World Wide Web so that they may be accessible to anyone with an Internet connection (in class we even discussed how you could technically <a href="https://homebrewserver.club/" target="_blank">host it yourself at home</a>). Typically you pay some company, known as a "hosting provider", to rent some space on one of their computers running a sever which you can upload your projects to. These are usually paid services, but because we're using GitHub as our open source code portfolio, we can take advantage of their free hosting service called GitHub Pages.
+      </p>
+
+      <h3>Hosting Your Project on GitHub Pages</h3>
+
+      <p>If you're using netnet to create your project, you can ask it to "publish" your project for you and it will enable the GitHub Pages feature on your behalf, but if you'd like to enable the feature yourself go to your project's "repository" page on GitHub and do the following:</p>
+
+      <ol>
+        <li>click on your repository's <b>Settings</b> tab.</li>
+        <li>in the side panel menu choose <b>Pages</b></li>
+        <li>make sure your "main" branch and your "/ (root)" folder are selected (they should be by default) then click <b>Save</b></li>
+      </ol>
+
+      <p>
+        GitHub should automatically generate a custom URL for you which should be live a couple of minutes afterwards (if you click that link immediately you will probably land on a 404 page, it takes a minute or two before the page is actually live). If you'd like your own custom domain name you'll have to buy one. As we discussed in class during our <a href="/notes/travelogue/" target="_blank">Internet Travelogue</a> workshop, all servers run on computers connected to the Internet, these computers all have an IP address. The GitHub Pages servers run on computers with the following IP addressses, <code>185.199.108.153</code>, <code>185.199.109.153</code>, <code>185.199.110.153</code> and <code>185.199.111.153</code>. Because it's not easy to remember IP addresses, we use domain names to access these websites, the Internet's Domain Name System (or DNS) is like a giant "Contacts List" or "Address Book" which keeps track of all the domain names and which IP addresses they point to. In GitHub's case, because their GitHub Pages servers are hosting lots of different people's websites, they also use this domain name to differentiate between the different projects hosted in their data center. For this reason, they will automatically generate a domain name for you, usually something like <code>https://YOUR_USERNAME.github.io/YOUR_PROJECT</code>, but you can also register your own cutsom domain name if you prefer.
+      </p>
+
+      <h3>Custom Domain Names</h3>
+
+      <p>In order to register a custom domain name, you need to pay a registrar to add that domain to the DNS (or some company that will register it for you). There are loads of company's that will do this, my personal preference these days is <a href="https://namecheap.com/" target="_blank">namecheap.com</a>. You can register your domain for a year (or more), but keep in mind, once that time runs out (and your registration "expires"), anyone will be able to purchase that domain (so it's best to set "auto-renew" if your registrar provides that feature). Once you've registered the domain you want, you'll need to let your registrar know which IP address you'd like it to resolve to. This looks a little different depending on which company you used to register your domain, but if you used namecheap, you can follow these instructions for <a href="https://www.namecheap.com/support/knowledgebase/article.aspx/9645/2208/how-do-i-link-my-domain-to-github-pages/" target="_blank">how to link your domain to GitHub Pages</a>.</p>
+
+    </article>
+
+    <br><br><br><br><br>
+
+    <script src="/js/Averigua.js"></script>
+    <script src="/js/rainbow-text.js"></script>
+    <script src="/js/fancy-chars.js"></script>
+    <script>
+      FancyText.animate(document.querySelector('header > h1'), 200, 0.2)
+
+      Array.from(document.querySelectorAll('h3'))
+        .forEach(h3 => FancyText.animate(h3, 5000, 0.2))
+
+      Array.from(document.querySelectorAll('a'))
+        .filter(a => a.className !== 'button')
+        .forEach(a => RainbowText.hoverShimmer(a))
+    </script>
+  </body>
+</html>
