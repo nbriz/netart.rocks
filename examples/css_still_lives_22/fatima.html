@@ -1,0 +1,307 @@
+<style>
+  @font-face {
+    font-family: "Corben";
+    src: url("Corben-Bold.ttf");
+  }
+  body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0, auto;
+  }
+  .frame {
+    border: 1px solid black;
+    width: 500px;
+    height: 500px;
+		position: relative;
+  }
+  .bustelo {
+  	position: absolute;
+    width: 150px;
+    height: 180px;
+    border-radius: 2px;
+    background-image: linear-gradient(90deg, rgba(210,178,17,1) 6%, rgba(241,205,10,1) 24%);
+    top: 46%;
+    left: 12%;
+    box-shadow: 5px 0 10px -2px hsl(34, 28%, 33%);
+    z-index: 80;
+  }
+  .lid {
+    position: absolute;
+    width: 150px;
+    height: 20px;
+    background: hsl(45, 94%, 41%);
+    border-radius: 50%;
+    top: -5%;
+  }
+  .bottom {
+    width: 100%;
+    height: 33%;
+    border-radius: 0px;
+    background: linear-gradient(90deg, rgba(203,15,15,1) 6%, rgba(238,23,23,1) 31%);
+    position: absolute;
+    bottom: 0;
+  }
+  .bottom::before {
+    content: "";
+    position: absolute;
+    height: 5px;
+    width: 101%;
+    bottom: 0px;
+    right: -1px;
+    background: linear-gradient(90deg, rgba(173,170,170,1) 9%, rgba(189,188,188,1) 46%, rgba(238,238,238,1) 64%, rgba(189,188,188,1) 82%);
+  }
+  .brand {
+    color: blue;
+    font-family: "Corben", sans-serif;
+    font-size: 28;
+    line-height: 1.2;
+    position: absolute;
+    top: 15%;
+    left: 35%;
+  }
+   .bustelo2 {
+  	position: absolute;
+    width: 150px;
+    height: 180px;
+    background: linear-gradient(90deg, rgba(218,184,16,1) 6%, rgba(233,199,10,1) 24%);
+    top: 44%;
+    left: 20%;
+    z-index: 80;
+  }
+   .lid2 {
+    position: absolute;
+    width: 150px;
+    height: 20px;
+    background: hsl(45, 94%, 38%);
+    border-radius: 50%;
+    top: -5%;
+  }
+  .bottom2 {
+    width: 100%;
+    height: 33%;
+    background: hsl(0, 100%, 43%);
+    position: absolute;
+    bottom: 0;
+  }
+  .bottom2::before {
+    content: "";
+    position: absolute;
+    height: 5px;
+    width: 101%;
+    bottom: 0px;
+    right: -1px;
+    background: linear-gradient(90deg, rgba(173,170,170,1) 9%, rgba(189,188,188,1) 46%, rgba(238,238,238,1) 64%, rgba(189,188,188,1) 82%);
+  }
+  .brand2 {
+    color: blue;
+    font-family: "Corben", sans-serif;
+    font-size: 28;
+    line-height: 1.2;
+    position: absolute;
+    top: 15%;
+    left: 20%;
+  }
+	.cup1 {
+    position: absolute;
+    background-image: linear-gradient(180deg, rgba(6,27,150,1) 50%, rgba(255,255,255,1) 50%);
+    width: 65px;
+    height: 65px;
+    border-radius: 3px;
+    left: 100px;
+    top: 160px;
+    z-index: 85;
+    background-size: 40px 22px;
+    background-repeat: repeat;
+    filter: drop-shadow(-1px 1px 2px grey);
+  }
+   .cup1::after {
+    content: "";
+    position: absolute;
+    height: 65px;
+    width: 20px;
+    background: rgb(255, 255, 255, .40);
+    right: 15px;
+    filter: blur(9px)
+  }
+  .cup2 {
+    position: absolute;
+    background-image: linear-gradient(180deg, rgba(6,27,150,1) 50%, rgba(255,255,255,1) 50%);
+    width: 65px;
+    height: 65px;
+    border-radius: 3px;
+    left: 230px;
+    bottom: 100px;
+    z-index: 90;
+    background-size: 40px 22px;
+    background-repeat: repeat;
+    filter: drop-shadow(-1px 2px 2px grey);
+  }
+   .cup2::after {
+    content: "";
+    position: absolute;
+    height: 65px;
+    width: 20px;
+    background: rgb(255, 255, 255, .40);
+    right: 25px;
+    filter: blur(8px)
+  }
+   .cup3 {
+    position: absolute;
+    background-image: linear-gradient(180deg, rgba(6,27,150,1) 50%, rgba(255,255,255,1) 50%);
+    width: 65px;
+    height: 65px;
+    border-radius: 3px;
+    left: 230px;
+    bottom: 161px;
+    z-index: 85;
+    background-size: 40px 22px;
+    background-repeat: repeat;
+    filter: drop-shadow(-1px 2px 2px grey);
+  }
+  .cup3::after {
+    content: "";
+    position: absolute;
+    height: 65px;
+    width: 20px;
+    background: rgb(255, 255, 255, .40);
+    right: 25px;
+    filter: blur(8px)
+  }
+  .coffeepotBody {
+    position: absolute;
+    background: linear-gradient(90deg, rgba(237,94,3,1) 50%, rgba(255,99,0,1) 50%);;
+    width: 175px;
+    height: 160px;
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+    border-radius: 30px 30px 50px 50px;
+  	bottom: 205px;
+    right: 60px;
+    z-index: 200;
+  }
+  .coffeepotBody::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 160px;
+    background: hsl(23, 100%, 44%);
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+    border-radius: 30px 0px 0px 50px;
+  }
+  .coffeepotBody::before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 160px;
+    background: hsl(23, 98%, 48%);
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+    border-radius: 30px 0px 0px 50px;
+    left: 72%;
+    transform: scaleX(-1);
+  }
+  .coffeepotRim {
+    position: absolute;
+    background: linear-gradient(90deg, rgba(237,94,3,1) 31%, rgba(255,99,0,1) 55%);
+    width: 120px;
+    height: 20px;
+    border-radius: 3px;
+    bottom: 188px;
+    right: 87px;
+    z-index: 201;
+  }
+  .handle {
+    position: absolute;
+    background: black;
+    width: 30px;
+    height: 135px;
+    right: 72px;
+    bottom: 5px;
+    border-radius: 10px;
+  }
+   .handle::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 132px;
+    border-radius: 10px;
+    background-image: linear-gradient(90deg, rgba(0,0,0,1) 44%, rgba(121,112,106,1) 69%, rgba(0,0,0,1) 87%);
+ 		right: 2px;
+    top: 1px;
+    filter: blur(3px);
+  }
+  .knob {
+    position: absolute;
+    background: #000;
+    width: 50px;
+    height: 40px;
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+    border-radius: 20px 20px 20px 20px;
+    right: 123px;
+    top: 96px;
+    z-index: 201;
+  }
+  .knob::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 36px;
+    background-image: linear-gradient(90deg, rgba(0,0,0,1) 37%, rgba(84,80,77,1) 65%, rgba(0,0,0,1) 91%);
+    right: 15px;
+    top: 2px;
+    filter: blur(2px);
+  }
+  .metal {
+    position: absolute;
+    background-image: linear-gradient(90deg, rgba(191,193,208,1) 38%, rgba(230,232,238,1) 65%, rgba(191,193,208,1) 91%);
+    width: 150px;
+    height: 95px;
+    border-radius: 30px 30px 5px 5px;
+    clip-path: polygon(10% 0, 90% 0, 100% 100%, 0 100%);
+    bottom: 95px;
+    right: 71px;
+    z-index: 198;
+    filter: drop-shadow(0px 700px 10px grey);
+  }
+  .metal::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 50px;
+    background-image: radial-gradient(circle, rgba(252,252,254,1) 11%, rgba(230,232,238,1) 100%);
+    filter: blur(5px);
+    border-radius: 4px;
+    bottom: 32px;
+    right: 35px;
+  }
+
+</style>
+
+<div class="frame">
+
+    <div class="bustelo2">
+		<div class="lid2"></div>
+    <div class="brand2">CAFE BUSTELO</div>
+		<div class="bottom2"></div>
+
+  </div>
+
+	<div class="bustelo">
+		<div class="lid"></div>
+    <div class="brand">CAFE BUST</div>
+		<div class="bottom"></div>
+  </div>
+
+  <div class="coffeepotBody">
+    <div class="handle"></div>
+  </div>
+
+  <div class="coffeepotRim"></div>
+	<div class="metal"></div>
+  <div class="knob"></div>
+
+  <div class="cup1"></div>
+  <div class="cup2"></div>
+  <div class="cup3"></div>
+
+</div>

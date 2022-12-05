@@ -1,0 +1,352 @@
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
+    background-color: rgba(192, 150, 128, 0.59);
+  }
+
+  .frame {
+    height: 511px;
+    width: 511px;
+    border: 5px solid none;
+    position: relative;
+  }
+
+  .frame::before{
+    content: "";
+    clip-path: polygon(54% 2%, 89% 12%, 99% 67%, 75% 100%, 25% 100%, 0 80%, 33% 54%);
+    position: absolute;
+    z-index: -5;
+    width: 555px;
+    height: 555px;
+    top: -33px;
+    left: -33px;
+    background-image: linear-gradient(
+      to top right, #d3cdc6 0%, #a68a84 36%, #545240 58%);
+  }
+
+  .canR {
+    position: absolute;
+    right: 66px;
+    bottom: 99px;
+    width: 177px;
+    height: 222px;
+    background-image: linear-gradient(to left,
+        #d5b43d 17%, #b08e30 73%, #828426 96%)
+  }
+
+  .canR::before {
+  content: "";
+  position: absolute;
+  height: 66px;
+  width: 55px;
+  right: 27px;
+  top: 44px;
+  clip-path: polygon(100% 0, 84% 18%, 100% 46%, 67% 43%, 49% 69%, 30% 44%, 0 45%, 16% 22%, 0 0);
+ 	background-image: linear-gradient(
+    #4a0e09 15%, #ede8ed 20%, #1f0e02 25%, #a5882d 50%);
+  }
+
+  .canR::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background-image: radial-gradient(ellipse at 50% 46%,
+        #cfae3b 25%, #815e1f 53%, #d9cf94 61%, #b59732 66%);
+    z-index: 2;
+    width: 100%;
+    height: 26px;
+    top: -15px;
+  }
+
+  .redR {
+    background-image: linear-gradient(to left,
+        #b62b2f 44%, #4b0c12 93%);
+    width: 100%;
+    height: 63px;
+    position: absolute;
+    bottom: 0px;
+  }
+
+  .redR::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+    width: 100%;
+    height: 11px;
+    bottom: -6px;
+    background-image: linear-gradient(to right,
+        #4e4045 16%, #effdfe 25%, #806057 32%, #fbe3d5 100%);
+  }
+
+  .line1R {
+    position: absolute;
+    top: 30px;
+    left: -1px;
+    font-size: 40;
+    font-family: cursive;
+    font-weight: 900;
+    color: transparent;
+    text-shadow: 0 0 2px black;
+  }
+
+  .line1R::after {
+    content: "USTELO";
+    position: absolute;
+    top: 50px;
+    left: -1px;
+    font-size: 40;
+    font-family: cursive;
+    font-weight: 900;
+  }
+
+  .line2R {
+    position: absolute;
+    top: 140px;
+    left: 10px;
+    font-size: 10;
+    font-family: cursive;
+    font-weight: 900;
+    letter-spacing: 1.5;
+    color: transparent;
+    text-shadow: 0 0 2px black;
+  }
+
+  .line3R {
+    position: absolute;
+    top: 160px;
+    left: 0px;
+    text-align: center;
+    font-size: 8;
+    font-family: cursive;
+    font-weight: 900;
+    color: transparent;
+    text-shadow: 0 0 3px rgb(220, 204, 160);
+    z-index: 2;
+  }
+
+  .canL {
+    position: absolute;
+    left: 99px;
+    bottom: 111px;
+    width: 177px;
+    height: 222px;
+    background-image: linear-gradient(to left,
+        #74671e 28%, #a5882d 100%);
+    z-index: -1;
+  }
+
+    .canL::before {
+  content: "";
+  position: absolute;
+  height: 66px;
+  width: 55px;
+  left: 5px;
+  top: 55px;
+  clip-path: polygon(87% 0, 69% 18%, 86% 38%, 50% 41%, 25% 64%, 20% 40%, 1% 36%, 11% 22%, 0 0);
+ 	background-image: linear-gradient(
+    #4a0e09 15%, #ede8ed 20%, #1f0e02 25%, #c88800 50%);
+  }
+
+  .canL::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background-image: radial-gradient(ellipse at 50% 46%,
+        #957d28 23%, #6d5b1b 51%, #dad48a 68%, #4f4411 79%);
+    z-index: 2;
+    width: 100%;
+    height: 20px;
+    top: -10px;
+  }
+
+  .redL {
+    background-image: linear-gradient(to left,
+        #3a0706 19%, #66212c 72%);
+    width: 100%;
+    height: 63px;
+    position: absolute;
+    bottom: 0px;
+  }
+
+  .redL::before {
+    content: "";
+    position: absolute;
+    height: 55px;
+    width: 40px;
+    top: -11px;
+    right: 55px;
+    background-image: linear-gradient(
+      #0f0f0f 0%, #ede8ed 4%, #ccbdc0 7%, #1d1d1b 11%, #808189 15%, #abb6ba 19%, #484146 22%, #050505 26%, #a6a3a8 30%, #262527 33%, #2c2a2c 37%, #d6d1d6 41%, #5f5b58 44%, #1b1918 48%, #a3a3a3 52%, #1b1b1d 56%, #303636 59%, #e1e5e0 63%, #1c1b1d 67%, #bfbbbf 70%, #202122 74%, #e1e5e5 78%, #1a191a 81%, #161717 85%, #676567 89%, #e0e1e1 93%, #2f2d2e 96%, #4f4e50 100%);
+    z-index: 3;
+    border: 5px solid rgb(207, 188, 179);
+  }
+
+  .redL::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+    width: 100%;
+    height: 11px;
+    bottom: -6px;
+    background-image: linear-gradient(to right,
+        #716264 14%, #d0d1d8 22%, #3a2322 38%, #523b39 66%, #150403 87%);
+  }
+
+   .line1L {
+    position: absolute;
+    top: 39px;
+    right: 11px;
+    font-size: 40;
+    font-family: cursive;
+    font-weight: 900;
+    color: transparent;
+    text-shadow: 0 0 2px black;
+  }
+
+  .line1L::before {
+    content: "LO";
+    position: absolute;
+    top: 50px;
+    left: -140px;
+    font-size: 40;
+    font-family: cursive;
+    font-weight: 900;
+  }
+
+  .line1L::after {
+    content: "B";
+    position: absolute;
+    top: 50px;
+    left: -1px;
+    font-size: 40;
+    font-family: cursive;
+    font-weight: 900;
+  }
+
+  .line2L {
+    position: absolute;
+    color: transparent;
+    top: 25px;
+    left: 65px;
+    text-shadow: 0 0 2px black;
+    border: 3px solid rgba(28, 0, 0, 0.38);
+    height: 140px;
+    width: 60px;
+    font-size: 4
+  }
+
+  .cup {
+    position: absolute;
+    background-image: linear-gradient(
+      #342678 20%, #e5dabd 23%, #e5dabd 41%, #342678 33%, #342678 63%, #e5dabd 40%, #e5dabd 79%, #342678 82%);
+    border: 5px solid rgb(229, 218, 189);
+    border-right: none;
+    width: 90px;
+    height: 63px;
+    right: 99px;
+    bottom: 334px;
+    z-index: 3;
+  }
+
+  .cup::before {
+    content: "";
+    position: absolute;
+    clip-path: polygon(0 0, 100% 0, 97% 8%, 91% 14%, 9% 14%, 2% 9%);
+    background-image: linear-gradient(
+      to bottom right,
+      #555950 5%, #66612f 30%, #d4cc88 60%);
+    width: 92px;
+    height: 111px;
+    top: 67px;
+    right: 0.5px;
+    z-index: -2;
+  }
+
+  .cup::after {
+    content: "";
+    position: absolute;
+    clip-path: polygon(18% 0, 0 31%, 0 66%, 19% 100%, 58% 100%, 58% 78%, 31% 78%, 20% 60%, 21% 41%, 30% 24%, 57% 24%, 57% 0);
+    background-image: linear-gradient(
+      to left,
+      #555950 69%, #66612f 81%, #d4cc88 96%);
+    width: 50px;
+    height: 55px;
+    right: 72px;
+    top: 7px;
+    z-index: -2;
+  }
+
+  .triangle {
+    position: absolute;
+    background-image: linear-gradient(
+      to right,
+      #331111 8%, #7b0e19 39%);
+    clip-path: polygon(100% 50%, 0 0, 0 100%);
+    width: 47px;
+    height: 63px;
+    font-size: 30;
+    color: rgb(255, 219, 197);
+  }
+
+  .triangle::after {
+    content: "★";
+    position: absolute;
+    top: 8px;
+  }
+
+  .kettle {
+    position: absolute;
+    background-image: linear-gradient(
+      #020301 10%, #caac99 15%, #742b15 20%, #8d241a 40%);
+    clip-path: polygon(17% 24%, 4% 31%, 17% 57%, 19% 79%, 65% 80%, 72% 24%, 58% 17%, 48% 14%, 50% 0, 38% 0, 40% 14%, 27% 18%);
+    width: 280px;
+    height: 230px;
+    right: -11px;
+    top: 45px;
+    z-index: -2;
+  }
+
+  .handle {
+    position: absolute;
+    background-image: linear-gradient(
+      to left, #989285 5%, #201f18 11%, #0a0903 45%, #631c10 54%, #8f261b 85%);
+    clip-path: polygon(69% 98%, 93% 94%, 97% 60%, 90% 32%, 77% 8%, 55% 2%, 51% 0%, 29% 0, 16% 7%, 15% 100%, 28% 100%, 34% 25%, 46% 24%, 47% 16%, 71% 26%, 73% 52%, 79% 62%, 75% 75%, 77% 86%);
+    width: 150px;
+    height: 140px;
+    right: -40px;
+    top: 95px;
+    z-index: -1;
+  }
+
+</style>
+
+
+<div class="frame">
+
+  <div class="canR">
+    <div class="line1R">AFE</div>
+    <div class="line2R">Cafe Espresso Molido</div>
+    <div class="line3R">EVERYTHING IS MUCH THE SAME<br>GOING MANIFEST GOODLY<br>freshly eating connecticut<br><br>MUCH SOLD TO BE SPOILED CkgD</div>
+    <div class="redR"></div>
+  </div>
+
+  <div class="canL">
+    <div class="line1L">C</div>
+    <div class="line2L">hello I am writing from a laptop<br> I do not know what is actually written here so I guess I'll make it<br> up. pls dont hate me I'm trying my best :((((( but while I have you here, I want to ask you to close your <br> current sight perceiving mechanism(s) and listen <br> to me speak. Where is the warmth? Where is she in your memory? Does one end feel the same as being at the other? Have you smiled today? Will she dance tomorrow? If I have a mango, will you come over? Take food as your medicine and medicine as your food. How can I fuck around and find out if fucking around within the system is not fucking around, and if one cannot escape the system to fuck. I will die and it will all be over soon. You wont know me. You wont need me. Need will know you not me. We all fall into the water and the river carries us away. And we all fall down. And we all fall back. Peace and Love on Earth. Screen age.</div>
+    <div class="redL"></div>
+  </div>
+
+  <div class="cup">
+    <div class="triangle"></div>
+  </div>
+
+  <div class="kettle"></div>
+  <div class="handle"></div>
+
+</div>

@@ -1,0 +1,295 @@
+<head>
+  <meta name="description" content="A still life depicting a kettle, two mugs, and a tin of coffee resting on a table, rendered in CSS code.">
+  <meta name="author" content="Nicole Stachowiak">
+  <title> Still Life </title>
+</head>
+
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: tan;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  /*frame*/
+  .frame {
+    height: 500px;
+    position: relative;
+    border: 1px solid black;
+    width: 500px;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+
+  /*kettle*/
+  .kettle-body {
+    background: rgb(255, 83, 0);
+    height: 150px;
+    width: 100px;
+    position: relative;
+    bottom: 460px;
+    left: 80px;
+    z-index: 5
+  }
+
+  .kettle-top {
+    width: 120px;
+    height: 30px;
+    background: rgb(255, 112, 0);
+    border-radius: 100px / 50px;
+    position: relative;
+    bottom: 115px;
+    left: 0px;
+  }
+
+  .kettle-knob {
+    width: 20px;
+    height: 25px;
+    background: black;
+    position: relative;
+    bottom: 163px;
+    left: 40px;
+    border-radius: 5px;
+  }
+
+  .kettle-spout {
+    width: 50px;
+    height: 70px;
+    background: rgb(255, 112, 0);
+    clip-path: polygon(0% 0%, 44% 0, 100% 30%, 44% 100%, 0% 100%);
+    position: relative;
+    bottom: 162px;
+    left: 90px;
+    z-index: -1;
+  }
+
+  .kettle-handle {
+    clip-path: polygon(20% 0%, 80% 0%, 79% 21%, 47% 25%, 26% 42%, 39% 95%, 0 95%, 0% 20%);
+    background: black;
+    height: 120px;
+    width: 70px;
+    position: relative;
+    bottom: 210px;
+    right: 55px;
+    z-index: 5;
+  }
+
+
+  .kettle-bottom {
+    height: 100px;
+    width: 80px;
+    border: 1px solid;
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(255, 255, 255, 1) 100%, rgba(0, 212, 255, 1) 100%);
+    transform: rotate(90deg);
+    position: relative;
+    top: 140px;
+    left: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  .kettle-reflection {
+    width: 105px;
+    height: 20px;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.5247286414565826) 0%, rgba(101, 101, 101, 0.4715073529411765) 100%);
+    border-radius: 100px / 50px;
+    position: relative;
+    bottom: 125px;
+    z-index: -1
+  }
+
+  /*coffee-container*/
+
+  .oval {
+    width: 150px;
+    height: 30px;
+    background: hsl(47, 87%, 44%);
+    border-radius: 100px / 50px;
+    position: relative;
+    bottom: 210px;
+  }
+
+  .coffee {
+    width: 150px;
+    height: 185px;
+    background-color: hsl(49, 100%, 53%);
+    transform: translate(250px, 70px);
+    position: relative;
+    bottom: 20px;
+    z-index: -1;
+  }
+
+  .red {
+    background-color: red;
+    height: 35%;
+    width: 150px;
+    position: relative;
+    bottom: 12px;
+  }
+
+  .brand {
+    position: relative;
+    left: 100px;
+    top: 15px
+  }
+
+  /*cups*/
+
+  .cup {
+    background: white;
+    border: 1px solid;
+    width: 70px;
+    height: 90px;
+    border-radius: 12px;
+    position: relative;
+    bottom: 110px;
+    left: 200px;
+  }
+
+  .interior {
+    width: 70px;
+    height: 20px;
+    background: grey;
+    border-radius: 100px / 50px;
+    position: relative;
+    bottom: 60px;
+  }
+
+  .handle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 15px 15px 0 0;
+    transform: rotate(135deg);
+    position: relative;
+    bottom: 50px;
+  }
+
+  .shadow {
+    width: 70px;
+    height: 20px;
+    background: hsl(63, 21%, 64%);
+    border-radius: 100px / 50px;
+    position: relative;
+    bottom: 35px;
+    z-index: -1
+  }
+
+
+  .flag {
+    border: 1px solid;
+    background: linear-gradient(90deg, rgba(0, 1, 255, 1) 49%, rgba(255, 255, 255, 1) 49%, rgba(255, 255, 255, 1) 100%);
+    (255, 255, 255));
+    background-size: 30% 10%;
+    width: 50px;
+    height: 55px;
+    position: relative;
+    left: 18px;
+    top: 20px;
+  }
+
+  .triangle {
+    background: red;
+    width: 50%;
+    height: 100%;
+    position: relative;
+    clip-path: polygon(100% 51%, 0 0, 0 100%);
+  }
+
+  .star {
+    background: white;
+    width: 80%;
+    height: 80%;
+    position: relative;
+    right: 3px;
+    top: 4px;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  }
+
+  /*table*/
+  .table {
+    width: 450px;
+    height: 140px;
+    background: cornsilk;
+    position: relative;
+    bottom: 170px;
+    right: -25px;
+    z-index: -4
+  }
+
+  .table-shadow {
+    width: 450px;
+    height: 60px;
+    background: hsl(63, 32%, 76%);
+    position: relative;
+    top: 100px;
+    z-index: -5;
+  }
+</style>
+
+
+<!-- frame-->
+<div class="frame">
+
+  <!--coffee tin-->
+  <div class="coffee">
+    <div class="brand" style="font-family:impact">
+      <h1>
+        CAF <p>
+        </p> BUS </h1>
+    </div>
+    <div>
+      <div class="red">
+      </div>
+      <div class="oval">
+      </div>
+    </div>
+  </div>
+
+    <!-- cup 1-->
+    <div class="cup">
+      <div class="flag">
+        <div class="triangle">
+          <div class="star"></div>
+        </div>
+      </div>
+      <div class="interior"></div>
+      <div class="handle"></div>
+    </div>
+
+    <!--cup 2-->
+    <div class="cup">
+      <div class="flag">
+        <div class="triangle">
+          <div class="star"></div>
+        </div>
+      </div>
+      <div class="handle"></div>
+      <div class="shadow"></div>
+    </div>
+
+    <!-- table-->
+    <div class="table">
+      <div class="table-shadow"></div>
+    </div>
+
+    <!-- kettle-->
+    <div class="kettle-body">
+      <div class="kettle-bottom">
+      </div>
+      <div class="kettle-top">
+      </div>
+      <div class="kettle-knob"></div>
+      <div class="kettle-spout"></div>
+      <div class="kettle-handle"></div>
+      <div class="kettle-reflection"></div>
+    </div>
+</div>
