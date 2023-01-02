@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Internet Art II</title>
+    <meta name="description" content="a class website for Internet Art II (MAAD 23632) at the University of Chicago">
+    <meta name="author" content="Nick Briz">
+    <meta charset="utf-8">
+
+    <!-- social media stuff -->
+    <meta property="og:title" content="Internet Art II">
+    <meta property="og:url" content="https://netart.rocks/uchicago">
+    <meta property="og:image" content="https://netart.rocks/images/computer.gif">
+    <meta property="og:description" content="a class website for Internet Art II (MAAD 23632) at the University of Chicago">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:site_name" content="https://netart.rocks/uchicago">
+    <meta name="twitter:site" content="@nbriz">
+
+    <link rel="icon" type="image/png"  href="https://netart.rocks/images/icon.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style media="screen">
+      .center {
+        text-align: center;
+        display: block;
+        width: 100%;
+      }
+
+      article.center a {
+        display: block;
+        font-size: 24px;
+        font-weight: bold;
+        font-style: italic;
+        text-decoration: underline;
+      }
+
+      article.center a:hover {
+        border-bottom: none;
+      }
+
+      .double {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .double div {
+        width: 50%;
+        max-width: 440px;
+      }
+
+      @media (max-width: 986px) {
+        .double { flex-direction: column; }
+        .double div { margin: 40px auto; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>randomness</h1>
+    </header>
+
+    <article>
+
+      <p>
+        <b>READ:</b> the chapter on <a href="/files/randomness-10print.pdf">Randomness</a> from the book <a href="https://10print.org/" target="_blank">10 PRINT CHR$(205.5+RND(1)); : GOTO 10 </a> (the title of which is the algorithm implemented in the language Basic).
+      </p>
+
+    </article>
+
+    <blockquote>
+      <p>There is this old romantic idea which is called "intuition". An artist has talent, a genius, sits down, has a drink and creates. And intuition does what it does, sometimes it creates something good, sometimes not. Now, when we work with computers we're modern and say intuition is old fashioned, I'm not interested. But there is a thing that can replace intuition. It's randomness.</p>
+      <cite>
+        <a href="https://en.wikipedia.org/wiki/Vera_Moln%C3%A1r" target="_blank">Vera Molnár</a>
+      </cite>
+    </blockquote>
+
+    <article>
+
+      <p>
+        In this next section we'll learn how to program by learning to code in the Web's defacto programming language: JavaScript. I'll be introducing all the core concepts in programming through the lens of "creative coding", and more specifically through the lens of "randomness" or "chance".
+      </p>
+
+    </article>
+
+    <br><br><br><br><br><br>
+
+    <script src="/js/Averigua.js"></script>
+    <script src="/js/rainbow-text.js"></script>
+    <script src="/js/fancy-chars.js"></script>
+    <script>
+      FancyText.animate(document.querySelector('header > h1'), 200, 0.2)
+
+      Array.from(document.querySelectorAll('h3'))
+        .forEach(h3 => FancyText.animate(h3, 5000, 0.2))
+
+      Array.from(document.querySelectorAll('a'))
+        .filter(a => a.className !== 'button')
+        .forEach(a => RainbowText.hoverShimmer(a))
+    </script>
+  </body>
+</html>

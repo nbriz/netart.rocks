@@ -46,8 +46,21 @@
         border-right: none;
       }
 
-      .pad {
-        padding-left: 20px;
+      #netitor-nav {
+        max-width: 800px;
+        margin: 40px auto;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      #netitor-nav > b {
+        color: var(--blue);
+        cursor: pointer;
+      }
+
+      #netitor-nav > b.selected {
+        border-bottom: 2px solid #000;
+        color: #000;
       }
 
     </style>
@@ -1613,43 +1626,15 @@
 
     <br><br><br>
 
-    <p>
-      <b class="pad">basic elements</b>
-    </p>
+    <nav id="netitor-nav">
+      <b class="selected" data-src="https://netizenorg.github.io/netitor/#code/eJxFT0tOwzAQXeNTDNl0QxLRJTKWuuMAXGBST+JRHY9lu6Tl9NipAGmk0fvM5+nnvlefjjPUQujOsq4USvcCXA6N2fAOMoMn/OKwVCJIIcUB7nJNcBZLMEvaUSY/AwYLUhw9tJTbImWFcjgUyE42uEaQANUCEReqcpsbVN8bpd2rOcEHoa239FhRpY4GIV+n3v3RR6OUjkY9/T8eMeGSMLr2bKFbGeqaRC1CALrhGj0paGKWlUBPZhJvd6ceJwOYYSPvW98N1avZcEHPZ/6mXyebAU41Yc1Hj8OewwWK7AMILtH83rlSYn4bx40vHMkyDpKWzjwgW9QjmkHpMZoft658qA==">basic elements</b>
+      <b data-src="https://netizenorg.github.io/netitor/#code/eJx1kMFOhEAMhu/zFL+cNIHdeEcSjR5MvHnwXKBAY5luZgeRt3fYEMMe9tK0X5s/6VfeFYWrWW2GnEEe/EvjSRnWrVNmoeXALVTOMctdDAuagXzPiAMji8uJM1CMQeopJmh4zkE53nNYgLiiqFxpivXwKXvMKgeUKtWH9EPszGJ5TNMG30byE+sevZLysgefNC8c9uSLzoP4Pprf05cleL4CouRbaW6kl0fTVFcd0mGxCYFH+7nxZ0raPLh1nz6scDgccEmB+OSBUE7/NHVOImZRRc2NjXyxO/niSrC7p29CPaly3NjDqvAPzt2D5g==">lists</b>
+      <b data-src="https://netizenorg.github.io/netitor/#code/eJxdkMFugzAMhu95Ci+XXYDep7ZPsNOkPUAaTPAaYpSYIt5+JtWEuhMS9u//y2fOb20LZkXwLsFSEGREsDQFC+ICCANON+xBpzS5gDBQxMa4Uiikuvz99Qk8HAsaISlgS/YWnEim2yJo2vZqznoX9P/FjiJz+TidEorL0mX293Kqef0kwayDLtBgNVQJ96bnfXfjh7agHxN5F+MGK+d7aUBrtPm9wERKl4KpSDNncUkOkgZ8JH+v7BvGyCv0LDv2QKk3rFfW0b2e6ip+RTE0wMYLjE4pXqwAJR+XXmVR2lcyzJl/0AuYgWOPuanBXbSLheFwWKq15xODtqqif748T7Oy5+pE43KxDh5qai//GwJ5Tvb6C12znpE=">images</b>
+      <b data-src="https://netizenorg.github.io/netitor/#code/eJxNTjFywzAMm6NXoFm61PbSqZfmL4xNR7pKoo+k4/PvK3tpFxIkQQC3V5pYAi5ldZ5aH6W6SrYA0OqyZNobzCJLuJiO39fovtjXMFR2Uu9Vxh8b5pTZhpEKq9TOxqaQ+7J8Xu/hNpwWDbx1XfDIOGdw5sLV8eAsGyIZCDNvmNI8sx4Xctf0aLksbMljqkhukIVrqk84PXts/K4Myso07ZippJxIcdCxRfLTr8X+08IkbB9oEK47lIu8DjmTwpAZx0OQVvWfP6hOMGbEFjU5xkj12dYHWdnW7H3ouvsvBTJ0kw==">video</b>
+      <b data-src="https://netizenorg.github.io/netitor/#code/eJxNTstOwzAQPOOv2PoEUlIjEBJCTc89lAsC5Vg59RIv9SOynQb+nm0CiNvMaF4bek/aowCYyBTbyIfH2+FTMrdIvS2NvL+bhaucjo20pQz5SSkM64lONKAhvY6pVxem2picObRk8NBiJ7dio5Z6Rqu6Fh9jLuDohDAhHHWAMSNI8r2sQJ45FiXoYEDq0RBjdOgxlCxKBPQdGvCXQaDAQhwT7F6f9zDoHqvfRu3yj1fEYvGfJfMahR5Y5c351t9CBTZOeGZ7iEVo57iuW0JM4sQhynBd0hcsrW8v+zxfzYg3oq6338k3bNU=">iframe</b>
+    </nav>
 
-    <iframe src="https://netizenorg.github.io/netitor/#code/eJxFT0tOwzAQXeNTDNl0QxLRJTKWuuMAXGBST+JRHY9lu6Tl9NipAGmk0fvM5+nnvlefjjPUQujOsq4USvcCXA6N2fAOMoMn/OKwVCJIIcUB7nJNcBZLMEvaUSY/AwYLUhw9tJTbImWFcjgUyE42uEaQANUCEReqcpsbVN8bpd2rOcEHoa239FhRpY4GIV+n3v3RR6OUjkY9/T8eMeGSMLr2bKFbGeqaRC1CALrhGj0paGKWlUBPZhJvd6ceJwOYYSPvW98N1avZcEHPZ/6mXyebAU41Yc1Hj8OewwWK7AMILtH83rlSYn4bx40vHMkyDpKWzjwgW9QjmkHpMZoft658qA==" height="500"></iframe>
-
-    <br><br><br>
-
-    <p>
-      <b class="pad">lists</b>
-    </p>
-
-    <iframe src="https://netizenorg.github.io/netitor/#code/eJx1kMFOhEAMhu/zFL+cNIHdeEcSjR5MvHnwXKBAY5luZgeRt3fYEMMe9tK0X5s/6VfeFYWrWW2GnEEe/EvjSRnWrVNmoeXALVTOMctdDAuagXzPiAMji8uJM1CMQeopJmh4zkE53nNYgLiiqFxpivXwKXvMKgeUKtWH9EPszGJ5TNMG30byE+sevZLysgefNC8c9uSLzoP4Pprf05cleL4CouRbaW6kl0fTVFcd0mGxCYFH+7nxZ0raPLh1nz6scDgccEmB+OSBUE7/NHVOImZRRc2NjXyxO/niSrC7p29CPaly3NjDqvAPzt2D5g==" height="630"></iframe>
-
-    <br><br><br>
-
-    <p>
-      <b class="pad">images</b>
-    </p>
-
-    <iframe src="https://netizenorg.github.io/netitor/#code/eJxdkMFugzAMhu95Ci+XXYDep7ZPsNOkPUAaTPAaYpSYIt5+JtWEuhMS9u//y2fOb20LZkXwLsFSEGREsDQFC+ICCANON+xBpzS5gDBQxMa4Uiikuvz99Qk8HAsaISlgS/YWnEim2yJo2vZqznoX9P/FjiJz+TidEorL0mX293Kqef0kwayDLtBgNVQJ96bnfXfjh7agHxN5F+MGK+d7aUBrtPm9wERKl4KpSDNncUkOkgZ8JH+v7BvGyCv0LDv2QKk3rFfW0b2e6ip+RTE0wMYLjE4pXqwAJR+XXmVR2lcyzJl/0AuYgWOPuanBXbSLheFwWKq15xODtqqif748T7Oy5+pE43KxDh5qai//GwJ5Tvb6C12znpE=" height="600"></iframe>
-
-    <br><br><br>
-
-    <p>
-      <b class="pad">video</b>
-    </p>
-
-    <iframe src="https://netizenorg.github.io/netitor/#code/eJxNTjFywzAMm6NXoFm61PbSqZfmL4xNR7pKoo+k4/PvK3tpFxIkQQC3V5pYAi5ldZ5aH6W6SrYA0OqyZNobzCJLuJiO39fovtjXMFR2Uu9Vxh8b5pTZhpEKq9TOxqaQ+7J8Xu/hNpwWDbx1XfDIOGdw5sLV8eAsGyIZCDNvmNI8sx4Xctf0aLksbMljqkhukIVrqk84PXts/K4Myso07ZippJxIcdCxRfLTr8X+08IkbB9oEK47lIu8DjmTwpAZx0OQVvWfP6hOMGbEFjU5xkj12dYHWdnW7H3ouvsvBTJ0kw==" height="450"></iframe>
-
-    <br><br><br>
-
-    <p>
-      <b class="pad">iframe</b>
-    </p>
-
-    <iframe src="https://netizenorg.github.io/netitor/#code/eJxNTstOwzAQPOOv2PoEUlIjEBJCTc89lAsC5Vg59RIv9SOynQb+nm0CiNvMaF4bek/aowCYyBTbyIfH2+FTMrdIvS2NvL+bhaucjo20pQz5SSkM64lONKAhvY6pVxem2picObRk8NBiJ7dio5Z6Rqu6Fh9jLuDohDAhHHWAMSNI8r2sQJ45FiXoYEDq0RBjdOgxlCxKBPQdGvCXQaDAQhwT7F6f9zDoHqvfRu3yj1fEYvGfJfMahR5Y5c351t9CBTZOeGZ7iEVo57iuW0JM4sQhynBd0hcsrW8v+zxfzYg3oq6338k3bNU=" height="400"></iframe>
+    <iframe id="netitor" src="https://netizenorg.github.io/netitor/#code/eJxFT0tOwzAQXeNTDNl0QxLRJTKWuuMAXGBST+JRHY9lu6Tl9NipAGmk0fvM5+nnvlefjjPUQujOsq4USvcCXA6N2fAOMoMn/OKwVCJIIcUB7nJNcBZLMEvaUSY/AwYLUhw9tJTbImWFcjgUyE42uEaQANUCEReqcpsbVN8bpd2rOcEHoa239FhRpY4GIV+n3v3RR6OUjkY9/T8eMeGSMLr2bKFbGeqaRC1CALrhGj0paGKWlUBPZhJvd6ceJwOYYSPvW98N1avZcEHPZ/6mXyebAU41Yc1Hj8OewwWK7AMILtH83rlSYn4bx40vHMkyDpKWzjwgW9QjmkHpMZoft658qA==" height="630"></iframe>
 
     <br><br><br><br><br><br>
 
@@ -1665,6 +1650,24 @@
       Array.from(document.querySelectorAll('a'))
         .filter(a => a.className !== 'button')
         .forEach(a => RainbowText.hoverShimmer(a))
+
+      Array.from(document.querySelectorAll('#netitor-nav > b'))
+        .forEach(a => {
+          RainbowText.hoverShimmer(a)
+          a.addEventListener('click', (e) => {
+            Array.from(document.querySelectorAll('#netitor-nav > b'))
+              .forEach(b => b.classList.remove('selected'))
+            a.classList.add('selected')
+
+            // document.querySelector('#netitor').setAttribute('src', a.dataset.src)
+            document.querySelector('#netitor').src = ''
+            setTimeout(() => {
+              document.querySelector('#netitor').src = a.dataset.src
+            }, 100)
+          })
+        })
+
+
     </script>
   </body>
 </html>

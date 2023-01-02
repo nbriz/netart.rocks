@@ -48,8 +48,21 @@
         border-right: none;
       }
 
-      .pad {
-        padding-left: 20px;
+      #netitor-nav {
+        max-width: 800px;
+        margin: 40px auto;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      #netitor-nav > b {
+        color: var(--blue);
+        cursor: pointer;
+      }
+
+      #netitor-nav > b.selected {
+        border-bottom: 2px solid #000;
+        color: #000;
       }
 
     </style>
@@ -438,32 +451,14 @@
 
       <br><br><br>
 
-      <p>
-        <b class="pad">changing our body's styles</b>
-      </p>
+      <nav id="netitor-nav">
+        <b data-src="https://netizenorg.github.io/netitor/#code/eJxFj8FuwyAQRM/hK0a+tI3ScG8tH9pLD8kp+QGMtzbNGiwDsqKq/17AriohYGZ22Uftw52pEXIvroPxSEtBu3EkGw74ij6AzY3wcT2fkt/RAcLFGe+XS5HQykKxdzBWc8zG2uyPYi8F0Lruju90QUrYzS9YBhPotTit0rd+dtF2z1vYcrJy+CNqubGJOj/SiF2y66lJ++6NtIqeEDJzNVUgpjx14x8Md3CfyKRVbq7KuL+ix5GUNbaHCQ/pyxYthYXIrtpNVEJluxWbnc86qN4/pRIshvn/tAPNSZTWAuyPyKByyuSyoP8CKpdxLQ==">changing our body's styles</b>
+        <b data-src="https://netizenorg.github.io/netitor/#code/eJxlkMFOwzAQRM/1V4xyASrawKEIQtozv8AJbZNtbNX1Rva2pSD+HSetUCUuc/CbXc9snfTkeWUAwndWoBEvsULs1rcvi3s8Lp6zPD3cvY5U+VNnLTcSSZ2ECkECn9FGgs6O7DqrFdbi2+H5x5hyCjN5lz0aCqC2BXnlGPL8gTF+n/JsRKbsecdBb5KZFFYOHItsIGWoZHxCyoZGJc7xNlCMopbhXdiaSXYlZhwtKSz1PYc0N9NyKFeN6y4V/5XYh5Zj3nFp0uxjGm7wJbKbuXBVb4xbwSl515z7AaYuL1c09jqWS2OuHN7UBBt5syysap+qsjy6reu5dTSX2BVQih3rsvhYewrbYvWH65JWv0QThow=">hover state changes</b>
+        <b data-src="https://netizenorg.github.io/netitor/#code/eJx1UMtugzAQPIevGHFKcgipVC4E8i+Ls8BKxrbsTZuk6r8XKJHSQyUf7J3Xeuqkd8vnDJjOoZcOX9lmU+xhBnI9J+jAkJF6RpIHY19MPOBTLjpUeDsew+30KwiWDL/QxYGQAhvpxEwXr/BuwcMMr0bBJ1HxrgK1ydur8mmZqw8VysV9flru9G9c9Er6mkdoRZ+2GsmlzsexWonb9/LC/W4Vt/Ya/5N2YpVjtXC2Zbjt5g2+54LqYi0rq2XsYSyl1ORTZzlSNE1u/BimD8TDMiKrTU74EKdzxhOEGO/y8w9bInEe">styling an img element</b>
+        <b data-src="https://netizenorg.github.io/netitor/#code/eJx9UUFuwjAQPMMrRj4BBwhVuYTAX0yySSw5tmUvkKjq37s1USmHVrJka3Z2Z3ZcJZ4snZeAnG1nWnzIA7ibhvsS+6II4zEjwSfDxrsS+pK8vTI9cPahxOGHZqnllz6O2qXWx6FE9KyZVu+Hhrr1o9oayxRLXOw1rg5hnOHdZrlY6KYxroOGyjOyukKIPlDkCQMJCO5JqJfo74mi2LYW2plBdOSekNdD3WvXUYIwV2IFNOoh/MLZz0TvoHp/o6jW2cdmJy1Pddld5u/Tt8nPZ2ZlbnlN7u2/BIo/AijmAPLsajf/zbIyQ4fa6pROSuQUUqxPqvZDkF+I2wxpyyelcTOOdSebzUWYWkI7fwHnMJSw">transitiong styles on hover</b>
+      </nav>
 
-      <iframe src="https://netizenorg.github.io/netitor/#code/eJxFj8FuwyAQRM/hK0a+tI3ScG8tH9pLD8kp+QGMtzbNGiwDsqKq/17AriohYGZ22Uftw52pEXIvroPxSEtBu3EkGw74ij6AzY3wcT2fkt/RAcLFGe+XS5HQykKxdzBWc8zG2uyPYi8F0Lruju90QUrYzS9YBhPotTit0rd+dtF2z1vYcrJy+CNqubGJOj/SiF2y66lJ++6NtIqeEDJzNVUgpjx14x8Md3CfyKRVbq7KuL+ix5GUNbaHCQ/pyxYthYXIrtpNVEJluxWbnc86qN4/pRIshvn/tAPNSZTWAuyPyKByyuSyoP8CKpdxLQ==" height="620"></iframe>
-
-      <br><br><br>
-
-      <p>
-        <b class="pad">hover state changes</b>
-      </p>
-
-      <iframe src="https://netizenorg.github.io/netitor/#code/eJxlkMFOwzAQRM/1V4xyASrawKEIQtozv8AJbZNtbNX1Rva2pSD+HSetUCUuc/CbXc9snfTkeWUAwndWoBEvsULs1rcvi3s8Lp6zPD3cvY5U+VNnLTcSSZ2ECkECn9FGgs6O7DqrFdbi2+H5x5hyCjN5lz0aCqC2BXnlGPL8gTF+n/JsRKbsecdBb5KZFFYOHItsIGWoZHxCyoZGJc7xNlCMopbhXdiaSXYlZhwtKSz1PYc0N9NyKFeN6y4V/5XYh5Zj3nFp0uxjGm7wJbKbuXBVb4xbwSl515z7AaYuL1c09jqWS2OuHN7UBBt5syysap+qsjy6reu5dTSX2BVQih3rsvhYewrbYvWH65JWv0QThow=" height="730"></iframe>
-
-      <p>
-        <b class="pad">styling an img element</b>
-      </p>
-
-      <iframe src="https://netizenorg.github.io/netitor/#code/eJx1UMtugzAQPIevGHFKcgipVC4E8i+Ls8BKxrbsTZuk6r8XKJHSQyUf7J3Xeuqkd8vnDJjOoZcOX9lmU+xhBnI9J+jAkJF6RpIHY19MPOBTLjpUeDsew+30KwiWDL/QxYGQAhvpxEwXr/BuwcMMr0bBJ1HxrgK1ydur8mmZqw8VysV9flru9G9c9Er6mkdoRZ+2GsmlzsexWonb9/LC/W4Vt/Ya/5N2YpVjtXC2Zbjt5g2+54LqYi0rq2XsYSyl1ORTZzlSNE1u/BimD8TDMiKrTU74EKdzxhOEGO/y8w9bInEe" height="590"></iframe>
-
-      <p>
-        <b class="pad">transitiong styles on hover</b>
-      </p>
-
-      <iframe src="https://netizenorg.github.io/netitor/#code/eJx9UUFuwjAQPMMrRj4BBwhVuYTAX0yySSw5tmUvkKjq37s1USmHVrJka3Z2Z3ZcJZ4snZeAnG1nWnzIA7ibhvsS+6II4zEjwSfDxrsS+pK8vTI9cPahxOGHZqnllz6O2qXWx6FE9KyZVu+Hhrr1o9oayxRLXOw1rg5hnOHdZrlY6KYxroOGyjOyukKIPlDkCQMJCO5JqJfo74mi2LYW2plBdOSekNdD3WvXUYIwV2IFNOoh/MLZz0TvoHp/o6jW2cdmJy1Pddld5u/Tt8nPZ2ZlbnlN7u2/BIo/AijmAPLsajf/zbIyQ4fa6pROSuQUUqxPqvZDkF+I2wxpyyelcTOOdSebzUWYWkI7fwHnMJSw" height="640"></iframe>
-
+      <iframe id="netitor" src="https://netizenorg.github.io/netitor/#code/eJxFj8FuwyAQRM/hK0a+tI3ScG8tH9pLD8kp+QGMtzbNGiwDsqKq/17AriohYGZ22Uftw52pEXIvroPxSEtBu3EkGw74ij6AzY3wcT2fkt/RAcLFGe+XS5HQykKxdzBWc8zG2uyPYi8F0Lruju90QUrYzS9YBhPotTit0rd+dtF2z1vYcrJy+CNqubGJOj/SiF2y66lJ++6NtIqeEDJzNVUgpjx14x8Md3CfyKRVbq7KuL+ix5GUNbaHCQ/pyxYthYXIrtpNVEJluxWbnc86qN4/pRIshvn/tAPNSZTWAuyPyKByyuSyoP8CKpdxLQ==" height="730"></iframe>
 
     <br><br><br><br><br><br>
 
@@ -479,6 +474,22 @@
       Array.from(document.querySelectorAll('a'))
         .filter(a => a.className !== 'button')
         .forEach(a => RainbowText.hoverShimmer(a))
+
+      Array.from(document.querySelectorAll('#netitor-nav > b'))
+        .forEach(a => {
+          RainbowText.hoverShimmer(a)
+          a.addEventListener('click', (e) => {
+            Array.from(document.querySelectorAll('#netitor-nav > b'))
+              .forEach(b => b.classList.remove('selected'))
+            a.classList.add('selected')
+
+            // document.querySelector('#netitor').setAttribute('src', a.dataset.src)
+            document.querySelector('#netitor').src = ''
+            setTimeout(() => {
+              document.querySelector('#netitor').src = a.dataset.src
+            }, 100)
+          })
+        })
     </script>
   </body>
 </html>
