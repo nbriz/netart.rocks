@@ -1,0 +1,311 @@
+<style>
+
+  * { box-sizing: border-box; }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .frame {
+    position: relative;
+    width: 500px;
+    height: 500px;
+/*     this border is for reference, u can remove it */
+    border: 1px solid black;
+  }
+  .table {
+    height: 100px;
+    width: 500px;
+    bottom: 0px;
+    position: absolute;
+    background: linear-gradient(90deg, rgba(216,206,183,1) 8%, rgba(187,163,151,1) 14%, rgba(173,142,135,1) 17%, rgba(180,144,136,1) 41%, rgba(220,145,133,1) 54%, rgba(191,128,114,1) 58%, rgba(208,150,125,1) 62%, rgba(201,171,156,1) 68%, rgba(251,221,202,1) 77%, rgba(241,211,193,1) 81%, rgba(201,171,156,1) 84%, rgba(216,196,171,1) 86%, rgba(204,191,164,1) 100%);
+  }
+  .table-side {
+    height: 30px;
+    width: 500px;
+    bottom: 0px;
+    position: absolute;
+    background-color: rgba(170,147,140,1)
+  }
+  .moka {
+    height: 32px;
+    width: 140px;
+    bottom: 200px;
+    right: 85px;
+    position: absolute;
+    border-radius: 5px;
+    background: linear-gradient(90deg, rgba(140,44,0,1) 11%,
+      rgba(169,47,0,1) 29%, rgba(233,92,21,1) 65%,
+      rgba(211,83,29,1) 100%);
+  }
+  .moka-lid {
+    height: 60px;
+    width: 150px;
+    bottom: 125px;
+    position: absolute;
+    border-radius: 100%;
+    transform: perspective(200px);
+		background: linear-gradient(0deg, rgba(173,62,10,1) 60%, rgba(156,46,0,1) 70%, rgba(168,61,10,1) 80%, rgba(140,54,33,1) 90%, rgba(189,159,135,1) 96%);
+  }
+  .moka-body {
+    height: 130px;
+    width: 150px;
+    bottom: 25px;
+    right: -10px;
+    position: absolute;
+    border-radius: 15px;
+    transform: perspective(15px) rotateX(-1deg);
+    background: linear-gradient(90deg, rgba(177,141,122,1) 0%,
+      rgba(143,72,36,1) 5%, rgba(123,46,7,1) 8%,
+      rgba(169,51,0,1) 28%, rgba(165,37,0,1) 29%,
+      rgba(206,72,26,1) 31%, rgba(178,51,9,1) 41%,
+      rgba(164,40,0,1) 62%, rgba(201,64,0,1) 63%,
+      rgba(176,51,0,1) 83%, rgba(201,64,0,1) 86%,
+      rgba(210,73,7,1) 90%, rgba(229,96,36,1) 100%);
+
+  }
+  .moka-base {
+    height: 120px;
+    width: 140px;
+    bottom: -111px;
+    right: -10px;
+    position: absolute;
+    border-radius: 15px;
+    transform: perspective(15px) rotateX(1.5deg);
+    background: linear-gradient(90deg, rgba(188,143,23,1) 1%,
+      rgba(118,83,6,1) 9%, rgba(153,113,14,1) 17%,
+      rgba(205,158,27,1) 28%, rgba(179,147,72,1) 35%,
+      rgba(153,135,117,1) 38%, rgba(143,125,106,1) 42%,
+      rgba(172,149,132,1) 48%, rgba(179,159,138,1) 53%,
+      rgba(246,226,202,1) 72%, rgba(246,226,202,1) 74%,
+      rgba(246,226,202,1) 79%, rgba(215,194,173,1) 89%,
+      rgba(152,132,112,1) 96%, rgba(152,132,112,1) 97%,
+      rgba(246,226,202,1) 98%, rgba(184,162,144,1) 99%);
+  }
+  .can-reflection {
+    height: 45px;
+    width: 55px;
+    bottom: -117px;
+    right: 80px;
+    position: absolute;
+    border-radius: 15px;
+    background: linear-gradient(90deg, rgba(160,20,34,0.7) 36%, rgba(207,60,66,0.6) 60%);
+
+  }
+  .moka-top {
+    height: 20px;
+    width: 25px;
+    bottom: 180px;
+    right: 52px;
+    position: absolute;
+    transform: perspective(2px) rotateX(-2deg);
+    background-color: black;
+  }
+
+  .moka-handle {
+    font-family: "Optima";
+    font-size: 170px;
+    height: 60px;
+    right: -65px;
+    position: absolute;
+    transform: rotateX(-180deg);
+  }
+
+  .can-1 {
+    height: 170px;
+    width: 150px;
+    bottom: 110px;
+    right: 200px;
+    position: absolute;
+    background: linear-gradient(90deg, rgba(251,208,40,1) 3%,
+      rgba(198,172,41,1) 24%, rgba(251,208,40,1) 62%,
+      rgba(242,210,83,1) 80%);
+  }
+  .can-1-top {
+  	height: 12px;
+    width: 150px;
+    bottom: 168px;
+    position: absolute;
+    border-radius: 100%;
+    background-color: rgba(251,208,41,1);
+  }
+  .can-1-lid{
+    height: 20px;
+    width: 150px;
+    bottom: 160px;
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(198,172,41,1);
+  }
+  .can-1-red{
+    font-family: "Helvetica";
+    color: white;
+    font-size: 12px;
+    height: 50px;
+    width: 150px;
+    bottom: -35px;
+    position: absolute;
+    border-radius: 5px;
+		background: linear-gradient(90deg, rgba(141,30,32,1) 20%, rgba(241,70,73,1) 96%);
+  }
+
+  .can-1-silver {
+    height: 7px;
+    width: 151px;
+    bottom: -40px;
+    position: absolute;
+    border-radius: 7px;
+    background: linear-gradient(90deg, rgba(118,100,93,1) 0%, rgba(226,255,254,1) 9%, rgba(118,100,93,1) 19%, rgba(203,158,142,1) 46%, rgba(253,233,201,1) 69%, rgba(118,100,93,1) 100%);
+
+  }
+  .FECA {
+    font-family: "Optima";
+    font-size: 34px;
+    bottom: 90px;
+    position: absolute;
+  }
+
+  .STELOBU {
+    font-family: "Optima";
+    font-size: 34px;
+    bottom: 50px;
+    position: absolute;
+
+  }
+
+  .can-2 {
+    height: 170px;
+    width: 150px;
+    bottom: 120px;
+    right: 290px;
+    position: absolute;
+		background: linear-gradient(90deg, rgba(251,208,40,1) 3%, rgba(228,190,42,1) 11%, rgba(179,156,40,1) 29%)
+  }
+
+  .can-2-red {
+    height: 40px;
+    width: 150px;
+    bottom: -35px;
+    position: absolute;
+    border-radius: 5px;
+		background: linear-gradient(90deg, rgba(141,30,32,1) 20%, rgba(241,70,73,1) 96%);
+  }
+  .can-2-silver {
+    height: 7px;
+    width: 151px;
+    bottom: -40px;
+    position: absolute;
+    border-radius: 7px;
+    background: linear-gradient(90deg, rgba(118,100,93,1) 0%, rgba(226,255,254,1) 9%, rgba(118,100,93,1) 19%, rgba(203,158,142,1) 46%, rgba(253,233,201,1) 69%, rgba(118,100,93,1) 100%);
+  }
+
+  .can-2-top {
+  	height: 12px;
+    width: 150px;
+    bottom: 168px;
+    position: absolute;
+    border-radius: 100%;
+    background-color: rgba(251,208,41,1);
+  }
+  .can-2-lid{
+    height: 20px;
+    width: 150px;
+    bottom: 160px;
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(198,172,41,1);
+  }
+  .barcode {
+    height: 60px;
+    width: 40px;
+    bottom: -25px;
+    right: 90px;
+    position: absolute;
+      background-color: silver;
+  }
+  .barcode-stripes {
+    height: 40px;
+    width: 30px;
+    bottom: -15px;
+    right: 95px;
+    position: absolute;
+    background-image: repeating-linear-gradient(
+    to bottom,
+    rgb(0, 0, 0),
+    rgb(255, 255, 255) 10%);
+  }
+
+  .can-2-text {
+    font-size: 7px;
+    height: 140px;
+    width: 50px;
+    right: 65px;
+    position: absolute;
+    border: 1px solid maroon;
+    margin: 20px;
+    padding: 3px;
+    outline-offset: 20px;
+  }
+
+  .mug {
+    height: 50px;
+    width: 60px;
+    bottom: 285px;
+    right: 255px;
+    position: absolute;
+    border-radius: 5px;
+    background: linear-gradient(0deg, rgba(203,188,166,1) 0%,
+      rgba(203,188,166,1) 20%, rgba(66,62,81,1) 21%,
+      rgba(66,62,81,1) 34%, rgba(203,188,166,1) 35%,
+      rgba(203,188,166,1) 49%, rgba(66,62,81,1) 50%,
+      rgba(66,62,81,1) 65%, rgba(203,188,166,1) 66%,
+      rgba(203,188,166,1) 79%, rgba(66,62,81,1) 80%,
+      rgba(66,62,81,1) 95%, rgba(203,188,166,1) 96%);
+  }
+  .mug-shadow {
+    height: 50px;
+    width: 60px;
+    bottom: 285px;
+    right: 255px;
+    position: absolute;
+    border-radius: 5px;
+    background: linear-gradient(90deg, rgba(73,72,80,0.6) 29%, rgba(204,191,164,0.5) 78%, rgba(73,72,80,0.2) 100%);
+  }
+</style>
+
+
+<div class="frame">
+  <div class="table"></div>
+	<div class="table-side"></div>
+  <div class="moka">
+    <div class="moka-lid"></div>
+    <div class="moka-body"></div>
+    <div class="moka-handle"><b>J</b></div>
+		<div class="moka-base"></div>
+    <div class="can-reflection"></div>
+		<div class="moka-top"></div>
+  </div>
+  <div class="can-2">
+    <div class="can-2-lid"></div>
+    <div class="can-2-top"></div>
+    <div class="can-2-red"></div>
+    <div class="can-2-silver"></div>
+    <div class="can-2-text">Zzzz i am so tired but i really am starting to enjoy school again which makes me happy and makes me feel like i've made good progress with my depression :D</div>
+    <div class="barcode"></div>
+    <div class="barcode-stripes"></div>
+  </div>
+  <div class="can-1">
+    <div class="can-1-lid"></div>
+    <div class="can-1-top"></div>
+    <div class="can-1-red">how many ounces are in a florida ounce (fl oz)</div>
+    <div class="can-1-silver"></div>
+    <div class="FECA">FE🔻&nbsp&nbsp&nbsp&nbspCA</div>
+    <div class="STELOBU">STELO&nbspBU</div>
+  </div>
+  <div class="mug"></div>
+		<div class="mug-shadow"></div>
+</div>

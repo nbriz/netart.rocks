@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CSS Still Lifes</title>
+    <style media="screen">
+      iframe {
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+
+    <iframe src="marina.html" width="" height=""></iframe>
+
+    <script>
+      const list = [
+        'marina',
+        'alyssa',
+        'fatima',
+        'vivian',
+        'ines',
+        'nicole',
+        'olivia',
+        'jamie',
+        'sofiya',
+        'skylar'
+      ]
+
+      let idx = 0
+      function animate () {
+        setTimeout(animate, 1000 / 5)
+        idx++
+        if (idx >= list.length) idx = 0
+        document.querySelector('iframe').src = `${list[idx]}.html`
+      }
+
+      animate()
+    </script>
+  </body>
+</html>
