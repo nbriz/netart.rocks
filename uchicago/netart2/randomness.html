@@ -47,9 +47,14 @@
         max-width: 440px;
       }
 
+      .double p {
+        max-width: 440px;
+      }
+
       @media (max-width: 986px) {
         .double { flex-direction: column; }
         .double div { margin: 40px auto; }
+        .double p { margin: 40px auto; }
       }
     </style>
   </head>
@@ -66,19 +71,132 @@
 
     </article>
 
+
+    <blockquote>
+      <p>The allure of gambling—and more generally, the allure of chance in
+  all games—rests on uncertainty. Uncertainty is so compelling that even oth-
+  erwise skill-based games usually incorporate formal elements of chance,
+  such as the coin toss at the beginning of a football game. As Katie Salen
+  and Eric Zimmerman put it, uncertainty “is a key component of meaningful
+  play” (2004, 174). Once the outcome of a game is known, the game be-
+  comes meaningless. Incorporating chance into the game helps delay the
+  moment when the outcome will become obvious.</p>
+      <cite>
+        <a href="https://10print.org/" target="_blank">from Randomness (10 PRINT CHR$(205.5+RND(1)); : GOTO 10)</a>
+      </cite>
+    </blockquote>
+
+
+    <article>
+      <p>
+        Among the many examples of "chance" and "randomness" in the history of art discussed in the assigned chapter are:
+        <ul>
+          <li>The authors describe how for Dada artists, like Marcel Duchamp (the book specifically mentions his piece <a href="https://www.moma.org/learn/moma_learning/marcel-duchamp-3-standard-stoppages-1913-14/" target="_blank">"3 Standard Stoppages</a>" (1914)), <i>"artistic experimentation with randomness in the early part of the twentieth century can be seen as a response to the sterile functionality of rationality and empiricism wrought by the Industrial Age and as a deliberate reaction against World War I."</i>. They menation the "the cut-up method", proposed by the writer William Burroughs as well as Tristan Tzara's "<a href="https://modernistcommons.ca/islandora/object/yale%3A352" target="_blank">To Make a Dadaist Poem</a>" (1920)</li>
+          <li>In the 50s and 60s experimental composer John Cage made a name for himself by incorporating random elements in his compositional process in order to "remove individual bias from creation, [...] from Cage’s point of view, random elements remove individual bias from creation; they may be used to reach beyond the limitations of taste and bias through 'chance operations.'". Elements of randomness can be found throughout his most influential pieces, including arguably his most famous work <a href="https://en.wikipedia.org/wiki/4%E2%80%B233%E2%80%B3" target="_blank">"4:33"</a>(1952)</li>
+        </ul>
+      </p>
+    </article>
+
+    <blockquote>
+      <p>Those involved with the composition of experimental music find ways and means to remove themselves from the activities of the sounds they make. Some employ chance operations, derived from sources as ancient as the Chinese Book of Changes, or as modern as the tables of random numbers used also by physicists in research”</p>
+      <cite>
+        John Cage
+      </cite>
+    </blockquote>
+
+    <article>
+      <p>
+        <ul>
+          <li>Techniques like these are still used by musicians today, the reading mentions that Thom Yorke, the lead singer of the band Radiohead, used the cut-up method to write the lrycis to the song <a href="https://en.wikipedia.org/wiki/Kid_A" target="_blank">"Kid A"</a> (1999). Except rather than a "response to the sterile functionality of rationality and empiricism wrought by the Industrial Age" (a la the Dadaists) or the desire to reject taste and escape one's bias (a la John Cage), Yorke deployed these techniques as a means to work through his own writers block.</li>
+          <li>
+            The reading goes on to discuss "Early Experiments in Computational Art", one such artist (not mentioned in the reading) is early computer art pioneer <a href="https://en.wikipedia.org/wiki/Vera_Moln%C3%A1r" target="_blank">Vera Molnár</a> who began creating algorithmic compositions in the 1960s, for example <a href="https://youtu.be/efZfR7U7cM4" target="_blank">134 photographies d'écran</a>" (1984-1986).
+          </li>
+        </ul>
+      </p>
+    </article>
+
+
     <blockquote>
       <p>There is this old romantic idea which is called "intuition". An artist has talent, a genius, sits down, has a drink and creates. And intuition does what it does, sometimes it creates something good, sometimes not. Now, when we work with computers we're modern and say intuition is old fashioned, I'm not interested. But there is a thing that can replace intuition. It's randomness.</p>
       <cite>
-        <a href="https://en.wikipedia.org/wiki/Vera_Moln%C3%A1r" target="_blank">Vera Molnár</a>
+        <a href="https://www.youtube.com/watch?v=BCZNNZGz5YI" target="_blank" id="vera-link">Vera Molnár</a>
       </cite>
     </blockquote>
 
     <article>
 
       <p>
-        In this next section we'll learn how to program by learning to code in the Web's defacto programming language: JavaScript. I'll be introducing all the core concepts in programming through the lens of "creative coding", and more specifically through the lens of "randomness" or "chance".
+        In this next section we'll learn how to program by learning to code in the Web's defacto programming language: JavaScript. I'll be introducing all the core concepts in programming through the lens of "creative coding", and more specifically through the lens of "randomness" or "chance", using JavaScript's built-in randomness function <code>Math.random()</code>
       </p>
 
+      <br><br>
+
+      <p style="border: 2px solid red; padding: 24px; border-radius: 10px;">
+        <b>NOTE:</b> Rather than using the normal forward and backward slashes, we'll be using other slash characters from the <a href="https://unicode-table.com/en/" target="_blank">Unicode Standard</a>, specifically the <code>／</code> and <code>＼</code>.
+      </p>
+
+    </article>
+
+    <br><br><br><br>
+
+    <article>
+      <h3>JavaScript</h3>
+    </article>
+
+    <br><br>
+
+    <article>
+      <p>
+         In the book, the programming language used to create the 10print composition is <a href="https://en.wikipedia.org/wiki/BASIC" target="_blank">BASIC</a>, this language was incredibly popular for many years (including among artists, especially in the 1980s) but is no longer considered a very modern language. Today, there are loads of different <a href="/uchicago/netart2/programming.html">programming languages</a> out there, they all basically do the same thing: allow you to write programs that get the <a href="/uchicago/netart2/whats-a-computer.html">computer</a> to do what you want it to do. All programming languages contain the same core concepts (variables, functions, loops, conditional statements, etc) but they all have slightly different ways of expressing these concepts, which is to say, they all have different <i>syntax</i> and <i>APIs</i>. Although any solid programming language could be used for anything (whether you're creating a website, or an iPhone app, or a video game, or a robot) some languages have special features that make them better suited for certain contexts or tasks. Different languages also have different communities of developers writing <i>libraries</i> and <i>frameworks</i> for that language.
+      </p>
+      <p>
+         Although JavaScript is not the only programming language we can use on the Internet, it's definitely the most popular, which means there's a large community creating libraries, tutorials and answering questions online. Furthermore, although JavaScript can be used for everything from controlling robots to scripting PhotoShop, it was originally invented as a programming language for the Web specifically, and so it's obviously the natural choice for us.
+      </p>
+    </article>
+
+    <blockquote cite="https://www.goodreads.com/book/show/23492802-magic-and-loss">
+      <p>[Netscape, 1995] displayed Web pages that were not very lively. You could have a nice cartoon of a monkey on the Web page, but there was no way to make the monkey dance when you moved over it with your mouse. Figuring out how to make that happen was the job of a language developer named Brendan Eich. He sat down and in a few weeks created a language called JavaScript [...] as browsers proliferated and the Web grew from a document-delivery platform into a software-delivery platform, JavaScript became, arguably, the most widely deployed language runtime in the world. If you wrote some JavaScript code, you could run it wherever the Web was—everywhere.</p>
+      <cite>
+        Paul Ford, from <a href="http://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/" target="_blank">What Is Code</a> in Bloomberg Business (2015)
+      </cite>
+    </blockquote>
+
+    <br><br><br><br>
+
+    <article>
+      <h3>Homework / Review</h3>
+
+      <p>
+        Here is the basic <a href="https://netnet.studio/?layout=dock-left#code/eJyNT1tqwzAQ/PcpBvoRB2NHbSkER/EN+tcLqNI6FlEkIys4bskZeqHcqVeo/EjpZ5eFnZ3ZZWd5FwZDVQLEfHdqwGcEEQp5PHh3tiqXzjhf4oGx7ZPc7ib5ztVTzFztbMg7/UElnll7mUmjLeUN6UMT/tK98yrvvWhLCDv0DXkahWuS8M3iKOGjnYpvphLbTnrdhsVq7TxSQwEae7BdLByPjI0oy9bLE7pG+ipCU3hhlTula1RgxctdBpST5xPZUIw3Cm0t+Te6BGR7rL5vX6tp7AoyHf1z57bs/D4zm/4BaR1oLw==" target="_blank">10print</a> algorithm written in JavaScript which we created in class, and here is the <a href="https://netnet.studio/?layout=dock-left#code/eJyNUEtOwzAQ3ecUI7FoIkgagZCqECKxQWzY9QLGnjQWzjg4jtKCegYu1DtxBfxJJdQV1kieeW+e5s3Uoz0obBIAF29aHODLJS5l/H1n9EQi51ppU8FVWW5u+eYh0GesDS9irSabj/ITK7grh30ElSTMO5S7zv6FZ21EPhs2VMDoMHdo0BPHJKnXi6Ok9naaeh0+V47cyMEuVtuJuJWaQBg2Q5ottg1+TDjaJ5I98/SzYT2mvicLvGwhfWW2KwwjoXuna6As7s9yAKH51CPZwk8tJBGaLe4tXD/C6uf0vQptR0A14j81p0UT95Zu7Fy4VbRSW52WNxfqyLyEg2VJlLnwG6RZuE68wi9Pk4X2
+        " target="_blank">animated version</a>. Below you'll find interactive examples where you can review all of the <b>core programming concepts</b> we covered in class with netnet.
+      </p>
+    </article>
+
+    <section class="double">
+      <div>
+        <h4>the ingredients</h4>
+        <p>If algorithms are like recipes, the data we store within <b>variables</b> are the ingredients</p>
+        <p style="font-size: 1.5em">
+          <a target="_blank" href="https://netnet.studio/?ex=47">declaring variables</a><br>
+          <a target="_blank" href="https://netnet.studio/?ex=50">reassigning variables</a><br>
+          <a target="_blank" href="https://netnet.studio/?ex=51">simple data types</a><br>
+          <a target="_blank" href="https://netnet.studio/?ex=52">data structures: Arrays</a><br>
+          <a target="_blank" href="https://netnet.studio/?ex=53">data structures: Objects</a><br>
+        </p>
+      </div>
+      <div>
+        <h4>the instructions</h4>
+        <p><b>conditional statements</b>, <b>functions</b> (sometimes called methods or routines) and <b>loops</b> are how we "control the flow" of the instructions that make up our algorithmic recipes</p>
+        <p style="font-size: 1.5em">
+          <a target="_blank" href="https://netnet.studio/?ex=55">conditionals (if, else)</a><br>
+          <a target="_blank" href="https://netnet.studio/?ex=56">functions (aka methods)</a><br>
+          <a target="_blank" href="https://netnet.studio/?ex=57">loops (for, while)</a><br>
+        </p>
+      </div>
+    </section>
+
+    <article>
+      <p>For a more thorough review these core programming concepts as they appear in the JavaScript language, consider reading the first few chapters from Marijn Haverbeke's book <a href="https://eloquentjavascript.net/" target="_blank">Eloquent JavaScript</a> (3rd edition 2018) as well as the Mozilla Developer Network's <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Language_Overview" target="_blank">JavaScript language overview</a>.</p>
     </article>
 
     <br><br><br><br><br><br>
@@ -95,6 +213,11 @@
       Array.from(document.querySelectorAll('a'))
         .filter(a => a.className !== 'button')
         .forEach(a => RainbowText.hoverShimmer(a))
+
+      document.querySelector('#vera-link').addEventListener('click', (e) => {
+        e.preventDefault()
+        window.open('https://www.youtube.com/embed/BCZNNZGz5YI', '_blank',' width=400,height=400 top=200,left=600')
+      })
     </script>
   </body>
 </html>
