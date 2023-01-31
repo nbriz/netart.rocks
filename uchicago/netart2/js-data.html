@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Internet Art II</title>
+    <meta name="description" content="a class website for Internet Art II (MAAD 23632) at the University of Chicago">
+    <meta name="author" content="Nick Briz">
+    <meta charset="utf-8">
+
+    <!-- social media stuff -->
+    <meta property="og:title" content="Internet Art II">
+    <meta property="og:url" content="https://netart.rocks/uchicago">
+    <meta property="og:image" content="https://netart.rocks/images/netartdiagram.gif">
+    <meta property="og:description" content="a class website for Internet Art II (MAAD 23632) at the University of Chicago">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:site_name" content="https://netart.rocks/uchicago">
+    <meta name="twitter:site" content="@nbriz">
+
+    <link rel="icon" type="image/png"  href="https://netart.rocks/images/icon.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style media="screen">
+      i {
+        font-size: 1.2em;
+      }
+    </style>
+  </head>
+  <body>
+
+    <header>
+      <h1>Working With Data</h1>
+    </header>
+
+    <article>
+
+      <iframe width="800" height="450" src="https://www.youtube.com/embed/4v4XxlfVk3o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+      <br><br>
+
+      <br><br>
+      <h2>REST APIs</h2>
+
+      <p>
+        When we visit a website our browser makes an HTTP request for that HTML as well as an subsequent HTTP requests for loading any assets (fonts, images, videos, etc). In the case of our projects (which we host on GitHub's servers), someone visiting our work in their browser send requests to the GitHub servers which send them back the code we wrote (and any other files/assets we might be storing on there), but our code can also make requests to other servers. In this way our work can incorporate data and other assets from various other parts of the web.
+      </p>
+
+      <p>
+        One of the most common approaches is to send requests from our JavaScript code to other servers which make data, assets and other services available through an interface known as a REST API. These 3rd party (meaning controlled by someone else) REST APIs usually provide data formatted in JSON (though sometimes you see other formats like XML) which we can access by sending HTTP requests to specific URLs.
+      </p>
+
+      <p>
+        There are loads of these sorts of APIs online, <a href="https://apilist.fun/" target="_blank">apilist.fun</a> and  <a href="https://www.programmableweb.com/" target="_blank">programmableweb.com</a> are just a couple of sites which attempt to aggregate as many of them as they can. The Chicago city also has a REST API which gives us access to all sorts of city data at  <a href="https://data.cityofchicago.org/" target="_blank">data.cityofchicago.org</a>
+      </p>
+
+      <p>
+        While it's possible to send requests to these REST APIs by entering their URLs in our browser's address bar (a great way to inspect what sort of data you'll be getting back and how it's structured), in order to create work using this data, we need a way to send HTTP requests in our JavaScript code. There have been different ways of accomplishing this over the years, which first began in the early days of <a href="https://en.wikipedia.org/wiki/Web_2.0" target="_blank">Web 2.0</a> (mid 2000s) with the <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest" target="_blank">XMLHttpRequest</a> object, which is a browser API for making HTTP requests. This was followed by an easier to use browser API called <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API" target="_blank">Fetch</a>.
+      </p>
+
+      <p>
+        Below you'll find 3 netnet examples, which send a request to the same REST API, called <a href="https://dog.ceo/" target="_blank">dog.ceo</a>, which returns a random image of a dog. The first uses the older XMLHttpRequest API, the second one uses the Fetch API and the third example uses the newer "<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function" target="_blank">async / await</a>" syntax to use the Fetch API with cleaner and easier to read code. All three examples technically do the same thing (the difference is the syntax)
+      </p>
+
+      <p style="font-size: 1.5em">
+        <a target="_blank" href="https://netnet.studio/?ex=60">XMLHttpRequest</a> (old way)<br>
+        <a target="_blank" href="https://netnet.studio/?ex=61">Fetch API: <i style="font-size:22px;">then(callback)</i></a> (newer way)<br>
+        <a target="_blank" href="https://netnet.studio/?ex=62">Fetch API: <i style="font-size:22px;">async/await</i></a> (newest way)<br>
+      <p>
+
+      <br><br>
+      <h2>other data sources</h2>
+
+      <p>
+        Not all data-driven projects you come across online make use of these 3rd party REST APIs, sometimes data is made available for download so you can host it locally with your project (ie. upload it directly to your GitHub project like you would images or other assets). There are lots of places to find datasets online, one popular repository of data is <a href="https://www.kaggle.com/datasets" target="_blank">kaggle.com</a>, or checkout Jeremy Singer's <a href="https://www.data-is-plural.com/" target="_blank">Data Is Plural</a> newsletter where he shares interesting datasets on a weekly basis (every single dataset he's shared in the newsletter previously can be found on this <a href="https://docs.google.com/spreadsheets/d/1wZhPLMCHKJvwOkP4juclhjFgqIY8fQFMemwKL2c64vk/edit#gid=0" target="_blank">spreadsheet</a>)
+      </p>
+
+      <p>
+        Sometimes the data we want is out there on some website, but there's no "download" button nor is there a REST API to conveniently request the data from. When this is the case you can create a "web scraper", a little bit of JavaScript code which acts as a bot that goes out onto the Internet and downloads the data off the website you want. These typically need to be custom written to ensure you get only the data you want, organized the way you want. This is beyond the scope of what we'll cover in class, but if this is something you're interested in learning more about, email me.
+      </p>
+
+      <p>
+        Lastly, you could create a project which generates its own data, this can be an automated process or it could be user generated data (like in Aaron Koblin's mechanical turk projects). In these cases you need somewhere to put the generated data, which requires "server side" or "back-end" JavaScript. In this class we're mostly focused on "client side" or "front-end" JavaScript, though again, while this is beyond the scope for this class, email me if you're interested in experimenting with something like this.
+      </p>
+    </article>
+
+
+
+
+    <br><br><br><br><br><br>
+
+    <script src="/js/Averigua.js"></script>
+    <script src="/js/rainbow-text.js"></script>
+    <script src="/js/fancy-chars.js"></script>
+    <script>
+      FancyText.animate(document.querySelector('header > h1'), 200, 0.2)
+
+      Array.from(document.querySelectorAll('h3'))
+        .forEach(h3 => FancyText.animate(h3, 5000, 0.2))
+
+      Array.from(document.querySelectorAll('a'))
+        .filter(a => a.className !== 'button')
+        .forEach(a => RainbowText.hoverShimmer(a))
+    </script>
+  </body>
+</html>
