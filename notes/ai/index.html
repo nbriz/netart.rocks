@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Machine Learning for Artists</title>
+    <meta name="author" content="Nick Briz">
+    <meta charset="utf-8">
+
+    <!-- social media stuff -->
+    <meta property="og:title" content="FLOSS Notes">
+    <meta property="og:url" content="https://netart.rocks/notes/digitizing-human-rights">
+    <meta property="og:image" content="https://netart.rocks/images/netartdiagram.gif">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:site_name" content="https://netart.rocks">
+    <meta name="twitter:site" content="@nbriz">
+
+    <link rel="icon" type="image/png"  href="https://netart.rocks/images/icon.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style media="screen">
+      .double {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .double p {
+        max-width: 440px;
+      }
+
+      .double div {
+        text-align: center;
+      }
+
+      @media (max-width: 986px) {
+        .double { flex-direction: column; }
+        .double p { margin: 40px auto; }
+      }
+
+      .b-frame {
+        border: 2px solid #c2c1db;
+        border-radius: 15px 15px 0 0;
+        border-top: 30px solid #c2c1db;
+        box-shadow:
+          0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+          0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+          0 12.5px 10px rgba(0, 0, 0, 0.06),
+          0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+          0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+          0 100px 80px rgba(0, 0, 0, 0.12);
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <header>
+      <h1>Machine Learning (AI) + Artists</h1>
+    </header>
+
+    <blockquote cite="https://www.youtube.com/watch?v=qGoCUpa8Qbos">
+      <p>"As AI progresses, the great promise is that these machines alongside of us are able to think, imagine and see things in ways that we never have before. Which means that maybe we have some new, weird, seemingly implausible solution to climate change, maybe we have some radically different approach to dealing with incurable cancers. The real practical and wonderful promise is that machines help us be more creative and using that creativity we get to terrific solutions."</p>
+      <cite>
+        <a href="https://www.youtube.com/watch?v=qGoCUpa8Qbo" target="_blank">Amy Webb</a>
+      </cite>
+    </blockquote>
+
+    <article>
+      <h3>AI netnet exapmles</h3>
+
+      <ul>
+        <li style="font-size: 24px;">
+          <a href="https://netnet.studio/?layout=dock-left#code/eJytVd9P2zAQfqZ/hcUDSVmblEq8VIDGgEmTxoa0Hy+IBze+pobEzmynP5j433e2kzSlUDptUuWqvu++O999dz3RieKFIVolp/tTYwo9iuOEieheM8j4TEUCTCyKPH6fA+O04AXEhdSwf3YSe9+zzsnuJAaElmqSyXlsJve6n0j1v6jGNHkAwfpzGKfZP3P2c4lG7d7aZ2AgMVyKF2jPOoTEhyTN5JhmxMIvazQ5jNGInwwMSfnkqGfPYY94Pql6ZMYZSAvao3opEjIphXdlis5J2CW/0UhIIoU2jlyTU0LnlJuGJAJteE4N3Fhz6Bi7zotPSOh9Dg688+3grqasSTOYGOSszdEDLAvJhdG3w7s1oOLp9BXk8TqScW2BljlakL73jBYVpvqy9YjmnJkpQq3H6n64ft920GaZQVTl3ARwAWMyjI7JOxIUi2DTxcii9lhu9xiuB6mS383HR/EuL4bxr39yZxy7ekkbS6a+U75xCn6V2NVzYfuKavioaA6hlYS1P3lRPROMBlMWVgJfUGzPhOO0XLWuUWf0rSwKqQywayf16ENGH52IWp61yC6kmPAUKWrxqFKg6mBEgmYvBL3Khk8qbYQbaqYI+Ju1ErTqs55Bo/v1RyQKUPqXFSh0L+09S7vb0NW1ru11uU2pROPUqRN4ociGKvPTTtiqxG7grFZlUuYgTJXSVQb2Vxg4e9BdYSNs1bkxio9LA2FAS1RNRpdBjwRbYDme7A2MpdFcZFzAJtIJFIvH3UtOSUDHrlFVzduox0+CwQIx/SNna542lmwZ0aLAPXsx5RlrbxvfLncqatdCSy20ZFyOyIRmGmqVONcRMaqEjaYjBdC8abmgM55Su+ucWi5hxhPQUQrmhwZ1be/CVuC1Z6vk6/ge+4pknrXd8nr9bhmpVaPtNtnSZ56nVcH92lGJLTJOcAo6xiuNAxDhd9DCvNGT1+tu3bu1SP0K2jW14Q6pDd9MbXNRBkeDQb0UtyY+bCVeD4/v82q8Qo/ZGP72lqswePUdN5EsjduQPYJ5DPye7OzNuWByHlHGrmaYz2fcxyBAhUEmqZ0mx9fFZDqd5p/9D9zS6bI=" target="_blank">Gif Eyes</a>
+        </li>
+      </ul>
+
+      <br><br><br><br>
+
+
+      <h3>Making Art with AI</h3>
+      <h4>(high-level to low-level)</h4>
+
+      <ul>
+        <li>
+          <b>AI as muse</b>: Google experimented with Language Models and writers in this "<a href="https://www.youtube.com/watch?v=iXTG8ZiLs1s" target="_blank">Digital Muse</a>" project. That was 3 years ago, the language models we have today are already orders of magnitude larger (in size/scope/etc), but the principle is still the same: use AI as part of your creative process (brainstorming, concepting, etc). The same can be said for image generating models like <a href="https://openai.com/product/dall-e-2" target="_blank">Dall-E</a>, <a href="https://github.com/Stability-AI/stablediffusion" target="_blank">Stable Diffusion</a>, <a href="XXX" target="_blank">midjourney</a>, etc as well as music tools like <a href="https://openai.com/blog/jukebox/" target="_blank">Jukebox</a> and the various <a href="https://magenta.tensorflow.org/demos" target="_blank">Magenta</a> projects.
+        </li>
+        <iframe class="rwd" height="420" src="https://www.youtube.com/embed/iXTG8ZiLs1s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <li>
+          <b>AI as studio assistant</b>: the quality of writing/sounds/images that these models (like the Dall-E, <a href="https://openai.com/blog/chatgpt/" target="_blank">ChatGPT</a>, etc) are starting to produce are good enough these days to make it to the final product (edited or even readymade), we've been seeing a lot of that form "AI artists" using prompt-based systems to create NFTs for example, but we’re also starting to see new AI-powered studio tools (think Adobe apps), like <a href="https://www.nvidia.com/en-us/studio/canvas/" target="_blank">NVIDIA Canvas</a>, <a href="https://runwayml.com/" target="_blank">RunwayML</a>, <a href="https://www.descript.com/" target="_blank">descript</a> and so many others starting to come out.
+        </li>
+        <iframe class="rwd" height="420" src="https://www.youtube.com/embed/wKztRskmsig" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <li>
+          <b>AI powered art</b>: new media artists and creative technologists are starting to make work which incorporates pre-existing AI models (imagine the sort of video games you can create with ChatGPT built into it?), this <a href="https://experiments.withgoogle.com/billtjonesai" target="_blank">dance project by Bill T. Jones</a> in collaboration with Google is maybe a less obvious example.
+        </li>
+        <li>
+          <b>AI as an artwork</b>: some artists have been training their own modesl, like Holly Herndon who trained an AI of ver voice called <a href="https://holly.mirror.xyz/54ds2IiOnvthjGFkokFCoaI4EabytH9xjAYy1irHy94" target="_blank">Holly+</a> (she’s got a great <a href="https://www.youtube.com/watch?v=5cbCYwgQkTE" target="_blank">TED talk/performance</a> on it) or <a href="https://www.moma.org/calendar/exhibitions/5535" target="_blank">Refik Anadol</a>'s image generator trained on the MoMA's collection. this might sound hard at first, but there's actually a few ways to do this:
+          <iframe class="rwd" height="420" src="https://www.youtube.com/embed/RVyh1ewep84" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <ul>
+            <li>
+              You can take an existing model (pre-trained AI) and build on top of it. You can learn the basics here: <a href="https://teachablemachine.withgoogle.com/" target="_blank">https://teachablemachine.withgoogle.com</a> I think this is also a very accessible demo we can use to better understand how these models are “trained”, what their limits are, how bias enters the picture, etc. Also check out the <a href="https://ml5js.org/" target="_blank">ml5.js</a> library and the corresponding tutorial series <a href="https://thecodingtrain.com/tracks/ml5js-beginners-guide" target="_blank">A Beginner's Guide to Machine Learning in JavaScript</a> from the Coding Train.
+            </li>
+            <li>
+              You can gather your own data (or use publicly available datasets like those found on <a href="https://www.kaggle.com/" target="_blank">kaggle.com</a> or <a href="https://docs.google.com/spreadsheets/d/1wZhPLMCHKJvwOkP4juclhjFgqIY8fQFMemwKL2c64vk/edit" target="_blank">elsewhere</a>) and use existing neural network architecture to train your own models from scratch. This typically takes a lot of data and processing power (so it can be take a while to create), artist Gene Kogan has some great resources for this called <a href="https://ml4a.net/" target="_blank">Machine Learning for Artists</a>.
+            </li>
+            <li>
+              Or you could create your own architecture and train your own models “from scratch”, or rather, using now industry standard Machine Learning libraries like <a href="https://www.tensorflow.org/js/" target="_blank">Tensor Flow</a> (see <a href="https://www.youtube.com/playlist?list=PLOU2XLYxmsILr3HQpqjLAUkIPa5EaZiui" target="_blank">Machine Learning for Web Devs and Creatives</a> by Google)
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>Making Art about AI</h3>
+
+      <blockquote cite="https://www.youtube.com/watch?v=8a-Tp0DFJEA">
+        <p>The coded gaze reflects the priorities, preferences and prejudices of those who have the power to shape technology</p>
+        <cite>
+          <a href="https://www.youtube.com/watch?v=8a-Tp0DFJEA" target="_blank">Joy Buolamwini</a>
+        </cite>
+      </blockquote>
+
+      <p>
+        AI isn't just changing our field, it's reshaping so many different aspects of our lives. I also think it's important to engage with some of these technologies not necessarily so to AI-art (or AI-aided art) but work in any medium <i>about</i> this present moment.
+      </p>
+
+      <iframe class="rwd" height="420" src="https://www.youtube.com/embed/Sqa8Zo2XWc4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+      <p>
+        One example might be Tom White’s <a href="https://drib.net/the-treachery-of-imagenet" target="_blank">The Treachery of ImageNet</a> (i have one of these on my wall), a reference to Magritte’s “this is not a pipe” painting, these prints clearly don’t look like the thing they are not to us (humans) but if you point an AI image classifier at it, it will think it is the thing that it is not. White’s work is an interesting conceptual response to this tech, but there is also loads of political work in this area as well. For example, artists who've worked on "datasets" as art, these aren't necessarily meant to be functional ML training datasets (like the kind you find on kaggle.com) but rather are works aimed at invoking discussions around the role curated data plays in this new world:
+      </p>
+
+      <img src="/images/notes/ai/black-health.webp" alt="black-health">
+
+      <p>
+        <a href="https://bomani.rip/black-health-book" target="_blank">Black Health</a> by Bomani Oseni McClendon
+      </p>
+
+      <img src="/images/notes/ai/datasorting.jpeg" alt="feminist dataset">
+
+      <p>
+        <a href="https://carolinesinders.com/feminist-data-set/" target="_blank">Feminist Data Set</a> by Carolin Sinders
+      </p>
+
+
+      <img src="/images/notes/ai/missing-datasets.jpg" alt="missing dataset">
+
+      <p>
+        <a href="https://mimionuoha.com/the-library-of-missing-datasets" target="_blank">The Library of Missing Datasets</a> by Mimi Ọnụọha
+      </p>
+
+      <br><br>
+
+      <p>
+        Of course, a fundamental understanding of how this tech works and more importantly, whose in control of this tech and how is it being used in the world as well as what the implications are, are prerequisites for making meaningful work in this regard. You can find more of my notes on <a href="https://nickbriz.com/talks/bias-in-ai/" target="_blank">Bias in AI here</a>.
+      </p>
+
+      <iframe class="rwd" height="420" src="https://www.youtube.com/embed/zl9y8tg7MA0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+    </article>
+
+
+    <br><br><br><br><br><br>
+
+    <script src="/js/Averigua.js"></script>
+    <script src="/js/rainbow-text.js"></script>
+    <script src="/js/fancy-chars.js"></script>
+    <script>
+      FancyText.animate(document.querySelector('header > h1'), 200, 0.2)
+
+      Array.from(document.querySelectorAll('h3'))
+        .forEach(h3 => FancyText.animate(h3, 5000, 0.2))
+
+      Array.from(document.querySelectorAll('a'))
+        .filter(a => a.className !== 'button')
+        .forEach(a => RainbowText.hoverShimmer(a))
+    </script>
+  </body>
+</html>
