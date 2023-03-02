@@ -6,8 +6,7 @@
     <meta charset="utf-8">
 
     <!-- social media stuff -->
-    <meta property="og:title" content="FLOSS Notes">
-    <meta property="og:url" content="https://netart.rocks/notes/digitizing-human-rights">
+    <meta property="og:title" content="AI Notes">
     <meta property="og:image" content="https://netart.rocks/images/netartdiagram.gif">
     <meta name="twitter:card" content="summary_large_image">
     <meta property="og:site_name" content="https://netart.rocks">
@@ -16,36 +15,10 @@
     <link rel="icon" type="image/png"  href="https://netart.rocks/images/icon.png">
     <link rel="stylesheet" href="/css/styles.css">
     <style media="screen">
-      .double {
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-      }
 
-      .double p {
-        max-width: 440px;
-      }
 
-      .double div {
-        text-align: center;
-      }
-
-      @media (max-width: 986px) {
-        .double { flex-direction: column; }
-        .double p { margin: 40px auto; }
-      }
-
-      .b-frame {
-        border: 2px solid #c2c1db;
-        border-radius: 15px 15px 0 0;
-        border-top: 30px solid #c2c1db;
-        box-shadow:
-          0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-          0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-          0 12.5px 10px rgba(0, 0, 0, 0.06),
-          0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-          0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-          0 100px 80px rgba(0, 0, 0, 0.12);
+      .netent-examples a {
+        font-size: 24px;
       }
 
     </style>
@@ -66,9 +39,14 @@
     <article>
       <h3>AI netnet exapmles</h3>
 
-      <ul>
-        <li style="font-size: 24px;">
-          <a href="https://netnet.studio/?layout=dock-left#code/eJytVd9P2zAQfqZ/hcUDSVmblEq8VIDGgEmTxoa0Hy+IBze+pobEzmynP5j433e2kzSlUDptUuWqvu++O999dz3RieKFIVolp/tTYwo9iuOEieheM8j4TEUCTCyKPH6fA+O04AXEhdSwf3YSe9+zzsnuJAaElmqSyXlsJve6n0j1v6jGNHkAwfpzGKfZP3P2c4lG7d7aZ2AgMVyKF2jPOoTEhyTN5JhmxMIvazQ5jNGInwwMSfnkqGfPYY94Pql6ZMYZSAvao3opEjIphXdlis5J2CW/0UhIIoU2jlyTU0LnlJuGJAJteE4N3Fhz6Bi7zotPSOh9Dg688+3grqasSTOYGOSszdEDLAvJhdG3w7s1oOLp9BXk8TqScW2BljlakL73jBYVpvqy9YjmnJkpQq3H6n64ft920GaZQVTl3ARwAWMyjI7JOxIUi2DTxcii9lhu9xiuB6mS383HR/EuL4bxr39yZxy7ekkbS6a+U75xCn6V2NVzYfuKavioaA6hlYS1P3lRPROMBlMWVgJfUGzPhOO0XLWuUWf0rSwKqQywayf16ENGH52IWp61yC6kmPAUKWrxqFKg6mBEgmYvBL3Khk8qbYQbaqYI+Ju1ErTqs55Bo/v1RyQKUPqXFSh0L+09S7vb0NW1ru11uU2pROPUqRN4ociGKvPTTtiqxG7grFZlUuYgTJXSVQb2Vxg4e9BdYSNs1bkxio9LA2FAS1RNRpdBjwRbYDme7A2MpdFcZFzAJtIJFIvH3UtOSUDHrlFVzduox0+CwQIx/SNna542lmwZ0aLAPXsx5RlrbxvfLncqatdCSy20ZFyOyIRmGmqVONcRMaqEjaYjBdC8abmgM55Su+ucWi5hxhPQUQrmhwZ1be/CVuC1Z6vk6/ge+4pknrXd8nr9bhmpVaPtNtnSZ56nVcH92lGJLTJOcAo6xiuNAxDhd9DCvNGT1+tu3bu1SP0K2jW14Q6pDd9MbXNRBkeDQb0UtyY+bCVeD4/v82q8Qo/ZGP72lqswePUdN5EsjduQPYJ5DPye7OzNuWByHlHGrmaYz2fcxyBAhUEmqZ0mx9fFZDqd5p/9D9zS6bI=" target="_blank">Gif Eyes</a>
+      <ul class="netent-examples">
+        <!-- <li>
+          <a href="https://netnet.studio/?layout=dock-left#code/eJytVd9P2zAQfqZ/hcUDSVmblEq8VIDGgEmTxoa0Hy+IBze+pobEzmynP5j433e2kzSlUDptUuWqvu++O999dz3RieKFIVolp/tTYwo9iuOEieheM8j4TEUCTCyKPH6fA+O04AXEhdSwf3YSe9+zzsnuJAaElmqSyXlsJve6n0j1v6jGNHkAwfpzGKfZP3P2c4lG7d7aZ2AgMVyKF2jPOoTEhyTN5JhmxMIvazQ5jNGInwwMSfnkqGfPYY94Pql6ZMYZSAvao3opEjIphXdlis5J2CW/0UhIIoU2jlyTU0LnlJuGJAJteE4N3Fhz6Bi7zotPSOh9Dg688+3grqasSTOYGOSszdEDLAvJhdG3w7s1oOLp9BXk8TqScW2BljlakL73jBYVpvqy9YjmnJkpQq3H6n64ft920GaZQVTl3ARwAWMyjI7JOxIUi2DTxcii9lhu9xiuB6mS383HR/EuL4bxr39yZxy7ekkbS6a+U75xCn6V2NVzYfuKavioaA6hlYS1P3lRPROMBlMWVgJfUGzPhOO0XLWuUWf0rSwKqQywayf16ENGH52IWp61yC6kmPAUKWrxqFKg6mBEgmYvBL3Khk8qbYQbaqYI+Ju1ErTqs55Bo/v1RyQKUPqXFSh0L+09S7vb0NW1ru11uU2pROPUqRN4ociGKvPTTtiqxG7grFZlUuYgTJXSVQb2Vxg4e9BdYSNs1bkxio9LA2FAS1RNRpdBjwRbYDme7A2MpdFcZFzAJtIJFIvH3UtOSUDHrlFVzduox0+CwQIx/SNna542lmwZ0aLAPXsx5RlrbxvfLncqatdCSy20ZFyOyIRmGmqVONcRMaqEjaYjBdC8abmgM55Su+ucWi5hxhPQUQrmhwZ1be/CVuC1Z6vk6/ge+4pknrXd8nr9bhmpVaPtNtnSZ56nVcH92lGJLTJOcAo6xiuNAxDhd9DCvNGT1+tu3bu1SP0K2jW14Q6pDd9MbXNRBkeDQb0UtyY+bCVeD4/v82q8Qo/ZGP72lqswePUdN5EsjduQPYJ5DPye7OzNuWByHlHGrmaYz2fcxyBAhUEmqZ0mx9fFZDqd5p/9D9zS6bI=" target="_blank">Gif Eyes</a>: this is the example I showed at the start of class.
+        </li> -->
+        <li>
+          <a href="https://netnet.studio/?layout=dock-left#code/eJytV11v2zYUfa5/xa33ILuzpGzAXoI2WNZ2QIEWLbBuL8MwUNKVzEQiNZKK4xb57zskJdlO2g7F+uBYFu8994PnfuTp4zSl91u2TMIwuS1TKwsjjGRLkkrd7+l76oV1XFFtdBdEfmnFB36noVTpcuhYOeGkVpBrmNL0YvHUw26d6+15njfSbYciK3WXO1ZWm7rVu9zVVzbtdMWtzZ1hzjtvxOQ9YNOKHZceMremzAtvzr//u+NKil72oxVbGtk7gsyz5WStrFR2ZQErb0ym2OWq7/KfZ8WAv7x4mkfdrwK5732pzbeCKkR5zapKd1w07f/GnPJ6mstPwF4siPIn1LS6EC158ReTND3Jcdiyo0bWG4oo2mzoRlasceRVc9BBWqoHFXVKw8KBOSJKEbfs2UG7rSy3ZHHPorOkB0MItBQd1QxeCYVPVYFwjpwODPNMigZ2YKa9htTbntXlq8SClBXfesGdkY7vebCKpnaBy4oM18K77a1QId06gk6J7Fvham26TANcyMDRAJ9eiRsRc5Ra+FfoW2gKu1flwRZ8/sOHuVrTR5wSPFPWjaE/m2sji1l5GXOxSsJ5sg4a4Tmz7C6dM7IYHK8SMTgNx/bJhpIviHX4W/2HjIexUrVS8ZHk7Fihq30mesRePd/KtloFjPVRLPHKEIzYCdyOEjeyEchnFgrqBd/Ikm3WsPvdsnnj360+BpBzcmbguxPXTPm2uAKLADfiUqAR4ZrcYNRMrbvP0KvVAizx/Lh8RYHjDy8FCRj6N/6M5nvxN85ob2BFL8vrkY694dQZgdxUEcyf74QKJBwsH6UhHj87rZDst6HvtcEtBHM2m9vifaPBJ7K6Y1oCsJbNYELHXPojJ1Vjj4xNpfY8SMJqDAJZGpSTHZ9TMrezZDOeWd0OHvGdcFsIfE03TALE3eQ0/EUZFEhLyLTbaZ+PyOEp90v46F1cznn/hP8za06zFpFejEKrkNrNvaDXx6yYjk6I4XtIZcTuqPIlOoWSnRipovv1Q3YElWNeINpaGniNCw/Rzd4jzFkNCQBbKgnuesPLMESoEBbU8cfQi1VfG9Hx4tGjmAkvZuc0TMgZW+fdDFSxxzUna1oFnaxl1bgtXdAZfPV+4mjMfYSxETzLspEAMZbGiCIIxqCued9rCUbPozu+78PsDkBcbQiZC2EpH9YJXil8RfFYMROc9X2VTejBsZSEQWaiiwFbxqSg09jzA+C32Ai+m7eBdHYnxeVVqVTpTOx0lgrWx/vw8Y1VbP88+yubAfDj4GWQ0rFTgUbXFivRNaruI92ekxq6gjEF94fHD4dH61eCw08lfLXGtI4FFotEt5y1uln5kzUdTFvtkz5R0Z9mt2E8hsd9KMStUA1PmZaBnmPmMahjtHjIrNt7I1z7djsipV4k28kK1Mrpx+wn7HZJf5uMDhzUMIAmrf2otWXZbN1DtbuxVP8ZQOvLqf5+9XWw8tW2DmW7+Eyjvl+LY5sR3uS0PSxG374wUmXXjLMtxGBKyOIllggLstUWfTDDd7I4DXNOIKRFEVro2A0/PyKhHS1NXoc94+C6L6ST5ecwAedOcFgcvgBy1H8g9ehBVz0Muocw4Na4THXiGvNnGHf7OMf8GEXjAlcNINv93LsnWiazMbhT+UVkerFePAw8hgR/AFFRwVioYNKhJWCwhVBO23LQh/fvMcv04AJLNvTD2Rl63TzzpV8it9iKH0/m0OoQD1YN/KeiB1jyAS2NKP28UlW4SLuEoh04co5oJ1Wldxny/fIGV/FaoqEoNqvEpwBhhRyuF4t5Mf4Xi41aWA==" target="_blank">Gif Nose</a>: this is the example we made together in class (with comments)
+        </li>
+        <li>
         </li>
       </ul>
 
