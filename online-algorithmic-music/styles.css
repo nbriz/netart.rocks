@@ -1,0 +1,143 @@
+/* major-mono-display-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Major Mono Display';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/major-mono-display-v12-latin-regular.eot'); /* IE9 Compat Modes */
+  src: url('fonts/major-mono-display-v12-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/major-mono-display-v12-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/major-mono-display-v12-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('fonts/major-mono-display-v12-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/major-mono-display-v12-latin-regular.svg#MajorMonoDisplay') format('svg'); /* Legacy iOS */
+}
+
+* { box-sizing: border-box; }
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: 'Major Mono Display', monospace;
+  font-weight: 100;
+}
+
+body.sub-long {
+  align-items: start;
+}
+
+@media (max-width: 400px) {
+  body.sub {
+    align-items: start;
+  }
+}
+
+a {
+  color: #000;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+  }
+
+  @media (max-width: 400px) {
+    section i {
+      align-self: start;
+    }
+  }
+
+  h1 {
+    font-size: 3.8vh;
+  }
+
+  @media (max-width: 400px) {
+    h1 {
+      font-size: 4.9vw;
+    }
+  }
+
+  hr {
+    border: none;
+    border-bottom: 1px solid black;
+    width: 100%;
+  }
+
+  img.splash {
+    height: 68vh;
+  }
+
+  @media (max-width: 400px) {
+    img.splash {
+      height: auto;
+      width: 90vw;
+    }
+  }
+
+  p.info {
+    width: 605px;
+    max-width: 90vw;
+  }
+
+  @media (max-width: 400px) {
+    p.info {
+      font-size: 4.9vw;
+    }
+  }
+
+  nav {
+    font-size: 2.1vh;
+    padding: 2vh 0;
+  }
+
+  nav a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  nav a:hover {
+    border-bottom: 1px solid #000;
+  }
+
+  @media (max-width: 400px) {
+    nav {
+      font-size: 11vw;
+      padding: 0 10vw 20vw 10vw;
+    }
+  }
+
+  .rwd { width: 100%; }
+
+  .mobile {
+    display: none;
+  }
+  @media (max-width: 400px) {
+    .mobile {
+      display: block;
+    }
+  }
+
+  .b-pad {
+    padding-bottom: 32px;
+  }
+
+  .bl-pad {
+    padding-left: 32px;
+    padding-bottom: 32px;
+  }
+
+  .lead {
+    align-self: start;
+  }

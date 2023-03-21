@@ -5,13 +5,45 @@
         <title>WebAudio API Notes</title>
         <link rel="stylesheet" href="libs/css/monokai_sublime.css">
         <link rel="icon" type="image/png"  href="https://netizen.org/classes/netart1/images/icon.png">
-        <link rel="stylesheet" href="/css/styles.css">
+        <!-- <link rel="stylesheet" href="/css/styles.css"> -->
+        <link rel="stylesheet" href="/online-algorithmic-music/styles.css">
+        <style media="screen">
+
+          body {
+            display: block;
+            text-transform: lowercase;
+          }
+
+          a {
+            font-size: 14px;
+            text-decoration: none;
+          }
+
+          a:hover {
+            text-decoration: underline;
+          }
+
+          header, article {
+            max-width: 800px;
+            margin: 0 auto;
+          }
+
+          .grid {
+            display: grid;
+            grid-column-gap: 20px;
+          }
+
+          .cols2 {
+            grid-template-columns: 1fr 1fr;
+          }
+
+        </style>
     </head>
     <body>
 
       <header>
-        <h1>Web Audio API</h1>
-        <h2>algorithmically composed sound/music</h2>
+        <h1>Web Audio API Notes</h1>
+        <h2>for algorithmically composed sound/music</h2>
       </header>
 
       <br><br>
@@ -50,16 +82,16 @@
             .then( data => {
               this.json = data
 
-              Vue.nextTick(() => {
-                FancyText.animate(document.querySelector('header > h1'), 200, 0.2)
-
-                Array.from(document.querySelectorAll('h3'))
-                  .forEach(h3 => FancyText.animate(h3, 5000, 0.2))
-
-                Array.from(document.querySelectorAll('a'))
-                  .filter(a => a.className !== 'button')
-                  .forEach(a => RainbowText.hoverShimmer(a))
-              })
+              // Vue.nextTick(() => {
+              //   FancyText.animate(document.querySelector('header > h1'), 200, 0.2)
+              //
+              //   Array.from(document.querySelectorAll('h3'))
+              //     .forEach(h3 => FancyText.animate(h3, 5000, 0.2))
+              //
+              //   Array.from(document.querySelectorAll('a'))
+              //     .filter(a => a.className !== 'button')
+              //     .forEach(a => RainbowText.hoverShimmer(a))
+              // })
             })
             .catch( err => { console.error(err) })
           },
