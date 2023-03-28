@@ -45,6 +45,12 @@ main {
   align-items: center;
 }
 
+  main ul {
+    width: 100%;
+    margin-left: 80px;
+    margin-top: -30px;
+  }
+
   section {
     display: flex;
     flex-direction: column;
