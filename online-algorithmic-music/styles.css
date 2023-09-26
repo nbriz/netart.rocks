@@ -106,6 +106,9 @@ main {
   nav {
     font-size: 2.1vh;
     padding: 2vh 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
   }
 
   nav a {
