@@ -35,7 +35,8 @@ body.sub-long {
 }
 
 a {
-  color: #000;
+/*  color: #000;*/
+  color: blue;
 }
 
 main {
