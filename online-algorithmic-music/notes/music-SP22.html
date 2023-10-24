@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Online Algorithmic Music</title>
+    <!-- <meta name="description" content="a class website for Internet Art II (MAAD 23632) at the University of Chicago"> -->
+    <meta name="author" content="Nick Briz">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- social media stuff -->
+    <!-- <meta property="og:title" content="Internet Art II">
+    <meta property="og:url" content="https://netart.rocks/uchicago">
+    <meta property="og:image" content="https://netart.rocks/images/netartdiagram.gif">
+    <meta property="og:description" content="a class website for Internet Art II (MAAD 23632) at the University of Chicago">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:site_name" content="https://netart.rocks/uchicago/netart2">
+    <meta name="twitter:site" content="@nbriz">
+
+    <link rel="icon" type="image/png"  href="https://netart.rocks/images/icon.png"> -->
+
+    <link rel="stylesheet" href="../styles.css">
+    <style media="screen">
+      p {
+        width: 100%;
+      }
+
+      .blue {
+        border: 2px solid blue;
+        padding: 10px;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body class="sub-long">
+
+    <main>
+      <h1>(AlgorithMic) Music theory</h1>
+      <section>
+
+        <p>
+          there Are a specific set of frequencies in the Audible huMAn rAnge (20 to 20,000hz) which we've culturAlly identified As MusicAl "notes" (you cAn <a href="https://pages.mtu.edu/~suits/etvsmean.html" target="_blank">find theM here</a>), All other frequencies Are considered "out of tune". but of the potentiAlly infinite nuMber of wAys we Might sub-divide thAt rAnge of frequencies, why did we lAnd on these?
+        </p>
+
+        <iframe class="rwd" height="420" src="https://www.youtube.com/embed/EdYzqLgMmgk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        <p class="blue">
+          try this <a href="https://netnet.studio/?layout=dock-left#code/eJylVFFv0zAQfl5/xSl7SDtap5sGiKrthICyBwRIG+IBoclxLq031y62k6wg/jvnZEm3CrRJVGkUn+/7fHffl0yl3hQeZDaLcos/CtRiG4HfbnAWWa6XGIHzW0WrSmZ+NYFXz8sqgrXUs+hkTA/8NjzQL4KSq4IST0/H0bw33RGXRhVrfCrr6Hjc8h6fdKR1lFhTOw//3jSTZU1e8RJzY9fRfJpQjHacsHLjwVkxi1beb9wkSTR6bj2zRty4RBuPLqkwHfEikybB22SFaoOWgsQ2ElyX3LFrFzgbtn/QeqPx2rGl9KsiZUSVFlJlySWF/w6f9wCSI1gqk3IFIW8IwiL3+JVOflMfDEcJZdEljHYegiwXSmZoYQaZETRK7RkpZbcXqFB4Y/vxYSdePOiQNPfHgY04NaoHBw3QOEEQjVVdIfvkhFSKh/wB8+YtOi8199JoWrsw2D7BDwjFGjZWi0YUXQVNpGkrSaDi2oM3oJBbDTw15JTF4vKs2W2ne81JLbHimCli2A1ZSCsUupGTur4vNVcueYitqoptibZIkQmzJmG9WJ2VM71eLt6//PzlPDfdnIKKdPr9lmkZegqTILjWNK3+Xdqg68Ihwv8ZLJSwp37/FwUBSKAg1yQ+bA0eD+sNTs1uHdpJWzajLulNY1ftjvs2/s6ugkAlvr6LfTQZNni3QcwmQK/TOHkxHoY+zCZoydUQpPZoSaomq87PSfoJxIeUH+9lp6TP0ppCZzRIZWzD7625wYDI8zx+CAitgCLVuvzfd9PcmZzxLHtXUusfpPOokTxaf0no8P4AZnNo5hOE6Tzf+e0eTWu4RmSjkCmz7O8nwDOIz3/W7m9L2Xn26ZU8avuHVezthyKy9F4R3WfjD0n12GM=" target="_blank">wAveforM visuAlizer</a>
+        </p>
+
+        <p>
+          "pure intonation" or "<a href="https://en.wikipedia.org/wiki/Just_intonation" target="_blank">just intonation</a>" is a way of tuning such that the
+    musical intervals (space between notes) are derrived from ratios of small
+    whole numbers. This sequence of notes or pure intervals are important in
+    music because they correspond to <a href="https://en.wikipedia.org/wiki/Harmonic_series_(music)" target="_blank">harmonic series</a>), the vibrational patterns
+    found in physical objects which correlate to human perception. see this <a href="https://www.youtube.com/watch?v=yNQ3dkl1rhk" target="_blank">video</a>
+    for a solid explainer.
+        </p>
+        <p id="just-tuning"></p>
+        <p class="blue">
+          in <a href="https://netnet.studio/?layout=dock-left#code/eJytlVlv4zYQgJ/Xv2KaPFhKvaJzLbaGbSDNURRo0qJdoA9BsKClkc1YIVVyZK8b+L93SEk+smkKtNWDBA2/GXJODstxWqh0DjRDSE2GgJkiY0HqDGylWa5cvRBd3l59e60JbdyDWknpoLecKUJwpUwRTB5EmUmrJ9QEERnI+ceBojhY5WUNlcPA6eppgtaB0bAylYU5riZGWqYMkFXTKVpwptKZG4py3BlmagEqGx0s5QJzY58OxkPBMl5xqVUlgbPp6GBGVLqBEBpJWkqsSedOaEPoxBIn72WVKSPwi5hhUfLuwlt7n0q9kC55dN5mbe1vzJLR+OiSqaJZNUnY1KRSRSY+sfh19XEHQBzBtDATWYDnOIIWJeHvvPNl2BiOBFMeFPAzR+K2cipl+lbSzEHy9sNqeaVTUhxHVkrv2FeIrDF0Y/GPng9zDM9MAedSOwIrmXUwgvsg5Oe4V395+0orx4YiOBbHEMNGftmy34mPvUb2JB+5Whyy2Qxgy1617Lk422e5ouwW9fLrlj0Tpy2bczXQDPYflt+07Kk42bAq/wr18h+2Zzh9cV71ZVeD5RebOJzXzu34tuBCnu2w37fsyVZmUuJUcsxOXovZQ3gXSJBzPjjsbWrgqEnFPaeopixSZXUA+X+9VxRNicGPnENbN9ibRdEkmzfjPU8+nAWvVJYVGA5WL3PPXZmlZuJ5vRG6lfd5BBqX9a6/mGL1mxdGcULmCh0p7U+uo5iVAp44pOgZjEtVUUieIgN4BlqVOICuUxq7sIZ1DB3ml0pnZpnILLv20f1JOUKNNuryYXhBd3sQYQyj8V7VKj7QXZgYESZMxmFN5RApGMLHtsRr0TeNX/cBfdguttb8QGCDbb+EdumBijdY7VQzhi6IZDqPvFKvjog2y4hHYT85j6HRWTff/a15E84W1pBH1nGd1beiUJW7MXj37l9E4P8NwK9YoHT4VQT+2flcFu4V77kWF8pVslB/hkLa1J6frzc3n3arj3936owxjSlFDRjXxhwi/LfJ70/wYixHddDYd99tg+5he/N0e2FBalmsHHKpN4dJTEVlRcnndsXd9x+Sz75XFnjRyO74Qq31XYmYDeC43++LD/1eGCWlj4YsOBX+tl3wJRCowOfcWtxOh8x3X9ATrs+p9Zclx7EwtrZP1sx9Ax7med7dV/CuQMGNueE5NZ3O5vr6C3hNXn4=" target="_blank">this example</a> i use the function above to calculate a <a href="https://en.wikipedia.org/wiki/Diatonic_scale" target="_blank">diatonic scale</a> with "pure intonation"
+        </p>
+
+      <p>
+        <a href="https://en.wikipedia.org/wiki/Equal_temperament" target="_blank">equal temperment</a> exists in contrast to just intonation, it's what's been
+        used most commonly in Western music since the 18th century. specifically,
+        12-tone equal temperment, ie. where you divide an octive into 12 equal parts.
+      </p>
+      <p>
+        while just intonation has more "pure" sounding notes (and harmonies), it
+    involves tuning your analog instrument to a single key, which isn't the
+    most practical thing to do, for that <a href="https://pages.mtu.edu/~suits/scales.html" target="_blank">reason equal temperment exists</a> (ie. you
+    can perform a song that switches keys mid track without re-tuning your
+    instrument).
+      </p>
+      <p>
+        below is a variation of the calcnote funciton in the prior example, this one will devide the octave into the common 12 keys you find on a piano, ie. the chromatic scale: c, c#, d, d#, e, f, f#, g, g#, a, a#, b
+      </p>
+
+      <p id="equal-tuning"></p>
+
+      <p>
+        if instead we want a c major scale (with the same notes as our pure diatonic scales in the previous example) we can select specific notes from the chromatic scale, by following the following pattern: tone tone, semi-tone, tone, tone, tone, semi-tone (where "tone" is a whole-step ie. two notes over and "semi-tone" is a half-step ie. one note over). below is a variation on the previous calcnote function that will only return the notes of a major scale
+      </p>
+
+      <p id="equal-tuning-major"></p>
+
+      <p class="blue">
+        in <a href="https://netnet.studio/?layout=dock-left#code/eJytVW1v0zAQ/rz+imP70GRkSVfxWrWV0MYkJDYQTOLDNCE3ubReUzvYl4Yy9b9zdrKuG2NIQFU1zd1zb8/d2cNynBYynQPNEFKdIWAmSRsQKgNTKZZL2yiCo9Pjp28VoQkjaIyk8nb1TBKCLUWKoHMvynRaLVARBKQh5xcLkkLvldUKKosep6rFBI0FrWClKwNzXE20MIzSQEZOp2jA6kpldpiU484wk0uQ2Wi3FkvMtVnsjocJy1hjUyNLAmvS0e6MqLSDJFFIwlBsdDq3idKENqlxciCqTOoEvyczLEqOnjhvB6lQS2HjK+t8Nt5+45a0wisbTyXNqknMriaVLLLknMUPm487AMk+TAs9EQU4HDNoUBB+4chHPjDsJ4xywAQ+MBOnlZUpo08FzSzEj3/YLK9USpJ5ZKP0jGuFwGhNJwa/RY7mEK4BfAAfItXKEizElTaf2QJhBBf9CPh76H/b/5ce/xC45wHPIngewcsIXjOYLQ/72xZk+gx1FcSlrgPnMDnshy6+az7VWNAMXJpubvpblortbuNdcP7bfnMuigE39cH+bQwOyeWGHmyQKqM8mt/Xd+htmwXv2J9pRvVRepvAPtUR9F88c34WMsuYjKONmqf3WNcu9+v1RmhXioscgcK6ifpRF6vPThiEMeljtCSVcK0LXNoeHluk4Bq0TWVRCN7HAXePViUOoGulwi6sYR1Ch/G1VJmuY5Flb5dcxXtpCRWaoMvJsEJ1IwgwhNEYrrcYlJzQmd+9AGNGNoTJHAIJQ3gVtuBG9KSt68JDL2+Vm265cRttJs8PXgQy3MCaotqFfkMk0nngjKKGEcWN40OlFz8PobVZt8+7oTkIdwsbkIOsw6arj7FQldsc7Oz8BQP/l4BPWKCw+AsDfy4+F4V9oHo/1UtpK1HIH36UNtPnzqqTk/Pt+ePXrUljmMKUghYYNitiEeHfTlGXwb0jLmho4+rdvg26ezeneDfyCqFEsbLIw94mE+uKyorirzcae9G7jL+6bVnim1Z2xpdTY29LxGwAh71eL3nB5xPXoUvHhii4Ge7mWvKB6lEen/Ny8ULtMb57Dz3hCZ0ad/Ewj4U2jX8yeu5WcC/P8+5dA1cKFLyaGzw3p9PZXAU/AX/pR4Y=" target="_blank">this example</a> i use the function above to calculate a <a href="https://en.wikipedia.org/wiki/Major_scale" target="_blank">major scale</a> with "equal temperment"
+      </p>
+
+      <p>
+        the major scale aka "ionian" is one of 7 modes, we can start that patter at at different point to change the "mode", see this <a href="https://en.wikipedia.org/wiki/Diatonic_scale#Modes" target="_blank">graph for feference</a>
+      </p>
+
+      <p>
+        a "chord" is a set of notes that are musically related played at the same time (when played in sequence we refer to it as an "arpeggio"). see this <a href="https://en.wikipedia.org/wiki/Chord_(music)#Exampless" target="_blank">graph for feference</a>
+      </p>
+
+      <p>
+        the <a href="https://en.wikipedia.org/wiki/Circle_of_fifths">circle of fifths</a> and how/why it's used...
+      </p>
+
+      <iframe class="rwd" height="420" src="https://www.youtube.com/embed/62tIvfP9A2w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+      <div style="padding: 40px;"></div>
+
+      <h2>Rythm</h2>
+
+      <div style="padding: 20px;"></div>
+
+      <p class="blue">
+        here is the <a href="https://netnet.studio/?gh=nbriz/beats" target="_blank">durm sampler</a> example project i made, if you'd like to remix it into your own project consider "forking" it.
+      </p>
+
+      <p>
+        in the vast majority of cases, the melodies, chords and arpeggios of music are played in sync with some <a href="https://en.wikipedia.org/wiki/Rhythm" target="_blank">rhythm</a>, notes are played in a regular cyclical pattern. this repeating cyclical pattern is typically referred to as a "bar" or "<a href="https://en.wikipedia.org/wiki/Bar_(music)" target="_blank">measure</a>". A bar typically has a "<a href="https://en.wikipedia.org/wiki/Time_signature">time signature</a>", which denotes how many "beats" are contained in each bar, for example in a 4/4 time signature each bar contains 4 quarter notes ('4n' in Tone.js), in 3/4 each bar contains 3 quarter notes (or '3n'). The speed at which we play through these bars is usually referred to as the "<a href="https://en.wikipedia.org/wiki/Tempo" target="_blank">tempo</a>" and typically noted in "bpm" or "beats per minute", the amount of quarter notes in a minute.
+      </p>
+
+      <iframe class="rwd" height="420" src="https://www.youtube.com/embed/NQQ1pPAgiPk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+      <div style="padding: 20px;"></div>
+
+      <iframe class="rwd" height="420" src="https://www.youtube.com/embed/QWveXdj6oZU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+      <div style="padding: 40px;"></div>
+
+
+      </section>
+      <nav>
+        <a href="../">home</a>
+        <a href="../schedule">schedule</a>
+        <a href="../assignments">assignments</a>
+        <a href="../sound-track">sound track</a>
+      </nav>
+    </main>
+
+    <script src="/js/Averigua.js"></script>
+    <script src="/js/netitor.min.js"></script>
+    <script>
+
+    new Netitor({
+      ele: '#just-tuning',
+      language: 'javascript',
+      theme: 'moz-dark',
+      code:`function calcNote (rootFreq, num) {
+  const ratios = [
+     1,      // unison ( 1/1 )       // C
+     9/8,    // major second         // D
+     5/4,    // major third          // E
+     4/3,    // fourth               // F
+     3/2,    // fifth                // G
+     5/3,    // major sixth          // A
+     15/8,   // major seventh        // B
+     2       // octave ( 2/1 )       // C
+  ]
+  let freq = rootFreq * ratios[num]
+  return freq
+}`})
+
+
+new Netitor({
+  ele: '#equal-tuning',
+  language: 'javascript',
+  theme: 'moz-dark',
+  code:`function calcNote (rootFreq, num) {
+  const tr2 = Math.pow(2, 1/12) // the twelth root of 2
+  const freq = rootFreq * Math.pow(tr2, num)
+  return freq
+}`})
+
+new Netitor({
+  ele: '#equal-tuning-major',
+  language: 'javascript',
+  theme: 'moz-dark',
+  code:`function calcNote (rootFreq, num) {
+  // const majorScale = [2, 2, 1, 2, 2, 2, 1]
+  const majorScale = [0, 2, 4, 5, 7, 9, 11, 12]
+  const tr2 = Math.pow(2, 1/12) // the twelth root of 2
+  const n = majorScale[num]
+  const freq = rootFreq * Math.pow(tr2, n)
+  return freq
+}`})
+
+    </script>
+  </body>
+</html>
