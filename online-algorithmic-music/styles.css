@@ -39,6 +39,17 @@ a {
   color: blue;
 }
 
+p {
+  line-height: 26px;
+}
+
+code {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 2px 8px;
+  background-color: #eee;
+}
+
 main {
   display: flex;
   flex-direction: column;

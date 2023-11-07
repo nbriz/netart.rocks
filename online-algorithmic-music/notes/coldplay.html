@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Online Algorithmic Music</title>
+    <!-- <meta name="description" content="a class website for Internet Art II (MAAD 23632) at the University of Chicago"> -->
+    <meta name="author" content="Nick Briz">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- social media stuff -->
+    <!-- <meta property="og:title" content="Internet Art II">
+    <meta property="og:url" content="https://netart.rocks/uchicago">
+    <meta property="og:image" content="https://netart.rocks/images/netartdiagram.gif">
+    <meta property="og:description" content="a class website for Internet Art II (MAAD 23632) at the University of Chicago">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:site_name" content="https://netart.rocks/uchicago/netart2">
+    <meta name="twitter:site" content="@nbriz">
+
+    <link rel="icon" type="image/png"  href="https://netart.rocks/images/icon.png"> -->
+
+    <link rel="stylesheet" href="../styles.css">
+    <style media="screen">
+      p {
+        width: 100%;
+      }
+
+      .blue {
+        border: 2px solid blue;
+        padding: 10px;
+        margin: 10px;
+      }
+
+      h3 {
+        margin-top: 70px;
+      }
+    </style>
+  </head>
+  <body class="sub-long">
+
+    <main>
+      <h1>coldplAy song GenerAtor</h1>
+      <h3>AlgorithMic Music: cAse study</h3>
+      <section>
+
+        <p>
+          a while back i got into an argument with my younger brother over the band coldplay. i was arguing that the band was very "formulaic", my brother disagreed. so, to prove him wrong, i decided to create an algorithm. i broke down what i felt were common patterns in coldplay tracks and created an app that could generate an infinite number of new tracks in the style of coldplay called <a href="https://web.archive.org/web/20160116143015/www.artslant.com/chi/articles/show/21967" target="_blank">the coldplay song generator</a>. i originally wrote this in a programming environment called Max/Msp and later rewrote it using it's open source alternative puredata. Here i'll discuss how we might recreate this algorithm for the browser using the web audio api and tone.js (neither of which existed at the time in 2011) by making references to various concepts and techniques we've covered so far.
+        </p>
+
+        <p>
+          we'll <a href="https://netnet.studio/?layout=dock-left#code/eJydUsGOmzAQvfMVU3qLCs62N8JyqVJppSqVumnvgB0zqbGRbZKwVf+945hNdlfKZREMxvPmvTdjSucnJaoEYAF/KQI05pQ5fEItC1pbLmxGWyvK/aMnCQA+zdi+thJ1AcvV+bMTKDtfwN1yeehiBYWPrdHeGuXmIo5uUPVUwE6JUyzcj87jbsoCUmhiaCkKG5O1Qqkz9KJ3rxODcejRkP4OT4LHTW+G4AeU2PmLsSNy30Vfx5tWz81dzVbQjN4bfRlLGAUVDCdwRiGHRtXtn9lJzfl5YJ+XlP5CIe43hJDWjJoX4G2t3VBbamD1anh3M/ymg6IzB2FnH+1onSEfg8HrJF7qvLDVGhWgx46GFxVKNp93UjrRhuEB8vv0WTINP0I59x0S3kipRFoREy+xCudWMqxKFjFv4dQiNz0+UcVlecWSeNQM8h+yDLAfjPWgsLG1ReEgywjlWouDB2fb+7TzfnAFYy3X+d5xofBgcy08kx2jF9FrY2VY0p05T6K15VlknEgZFWda5z2G+pSMR/YbMmRT7F0u0Xdjk6OZCba0/ab8ub5K2AKkMk2tQOtPEKCwYEnCGHz7tfm6ffixeYT8/Vdyplr/Xm+28P3hcbverH++kzD+X8mlif9XDS71" target="_blank" style="color:magenta">start with this html/css template</a>, the html contains two buttons, one to toggle the playback and another to generate a new random coldplay track. the rest of the code will be our javascript logic. there have been many algorithms written that aim to identify patterns within a body of music and the identified patterns to create new music in that "style", we looked at one such project early this quarter, emi or experiments in musical intelligence by david cope. that's not what we're going to do. we're going to deduce coldplay's formula ourselves and create a custom algorithm based on the patterns we ourselves observe in coldplay's style. this will inevitably produce a "less accurate" representation of the band's style, but failing to "copy" perfectly is one way to create something new. with that in mind, consider this case study a way of exploring other algorithmic musical routes u might take, interesting detours that might lead to ur own novel algorithmic compositions.
+        </p>
+
+        <h3>sound source: piano via tone.js sampler</h3>
+
+
+        <p>
+          first, we need to choose our sound source. coldplay often times centers their music around a piano, so let's borrow the sampler instance from <a href="https://netnet.studio/?layout=dock-left#code/eJydlV1vmzAUhu/zK05TqQlVA2s+q6it5JF1V7vZx9W0CwdOEqfEINus6qb+9x1sUrnWiKZJER+PXz8Ycg7cno1GIA5VqQwUYq24EqhhNLrv3epMicqAVtldf2dMpZdJkuUy3uscC/FTxRJNst0ltBO/UJZq2xzSb6QNlzlX+cgZn5N1LYo8kTI+iGZ+//42cfaOy5hS4l7HW2F29ToWZSv4SjiYfpx/3wNILmFblGtegJRX0IThMunRQFZKTVfgh6pABXcg8ckOx18cGv6mEECtCr0EdwwwYO8Gy2YbH6rJ4OpI0+uGptdv6erc4pUO+IPjDyFnFrOApmPrHofusXOPQ/fYuQPOLGYBTSfWPQndE+eehO6JcwecWcwCmk6texq6p849Dd1T5w44s5gFNJ1Z9yx0z5x7Frpnzh1wZjELaDq37nnonjv3PHTPnTvgzGIW0HRh3YvQvXDuReheOHfAmcUsoOmNdd9YauGLG1NYINe4hGt3vqaTb6pYQndn8TqnreYFP1DTokr6NPMlik25Qm2E5EaUchg1bZQkYHZCQ7neY2ZgWCro5yJrAtTk/QgeESsNRvHsEcoNlLUi9Az0OjCoX/uQ0CdeURu6TuPUciBLg7aEBldQKdQa8yVseKHxeGtPfuy8O6e93Ko7hn7shC73ch+6Yxsv9tAdM37sxFW3Xu5jd+zZj53Q7bwc647VfuyEbu/l3nfHHv1/bPaXWFNovaawNrW0VeQSQ4za0nD1QuVGxeKq5jvGdPDDjooNlSCNXVzAGe3jVh+9vsHbF35slNhuUTFjqDCbKXGzqqhNeVPpMkbV6DrKrc5bXNtc/7G8f1nd59Z+enn2yb1dH3Ul/kRpNH2/tUGJqmk1+tZS2w5oNXn5JI8PP3ozUlfE27uKeq/f1D+CbCq5" target="_blank" style="color:magenta">the piano sampler demo</a> we looked at last week. we don't need the keymap or the press/release functions (those are for creating a piano/keyboard instrument) we just want the instance of the <code>sampler</code> (lines 8 - 43) to use as our sound source.
+        </p>
+
+        <p id="test-piano"></p>
+
+        <p>
+          to test that your sampler is working try the adding the code below to your sketch. <b>note</b>: it may take a few seconds for your player to load all those samples, you may need to wait a second or two before the pushing the "coldplay" (toggle) button will play the chord below.
+        </p>
+
+
+        <h3>scheduling playback: rythm via tone.js transport</h3>
+
+        <p>
+          assuming our piano is working, let's introduce the transport logic and replace the play function and event listener with something more like the ones from <a href="https://netnet.studio/?layout=dock-left#code/eJx1k29P2zAQxt/zKU5IUxKgNpOoxKa20sQm3jPeIV44zuG4uHZkXzp1E999Z6eF8WdS5CSX3z33+HJetCNR8KtEKpJMFAZQcUBjbFjI/bejo0XS0Q4EKerlcU80pK9S6s6LderQ2W0UHkmaXvLN/kYfosmPfM1Y2HcqdjNn26jijkWt66T3YmNz/vFqISf11cdl2AGukzCW+rEVNuwFbjn8cfrqCECegHGhVQ68P4PMwonkOF8OCXQYPWGEJZxPQR184ro7Tz0HPf4qOeJnDtSNoPAdE1mvyAZfN5xQULENbtyg2Co3IufNLkFKmIJgPXSoLXtI/9bwgTAxe8cRgOrqojqD6kdZr/PKAlewUesQob5gN0GT2mKzp+eFLuv1vHoFz1/B91PNh9Hr7BkGp3ZQk91gA3+K2IudvOPs6u7Qlk/Tu3DoDfX3BZ82TNEag/EbkdKPN+hQJawzzIYuPdsqFfb6Rez0NLu0XsfMPne+3cFnxp7e2KRgjEOoDybtA9TlT9xG5dMQIgkeqGx5uYSqDC121YEGeMeGoZ7sPAE6rv9fkJUO5IuvN1Q7bJ7/9Zfz99+T7rEbHd7ggIpKt2G5Kr2fWj91KZfh+TdIdTUdsaoRPFeVdlY/5iaWLjR87g6z/Rd8uidj" target="_blank" style="color:magenta">the transport example</a> we looked at earlier this quarter. below i've added a <code>toggle</code> function from that example which is now triggered by the click event of the toggle button, with one addition: we've made it an <code>async</code> function so that we can call tone.js's start function the first time we click it (to get around the same bug audio playback issue that our <a href="https://netnet.studio/?c=2v&layout=dock-left" target="_blank" style="color:magenta">enter template</a> addresses). to ensure we only call the start function the first time we click, we've wrapped it in a conditional statement checking for the <code>firstclick</code> property of our new state object.
+        </p>
+
+        <p id="transport-code"></p>
+
+        <p>
+          this new <code>state</code> object will be used to keep track of our app's state, in addition to this <code>firstclick</code> boolean (true/false) we've also added a <code>counter</code> (to keep track of the number of beats) and the same notes array from the transport example linked above. lastly, we also updated the <code>play</code> function so that it accepts a <code>time</code> argument, which is passed in by the transport's <code>scheduleRepeat</code> method (line 44 below) which will call the play function every <code>'8n'</code> or 8th note. the play function is very similar to the ones we've seen in our other transport examples, except with some additional logic at the start to ensure the buffers (mp3 data) have all loaded into our sampler before we attempt to play it. it also provides feedback to the user (so they know whether or not the buffers have loaded) by changing the button's text content.
+        </p>
+
+
+        <h3>clock's "dna"</h3>
+
+        <p id="coldplay-state"></p>
+
+        <p>
+          here is where we'll create an algorithm based on our interpretation of coldplay's formula. as i said earlier, if our goal was to create an accurate representation of the band's style we would be better served by gathering as much data as possible (the musical scores of their entire oeuvre) and running some statistical analysis on it. but our goal isn't <i>really</i> to make the perfect coldplay machine, but rather to use coldplay as a starting point from which we might explore other hand-crafted musical algorithms, to that end we'll start by breaking down the core chord progression and arpeggio from their song <a href="https://www.youtube.com/watch?v=g6zbo3YtAhg" target="_blank">clocks</a> (which in many ways is a solid example of their "style").
+        </p>
+
+        <p>
+          a classic coldplay song has a 4 chord progression. meaning there are 4 'bars' or 'measures' in a verse or chorus which repeat. rather than simply keeping track of our beat within a single measure with a counter, we'll update our <code>state</code> object so that it keeps track of each of the for measures by adding a <code>bar</code>. i've also renamed the 'counter' <code>step</code> to make it more musically explicit. the bar will count which of the 4 measures we're in and the step will count which beat within that measure we're in. with a typical 4/4 rythm, a measure contains a total of 4 beats or 4 quarter notes, <code>'4n'</code>. since our transport is triggering the play function on every 8th note (or <code>'8n'</code>) our bar will contain a total of 8 steps (each an 8th note long), so i've added a <code>totalSteps</code> property to our state object. our chord progression will only have 4 bars so i've also added a <code>totalBars</code> property.
+        </p>
+
+        <p>
+          i've also replaced the <code>notes</code> array from before with a few new arrays which represent the piano part in our reference song, clocks. the piano plays a chord progression with the left hand and an accompanying arpeggio with the right hand. rather than noting the specific notes for these chords and arpeggios, we'll abstract this out a bit more in such a way that will allow us to easily make algorithmic variations on it. we could approach this a number of different ways, but what i decided to do was first identify the key of the song, which seems to be 'f minor', which i've store in two arrays. the first is called <code>rightHandScale</code> which starts the f minor scale on the 4th octave (or <code>'F4'</code>), and the second is called <code>leftHandScale</code> which is also an f minor but starts the scale one octave lower on <code>'F3'</code>. coldplay often accompanies the chord progression played on the left hand with arpeggios played one octave above on the right hand.
+        </p>
+
+        <p>
+          following each of the scales, i've added arrays containing other arrays (aka: multi-dimensional arrays) which represent the notes played as indexes from the scale. take a look at the <code>leftHandChrd</code> property. this array contains an array for each of the 4 chords in the progression (one played at the start of each measure or bar). the first chord is represented by the indexes <code>[1, 3, 6]</code>. this corresponds to the notes <code>['G3', 'A#3', 'D#4']</code> which happens to be a 'G diminished' chord, the first chord in the song clocks. these 'left hand' notes will be played all at the same time, because it's a 'chord', where as the notes in the 'right hand' (stored in the <code>rightHandArp</code> arrays) will be played one after the other, which is what makes them an 'arpeggio'. notice that the first 3 indexes in the first right hand array match the 3 indexes in the first left hand array, only reversed. you might also notice that the arpeggio simply repeats those same 3 notes again two (and two thirds) more times. if you compare the subsequent right and left hand arrays to each other you'll notice the same is true. by representing the notes for the song clocks this way, as indexes from the song's key (or the scale the song is written in) a pattern is revealed to us, the song's 'dna'.
+        </p>
+
+        <p id="play-coldplay"></p>
+
+        <p>
+          next, we'll update our <code>play</code> function so that it works with our new state data. in the code above we use the modulus operator <code>%</code> to do some simple 'clock arithmetic' (no pun intended) to get the current bar or <code>b</code> (line 12) a number between 0 and 3, as well as the current 8th note or step <code>s</code> (line 11) within that bar/measure, a number between 0 and 7. then on lines 15-19 we have the logic for the left hand, starting with a conditional statement that checks to see if we're on the first step of the bar (because we only want to play the chord once per measure), if so we grab the array of indexes for that bar's <code>chord</code> and then convert that from an array of numbers to an array of notes by using the javascript array's <code>map</code> method to map out the corresponding notes from the scale. lastly we'll send that array of notes into our sampler's <code>triggerAttackRelease</code> and hold that chord for the whole measure or <code>'1n'</code>.
+        </p>
+
+        <p>
+          for our right hand arpeggio logic (lines 22-25) we don't have a conditional statement, because we want to play a not everytime the function is called by the transport (every 8th note). on lines 22 and 23 we similarly map out our notes, but this time only send a single note to the <code>triggerAttackRelease</code> method, the note corresponding to the current step or <code>notes[s]</code> and hold that for an 8th note (or <code>'8n'</code>). then we have a bit of code (lines 28-30) used to change the background color to a random shade of blue each time the play function runs for a bit of visual feedback, followed by our new counter logic. we increment our <code>step</code> by 1 (or <code>++</code>) each time play runs (just as we did with our counter before), but we only increment our <code>bar</code> when we're on the last step of the measure (step 7), or <code>state.totalSteps - 1</code>
+        </p>
+
+        <h3>the coldplay 'formula'</h3>
+
+        <p>
+          if we play our algorithm now it should sound exactly like the song clocks. our last step will be to create a function which randomizes our notes in a way that conforms to coldplay's formula. part of their formula is already represented in our <code>state</code> object, the fact that we have a 4 chord progression (noted by <code>totalSteps</code> with the chord shapes stored as indexes corresponding to a musical scale stored in <code>leftHandChrd</code> and <code>leftHandScale</code> respectively) as well as the fact that each chord will be accompanied by an arpeggio (stored in the <code>rightHandArp</code> and <code>rightHandScale</code> arrays). we noticed before that the arpeggio in the song clocks follows a particular pattern based on the inversion of the notes in their corresponding chord. if the chord is: a, b, c then the arpeggio would be c, b, a, c, b, a, c, b. so we'll need to create a function that recreates new versions of this pattern. but first, let's reintroduce a familiar helper function.
+        </p>
+
+        <p id="music-helpers"></p>
+
+        <p>
+          we first discussed this <code>createScale</code> function during our lecture on <a href="music.html" target="_blank" style="color:#00abff">music theory</a>. this function takes two arguments, a root note (ex: <code>'F4'</code>) and an array representing the number of 'steps' between each note (starting from our root note) needed to create a particular scale (ex: <code>[2, 1, 2, 2, 1, 2, 2]</code> is the pattern for a 'minor' scale). the function then returns an array of note strings in that particular scale, for example: <code>[ 'F4', 'G4', 'G#4', 'A#4', 'C5', 'C#5', 'D#5', 'F5' ]</code>.
+        </p>
+
+        <p id="random-coldplay"></p>
+
+        <p>
+          using this function we can create a function that recreates new versions of this pattern we identified earlier. our random function will first choose a new tempo and a new key for the song. coldplay rarely plays slower then 90bpm (beats per minute) and faster than 140bpm, so we'll select a random integer from that range and assign that as our new transport bpm value (line 3). then we'll choose a new scale, coldplay often sticks to 'minor' keys (hence the melancholy tone of their music) so we'll define the <code>minor</code> scale shape in an array (line 4) as well as all a <code>keys</code> array of root notes i've noticed coldplay tends to write their music in (line 5). we'll use our <code>createScale</code> function to create two new scales based on our <code>minor</code> pattern and a randomly chosen <code>key</code> (lines 5-6) and update our state's <code>rightHandScale</code> and <code>leftHandScale</code> ensuring that the latter is one octave under the former.
+        </p>
+
+        <p>
+          once we have a new tempo and new scale we'll create our new array of index values for our chords and our arpeggios. we'll start by clearing the previous arrays (lines 10-11) and then in a four loop (which loops 4 times, one per bar) we'll select new index values for those a, b, c indexes (lines 13-15) using a little clock arithmetic to ensure they always stay within the length of the corresponding scale arrays (lines 16-17) before adding (or 'pushing') our new arrays to the state.
+        </p>
+
+        <p id="toggle-random"></p>
+
+        <p>
+          then we'll make sure to attach this function to the click event of our 'randomize' button. if we want to make sure we also start with a random composition, we could also add a call to this function <code>randomColdplay()</code> after we restart tone.js's context within the 'firstclick' conditional of our <code>toggle</code> function.
+        </p>
+
+        <h3>finishing touches: reverb via tone.js sound processing</h3>
+
+        <p id="reverb"></p>
+
+        <p>
+          if you go back to listen to the original <a href="https://www.youtube.com/watch?v=g6zbo3YtAhg" target="_blank">clocks</a> song, you may notice that there's a bit of reverb on the piano, using what we learned from the <a href="https://netnet.studio/?layout=dock-left#code/eJx1ksFunDAQhu9+iun2AESL3bTKJWI55dBDK+Ww98rYs6x3wUb2kCit8u4dA6nUqJWQsGfm/5lvhuZDXYO2FrSHr8fv36CbiYJPQAHCHGHSPUJdt6JZE+DsYWcGZ64Yd+1yaNSaaoVokoluIkjRHHZnoindK2Wsl5dkcXBPUXok1Z8Vv9xP9CH2+chPnUh7q6OtB9dFHV/Y1A1WeS9Hl/W7tlGre/vvz3AHeEmyd3SeO+nCZnDk8Dv5m74V6gb6IXR6AO/3kEvhRgkAYXgEBNyzfoEDeHxekvLR+f4x+P4hJ8pfXPmMdA+f5N0e+LLUH92IOXS7xk6IttPmmkOf78RrJSk8YCLnNbngy0oIpWAMESGF2dsE+km7QXcDwhkjW70BbmQmjAvUJSk9W+akiKhGnQjj1vfJsfgAxX9Hswo7jNeBtT0T/biV4/Sl2Awm5sD4F/kSKbNzxS14j4bKhZcBTrM3GWbRQVlBnszqIXmvkZjyVQjeZY9UFh+3/6eoJA+gWG7FfhFUefh/NvUbw8ngAg==" target="_blank" style="color:magenta">single effect</a> and the <a href="https://netnet.studio/?layout=dock-left#code/eJx1U9GK2zAQfD5/xTZ9sH3YUtIjLYTEUDjaPrRwLYE+Flne2EpsKZXkhLTcv3ct+460XMFg76xmJO2M16/yHERVgdDwafvlM5S990Y78AZMb+EoaoQ8L6L12ABVbWayVfKAdlaEjzUfW0UUrZ206ujBWbmZNd4f3YpzWWm2dxW26mSZRs/rhtNL/UJtbD180pM7L3QlbJW3qrTCXkhUtRXXmnVq4M+KNR/Vi5e3oRPg3rFa+aYvmTKTwJbgf+hP/CLit1C3phQtaJ3BsBRueQQQSRqBh1ooDRvQeA499pHqZM6WKfPmHp1XWnhldJJGE4EuKS7XjAel6wej6/uhkfwm6TP6FZBGBlSE9VvV4QAtRmyHWJVCHgbozTJ6fBa3eEJbXqt/C8hLslJcVrBg1/SzaK6573tvvovmmvxuZJfC4QeLP3vUklSW85vshmAjvTihW8HbUDrUTnl1Up7W5HfzjLCv1Aw7cg6dsQjO9LpyIE5CtaJsERq0dNcnyyavpOmCTXvHRV+Rc94i8k44j3Y6/E4ReQPxf80eiSXaQ0vcmkb+Y8G64108CRxp0Gj/siYgyaCcMtkM1gY7smnQ2TCxLGSAbrTrtRy8DkKQpDDMbRRlFF3rKQSPUURxrdEn8evpF4lTRvmIQxVngZAO+XoO4x9gvCIb" target="_blank" style="color:magenta">effect chain</a> examples last week, we can create a <code>reverb</code> processing node connected to our destination and then update our <code>sampler</code> so that rather than connecting it directly <code>toDestination()</code> we connect it to our new processing node <code>connect(reverb)</code>
+        </p>
+
+        <p>
+          the final sketch should look something like this <a href="https://netnet.studio/?layout=dock-left#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" target="_blank" style="color:magenta">coldplay song generator</a> 
+        </p>
+
+
+
+
+
+      <div style="padding: 40px;"></div>
+
+
+      </section>
+      <nav>
+        <a href="../">home</a>
+        <a href="../schedule">schedule</a>
+        <a href="../assignments">assignments</a>
+      </nav>
+    </main>
+
+    <script src="/js/Averigua.js"></script>
+    <script src="/js/netitor.min.js"></script>
+    <script>
+
+    new Netitor({
+      ele: '#test-piano',
+      language: 'javascript',
+      theme: 'moz-dark',
+      code:`// FUNCTIONS ........................
+function play () {
+  sampler.triggerAttackRelease(['C4', 'E4', 'G4'], '8n')
+}
+
+// EVENT LISTENERS ..................
+nn.get('#toggle').on('click', play)
+`})
+
+new Netitor({
+  ele: '#transport-code',
+  language: 'javascript',
+  theme: 'moz-dark',
+  code:`const state = {
+  firstclick: false,
+  counter: 0,
+  notes: [
+    'C4', 'E4', 'G4', // C major (4th octave)
+    'C5', 'E5', 'G5' // C major (5th octave)
+  ]
+}
+
+// FUNCTIONS ........................
+function play (time) {
+  // wait for sampler buffers to be loaded
+  if (sampler.loaded === false) {
+    nn.get('#toggle').content('...loading...')
+    return // exit the function
+  } else {
+    nn.get('#toggle').content('cold<i>stop</i>')
+  }
+
+  // play next note
+  const note = state.notes[state.counter % state.notes.length]
+  sampler.triggerAttackRelease(note, '8n', time)
+  state.counter++ // increase counter by 1
+}
+
+async function toggle () {
+  // restart tone.js context on initial click
+  if (state.firstclick === false) {
+    await Tone.start()
+    state.firstclick = true
+  }
+
+  if (Tone.Transport.state === 'started') {
+    Tone.Transport.stop()
+    nn.get('#toggle').content('cold<i>play</i>')
+  } else {
+    Tone.Transport.start()
+    nn.get('#toggle').content('cold<i>stop</i>')
+  }
+}
+
+// EVENT LISTENERS ..................
+nn.get('#toggle').on('click', toggle)
+Tone.Transport.scheduleRepeat(time => play(time), '8n')
+`})
+
+new Netitor({
+  ele: '#music-helpers',
+  language: 'javascript',
+  theme: 'moz-dark',
+  code:`function createScale(root, pattern) {
+  const scale = [root]
+  let note = root.slice(0, -1) // ex: 'C' from 'C4'
+  let octave = parseInt(root.slice(-1)) // ex: 4 from 'C4'
+  const notes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']
+
+  for (const step of pattern) {
+    const noteIndex = notes.indexOf(note)
+    const nextNoteIndex = (noteIndex + step) % notes.length
+    if (nextNoteIndex < noteIndex) octave += 1
+    note = notes[nextNoteIndex]
+    scale.push(note + octave)
+  }
+
+  return scale
+}
+`})
+
+new Netitor({
+  ele: '#coldplay-state',
+  language: 'javascript',
+  theme: 'moz-dark',
+  code:`const state = {
+  firstclick: false,
+  step: 0,
+  bar: 0,
+  totalSteps: 8,
+  totalBars: 4,
+  rightHandScale: [ 'F4', 'G4', 'G#4', 'A#4', 'C5', 'C#5', 'D#5', 'F5' ],
+  rightHandArp: [
+    [6, 3, 1, 6, 3, 1, 6, 3],
+    [5, 3, 0, 5, 3, 0, 5, 3],
+    [5, 3, 0, 5, 3, 0, 5, 3],
+    [4, 2, 0, 4, 2, 0, 4, 2]
+  ],
+  leftHandScale: [ 'F3', 'G3', 'G#3', 'A#3', 'C4', 'C#4', 'D#4', 'F4' ],
+  leftHandChrd: [
+    [1, 3, 6],
+    [0, 3, 5],
+    [0, 3, 5],
+    [0, 2, 4]
+  ]
+}
+`})
+
+new Netitor({
+  ele: '#play-coldplay',
+  language: 'javascript',
+  theme: 'moz-dark',
+  code:`function play (time) {
+  // wait for sampler buffers to be loaded
+  if (sampler.loaded === false) {
+    nn.get('#toggle').content('...loading...')
+    return // exit the function
+  } else {
+    nn.get('#toggle').content('cold<i>stop</i>')
+  }
+
+  // get current step && bar index
+  const s = state.step % state.totalSteps
+  const b = state.bar % state.totalBars
+
+  // play left hand chord
+  if (s === 0) {
+    const chord = state.leftHandChrd[b]
+    const notes = chord.map(i => state.leftHandScale[i])
+    sampler.triggerAttackRelease(notes, '1n', time)
+  }
+
+  // play right hand arpeggio
+  const arp = state.rightHandArp[b]
+  const notes = arp.map(i => state.rightHandScale[i])
+  const note = notes[s]
+  sampler.triggerAttackRelease(note, '8n', time)
+
+  // some visual feedbak
+  const hue = nn.randomInt(190, 230) // shade of blue
+  const saturation = nn.randomInt(25, 65)
+  nn.get('body').css({ backgroundColor: \`hsl(\${hue}deg, \${saturation}%, 50%)\` })
+
+  // update step/bar for next play call
+  state.step++
+  if (s === state.totalSteps - 1) state.bar++
+}
+`})
+
+new Netitor({
+  ele: '#random-coldplay',
+  language: 'javascript',
+  theme: 'moz-dark',
+  code:`function randomColdplay () {
+  // choose new key/scale && tempo
+  Tone.Transport.bpm.value = nn.randomInt(90, 140)
+  const minor = [2, 1, 2, 2, 1, 2, 2]
+  const keys = [ 'F', 'D', 'G', 'C', 'D#', 'A#']
+  const key = nn.random(keys)
+  state.rightHandScale = createScale(\`\${key}4\`, minor)
+  state.leftHandScale = createScale(\`\${key}3\`, minor)
+  // create new arpeggio && chord patterns
+  state.rightHandArp = []
+  state.leftHandChrd = []
+  for (let i = 0; i < 4; i++) {
+    let a = nn.randomInt(0, 7)
+    let b = nn.random() > 0.5 ? a + 2 : a + 3
+    let c = nn.random() > 0.5 ? b + 2 : b + 3
+    if (b > 7) b = b % 8
+    if (c > 7) c = c % 8
+    state.leftHandChrd.push([a, b, c])
+    state.rightHandArp.push([c, b, a, c, b, a, c, b])
+  }
+}
+`})
+
+new Netitor({
+  ele: '#toggle-random',
+  language: 'javascript',
+  theme: 'moz-dark',
+  code:`nn.get('#randomize').on('click', randomColdplay)
+`})
+
+new Netitor({
+  ele: '#reverb',
+  language: 'javascript',
+  theme: 'moz-dark',
+  code:`const reverb = new Tone.Reverb({
+  wet: 0.75,
+  decay: 5
+}).toDestination()
+`})
+
+    </script>
+  </body>
+</html>
