@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Web Design Trends</title>
+    <meta name="author" content="Nick Briz">
+    <meta charset="utf-8">
+
+    <!-- social media stuff -->
+    <meta property="og:title" content="FLOSS Notes">
+    <meta property="og:url" content="https://netart.rocks/notes/digitizing-human-rights">
+    <meta property="og:image" content="https://netart.rocks/images/netartdiagram.gif">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:site_name" content="https://netart.rocks">
+    <meta name="twitter:site" content="@nbriz">
+
+    <link rel="icon" type="image/png"  href="https://netart.rocks/images/icon.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style media="screen">
+
+      :root {
+        --code-text: #38383d;
+        --code-meta: #7E7E7F;
+        --code-tag: #0078f0;
+        --code-tag-bracket: #38383d;
+        --code-attribute: #de3ed9;
+        --code-string: #0252cd;
+      }
+
+      code {
+        border-radius: 6px;
+        padding: 1px 8px;
+        border: 1px solid var(--code-tag);
+        color: var(--code-tag);
+        font-size: 17px;
+      }
+
+      h2 {
+        padding-top: 20px;
+      }
+
+      iframe {
+        width: 100vw;
+        /* height: 50vh; */
+        border: 1px solid black;
+        border-left: none;
+        border-right: none;
+      }
+
+      #netitor-nav {
+        max-width: 800px;
+        margin: 40px auto;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      #netitor-nav > b {
+        color: var(--blue);
+        cursor: pointer;
+      }
+
+      #netitor-nav > b.selected {
+        border-bottom: 2px solid #000;
+        color: #000;
+      }
+
+      #gallery {
+        max-width: 1300px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 10px;
+        margin-bottom: 40px;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <header>
+      <h1>trends</h1>
+      <h2>from the world of web "design"</h2>
+    </header>
+
+
+    <article>
+
+      <p id="info">
+        Here I've put together a collection of web design trends seen through a single element: <button type="button" name="button">a button</button>. Click on the link below to update the example, experiment with them and dig deeper into any of the styles/trends that interest you.
+      </p>
+
+    </article>
+
+    <nav id="netitor-nav">
+      <b class="selected" data-src="https://netizenorg.github.io/netitor/#code/eJxFjktuwzAMRPc6xdSrFojTCxjZdN1dL6BYdExYH0OkY/j2oZICWZLDx3nDR9879QvBI5aywCt0ZoEspOOMkhF4mqhSVlxr2akKfA4IdOeR5OzI21lLhOozKStVr5xvkEOUEowNDeumUhMoUrJn0rnPyNZ73VRLlhM4r5tiYorBJoncoBNM4+vtEI+z+2t+TbEkMlcr0oLRfjQC+0wZnNZXTUs9uur3ziQ39ZFFIXpEcn1/ccOr/vITeVzwS8P3/+IBC8FkQA==">raw</b>
+      <b data-src="https://netizenorg.github.io/netitor/#code/eJyVkU1OwzAQhfc9xZANsHBSSiOVtGSDEBu4ADvHcdJRHdvyOLQFcXfcn9BULQgWtqz3Zsb292YXjMFcOnlJwCFyfBlB4VrPFZKHovXeaGAsH8x251woFAto5CzZC4NguXyzwuloWoMaG64g+h4YHU0kv1YyHwDEDTvc+REEgO1WGFdKl8GtXQEZhSUUiovFdGtaXpao6wxu0mCnQ7uaHjqFUSY09soroz0jfJcZjMZd7VaseINqnQFxTYykw2pnernyzLugVsY1GbTWSic4yV7vUmI99xmMh8OdKlpHm5utQe2l24ifg1my/2pHEYTiRPdR799R/rAl+/InssZJqHlbrn+C26dbn9DtwE4COdQkPVjUZ7mO0o5VEVDWzrS6ZCHVOnBsnbqae28pSxJR6njJlbI8QCJecYexME1ylyaTNKHq9fH5Ka6xuj4ZZg2hR6MzELJDdlSwC02Yt87rJ3x499mA/xdH/XscX4u7/xg=">brutalist</b>
+      <b data-src="https://netizenorg.github.io/netitor/#code/eJy1VF1vmzAUfe+vuGoVaZFCYiCQQLO87Hk/woABq8ZGtmnopv33GYxT0qSLJm0I83E/fM89PvZB6TdGjg8A5l5TrjSuJG7gp/kFyIQsiEzBb3tQgtECtMRctVgSrp9nIZ7EBe1UCtu2t/YWFwXlVQqRyU2cNcP5SyVFxwsvF0yYqZ8QSqIytu7x4RxlWVprKbj2StxQ9paCMvU9RSSdO0+EVrVOIUbIWjXptYcZrXgKucFK5KxAZ9LNFIzkJoULTqwv76QaCreCuoRfEy9VgymbOKmnWmF8bmpi6X2qu6Qg8OM/cOLjXUj2/4aTyHEyWhX9QVJY73eRJI21M6L1QEiL8xHbOogctP9BY1qLVyKdwK57D5JdRmLHY++pGhfiNFJmlBSYgUBW2ZcgBt+PIAgD2MA2WixXFhZMkaEZw/sqNkSL5RyVPtGBgAnRiRa6NopHaGExNLj3JmO4R46ZhnLPKWE7ynu+8G6SS4V4415L7U66cEy9j1CTldGGv4JgGyxvqikx1+faudqgc/18UuC+mKxs/LMwLhS2u7frbkjCxg9YqaaCe0Un8fBh1nkdqOeP7laKlkht4H3s+MZK3lGYIQFfsLAyNf13SRw205n4cMg6rQWHnGGlvj6eT8fH4zdG8xf4Tg4bGzIGy+MwrtJG1f9dytTIzaTfoZCsEA==">minimalist</b>
+      <b data-src="https://netizenorg.github.io/netitor/#code/eJzNVcGO2jAQvfMVI62QYEWIgc1SAuLSQ6VWPVfbm7Ed1iXYke1Q2Kr/Xjs2hCTbZS+VKpBxxu/NvBnPkJU2p5ytewDxvV0ANlgzClIABiIpK5iAzQk+W8MXLIxgFejZmEKncRwQYy7jH7vqWMX2OT48fXr59v1gsfexXTaSnuBXxSwwpVxsU5ii4rgMEcluq2QpaERkLlUKd2ROMJ244989xy+NsQK8B8p1keNTCptckl1wIRVlloiWzSBonLA9TNi+HSmFnAuGVbRVmHImzEBtN3iARhC+wxG0LOPJbGitlSMAR8N5TV+gPsz7gA0kdvehXwOdl2mSjKBe0PhhPrTbG6ih81WHvEMomVF0nXHkwpfaJTqbJ5c05THSz5jKn+5gaitwXl012mlZKZcQCCKbp4OC/22Dpw3wK9hOpteMKOgIemxCs2xBgQvNTMNtrfmvTtushud3sy6SuoJ8Lavl3JZZlnlrJoWJNH9hto8fzn1s2NHUdb+hxVbds0iptHNeSC4MU1dRjcJCc8OliAolC6aMa/rL3S7bIFoq7Dbu0ie6c2z43s5ElJWCeJSfAD9kVcgwZmvQBX5r2l4VVhkzqfb/SleaSVLqUUeotwe5sjSOnoKQgrX+P1JsAxxYQDaGpPr8V4MxxY/49mA0BdweibfxnWGoRXRvIxSz0SyXHkhBE5yzARovkqHnruLwpumtvAf3zlk58vpjzskOvjILcY8WGhB/AAGnv6g=">skeumorphic</b>
+      <b data-src="https://netizenorg.github.io/netitor/#code/eJxtUsFuwyAMvecrLFWVOimoSddKUxb1svM+goBJWClEQNRmU/99QGjXw2LJQn7m+fmR1vlZ4bEA6Ayf4SccAAaU/eAb2FXVeH1PpY6yU2/NpDlhRhnbwAqrGAvMpRsVnRsQCvONr8l5KebQrj3qwMZCRruAVMleE+nx7J6BWxGFTN4bnaU8iDtl2ClrMZZjUKCNxqUyUs6l7oPiw3iF18NDdeoklnI5hUGHf9ZpQEmN1JI+dgUlm3p/4NiXsGI0RjiIKsbLnfNK3EC5uTRQB8Il7WJadRijTH0AJCHkCRfpW3hSyl4OTm3qt6qE3bqEfb3Oo0Swjgh6lioY4Kh2xKGV4gl08hvD1vv7Xql4yc9XV/l12GRdHDMa+ed0UrB43QjDJpcdN5OPjvzZeyvabf5Lina5cPxQkp3gE9ttLvwCSris6A==">neumorphic</b>
+    </nav>
+
+    <iframe id="netitor" src="https://netizenorg.github.io/netitor/#code/eJxFjktuwzAMRPc6xdSrFojTCxjZdN1dL6BYdExYH0OkY/j2oZICWZLDx3nDR9879QvBI5aywCt0ZoEspOOMkhF4mqhSVlxr2akKfA4IdOeR5OzI21lLhOozKStVr5xvkEOUEowNDeumUhMoUrJn0rnPyNZ73VRLlhM4r5tiYorBJoncoBNM4+vtEI+z+2t+TbEkMlcr0oLRfjQC+0wZnNZXTUs9uur3ziQ39ZFFIXpEcn1/ccOr/vITeVzwS8P3/+IBC8FkQA==" height="630"></iframe>
+
+    <br><br>
+
+    <p id="gallery"></p>
+
+    <br><br><br><br><br><br>
+
+    <script src="/js/Averigua.js"></script>
+    <script src="/js/rainbow-text.js"></script>
+    <script src="/js/fancy-chars.js"></script>
+    <script>
+      FancyText.animate(document.querySelector('header > h1'), 200, 0.2)
+
+      Array.from(document.querySelectorAll('h3'))
+        .forEach(h3 => FancyText.animate(h3, 5000, 0.2))
+
+      Array.from(document.querySelectorAll('a'))
+        .filter(a => a.className !== 'button')
+        .forEach(a => RainbowText.hoverShimmer(a))
+
+      Array.from(document.querySelectorAll('#netitor-nav > b'))
+        .forEach(a => {
+          RainbowText.hoverShimmer(a)
+          a.addEventListener('click', (e) => {
+            Array.from(document.querySelectorAll('#netitor-nav > b'))
+              .forEach(b => b.classList.remove('selected'))
+            a.classList.add('selected')
+
+            document.querySelector('#info').innerHTML = infodata[a.textContent]
+            document.querySelector('#gallery').innerHTML = gallerydata[a.textContent]
+
+            // document.querySelector('#netitor').setAttribute('src', a.dataset.src)
+            document.querySelector('#netitor').src = ''
+            setTimeout(() => {
+              document.querySelector('#netitor').src = a.dataset.src
+            }, 100)
+          })
+        })
+
+      const infodata = {
+        'raw': `
+          Here I've put together a collection of web design trends seen through a single element: <button type="button" name="button">a button</button>. Click on the link below to update the example, experiment with them and dig deeper into any of the styles/trends that interest you.
+        `,
+        'brutalist': `
+          <b>Brutalist web design</b> is an aesthetic that's proven tricky to codify. It's often shockingly maximal but can also be stripped down and minimal. In either case, it aims to feel unconventional and unexpected. The term "brutalist" is loosely borrowed form brutalism, a mid-century architectural movement (though the two movements share very little aesthetic similarities). A brutalist approach to web design could mean presenting the "raw" HTML but it could also mean styling things in minimally or making them as gaudy as possible, so long as it's jarring.
+        `,
+        'minimalist': `
+            <b>Minimalist web design</b>, sometimes also referred to as "flat" design, is likely the most common approach these days. Generally this means clean lines, simple typography and plenty of white space. Colors are often used to draw the viewers eyes to certain aspects of the page and guide their experience. Instagram is a good example of fairly "safe" minimalist design. Consider Instagram's follow button (below). Goolge has it's own brand of minimalism it calls "<a href="https://en.wikipedia.org/wiki/Material_Design" target="_blank">material design</a>", which plays with the metaphor of paper by adding slight drop shadows and subtle animations while keeping things relatively simple. Consider Gmail's send button (below). Another popular minimalist variation is what's known as "<a href="https://en.wikipedia.org/wiki/Flat_design" target="_blank">flat</a>" design. Flat designs reject even the most subtle 3D effects like shadows and gradients. Consider Twitter's login button (below).
+        `,
+        'skeumorphic':`
+          <b>skeumorphic web design</b> refers to the evolution of design trends that aim to make the virtual feel physical. In the first decade of this century skeumorphism was all the rage. Wikipedia defines a <a href="https://en.wikipedia.org/wiki/Skeuomorph#Virtual_examples" target="_blank">skeuomorph</a> as "a derivative object that retains ornamental design cues from structures that were inherent to the original." In web design this often means creating interface elements that mimic their real-world counterparts, often striving for realism and a tactical feel. For example, <a href="ig-logos.png" target="_blank">compare Instagram's current logo to it's original</a>. Both logos symbolize a camera, but the original was skeumorphic because it almost tries to convince us that the logo is in fact a tiny camera sitting next to our other app icons. Consider the skeumorphic button below.
+        `,
+        'neumorphic': `
+        <b>neumorphic web design</b> has evolved from skeumorphic design trends in recent years. <a href="https://en.wikipedia.org/wiki/Neumorphism" target="_blank">Neumorphism</a>, which is still concerned with the illusion of tactility and depth, but is less interested in realism. Neumorphism is something of a minimalist approach to skeumorphism, that might sound like an oxymoron, but consider this neumorphic button below.
+        `
+      }
+
+      const gallerydata = {
+        'raw': '',
+        'brutalist': `
+        <br>
+          Here are a few examples of brutalist web designs:
+<br><br><br>
+          <div class="grid">
+            <div>
+              <img src="/images/notes/brutalist/1.png">
+              <a href="https://gastronomical.global/" target="_blank" style="">gastronomical.global</a>
+            </div>
+            <div>
+              <img src="/images/notes/brutalist/2.png">
+              <a href="https://www.belentenorio.com/index.html" target="_blank">belentenorio.com</a>
+            </div>
+            <div>
+              <img src="/images/notes/brutalist/3.png">
+              <a href="http://escolalateral.com/" target="_blank">escolalateral.com</a>
+            </div>
+          </div>
+          <div class="grid">
+            <div>
+              <img src="/images/notes/brutalist/4.png">
+              <a href="https://www.99percentoffsale.com/" target="_blank">99percentoffsale.com</a>
+            </div>
+            <div>
+              <img src="/images/notes/brutalist/5.png">
+              <a href="https://mcachicago.org/" target="_blank">mcachicago.org</a>
+            </div>
+            <div>
+              <img src="/images/notes/brutalist/6.png">
+              <a href="https://slavakirilenko.com" target="_blank">slavakirilenko.com</a>
+            </div>
+          </div>
+        `,
+        'minimalist':`
+        <br>
+        Here are a few examples of minimalist web designs:
+        <br><br><br>id">
+          <div>
+            <img src="/images/notes/minimalist/1.png">
+            <a href="https://www.mit.edu/about/" target="_blank">mit.edu</a>
+          </div>
+          <div>
+            <img src="/images/notes/minimalist/2.png">
+            <a href="https://themarkup.org/" target="_blank">themarkup.org</a>
+          </div>
+          <div>
+            <img src="/images/notes/minimalist/3.png">
+            <a href="https://typelist.upstatement.com/" target="_blank">typelist.upstatement.com</a>
+          </div>
+        </div>
+        <div class="grid">
+          <div>
+            <img src="/images/notes/minimalist/4.png">
+            <a href="https://work.co/" target="_blank">work.co</a>
+          </div>
+          <div>
+            <img src="/images/notes/minimalist/5.png">
+            <a href="https://colejorissen.com/" target="_blank">colejorissen.com</a>
+          </div>
+          <div>
+            <img src="/images/notes/minimalist/6.png">
+            <a href="https://www.google.com/gmail/about/" target="_blank" style="">gmail</a>
+          </div>
+        </div>
+        `,
+        'skeumorphic': `
+        <br>
+        Here are a few examples of skeumorphic web designs:
+        <br><br><br>
+        <div class="grid">
+          <div>
+            <img src="/images/notes/skeumorphism/1.png">
+            <a href="https://www.bagigia.com/" target="_blank">bagigia.com</a>
+          </div>
+          <div>
+            <img src="/images/notes/skeumorphism/2.png">
+            <a href=" http://www.alexbuga.com/v9/" target="_blank">alexbuga.com</a>
+          </div>
+          <div>
+            <img src="/images/notes/skeumorphism/3.png">
+            <a href="https://nicroto.github.io/viktor/" target="_blank" style="">viktor</a>
+          </div>
+        </div>
+        `,
+        'neumorphic': `
+        <br>
+        Here are a few examples of neumorphic web designs:
+        <br><br><br>
+        <div class="grid">
+          <div>
+            <img src="/images/notes/neumorphism/1.png">
+            <a href="https://neumorphic.design/" target="_blank">neumorphic.design</a>
+          </div>
+          <div>
+            <img src="/images/notes/neumorphism/2.png">
+            <a href="https://codepen.io/KelvinBLAZE/full/xxbrqxr" target="_blank">neumorphic calculator</a>
+          </div>
+          <div>
+            <img src="/images/notes/neumorphism/3.png">
+            <a href="https://codepen.io/sam_garcia2/full/RwaydpP/" target="_blank">neumorphic clock</a>
+          </div>
+        </div>
+        `
+      }
+
+
+    </script>
+  </body>
+</html>
