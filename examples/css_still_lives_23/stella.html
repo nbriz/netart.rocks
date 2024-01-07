@@ -1,0 +1,338 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style>
+
+  body{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .frame{
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+  }
+  
+  .background{
+    position: absolute;
+    width: 500px;
+    height: 200px;
+    top: 299px;
+    background: rgb(226, 226, 218);
+  }
+  
+  .cafetera{
+    border: 2px solid rgb(238, 119, 69);
+    position: absolute;
+    width: 202px;
+    height: 165px;
+    bottom: 230px;
+    right: 149px;
+    border-radius: 15px;
+    transform: perspective(15px) rotateX(-1deg);
+    background: #e76117;
+    z-index: 10;
+  }
+
+  .block{
+    position: absolute;
+    width: 24px;
+    height: 35px;
+    top: -10px;
+    left: 24px;
+    border: 1px solid rgb(238, 119, 69);
+    background-color: #e76117;
+    clip-path: polygon(0 0, 60% 0, 70% 100%, 9% 100%);
+  }
+  
+  .secondblock{
+    position: absolute;
+	  width: 20px;
+ 	  height: 37px;
+	  transform: skew(2deg);
+    left: 39px;
+    top: -11px;
+    border: 1px solid rgb(238, 119, 69);
+    background-color: #e76117;
+  }
+    
+  .blackhandle{
+    position: absolute;
+    width: 153px;
+    height: 193px;
+    bottom: -22px;
+    right: 142px;
+    background-color: rgb(68, 63, 65);
+    border-radius: 22px;
+    clip-path: polygon(61% 4%, 74% 0, 88% 0, 88% 15%, 79% 15%, 63% 28%, 53% 51%, 49% 69%, 50% 87%, 49% 100%, 26% 100%, 21% 94%, 24% 63%, 32% 41%, 45% 19%); 
+  }
+  
+
+  .topblack{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    bottom: 186px;
+    right: 87px;
+    border-radius: 10px;
+    transform: perspective(14px) rotateX(-13deg);
+    background: rgb(57, 59, 63);
+  }
+  
+  .bottom{
+    position: absolute;
+    width: 170px;
+    height: 43px;
+    top: 258px;
+    left: 165px;
+    border-radius: 7px;
+    background-color: #e76117;
+    z-index: 2
+  }
+  
+  .lid{
+    position: absolute; 
+    top: 87px; 
+    left: 248px; 
+    transform: translate(-50%, -50%); 
+    height: 50px; 
+    width: 200px; 
+    border-radius: 100px 100px 0 0; 
+    background-color: #e76117; 
+  }
+  
+  .metalbottom{
+    border: 2px solid rgb(214, 215, 198);
+    position: absolute;
+    width: 187px;
+    height: 165px;
+    top: 279px;
+    left: 155px;
+    border-radius: 25px 25px 20px 20px;
+    transform: perspective(10px) rotateX(1deg);
+    background: rgb(133, 139, 135);
+    z-index: 1
+  }
+  
+  .bustello{
+    position: absolute;
+    width: 180px;
+    height: 230px;
+    border: 0.01px solid rgb(177, 173, 94);
+    border-radius: 12px;
+    background-color: rgb(231, 214, 0);
+  }
+  
+  .left-can{
+    position: absolute;
+    top: 180px;
+    left: 81px;
+    font-size: 37px;
+    text-indent: 0px;
+    line-height: 71px;
+  }
+  
+  .label{
+    position: absolute;
+    background-color: rgb(251, 249, 239);
+    width: 50px;
+    height: 79px;
+    top: 139px;
+    left: 39px;
+  }
+  
+  .redlabel{
+    position: absolute;
+    width: 60px;
+    height: 79px;
+    top: 105px;
+    left: 30px;
+    border: 1px solid rgb(208, 70, 11);
+  }
+  
+  .redlabel2{
+    position: absolute;
+    width: 60px;
+    height: 93px;
+    top: 10px;
+    left: 30px;
+    border: 1px solid rgb(208, 70, 11);
+  }
+  
+  .barcode{
+    position: absolute;
+    width: 40px;
+    height: 60px;
+    bottom: 22px;
+    left: 43px;
+    background-size: 20px 20px;
+    background-image: linear-gradient(#000000 4.90%, #ffffff 4.90%,#ffffff 14.71%, #000000 14.71%, #000000 24.51%, #fff 24.51%, #fff 34.31%, #000000 34.31%, #000000 46.57%, #fff 46.57%, #fff 50%, #000000 50%, #000000 54.90%, #ffffff 54.90%, #ffffff 64.71%, #000000 64.71%, #000000 74.51%, #fff 74.51%, #fff 84.31%, #000000 84.31%, #000000 96.57%, #fff 96.57%, #fff 100%)
+  }
+  
+  .right-can{
+    position: absolute;
+    top: 180px;
+    left: 265px; 
+    font-size: 50px;
+    text-indent: 93px;
+    line-height: 186px;
+    font-family: "Lucida Console", "Courier New", monospace;
+  }
+  
+  .red{
+    background-color: rgb(202, 77, 91);
+    background-size: 100% 40%;
+    width: 100%;
+    height: 28%;
+    position: absolute;
+    bottom: 3%;
+    font-size: 13px;
+    color: white;
+    text-indent: 96px;
+    line-height: 32px;
+    
+  }
+  
+  .yellowlid{
+    position: absolute;
+    background-color: rgb(231, 214, 0);
+    width: 185px;
+    left: -4px;
+    height: 15px;
+    top: -2px;
+    border: 1px solid rgb(249, 250, 140);
+    border-radius: 6px;
+  }
+  
+  .cup{
+    border: 1px solid rgb(195, 186, 158);
+    width: 92px;
+    height: 88px;
+    border-radius: 5px;
+    background-color: white;
+  }
+  
+  .top-cup{
+    position: absolute;
+    top: 280px;
+    right: 30px;
+    z-index: 10;
+    background-image: linear-gradient(to top, #b4b1a6 0%, #ffffff 5%);
+  }
+  .bottom-cup{
+    position: absolute;
+    top: 370px;
+    right: 30px;
+    z-index: 10;
+    background-image: linear-gradient(#b4b1a6 0%, #ffffff 8%);
+  } 
+  
+  .triangle{
+    width: 60%;
+    height: 90%;
+    background-color: rgb(255, 0, 0);
+    clip-path: polygon(0 0, 0% 100%, 100% 50%);
+    /* transform: rotate(10deg) scale(2);*/		
+    transform: translate(65%, 5%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .star{
+    background-color: white;
+    width: 50%;
+    height: 30%;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 
+      50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    transform: translate(-25%, 0px)
+  }
+  
+  .stripes{
+    background-image: linear-gradient(#2d34fb 50%, #ffffff 50%);
+    background-size: 100% 40%;
+    width: 60%;
+    height: 90%;
+    position: absolute;
+    top: 5%;
+    left: 40%;
+    z-index: -1;
+  }
+  
+  .stripes2{
+    background-image: linear-gradient(#2d34fb 50%, #ffffff 50%);
+    background-size: 100% 40%;
+    width: 20%;
+    height: 90%;
+    position: absolute;
+    top: 5%;
+    left: 0%;
+    z-index: -1;    
+  }
+  
+  .handle{
+    border: 1px solid rgb(195, 186, 158);
+    width: 15px;
+    height: 60px;
+    background-color: white;
+    position: absolute;
+    left: 20%;
+    bottom: 10%;
+    border-radius: 35%;
+  }
+  
+  
+  
+</style>
+
+
+
+</head><body><div class="frame">
+  <div class="background">
+  </div>
+  <div class="bustello left-can">
+    <br>
+    O
+  <div class="redlabel"></div>
+  <div class="redlabel2"></div>
+  <div class="red"></div>
+  <div class="label"></div>
+  <div class="yellowlid"></div>
+  <div class="barcode"></div>
+  </div>
+  <div class="bustello right-can">
+    CAB
+  <div class="red">
+    Allergy
+  </div>
+  <div class="yellowlid"></div>
+  </div>
+  <div class="cup top-cup">
+    <div class="triangle">
+      <div class="star"></div>
+      </div>
+    <div class="stripes"></div>
+    <div class="stripes2"></div>
+    <div class="handle"></div>
+      </div>
+  <div class="cup bottom-cup">
+    <div class="triangle">
+      <div class="star"></div>
+    </div>
+    <div class="stripes"></div>
+    <div class="stripes2"></div>
+    <div class="handle"></div>
+ </div>
+    <div class="cafetera">
+      <div class="topblack"></div>
+      <div class="block"></div>
+      <div class="blackhandle"></div>
+      <div class="secondblock"></div>
+  </div>
+      <div class="bottom"></div>
+      <div class="lid"></div>
+      <div class="metalbottom"></div>
+</div></body></html>

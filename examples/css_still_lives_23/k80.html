@@ -1,0 +1,410 @@
+<style>
+
+  * { box-sizing: border-box; }
+
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    cursor: none;
+
+  }
+  .frame {
+    position: relative;
+    width: 500px;
+    height: 500px;
+  }
+  .cup {
+  width: 88px;
+  height: 90px;
+  position: relative; /* To position the handle */
+  background-image: repeating-linear-gradient(
+    to bottom, #003366 0%, hsl(222, 100%, 28%) 50%, #ffffff 50%, #ffffff 100%
+  );
+  background-size: 100% 20%;
+  opacity: 0.5; /* Opacity should be from 0.0-1.0, not percentage */
+
+}
+
+.cup::before {
+  content: '';
+  position: absolute;
+  left: -20px; /* Adjust as needed to position the handle on the left */
+  top: 20px; /* Adjust as needed for vertical positioning */
+  width: 50px;
+  height: 50px; /* Height should be less than the cup for a good handle shape */
+  background: white;
+  border: 3px solid white; /* Add a border if you want a defined edge */
+  border-radius: 20px 20px 0 0; /* This creates the semi-oval shape */
+  transform: rotate(-90deg); /* Adjust the rotation as needed */
+}
+
+    .triangle {
+        width: 50%;
+        height: 100%;
+        background-color: red;
+        clip-path: polygon(0 0, 0% 100%, 50% 50%);
+      }
+      .stripes {
+        background-image: linear-gradient(
+        to bottom,
+        #ffffff 25%, /* White for the first 25% */
+        #002e7a 25%, /* Blue starts immediately after */
+        #002e7a 50%, /* Blue continues until 50% */
+        #ffffff 50%, /* White starts again at 50% */
+        #ffffff 75%, /* White until 75% */
+        #002e7a 75% /* Blue for the last 25% */
+      );
+      width: 100%;
+      height: 100%;
+      position: absolute;
+}
+/* Keyframes for cup1's vertical movement */
+@keyframes cup1UpDown {
+  0%, 100% {
+    top: 310px;
+  }
+  50% {
+    top: 305px;
+  }
+}
+
+/* Keyframes for cup1's horizontal movement */
+@keyframes cup1LeftRight {
+  0%, 100% {
+    left: 150px;
+  }
+  50% {
+    left: 155px;
+  }
+}
+
+/* Keyframes for cup2's vertical movement */
+@keyframes cup2UpDown {
+  0%, 100% {
+    top: 225px;
+  }
+  50% {
+    top: 220px;
+  }
+}
+
+/* Keyframes for cup2's horizontal movement */
+@keyframes cup2LeftRight {
+  0%, 100% {
+    left: 150px;
+  }
+  50% {
+    left: 145px;
+  }
+}
+
+/* Keyframes for cup3's vertical movement */
+@keyframes cup3UpDown {
+  0%, 100% {
+    top: 110px;
+  }
+  50% {
+    top: 115px;
+  }
+}
+
+/* Keyframes for cup3's horizontal movement */
+@keyframes cup3LeftRight {
+  0%, 100% {
+    left: 200px;
+  }
+  50% {
+    left: 195px;
+  }
+}
+
+    .cup1 {
+      position: absolute;
+      top: 310px;
+      left: 150px;
+      z-index: 5;
+      scale: 95%;
+      animation: cup1UpDown 4s ease-in-out infinite, cup1LeftRight 6s ease-in-out infinite;
+    }
+    .cup2 {
+      position: absolute;
+      top: 225px;
+      left: 150px;
+      z-index: 5;
+      scale: 95%;
+      animation: cup2UpDown 3s ease-in-out infinite, cup2LeftRight 5s ease-in-out infinite;
+    }
+    .cup3 {
+      position: absolute;
+      top: 110px; /* Adjust as needed */
+      left: 200px; /* Adjust as needed */
+      z-index: 1;
+      transform: scaleX(-1) scale(0.95); /* Combines horizontal flip with scaling */
+      transform-origin: center center; /* Ensures the flip and scale happen around the center */
+      animation: cup3UpDown 6s ease-in-out infinite, cup3LeftRight 4s ease-in-out infinite;
+    }
+  .coffee {
+    background-image: linear-gradient(#F9E214 66%, #DB2F00 30%);
+    opacity: 60%;
+    width: 30%;
+    height: 40%;
+  }
+
+/* Keyframes for can1's clockwise movement */
+@keyframes can1Clockwise {
+  0% {
+    top: 190px;
+    left: 190px;
+  }
+  25% {
+    top: 185px;
+    left: 195px;
+  }
+  50% {
+    top: 190px;
+    left: 200px;
+  }
+  75% {
+    top: 195px;
+    left: 195px;
+  }
+  100% {
+    top: 190px;
+    left: 190px;
+  }
+}
+
+/* Keyframes for can2's counterclockwise movement */
+@keyframes can2Counterclockwise {
+  0% {
+    top: 200px;
+    left: 270px;
+  }
+  25% {
+    top: 195px;
+    left: 265px;
+  }
+  50% {
+    top: 200px;
+    left: 260px;
+  }
+  75% {
+    top: 205px;
+    left: 265px;
+  }
+  100% {
+    top: 200px;
+    left: 270px;
+  }
+}
+	  .can1 {
+      position: absolute;
+      top: 190px;
+      left: 190px;
+      z-index: 0;
+      animation: can1Clockwise 8s linear infinite;
+    }
+  .can2 {
+  position: absolute;
+  background-color: #F9E214; /* Bright yellow color for Café Bustelo can */
+  /* Add more styling details like gradients and text here */
+	  top: 200px;
+  left: 270px;
+  animation: can2Counterclockwise 8s linear infinite;
+    }
+    .kettle {
+      position: absolute;
+      top: 256px; /* Starting position */
+      left: 5px; /* Starting position */
+      opacity: 60%;
+      /* Animation properties */
+      animation: upDownAnimation 5s ease-in-out infinite, leftRightAnimation 8s ease-in-out infinite;
+    }
+    .kettle-top{
+  height: 20px;
+  width: 15px;
+  position: absolute;
+  top: -179px;
+  left: 110px;
+  background-color: black;
+  border-top-left-radius: 10px; /* Adjust as needed */
+  border-top-right-radius: 10px; /* Adjust as needed */
+    }
+    .kettle-lid {
+  position: absolute;
+  top: -159px; /* Adjust as needed */
+  left: 45px; /* Center relative to the kettle pot */
+  width: 150px; /* Adjust as needed */
+  height: 30px; /* Adjust as needed */
+  background-color: #ffa500; /* Orange color for the lid */
+  clip-path: ellipse(75px 30px at 50% 100%); /* Flipping the semi-circle */
+  z-index: 3;
+    }
+.kettle .spout {
+  position: absolute;
+  top: -120px; /* Adjust as needed */
+  left: 193px; /* Adjust the position where the spout should start */
+  width: 0; /* Width should be 0 for the triangle effect */
+  height: 00; /* Height should be 0 for the triangle effect */
+  border-left: 15px solid transparent; /* Half the width of the triangle */
+  border-right: 15px solid transparent; /* Half the width of the triangle */
+  border-bottom: 40px solid #ffa500; /* Height and color of the triangle */
+  transform: translate(-50%, 0) rotate(-25deg); /* Adjusts the spout angle */
+  transform-origin: left bottom; /* Ensures rotation happens from the base */
+}
+
+
+    .kettle-handle {
+  position: absolute;
+  top: -90px; /* Adjust based on the kettle pot position */
+  left: 21px; /* Adjust so it's positioned to the side of the pot */
+  width: 20px; /* Width of the handle */
+  height: 80px; /* Height of the handle */
+  background-color: black;
+  z-index: 4; /* Ensure it's above other elements */
+  transform: rotate(-10deg); /* Adjust the angle to match the image perspective */
+    }
+      .kettle-handle::before,
+      .kettle-handle::after {
+        content: '';
+        position: absolute;
+        background-color: black;
+        height: 20px; /* Half the handle width for a nice curve */
+        border-radius: 50%;
+        z-index: 11;
+      }
+      .kettle-handle::before {
+        top: -10px; /* Positioned to create the top part of the handle */
+        left: 0;
+        width: 36px; /* Extend beyond the width of the handle to create the top edge */
+        border-radius: 10px 0 0 0; /* Only top-left corner is rounded */
+      }
+      .kettle-handle::after {
+        bottom: -10px; /* Half the extra height, creates the bottom curve */
+        left: 0;
+        width: 23px; /* Match the handle width */
+      }
+    .kettle-pot {
+      position: absolute;
+      top: -129px;
+      left: 45px;
+      width: 149px;
+      height: 125px;
+      z-index: 2;
+    }
+      .panel {
+        position: absolute;
+        top: 0;
+        height: 100%;
+      }
+        /* First Panel - Leftmost panel */
+        .panel:nth-child(1) {
+          left: 0;
+          background: linear-gradient(to bottom right, #ffc77d, #ff7f00);
+          clip-path: polygon(0 0, 100% 0, 150% 150%, 40% 110%);
+          width: 34%; /* each panel will take up 25% of the width */
+        }
+        /* Second Panel - Solid color */
+        .panel:nth-child(2) {
+          left: 25%;
+          background: #ffa500; /* Solid color */
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 25% 100%);
+          width: 25%; /* each panel will take up 25% of the width */
+        }
+        /* Third Panel - Lighter towards top left */
+        .panel:nth-child(3) {
+          left: 50%;
+          background: linear-gradient(to top left, #ffcb85, #ffa500);
+          clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%);
+          width: 25%; /* each panel will take up 25% of the width */
+          z-index: 2;
+        }
+        /* Fourth Panel - Darker towards bottom right */
+        .panel:nth-child(4) {
+          left: 69%;
+          background: linear-gradient(to bottom right, #ffa500, #ff7f00);
+          clip-path: polygon(0 0, 100% 0, 60% 100%, 0 100%);
+          width: 31.5%; /* each panel will take up 25% of the width */
+        }
+    .kettle-waist {
+      position: absolute;
+      top: -4px; /* Adjust based on the pot height */
+      left: 61px; /* Center relative to the kettle pot */
+      width: 117px; /* The waist is narrower */
+      height: 20px; /* Adjust as needed */
+      background-color: #ffa500; /* Orange color */
+      z-index: 2;
+    }
+    .kettle-base {
+      position: absolute;
+      top: 16px; /* Adjust based on the waist position */
+      left: 45px; /* Adjust to center it relative to the pot */
+      width: 150px; /* Full width relative to the pot size */
+      height: 120px; /* Height of the base */
+      background-color: silver; /* Silver color for the base */
+      clip-path: polygon(10% 0, 90% 0, 100% 100%, 0 100%); /* Trapezoid shape */
+      z-index: 1;
+    }
+
+  @keyframes upDownAnimation {
+    0%, 100% {
+      top: 256px;
+    }
+    50% {
+      top: 246px; /* Moves up by 10px */
+    }
+  }
+
+  /* Define the keyframes for the left and right movement */
+  @keyframes leftRightAnimation {
+    0%, 100% {
+      left: 5px;
+    }
+    50% {
+      left: 15px; /* Moves right by 10px */
+    }
+  }
+  </style>
+
+<body>
+  <div class="frame">
+    <div class="cup cup1">
+      <div class="stripes"></div>
+      <div class="triangle"></div>
+    </div>
+    <div class="cup cup2">
+      <div class="stripes"></div>
+      <div class="triangle"></div>
+    </div>
+    <div class="cup cup3">
+      <div class="stripes"></div>
+      <div class="triangle"></div>
+    </div>
+    <div class="kettle">
+  		<div class="kettle-top"></div>
+      <div class="spout"></div>
+      <div class="kettle-lid"></div>
+      <div class="kettle-handle"></div>
+      <div class="kettle-pot">
+  	    <div class="panel"></div>
+        <div class="panel"></div>
+        <div class="panel"></div>
+        <div class="panel"></div>
+</div>
+
+      <div class="kettle-waist"></div>
+      <div class="kettle-base"></div>
+		</div>
+
+    <div class="coffee can1">
+      <!-- Add more elements for text and other details -->
+    </div>
+    <div class="coffee can2">
+      <!-- Add more elements for text and other details -->
+    </div>
+  </div>
+</body>

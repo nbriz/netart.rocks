@@ -1,0 +1,543 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  @font-face {
+    font-family: "Wabene";
+    src: url("Wabene.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Acme";
+    src: url("Acme Gothic Wide Bold.otf") format("opentype")
+  }
+
+  @font-face {
+    font-family: "Newside";
+    src: url("Newside FP Regular.ttf") format("truetype");
+  }
+
+  .frame {
+    position: relative;
+    width: 700px;
+    height: 500px;
+    border: 1px solid black;
+  }
+
+  .table {
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(90deg, rgba(204, 187, 158, 1) 0%, rgba(226, 207, 174, 1) 20%, rgba(245, 226, 194, 1) 50%, rgba(226, 207, 174, 1) 82%, rgba(204, 187, 158, 1) 100%);
+    z-index: -4;
+    bottom: 0;
+  }
+
+  .cafetera {
+    position: absolute;
+    top: 100px;
+    left: 70px;
+    width: 210px;
+    height: 180px;
+    border: 1px solid orange;
+    border-radius: 3px;
+    z-index: -1;
+    transform: perspective(20px) rotateX(-1deg);
+    background: linear-gradient(90deg, rgba(255, 121, 29, 1) 0%, rgba(255, 130, 0, 1) 25%, rgba(255, 134, 49, 1), rgba(255, 108, 20, 1) 26%, rgba(249, 119, 0, 1) 27%, rgba(255, 130, 0, 1) 40%, rgba(255, 108, 20, 1) 50%, rgba(255, 134, 49, 1) 51%, rgba(255, 121, 34, 1) 52%, rgba(245, 78, 3, 1) 75%, rgba(255, 104, 0, 1) 75%, rgba(255, 134, 49, 1) 76%, rgba(255, 121, 34, 1) 76%, rgba(255, 100, 4, 1) 79%, rgba(255, 132, 20, 1) 98%, rgba(255, 163, 79, 1) 100%);
+  }
+
+  .lid-top {
+    position: absolute;
+    height: 35px;
+    top: 15px;
+    left: 160px;
+    width: 30px;
+    border: 1px solid grey;
+    border-radius: 2px;
+    background: linear-gradient(90deg, rgba(91, 91, 91, 1) 28%, rgba(48, 48, 48, 1) 100%);
+    transform: perspective(1.5px) rotateX(-1deg);
+
+  }
+
+  .cafetera-lid {
+    position: absolute;
+    top: -40px;
+    left: -1px;
+    width: 210px;
+    height: 40px;
+    border: 1px solid orange;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    background: linear-gradient(90deg, rgba(255, 190, 101, 1) 0%, rgba(255, 119, 2, 1) 12%, rgba(255, 171, 20, 1) 25%, rgba(255, 138, 38, 1) 37%, rgba(255, 149, 55, 1) 54%, rgba(255, 182, 76, 1) 75%, rgba(255, 163, 79, 1) 100%);
+
+  }
+
+  .cafetera-handle {
+    position: relative;
+    top: 100px;
+    left: 30px;
+    width: 35px;
+    height: 170px;
+    border: 1px solid grey;
+    border-radius: 100% 0 0 40% / 50% 100% 100% 100%;
+    z-index: -2;
+    transform: skewX(-10deg);
+    background: linear-gradient(90deg, rgba(131, 131, 131, 1) 0%, rgba(91, 91, 91, 1) 28%, rgba(45, 45, 45, 1) 61%, rgba(66, 66, 66, 1) 83%, rgba(48, 48, 48, 1) 100%);
+  }
+
+  .orange-bottom {
+    position: absolute;
+    bottom: 180px;
+    left: 78px;
+    height: 45px;
+    width: 194px;
+    border: 1px solid orange;
+    border-radius: 5px;
+    background: linear-gradient(90deg, rgba(249, 156, 46, 1) 0%, rgba(245, 113, 21, 1) 24%, rgba(233, 82, 14, 1) 100%);
+    z-index: -1;
+
+  }
+
+  .metal-bottom {
+    position: absolute;
+    bottom: 55px;
+    left: 71px;
+    height: 130px;
+    width: 208px;
+    border: 1px solid hsl(0, 0%, 78%);
+    border-radius: 8px;
+    transform: perspective(15px) rotateX(1deg);
+    background: linear-gradient(90deg, rgba(107, 107, 107, 1) 0%, rgba(221, 233, 215, 1) 4%, rgba(195, 195, 195, 1) 9%, rgba(221, 233, 215, 1) 14%, rgba(255, 255, 255) 16%, rgba(195, 195, 195, 1) 18%, rgba(226, 228, 224, 1) 22%, rgba(145, 145, 145, 1) 30%, rgba(145, 145, 145, 1) 40%, rgba(186, 215, 247, 1) 45%, rgba(186, 215, 247, 1) 49%, rgba(145, 145, 145, 1) 52%, rgba(145, 145, 145, 1) 53%, rgba(216, 224, 212, 1) 61%, rgba(216, 224, 212, 1) 58%, rgba(255, 255, 255) 68%, rgba(195, 196, 194, 1) 92%, rgba(245, 214, 21, 1) 98%);
+    z-index: -1;
+  }
+
+
+  .bustello {
+    position: absolute;
+    width: 250px;
+    height: 280px;
+    border: 0px solid yellow;
+    z-index: -1;
+    background: linear-gradient(90deg, rgba(235, 208, 16, 1) 0%, rgba(255, 224, 0, 1) 9%, rgba(255, 237, 0, 1) 47%, rgba(255, 224, 0, 1) 96%, rgba(235, 208, 16, 1) 100%);
+    border-radius: 3%
+  }
+
+  .bustello-lid {
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, rgba(235, 208, 16, 1) 0%, rgba(255, 224, 0, 1) 1%, rgba(255, 237, 0, 1) 46%, rgba(255, 224, 0, 1) 100%, rgba(235, 208, 16, 1) 100%);
+    top: -15px;
+    z-index: 1;
+  }
+
+  .bustello-lid-shadow {
+    position: absolute;
+    width: 100%;
+    height: 25px;
+    border-radius: 0 0 100% 100%;
+    background: linear-gradient(90deg, rgba(221, 195, 11, 1) 0%, rgba(255, 224, 0, 1) 30%, rgba(221, 195, 11, 1) 100%);
+    top: -5px;
+    z-index: 0;
+  }
+
+  .bustello-red {
+    position: absolute;
+    width: 100%;
+    height: 90px;
+    bottom: 0;
+    background: linear-gradient(90deg, rgba(238, 0, 0, 1) 0%, rgba(255, 0, 0, 1) 9%, rgba(255, 64, 64, 1) 27%, rgba(255, 72, 72, 1) 43%, rgba(255, 0, 0, 1) 82%, rgba(255, 4, 4, 1) 94%, rgba(222, 0, 0, 1) 100%);
+    border-radius: 2px;
+
+  }
+
+  .bustello-bottom-curve {
+    position: absolute;
+    width: 100%;
+    height: 12px;
+    bottom: -12px;
+    background: linear-gradient(90deg, rgba(91, 98, 89, 1) 0%, rgba(119, 131, 115, 1) 25%, rgba(150, 174, 201, 1) 50%, rgba(144, 158, 139, 1) 75%, rgba(91, 98, 89, 1) 100%);
+    border-radius: 5% 5% 100% 100%;
+  }
+
+  .bustello-font {
+    position: absolute;
+    font-family: "Wabene", serif;
+    font-size: 45px;
+    top: 110px;
+
+  }
+
+  .cafe-font {
+    position: absolute;
+    font-family: "Acme", serif;
+    font-size: 50px;
+    top: 45px;
+  }
+
+  .coffee-font {
+    position: absolute;
+    top: 160px;
+    font-family: "Gill Sans", serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 19px;
+  }
+
+
+  .white-text {
+    position: absolute;
+    font-family: "Newside", serif;
+    font-size: 11px;
+    bottom: 60px;
+    color: white;
+
+  }
+
+  .yellow-text {
+    position: absolute;
+    font-family: "Newside", serif;
+    font-size: 10px;
+    font-style: italic;
+    bottom: 45px;
+    color: rgb(255, 222, 0);
+    left: 10px;
+
+  }
+
+  .white-text2 {
+    position: absolute;
+    font-family: "Futura", serif;
+    font-size: 9px;
+    font-weight: 700;
+    bottom: 20px;
+    color: white;
+    left: 30px;
+  }
+
+  .red-tri {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
+    background: red;
+    transform: translate(160px, 65px);
+    z-index: 1;
+  }
+
+  .stripe-tri {
+    position: absolute;
+    z-index: -1;
+    clip-path: polygon(50% 0%, 0 50%, 100% 50%);
+    background: repeating-linear-gradient(90deg, white, black 2px, white 3px);
+    width: 60px;
+    height: 50px;
+    transform: translate(150px, 70px);
+  }
+
+  .barcode {
+    position: absolute;
+    background: repeating-linear-gradient(white, black 4px, white 5px);
+    width: 26px;
+    height: 90px;
+    bottom: 22px;
+    right: 0px;
+    z-index: 1;
+    transform: skewY(-8deg) translate(-2px);
+  }
+
+
+  .barcode-outline {
+    position: absolute;
+    width: 35px;
+    height: 110px;
+    background: linear-gradient(90deg, rgba(230, 230, 230, 1) 0%, rgba(255, 255, 255, 1) 36%, rgba(210, 210, 210, 1) 100%);
+    bottom: 12px;
+    right: 0px;
+    z-index: 0;
+    transform: skewY(-7deg)
+  }
+
+  .barcode-outline-curve1 {
+    position: absolute;
+    width: 100%;
+    height: 5%;
+    background: rgb(255, 223, 0);
+    border-radius: 50%;
+    top: -4px;
+
+  }
+
+  .barcode-outline-curve2 {
+    position: absolute;
+    width: 100%;
+    height: 5%;
+    background: linear-gradient(90deg, rgba(230, 230, 230, 1) 0%, rgba(255, 255, 255, 1) 36%, rgba(210, 210, 210, 1) 100%);
+    border-radius: 50%;
+    bottom: -3px;
+
+  }
+
+  .red-outline {
+    position: absolute;
+    width: 35px;
+    height: 120px;
+    border: 1px solid red;
+    top: 30px;
+    right: 0;
+    transform: skewY(-10deg);
+    font-family: "Newside";
+    font-size: 7px;
+    padding: 3px;
+    word-wrap: break-word;
+
+  }
+
+  .left-can {
+    position: absolute;
+    left: 283px;
+    bottom: 46px;
+  }
+
+  .right-can {
+    position: absolute;
+    right: 40px;
+    bottom: 25px;
+  }
+
+  .cup {
+    position: absolute;
+    border: 1px solid grey;
+    width: 88px;
+    height: 92px;
+    border-radius: 5px 5px 15px 15px;
+    background-color: white;
+    z-index: -1;
+  }
+
+  .cup-handle {
+    position: absolute;
+    width: 60px;
+    height: 30px;
+    border: 8px solid white;
+    left: -46px;
+    top: 30px;
+    z-index: 4;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    transform: rotate(-90deg);
+
+  }
+
+  .cup-handle-outline {
+    position: absolute;
+    width: 63px;
+    height: 33px;
+    border: 11px solid grey;
+    left: -48px;
+    top: 28.5px;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    transform: rotate(-90deg);
+    z-index: 3;
+  }
+
+  .cup-lid-shadow {
+    position: absolute;
+    width: 85%;
+    height: 5px;
+    border: 0.1px solid hsl(0, 0%, 78%);
+    transform: translate(6px, -1.5px);
+    background-color: hsl(0, 0%, 78%);
+    border-radius: 50%;
+  }
+
+
+  .cup-lid-white1 {
+    position: absolute;
+    width: 87px;
+    height: 25px;
+    border: 0.2px solid grey;
+    border-radius: 40%;
+    transform: translate(-0.5px, -7.5px);
+    background-color: white;
+    z-index: -1;
+
+  }
+
+  .cup-lid-white2 {
+    position: absolute;
+    width: 86px;
+    height: 6px;
+    border: 0.2px solid transparent;
+    border-radius: 40%;
+    transform: translate(0px, 3px);
+    background-color: white;
+  }
+
+  .bottom-cup {
+    position: absolute;
+    bottom: 25px;
+    left: 280px;
+    background: white;
+  }
+
+  .top-cup {
+    position: absolute;
+    top: 290px;
+    left: 280px;
+  }
+
+  .third-cup {
+    position: absolute;
+    top: 80px;
+    left: 350px;
+  }
+
+  .right-handle {
+    position: absolute;
+    width: 60px;
+    height: 30px;
+    border: 8px solid white;
+    top: 30px;
+    right: -47px;
+    z-index: 3;
+    border-radius: 0 0 50% 50% / 0 0 100% 100%;
+    transform: rotate(-90deg);
+  }
+
+  .right-cup-handle-outline {
+    position: absolute;
+    width: 63px;
+    height: 33px;
+    border: 11px solid grey;
+    top: 28.5px;
+    right: -49px;
+    border-radius: 0 0 50% 50% / 0 0 100% 100%;
+    transform: rotate(-90deg);
+    z-index: 2;
+  }
+
+
+  .triangle {
+    width: 30%;
+    height: 60%;
+    background: linear-gradient(0deg, rgba(158, 29, 27, 1) 0%, rgba(233, 60, 48, 1) 46%, rgba(249, 73, 53, 1) 100%);
+    clip-path: polygon(0 0, 0% 100%, 100% 50%);
+    transform: translate(-1.5px, 34%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .star {
+    background-color: white;
+    width: 45%;
+    height: 25%;
+    transform: translate(-5px, 3px);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)
+  }
+
+  .stripes {
+    background: linear-gradient(0deg, rgba(33, 73, 176, 1) 0%, rgba(57, 98, 206, 1) 8%, rgba(54, 90, 184, 1) 13%, rgba(33, 73, 176, 1) 19%, rgba(255, 255, 255, 1) 20%, rgba(240, 245, 255, 1) 33%, rgba(255, 255, 255, 1) 39%, rgba(33, 73, 176, 1) 40%, rgba(57, 98, 206, 1) 48%, rgba(54, 90, 184, 1) 53%, rgba(33, 73, 176, 1) 60%, rgba(255, 255, 255, 1) 61%, rgba(240, 245, 255, 1) 70%, rgba(255, 255, 255, 1) 79%, rgba(89, 110, 175, 1) 80%, rgba(33, 73, 176, 1) 81%, rgba(57, 98, 206, 1) 88%, rgba(54, 90, 184, 1) 93%, rgba(33, 61, 148, 1) 100%);
+    width: 100%;
+    height: 90%;
+    position: absolute;
+    top: 5px;
+    left: 0%;
+    z-index: -1;
+    border-radius: 0 0 5px 5px;
+  }
+</style>
+
+</head><body><div class="frame">
+  <div class="table"></div>
+  <div class="lid-top"></div>
+  <div class="cafetera">
+    <div class="cafetera-lid"></div>
+  </div>
+  <div class="cafetera-handle"></div>
+  <div class="orange-bottom"></div>
+  <div class="metal-bottom"></div>
+
+  <div class="bustello left-can">
+    <div class="bustello-lid"></div>
+    <div class="bustello-lid-shadow"></div>
+    <div class="bustello-red"></div>
+    <div class="bustello-bottom-curve">
+    </div>
+    <div class="bustello-font">USTELO'</div>
+    <div class="cafe-font">AFE'</div>
+    <div class="coffee-font">Espresso Ground Coffee</div>
+    <div class="white-text">ALWAYS PURE AND FLAVORFUL, LIKE NO OTHER</div>
+    <div class="yellow-text">
+      Vacuum Packed - 100% Pure Coffee
+    </div>
+    <div class="white-text2">
+      NET WT 10 0Z (283g)
+    </div>
+  </div>
+  <div class="bustello right-can">
+    <div class="bustello-lid"></div>
+    <div class="bustello-lid-shadow"></div>
+    <div class="bustello-red"></div>
+    <div class="bustello-bottom-curve">
+    </div>
+    <div class="bustello-font">BUSTELO'</div>
+    <div class="cafe-font">CAFE'</div>
+    <div class="coffee-font">Espresso Ground Coffee</div>
+    <div class="white-text">PURE AND FLAVORFUL, LIKE NO OTHER
+    </div>
+    <div class="yellow-text">
+      Vacuum Packed - 100% Pure Coffee
+    </div>
+    <div class="white-text2">
+      NET WT 10 0Z (283g)
+    </div>
+    <div class="red-outline">111111111111111111111111111111hello world this took forever to make! 111111111111111111
+    </div>
+    <div class="red-tri"></div>
+    <div class="stripe-tri"></div>
+    <div class="barcode"></div>
+    <div class="barcode-outline">
+      <div class="barcode-outline-curve1"></div>
+      <div class="barcode-outline-curve2"></div>
+    </div>
+  </div>
+  <div class="cup top-cup">
+    <div class="cup-lid-shadow"></div>
+    <div class="cup-lid-white1"></div>
+    <div class="cup-lid-white2"></div>
+    <div class="cup-handle"></div>
+    <div class="cup-handle-outline"></div>
+    <div class="triangle">
+      <div class="star"></div>
+    </div>
+    <div class="stripes"></div>
+  </div>
+  <div class="cup bottom-cup">
+    <div class="cup-handle"></div>
+    <div class="cup-handle-outline"></div>
+    <div class="triangle">
+      <div class="star"></div>
+    </div>
+    <div class="stripes"></div>
+    <div class="strips"></div>
+  </div>
+  <div class="cup third-cup">
+    <div class="cup-lid-shadow"></div>
+    <div class="cup-lid-white1"></div>
+    <div class="cup-lid-white2"></div>
+    <div class="stripes"></div>
+    <div class="right-handle"></div>
+    <div class="right-cup-handle-outline"></div>
+  </div>
+</div></body></html>

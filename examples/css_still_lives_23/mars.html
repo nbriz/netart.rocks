@@ -1,0 +1,600 @@
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+128" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Gluten" rel="stylesheet">
+</head>
+
+<style>
+  * {
+    box-sizing: border-box;
+
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+
+  }
+
+  .frame {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+  }
+
+  .cafetera {
+    position: absolute;
+    top: 90px;
+    left: 160px;
+    width: 210px;
+    height: 300px;
+    z-index: -2;
+
+  }
+
+  .line {
+    position: absolute;
+    width: 210px;
+    height: 50px;
+    background-color: rgb(255, 145, 0);
+    left: -2%;
+    top: -7%;
+    border: 5px solid rgb(255, 145, 0);
+    border-radius: 40%;
+    z-index: -2;
+
+  }
+
+  .handle {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+    background-color: black;
+    left: 43%;
+    top: -60%;
+    z-index: -4;
+    transform: rotate(180deg);
+  }
+
+  /*   .lid {
+    position: absolute;
+    width: 100vh;
+    height 50px;
+    top: 5%;
+    background-color: orange;
+
+  } */
+
+  .panel {
+    position: absolute;
+    width: 70px;
+    height: 160px;
+    background-color: orange;
+    border: 3px solid rgb(255, 145, 0)
+  }
+
+  .one {
+    right: 74%;
+    transform: rotateY(60deg) rotateX(5deg);
+  }
+
+  .two {
+    right: 55%;
+    transform: rotateY(45deg) rotateX(5deg);
+
+  }
+
+  .three {
+    width: 60px;
+    right: 35%;
+    transform: rotateY(-5deg) rotateX(-5deg);
+
+  }
+
+  .four {
+    width: 60px;
+    right: 9%;
+    transform: rotateY(-30deg) rotateX(-4deg);
+
+  }
+
+  /*    .spout {
+    position: absolute;
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+    color: pink;
+    width: 100%;
+    height: 100%;
+    left: 30%;
+    top: 20%;
+    z-index: 3;
+
+  }  */
+
+/*   .opening {
+    position: absolute;
+    width: 15%;
+    height: 25%;
+    clip-path: polygon(30% 65%, 70% 65%, 100% 0, 0 0);
+    background-color: black;
+    outline-style: 5px solid;
+    outline-color: hsl(34, 47%, 69%);
+    left: 30%;
+    top: -6%;
+    transform: rotateZ(0deg) rotateY(6deg) rotateX(-65deg);
+    z-index: 10;
+  } */
+
+  .bustello {
+    width: 180px;
+    height: 250px;
+    border-radius: 5%;
+    position: relative;
+  }
+
+  .left-can {
+    position: absolute;
+    top: 220px;
+    left: 140px;
+    /*     border: ; */
+    z-index: 2;
+  }
+
+  .right-can {
+    position: absolute;
+    top: 170px;
+    left: 270px;
+    z-index: 0;
+
+  }
+
+  .red-yellow {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(#ffff00 75%, #ff2600 0%);
+    border-radius: 6%;
+    overflow: clip;
+  }
+
+  .red {
+    position: relative;
+    clip-path: polygon(0 33%, 100% 64%, 0 64%);
+    background-color: #ff2600;
+    width: 100%;
+    height: 20%;
+    top: 67%;
+    left: 0%;
+    rotate: (5deg);
+
+  }
+
+  .verse {
+    position: relative;
+    clip-path: polygon(0 33%, 100% 64%, 0 64%);
+    background-color: #ff2600;
+    width: 100%;
+    height: 20%;
+    top: 46%;
+    right: -10%;
+    transform: rotateY(150deg);
+
+  }
+
+  .yellow {
+    position: relative;
+    clip-path: polygon(0 33%, 100% 64%, 0 64%);
+    background-color: #ff2600;
+    width: 100%;
+    height: 20%;
+    top: 68%;
+    right: -10%;
+    transform: rotateY(150deg) rotateX(180deg) rotateZ(-4deg);
+
+  }
+
+  .yellow-text {
+    position: absolute;
+    font-family: Gluten;
+    color: rgb(0, 0, 82);
+    font-size: 40px;
+    line-height: 0.9;
+  }
+
+  .ca {
+    left: 66%;
+    top: 4%;
+    transform: rotateY(60deg);
+    /*     z-index: 0; */
+
+  }
+
+  .lo {
+    top: 24%;
+    left: -12%;
+    transform: rotateY(60deg);
+
+  }
+
+  .triang1 {
+    position: absolute;
+    width: 20%;
+    height: 10%;
+    background-color: red;
+    clip-path: polygon(0 0, 0 100%, 85% 50%);
+    transform: rotate(90deg) rotateY(-20deg);
+    top: 30%;
+    left: 0%;
+    z-index: 4;
+  }
+
+  .triang2 {
+    position: absolute;
+    width: 10%;
+    height: 15%;
+    background-color: rgb(0, 0, 82);
+    clip-path: polygon(0 0, 0 100%, 85% 50%);
+    transform: rotate(270deg) rotateY(-20deg);
+    top: 25%;
+    left: 5%;
+    z-index: 3;
+
+  }
+
+  .bust {
+    text-align: center;
+    top: 10%;
+    right: 5%;
+    transform: rotateY(30deg);
+
+  }
+
+  .ft {
+    top: 10%;
+    right: -9%;
+    transform: rotateY(50deg);
+
+  }
+
+  .oval {
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    border-radius: 100%;
+
+  }
+
+  .top-oval {
+    background-color: rgb(255, 250, 0);
+    top: -10%;
+    border: 5px solid rgb(255, 243, 0);
+/*     z-index: ; */
+  }
+
+  .bottom-oval {
+    position: absolute;
+    background-color: #ff2600;
+    border: 5px solid silver;
+    width: 102%;
+    bottom: -12%;
+    z-index: -2;
+  }
+
+  .red-box {
+    position: relative;
+    width: 70px;
+    height: 80px;
+    background-color: yellow;
+    border: 3px solid #ff2600;
+    top: -73%;
+    left: 31%;
+    overflow: clip;
+    font-family: Garamond;
+    font-size: 3px;
+    text-shadow: 2px 1px 2px;
+
+  }
+
+  .red-box h2 {
+    position: absolute;
+    top: -4%;
+
+  }
+
+  .alter {
+    background-image: linear-gradient(#ffff00 50%, #ff2600 50%);
+    overflow: clip;
+    font-family: Monaco;
+    font-size: 1.5px;
+    text-shadow: 2px 1px 2px;
+    text-align: center;
+  }
+
+  .alter h2 {
+    position: absolute;
+    top: -1%;
+
+  }
+
+  .barcode {
+    position: relative;
+    width: 50px;
+    height: 70px;
+    background-color: #eef3ff;
+    top: -92%;
+    left: 36%;
+    overflow: clip;
+    font-stretch: ultra-expanded;
+  }
+
+  .barcode p {
+    position: absolute;
+    font-family: Monaco;
+    font-size: 6px;
+    transform: rotate(270deg);
+    white-space: nowrap;
+    text-shadow: 1px 0px 2px;
+    top: 35%;
+    left: 40%;
+
+
+  }
+
+  .barcode h3 {
+    position: absolute;
+    font-family: 'Libre Barcode 128';
+    transform: rotate(270deg);
+    font-size: 25px;
+    top: -10%;
+    left: 15%;
+    text-shadow: 0px 0px 0px;
+    /*     font-stretch: extra-condensed; */
+
+  }
+
+  .barcode h2 {
+    position: absolute;
+    font-family: 'Libre Barcode 128';
+    transform: rotate(270deg);
+    font-size: 25px;
+    top: -3.5%;
+    left: -15%;
+    text-shadow: 0px 0px 0px;
+
+  }
+
+  .red-text {
+    position: absolute;
+    font-family: Monaco;
+    font-size: 5px;
+    color: white;
+  }
+
+  .cup {
+    border: 1px solid transparent;
+    width: 88px;
+    height: 92px;
+    background-color: #eef3ff;
+    /*     z-index: ; */
+
+  }
+
+  .stacked-cup1 {
+    position: absolute;
+    top: 358px;
+    left: 101px;
+    border-radius: 10%;
+    /*     z-index: ; */
+
+  }
+
+  .top-oval3 {
+    top: -10%;
+    left: 0%;
+    border: 2px solid silver;
+    background-color: #eef3ff;
+    /*     z-index: ; */
+  }
+
+  .bottom-oval3 {
+    background-color: #eef3ff;
+    border: 2px solid silver;
+    bottom: -8%;
+    /*     z-index: ; */
+  }
+
+  .stacked-cup2 {
+    position: absolute;
+    top: 268px;
+    left: 101px;
+    z-index: ;
+    border-radius: 10%;
+  }
+
+  .top-oval2 {
+    background-color: #eef3ff;
+    /*     border: 2px solid silver; */
+    top: -10%;
+    /*     z-index: ; */
+  }
+
+  .bottom-oval2 {
+    background-color: #eef3ff;
+    border: 3.5px solid hsl(34, 0%, 13%);
+    bottom: -11%;
+    /*     z-index: ; */
+  }
+
+  .alt3 {
+    position: absolute;
+    top: 5%;
+    left: 0%;
+  }
+
+  .flag {
+    position: relative;
+    /*     overflow: hidden; */
+    top: 95px;
+    left: 300px;
+    border-radius: 10%;
+    /*     z-index: ; */
+  }
+
+  .top-oval4 {
+    background-color: #eef3ff;
+    /*     border: 4px solid silver; */
+    top: -13%;
+    z-index: -1;
+    transform: rotateX(140deg);
+
+  }
+
+  .bottom-oval4 {
+    background-color: #eef3ff;
+    border: 2px solid silver;
+    bottom: -13%;
+    z-index: -1;
+  }
+
+  .triangle {
+    width: 50%;
+    height: 90%;
+    background-color: red;
+    clip-path: polygon(0 0, 0 100%, 85% 50%);
+    transform: translate(15%, 5%);
+    position: absolute;
+    left: 52%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*     z-index: ; */
+
+  }
+
+  .star {
+    background-color: white;
+    width: 45%;
+    height: 25%;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    transform: translate(-15%, 0px);
+
+  }
+
+  .stripes {
+    background-image: linear-gradient(#3659ad 50%, #eef3ff 50%);
+    background-size: 100% 40%;
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    top: 5%;
+    /*     z-index: ; */
+  }
+
+  .stripe-container {
+    /*     border: 1px solid black; */
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+  }
+
+  .alt {
+    position: absolute;
+    width: 35px;
+    top: 5%;
+    left: 60%;
+    /*     z-index: ; */
+
+
+  }
+
+  .alt2 {
+    position: absolute;
+    width: 35px;
+    top: 5%;
+    left: -0%;
+    /*     z-index: ; */
+  }
+</style>
+
+
+<div class="frame">
+  <div class="cafetera">
+    <div class="line">
+      <div class="handle"></div>
+    </div>
+    <div class="panel one"></div>
+    <div class="panel two"></div>
+    <div class="panel three"></div>
+    <div class="panel four"></div>
+    <div class="spout"></div>
+    <div class="opening"></div>
+  </div>
+  <div class="bustello left-can">
+    <div class="red-yellow left">
+      <div class="yellow-text ca">
+        <h2>CA <br> BU</h2>
+      </div>
+      <div class="yellow-text lo">
+        <h2>LO</h2>
+      </div>
+      <div class="triang1"></div>
+      <div class="triang2"></div>
+      <div class="red"></div>
+      <div class="verse"></div>
+    </div>
+    <div class="oval top-oval"></div>
+    <div class="oval bottom-oval"></div>
+    <div class="red-box">
+      <h2>Café Bustelo® tiene un aroma irresistible y un sabor pleno. Es un café deliciosamente versátil, que se puede preparar usando su método preferido: filtrado, cappuccino, espresso o frío con hielo y así satisfacer todos los gustos.¡El mejor café se disfruta en compañía! Café Bustelo coffee has an irresistible aroma and rich taste. It is a deliciously versatile coffee that can be prepared using your preferred method: drip brewed, cappuccino, espresso or cold with ice to satisfy all tastes. The best coffee is enjoyed with company!</h2>
+    </div>
+    <div class="red-box alter">
+      <h2>GⓇROWLAND COFFEE ROASTERS, INC. <br>MIAMI, FL 33178<br> SI TIENE COMENTARIOS O PREGUNTAS, LLAME AL<br> FOR COMMENTS OR QUESTIONS, PLEASE CALL<br>:1-800-990-9039<br> cafebustelo.com</h2>
+    </div>
+    <div class="barcode">
+      <p>7441 00050 0</p>
+      <h3>coffee</h3>
+      <h2>coffee</h2>
+    </div>
+    <div class="red-text"></div>
+  </div>
+  <div class="bustello right-can">
+    <div class="yellow-text bust">
+      <h2>CA <br> BUS</h2>
+    </div>
+    <div class="yellow-text ft">
+      <h2>F <br>&nbsp;T</h2>
+    </div>
+    <div class="red-yellow">
+      <div class="yellow"></div>
+    </div>
+    <div class="oval top-oval"></div>
+    <div class="oval bottom-oval"></div>
+  </div>
+  <div class="cup stacked-cup1">
+    <div class="oval top-oval3"></div>
+    <div class="oval bottom-oval3"></div>
+    <div class="stripes"></div>
+  </div>
+  <div class="cup stacked-cup2">
+    <div class="oval top-oval2">
+    </div>
+    <div class="oval bottom-oval2"></div>
+    <div class="stripes alt3"></div>
+  </div>
+  <div class="cup flag">
+    <div class="oval top-oval4">
+    </div>
+    <div class="oval bottom-oval4"></div>
+    <div class="stripe-container">
+      <div class="stripes alt2"></div>
+      <div class="stripes alt"></div>
+      <div class="triangle">
+        <div class="star"></div>
+      </div>
+    </div>
+
+  </div>
+</div>

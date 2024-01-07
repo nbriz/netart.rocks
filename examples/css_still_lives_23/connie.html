@@ -1,0 +1,342 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style>
+
+  * { box-sizing: border-box; }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .frame {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border: 3px solid;
+  }
+
+  .coffee {
+    width: 150px;
+    height: 185px;
+    background-image: linear-gradient(to right, #f1db00, #f3e249, #f5e870, #f8ee92, #faf4b2, #faf4b2, #faf4b2, #faf4b2, #f8ee92, #f5e870, #f3e249, #f1db00);
+    position: absolute;
+    left: 300px;
+    top: 180px;
+    border: 1px solid;
+  }
+
+  .bottom-strip {
+    width: 150px;
+    height: 8px;
+    position: relative;
+    transform: translate(1px, 18px);
+    border: 1px solid;
+    background-image: linear-gradient(to right, #85878c, #999a9e, #acadb0, #c1c1c3, #d5d5d6, #d5d5d6, #d5d5d6, #d5d5d6, #c1c1c3, #acadb0, #999a9e, #85878c);
+    border-radius: 0% 0% 50% 50%;
+    transition: transform 0.3s ease; 
+  }
+
+  .coffee:hover .bottom-strip {
+    transform: translate(1px, 28px); 
+  }
+
+  .lid {
+    width: 150px;
+    height: 20px;
+    background-color: hsl(40, 89%, 34%);
+    position: absolute;
+    border: 1px solid;
+    border-radius: 70%;
+    right: -1px;
+    top: -11px;
+  }
+
+  .brand {
+    padding: 10% 10%;
+    font-family: serif;
+    font-weight: bold;
+    font-size: 30px;
+    overflow: hidden;
+    position: relative;
+    top: 11px;
+  }
+
+  .brand-sub {
+    padding: 5%;
+    font-family: sans-serif verdana;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: bold;
+    overflow: hidden;
+    position: relative;
+    right: -11px;
+    top: -5px;
+  }
+
+  .red {
+    background-image: linear-gradient(to right, #ce2c2c, #de5650, #eb7974, #f59b98, #fbbcbb, #fbbcbb, #fbbcbb, #fbbcbb, #f59b98, #eb7974, #de5650, #ce2c2c);
+    height: 33%;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+  }
+
+  .red-brand {
+    padding: 5%;
+    font-family: sans-serif verdana;
+    font-size: 9.5px;
+    overflow: hidden;
+    position: relative;
+    right: -3px;
+    top: 5px;
+    text-align: center;
+  }
+
+  .cup {
+    background: linear-gradient(0deg, rgba(255,255,255,1) 50%, rgba(34,36,195,1) 50%);
+    background-size: 100% 40%;
+    border: 1px solid;
+    width: 50px;
+    height: 55px;
+    position: absolute;
+    right: 230px;
+    top: 311px;
+    z-index: 1;
+  }
+
+  .cup2 {
+    background: linear-gradient(0deg, rgba(255,255,255,1) 50%, rgba(34,36,195,1) 50%);
+    background-size: 100% 40%;
+    border: 1px solid;
+    width: 50px;
+    height: 55px;
+    position: absolute;
+    right: 230px;
+    top: 257px;
+    z-index: 1;
+  }
+
+  .cup2-top {
+    background-color: white;
+    border: 1px solid;
+    width: 50px;
+    height: 8px;
+    position: relative;
+    right: 1px;
+    top: -58px;
+    border-radius: 90%;
+  }
+
+  .triangle {
+    background: red;
+    width: 90%;
+    height: 100%;
+    clip-path: polygon(0 0, 0% 100%, 100% 49%);
+  }
+
+  .triangle::after {
+    content: "★";
+    color: white;
+    font-size: 24px;
+    display: block;
+    transform: translate(5%, 40%);
+  }
+
+  .handle {
+    background: white;
+    background-size: 100% 40%;
+    border: 1px solid;
+    width: 20px;
+    height: 25px;
+    position: absolute;
+    right: 279px;
+    top: 325px;
+    border-radius: 150px 50px 50px 150px;
+    z-index: 1;
+  }
+
+  .handle-inside {
+    background: #cacaca;
+    background-size: 100% 40%;
+    border: 1px solid;
+    width: 16px;
+    height: 15px;
+    position: absolute;
+    right: 279px;
+    top: 330px;
+    border-radius: 500px 300px 300px 500px;
+    z-index: 1;
+  }
+
+  .handle2 {
+    background: white;
+    background-size: 100% 40%;
+    border: 1px solid;
+    width: 20px;
+    height: 25px;
+    position: absolute;
+    right: 279px;
+    top: 271px;
+    border-radius: 150px 50px 50px 150px;
+    z-index: 1;
+  }
+
+  .handle2-inside {
+    background: #cacaca;
+    background-size: 100% 40%;
+    border: 1px solid;
+    width: 16px;
+    height: 15px;
+    position: absolute;
+    right: 279px;
+    top: 276px;
+    border-radius: 500px 300px 300px 500px;
+    z-index: 1;
+  }
+
+  .kettle {
+    height: 140px;
+    width: 150px;
+    border: 1px solid;
+    position: absolute;
+    right: 250px;
+    top: 130px;
+    -webkit-clip-path: polygon(0 0, 100% 0, 82% 100%, 20% 100%);
+    clip-path: polygon(0 0, 100% 0, 82% 100%, 20% 100%);
+    background-image: linear-gradient(to right, #f77b11, #f9882e, #fb9544, #fca159, #fdad6d, #fdad6d, #fdad6d, #fdad6d, #fca159, #fb9544, #f9882e, #f77b11);
+    z-index: -1;
+  }
+  
+  .handle-2 {
+    height: 135px;
+    width: 100px;
+    background-color: black;
+    position: relative;
+    left: 0px;
+    bottom: -115px;
+    filter: blur(2px);
+    clip-path: polygon(66% 8%, 100% 0, 100% 22%, 71% 29%, 60% 51%, 61% 100%, 38% 100%, 37% 50%, 48% 21%);
+  }
+
+ .handle-2::before {
+    content: "";
+    height: 130px;
+    width: 100px;
+    background-color: white;
+    position: absolute;
+    top: 4px;
+    left: 7px;
+    filter: blur(10px);
+    clip-path: polygon(66% 8%, 100% 0, 100% 22%, 71% 29%, 60% 51%, 61% 100%, 38% 100%, 37% 50%, 49% 21%);
+  }
+  
+  .handle-2::after {
+    content: "";
+    height: 130px;
+    width: 100px;
+    background-color: rgb(31, 0, 0);
+    position: absolute;
+    clip-path: polygon(66% 8%, 100% 0, 100% 22%, 71% 29%, 60% 51%, 61% 100%, 38% 100%, 37% 50%, 49% 21%);
+    top: 6px;
+    left: 9px;
+    filter: blur(10px);
+  }
+
+  .kettle-lid {
+    width: 150px;
+    height: 30px;
+    position: relative;
+    right: -94px;
+    top: -30px;
+    border: 1px solid;
+    border-radius: 5000px 5000px 900% 900%;
+    background-color: rgb(242, 121, 45);
+  }
+
+  .kettle-lid-top {
+    width: 25px;
+    height: 20px;
+    position: relative;
+    background-color: black;
+    right: -154px;
+    top: -80px;
+    -webkit-clip-path: polygon(0 0, 100% 0, 82% 100%, 20% 100%);
+    clip-path: polygon(0 0, 100% 0, 82% 100%, 20% 100%);
+  }
+
+  .kettle-bottom {
+    width: 150px;
+    height: 100px;
+    border: 1px solid;
+    -webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+    position: absolute;
+    right: 250px;
+    top: 266px;
+    background-image: linear-gradient(to right, #9c9c9c, #ababab, #bbbbbb, #cacaca, #dadada, #dadada, #dadada, #dadada, #cacaca, #bbbbbb, #ababab, #9c9c9c);
+    z-index: -1;
+  }
+
+</style>
+
+</head><body><div class="frame">
+	<div class="coffee">
+    <div class="brand">CAFÉ BUSTELO</div>
+    <div class="brand-sub">Espresso Ground Coffee</div>
+    <div class="red"></div>
+    <div class="red-brand">ALWAYS PURE AND FLAVORFUL, LIKE NO OTHER </div>
+    <div class="lid"></div>
+    <div class="bottom-strip"></div>
+  
+  <div class="coffee" style="Left: -80px;top:0px;">
+    <div class="brand">CAFÉ BUSTELO</div>
+    <div class="brand-sub">Espresso Ground Coffee</div>
+    <div class="red"></div>
+    <div class="red-brand">ALWAYS PURE AND FLAVORFUL, LIKE NO OTHER </div>
+    <div class="lid"></div>
+    <div class="bottom-strip"></div>
+  </div>
+    
+  </div>
+  <div class="cup">
+		<div class="triangle"></div>
+  </div>
+
+  <div class="cup2">
+								<div class="triangle"></div>
+    <div class="cup2-top"></div>
+  </div>
+
+  <div class="cup3">
+    <div class="cup3-top"></div>
+  </div>
+
+  <div class="handle"></div>
+
+  <div class="handle-inside"></div>
+
+  <div class="handle2"></div>
+
+  <div class="handle2-inside"></div>
+
+  <div class="handle3"></div>
+
+  <div class="handle3-inside"></div>
+
+  <div class="kettle"></div>
+  
+   <div class="handle-1"></div>
+
+  <div class="handle-2"></div>
+
+  <div class="kettle-bottom"></div>
+
+  <div class="kettle-lid"></div>
+
+  <div class="kettle-lid-top"></div>
+
+  <div class="background"></div>
+  </div></body></html>

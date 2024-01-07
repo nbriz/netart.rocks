@@ -1,0 +1,259 @@
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .frame {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    /*     border: 1px solid black; */
+  }
+
+  .bustello {
+    border: 1px solid yellow;
+    width: 180px;
+    height: 230px;
+    background-color: hsl(57, 100%, 68%);
+    border-radius: 20%;
+  }
+
+  .b-top {
+    background: linear-gradient(to top right, #ffe600 0%, #ffffff 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .left-bustello {
+    position: absolute;
+    top: 240px;
+    left: 200px;
+    z-index: -1;
+    border-radius: 20%;
+  }
+
+  .left-bustello-text {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    z-index: 1;
+    font-size: 30px
+  }
+
+  .bustello::after {
+    content: "";
+    width: 180px;
+    height: 100px;
+    background: linear-gradient(to top right, #ad0101 0%, #330000 100%);
+    position: absolute;
+    top: 128px;
+    z-index: 3;
+    border-radius: 0px 0px 20px 20px;
+  }
+
+  .right-bustello {
+    position: absolute;
+    top: 240px;
+    left: 350px;
+    border-radius: -8%;
+  }
+
+  .right-bustello-text {
+    position: absolute;
+    top: 270px;
+    left: 370px;
+    z-index: 1;
+    font-size: 30px
+  }
+
+  .cup {
+    width: 88px;
+    height: 92px;
+  }
+
+  .top-cup {
+    position: absolute;
+    top: 149px;
+    left: 230px;
+    border-radius: 30%;
+  }
+
+  .bottom-cup {
+    position: absolute;
+    top: 377px;
+    left: 160px;
+    border-radius: 30%;
+  }
+
+  .middle-cup {
+    position: absolute;
+    top: 286px;
+    left: 160px;
+    border-radius: 30%;
+  }
+
+  .triangle {
+    width: 50%;
+    height: 90%;
+    background-color: red;
+    position: absolute;
+    clip-path: polygon(0 0, 0% 100%, 100% 50%);
+    transform: translate(0px, 5%);
+    border-radius: 30%;
+  }
+
+  .star {
+    background-color: white;
+    width: 35%;
+    height: 25%;
+    position: relative;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%,
+        79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    transform: translate(-5%, 29px)
+  }
+
+  .stripes {
+    background-image: linear-gradient(#0f00e6 50%, #ffffff 50%);
+    background-size: 100% 40%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -0px;
+    left: 0px;
+    z-index: -1;
+    border-radius: 30%;
+  }
+
+  .cup-handle {
+    background-color: hsl(0, 0%, 92%);
+    clip-path: circle(50% at 100% 51%);
+    width: 51px;
+    height: 92px;
+    position: absolute;
+    left: -49;
+    z-index: 1;
+    filter: blur(19px);
+  }
+
+  .orangetop {
+    background-image: linear-gradient(to right, #eb640a 0%, #ac2c02 100%);
+    border: 1px;
+    clip-path: polygon(50% 38%, 100% 38%, 82% 100%, 19% 100%, 0% 38%);
+    width: 210px;
+    height: 290px;
+    position: absolute;
+    top: -207px;
+    left: -155px;
+    z-index: -3;
+  }
+
+  .silverbottom {
+    background-image: linear-gradient(to left, #d9d6d4 0%, #858585 100%);
+    border: 1px;
+    clip-path: polygon(52% 38%, 100% 38%, 80% 0, 18% 0, 0% 38%);
+    width: 200px;
+    height: 290px;
+    position: absolute;
+    top: 79px;
+    left: -150px;
+    z-index: -3
+  }
+
+  .topofcoffee {
+    background-image: linear-gradient(to right, #eb640a 0%, #ac2c02 100%);
+    border: 1px solid black;
+    clip-path: polygon(49% 7%, 83% 12%, 100% 44%, 79% 44%, 55% 44%, 31% 44%, 17% 44%, 0 44%, 17% 12%);
+    width: 210px;
+    height: 150px;
+    position: absolute;
+    top: -163px;
+    left: -155px;
+
+
+  }
+
+  .blackthing {
+    background-color: black;
+    clip-path: polygon(0 0, 100% 0%, 75% 100%, 33% 100%);
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: -184px;
+    left: -79px;
+    z-index: -2;
+    filter: blur(8px);
+  }
+
+  .coffeehandle {
+    background-color: black;
+    clip-path: polygon(26% 14%, 100% 0%, 48% 33%, 58% 91%);
+    width: 112px;
+    height: 165px;
+    position: absolute;
+    left: -244;
+    top: -108px;
+    z-index: -4;
+    filter: blur(27px);
+
+  }
+</style>
+<body>
+
+</body>
+
+<div class="frame">
+  <div class="cafetera"></div>
+  <div class="bustello left-bustello">
+    <div class="bustello b-top"></div>
+    <div class="left-bustello-text">
+      CAFE BUSTELLO
+    </div>
+  </div>
+  <div class="bustello right-bustello">
+    <div class="bustello b-top"></div>
+  </div>
+  <div class="right-bustello-text">
+    CAFE BUSTELLO
+  </div>
+  <div class="cup top-cup">
+    <div class="cup-handle">
+    </div>
+    <div class="triangle"></div>
+    <div class="star"></div>
+    <div class="stripes"></div>
+  </div>
+  <div class="cup bottom-cup">
+    <div class="cup-handle">
+    </div>
+    <div class="triangle"></div>
+    <div class="star"></div>
+    <div class="stripes"></div>
+  </div>
+  <div class="cup middle-cup">
+    <div class="cup-handle">
+    </div>
+    <div class="triangle"></div>
+    <div class="star"></div>
+    <div class="stripes">
+    </div>
+    <div class="silverbottom">
+    </div>
+    <div class="orangetop">
+    </div>
+    <div class="topofcoffee">
+    </div>
+    <div class="blackthing">
+    </div>
+    <div class="coffeehandle">
+    </div>
+  </div>
+
+</div>

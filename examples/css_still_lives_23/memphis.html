@@ -1,0 +1,298 @@
+<style>
+
+  * {box-sizing: border-box; }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+		margin: 0;
+  }
+
+  .frame {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+  }
+
+  .cup {
+    border: 1px solid black;
+    width: 65px;
+    height: 70px;
+    background: linear-gradient(blue 0%, blue 20%, white 20%, white 40%, blue 40%, blue 60%, white 60%, white 80%, blue 80%, blue 100%);
+  }
+
+  .cup-handle {
+    width: 70%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255,244,239,1) 9%, rgba(201,191,182,1) 43%, rgba(233,228,225,1) 77%);
+    clip-path: polygon(96% 10%, 81% 9%, 63% 11%, 44% 18%, 38% 34%, 37% 47%, 40% 62%, 51% 72%, 65% 76%, 77% 78%, 89% 78%, 100% 78%, 100% 65%, 87% 65%, 74% 64%, 63% 63%, 55% 59%, 50% 51%, 48% 38%, 53% 26%, 65% 23%, 80% 22%, 97% 22%);
+  	transform: translate(-100%, -60px);
+  }
+
+    .other-cup-handle {
+    width: 70%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255,244,239,1) 9%, rgba(201,191,182,1) 43%, rgba(233,228,225,1) 77%);
+    clip-path: polygon(96% 10%, 81% 9%, 63% 11%, 44% 18%, 38% 34%, 37% 47%, 40% 62%, 51% 72%, 65% 76%, 77% 78%, 89% 78%, 100% 78%, 100% 65%, 87% 65%, 74% 64%, 63% 63%, 55% 59%, 50% 51%, 48% 38%, 53% 26%, 65% 23%, 80% 22%, 97% 22%);
+  	transform: translate(63px, 2px) scaleX(-1);
+  }
+
+   .other-cup {
+    position: absolute;
+    top: 59px;
+    left: 213px;
+    border: 1px solid black;
+    width: 65px;
+    height: 70px;
+    background: linear-gradient(blue 0%, blue 20%, white 20%, white 40%, blue 40%, blue 60%, white 60%, white 80%, blue 80%, blue 100%);
+  }
+
+  .top-cup {
+    position: absolute;
+    top: 200px;
+    left: 240px;
+  }
+
+  .bottom-cup {
+  position: absolute;
+  top: 270px;
+  left: 240px;
+  }
+
+  .triangle {
+    width: 60%;
+    height: 90%;
+    background-color: red;
+    clip-path: polygon(0 0, 0% 100%, 100% 50%);
+    transform: translate(0px, 5%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .star {
+    background-color: white;
+    width: 45%;
+    height: 25%;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  	transform: translate(-55%, 0px);
+  }
+
+  .container {
+  margin-top: 100px; /* Adjust the margin to move the shape downwards */
+}
+  .cafetera {
+    position: absolute;
+		border: 1px solid black;
+   	top: 90px;
+    left: 0px;
+    width: 200px;
+    height: 200px;
+/*     background-color: orange; */
+    clip-path: polygon(0 0, 100% 0, 88% 86%, 14% 86%);
+    background-image: linear-gradient(90deg, #f68043 0%, #f79c1d 25%, #e06423 25%, #db8714 50%, #e06423 50%, #db8714 75%, #e09023 75%, #FF6347 100%);
+  }
+
+
+  .base {
+/*     border: 1px solid black; */
+		background: linear-gradient(90deg, rgba(180,180,180,1) 22%, rgba(255,254,246,1) 45%, rgba(170,170,170,1) 84%);
+    position: relative;
+    top: 145px;
+    left: 3px;
+    width: 200px;
+    height: 110px;
+    border-radius: 30px 30px 0 0;
+/*     transform: rotate(180deg); */
+  }
+
+  .top {
+    background: linear-gradient(90deg, rgba(247,100,29,1) 9%, rgba(255,137,36,1) 43%, rgba(255,114,16,1) 77%);
+    position: absolute;
+    top: 70px;
+    left: -5px;
+    width: 210px;
+  	height: 24px;
+    border-radius: 0 0 20px 20px;
+/*     transform: translateY(-50%); */
+  	border-top-left-radius: 50px;
+  	border-top-right-radius: 50px;
+/*     transform: rotate(180deg); */
+  }
+
+  .handle {
+  position: absolute;
+  top: 69px;
+  left: -90px;
+  width: 150px;
+  height: 190px;
+  background-color: black;
+  clip-path: polygon(80% 13%, 55% 14%, 35% 24%, 26% 38%, 20% 56%, 19% 73%, 20% 84%, 34% 84%, 33% 73%, 33% 59%, 35% 46%, 44% 36%, 58% 30%, 81% 29%);
+}
+
+  .spout {
+  position: absolute;
+  background-color: #ff8924;
+  top: 93px;
+  left: 189px;
+  width: 60px;
+  height: 90px;
+  clip-path: polygon(0 0, 0 81%, 63% 0);
+}
+
+  .lid {
+  position: absolute;
+  background-color: black;
+  top: 40px;
+  left: 85px;
+  width: 90px;
+  height: 100px;
+  clip-path: polygon(1% 0, 45% 0, 35% 31%, 10% 31%);
+
+  }
+
+	.bustello {
+  border: 1px solid black;
+ 	width: 150px;
+  height: 200px;
+  background: linear-gradient(90deg, rgba(255,225,6,1) 9%, rgba(243,255,13,1) 43%, rgba(255,224,2,1) 79%);
+  border-radius: 5px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+  .bustello::before {
+  content: "CAFE BUSTELLO";
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 29px;
+  color: black;
+}
+
+  .bustello-lid {
+  position: absolute;
+  border: 1px solid black;
+  background-color: #ffe002;
+  top: -3%;
+  left: -4%;
+  width: 160px; /* Adjust width as needed */
+  height: 10px; /* Adjust height as needed */
+}
+
+	.small-text {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -25%);
+  font-size: 12px;
+  color: black;
+  white-space: nowrap;
+}
+
+	.white-text {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -25%);
+  font-size: 7px;
+  color: white;
+  white-space: nowrap;
+}
+
+  .yellow-text {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -25%);
+  font-size: 6px;
+  color: yellow;
+  white-space: nowrap;
+}
+
+  .weight-text {
+  position: absolute;
+  top: 95%;
+  left: 50%;
+  transform: translate(-50%, -25%);
+  font-size: 8px;
+  color: white;
+  white-space: nowrap;
+}
+
+	.red-stripe {
+	position: absolute;
+	bottom: 0px;
+	left: 0;
+  background: linear-gradient(90deg, rgba(193,11,0,1) 9%, rgba(212,35,15,1) 43%, rgba(200,23,23,1) 79%);
+  width: 100%;
+  height: 65px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+/*   transform: translate(-55%, 0px); */
+}
+
+  .bustello-left {
+  position: absolute;
+  top: 130px;
+  left: 170px;
+}
+
+  .bustello-right {
+  position: absolute;
+  top: 145px;
+  left: 305px;
+}
+
+
+</style>
+
+<div class="frame">
+  <div class="other-cup">
+    <div class="other-cup-handle"></div>
+  </div>
+	<div class="bustello bustello-left">
+   <div class="red-stripe"></div>
+    <div class="small-text">Espresso Ground Coffee</div>
+    <div class="white-text">ALWAYS PURE AND FLAVORFUL, LIKE NO OTHER</div>
+    <div class="weight-text"> NET WT 10 OZ (283g)</div>
+    <div class="bustello-lid"></div>
+  	</div>
+  <div class="bustello bustello-right">
+   <div class="red-stripe"></div>
+    <div class="small-text">Espresso Ground Coffee</div>
+    <div class="white-text">ALWAYS PURE AND FLAVORFUL, LIKE NO OTHER</div>
+    <div class="yellow-text">VACUUM PACKED - 100% PURE COFFEE</div>
+    <div class="weight-text"> NET WT 10 OZ (283g)</div>
+    <div class="bustello-lid"></div>
+  	</div>
+
+  <div class="container">
+    <div class="handle"></div>
+  	<div class="cafetera"></div>
+  	<div class="base"></div>
+  	<div class="top"></div>
+    <div class="lid"></div>
+    <div class="spout"></div>
+  </div>
+  <div class="cup top-cup">
+    <div class="triangle">
+    	<div class="star"></div>
+    </div>
+    <div class="stripes"></div>
+    <div class="cup-handle"></div>
+  </div>
+  <div class="cup bottom-cup">
+  		<div class="triangle">
+    	<div class="star"></div>
+      </div>
+      <div class="cup-handle"></div>
+    	</div>
+    <div class="stripes"></div>
+  </div>
+  <div class="small-cup"></div>
+</div>

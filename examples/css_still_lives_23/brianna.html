@@ -1,0 +1,210 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style>
+  
+  * { box-sizing: border-box; }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+	
+  .frame {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border: 4px solid black;
+
+  }
+  
+  .cup{
+    border: 1px solid #262a97;
+    width: 70px;
+    height: 90px;
+    position: absolute;
+    left: 35%;
+    top: 29.25%;
+    border-radius: 10%;
+    z-index: -1;
+  }
+  .triangle{
+    width: 70%;
+    height: 90%;
+    background-color: red;
+    clip-path: polygon(49% 50%, 0 21%, 0 82%);
+    transform: translate(0%,0%);
+  }
+  .stripes{
+    background-image: linear-gradient(#262a97 51%, #ffffff 51%);
+  	background-size: 100% 40%;
+    width: 100%;
+    height: 90%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+    
+  }
+  .bustelo-1{
+    border: 2px solid #ffd400;
+    width: 140px;
+    height: 209px;
+    position: absolute;
+    left: 25%;
+    bottom: 10%;
+    border-radius: 7%;
+    background-image: linear-gradient(#ffe01a 70%, #e00b0b 30%)
+  }
+  .bustelo-2{
+    border: 2px solid #ffd400;
+    width: 140px;
+    height: 175px;
+    position: absolute;
+    left: 13%;
+    bottom: 17%;
+    border-radius: 7%;
+    background-image: linear-gradient(#ffe01a 70%, #e00b0b 30%);
+  }
+
+  .cafetera{
+    position: absolute;
+    top: 100px;
+    left: 53%;
+    width: 160px;
+    height: 300px;
+    
+  }
+  .caf-top{
+    position: absolute;
+    clip-path: polygon(0 0, 100% 0, 75% 100%, 24% 100%);
+    background-color: hsl(0, 0%, 23%);
+    bottom: 90%;
+    width: 20%;
+    height: 10%;
+    left: 40%;
+    z-index: -1;
+    border-radius: 25%;
+  }
+  .caf-handle{
+    position: absolute;
+		clip-path: polygon(79% 12%, 79% 1%, 90% 5%, 97% 12%, 100% 24%, 100% 85%, 91% 85%, 91% 27%, 89% 20%, 85% 15%);
+    background-color: hsl(0, 0%, 23%);
+    left: -20%;
+    width: 145%;
+    height: 55%;
+    top: 15%;
+    border-radius: 27%;
+  }
+  .caf-lid{
+    position: absolute;
+    clip-path: ellipse(53% 20% at 50% 100%);
+    width: 105.75%;
+    height: 40%;
+    bottom: 84%;
+    left: -2%;
+    background-color: #f2721c;
+  }
+  .caf-middle{
+    width: 90%;
+    height: 55%;
+    position: absolute;
+    top: 16%;
+    left: 6%;
+    background-image: linear-gradient(to right, #f26202 25%, #f2721c 0%, #ff8b1f 52%, #ff810a 47%, #ff7b24 74%, #ff7a33 0%);
+ 		z-index: 5;
+    transform: perspective(270px) rotateX(-30deg);
+  }
+  .caf-bottom{
+    width: 87%;
+    height: 41%;
+    position: absolute;
+    bottom: 0%;
+    left: 7.5%;
+    background-image: linear-gradient(to right, #7e7e7e 0%, #e3e3e3 25%, #787878 50%, #e3e3e3 75%, #7e7e7e 100%);
+    transform: perspective(270px) rotateX(30deg);
+    border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+  
+  }
+  .bustelo-1-label{
+    position: relative;
+    font-size: 30px;
+    color: #072a63;
+    font-family: Luminari, fantasy;
+  }
+  .bustelo-2-label{
+    position: relative;
+    font-size: 30px;
+    color: #072a63;
+    font-family: Luminari, fantasy;
+    bottom: 5%;
+  }
+  .bustelo-1-text{
+    position: absolute;
+    color: #072a63;
+    font-family: Luminari, fantasy;
+    font-size: 13px;
+    bottom: 26%;
+  }
+  .bustelo-2-text{
+    position: absolute;
+    color: #072a63;
+    font-family: Luminari, fantasy;
+    font-size: 13px;
+    bottom: 26%; 
+    right: 57%;
+  }
+  .logo-red{
+    position: absolute;
+    width: 25%;
+    height: 20%;
+    background-color: red;
+    clip-path: polygon(50% 87%, 0 0, 100% 0);
+    transform: translate(0%,0%);
+    left: 40%;
+    top: 15%;
+  }
+  .logo-black{
+    position: absolute;
+    background-color: #2e302f;
+    width: 35%;
+    height: 20%;
+    clip-path: polygon(50% 61%, 0 100%, 100% 100%);
+    left: 35%;
+    top: 5%;
+  }
+
+</style>
+
+
+</head><body><div class="frame">
+  <div class="cafetera">
+    <div class="caf-handle"></div>
+    <div class="caf-top"></div>
+    <div class="caf-lid"></div>
+    <div class="caf-middle"></div>
+    <div class="caf-bottom"></div>
+  </div>
+  <div class="bustelo-2">
+    <p class="bustelo-2-label">CAF<br>BUS</p>
+    <p class="bustelo-2-text">
+      Cafe Es
+    </p>
+  </div>
+  <div class="bustelo-1">
+    <div class="logo-black"></div>
+    <div class="logo-red"></div>
+    <p class="bustelo-1-label">FE<br>TELO</p>
+    <p class="bustelo-1-text">
+      Ground Coffee
+    </p>
+  </div>
+  <div class="cup">
+  	<div class="triangle"></div>
+  	<div class="stripes"></div>
+  </div>
+  
+	<!-- ur HTML code goes here -->  
+</div></body></html>

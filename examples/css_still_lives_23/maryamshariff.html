@@ -1,0 +1,410 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style>
+  * { box-sizing: border-box; }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+	
+  .frame {
+    position: relative;
+    width: 500px;
+    height: 500px;
+  }
+  
+  
+
+  /* cafetera */
+  
+  .cafetera {
+    position: absolute;
+    top: 100px;
+    left: 20px;
+    width: 210px;
+    height: 300px;
+  }
+  
+  .caf-middle {
+    width: 70%;
+    height: 55%;
+    background: linear-gradient(90deg, rgba(255,122,0,1) 0%, rgba(214,110,15,1) 24%, rgba(241,143,49,1) 25%, rgba(242,138,37,1) 46%, rgba(255,122,0,1) 46%, rgba(242,138,38,1) 55%, rgba(214,110,15,1) 69%, rgba(238,126,24,1) 70%);
+    position: absolute;
+    top: 14%;
+    left: 15%;
+    z-index: 5;
+    transform: perspective(300px) rotateX(-30deg);
+  }
+  
+    .caf-bottom {
+    width: 240px;
+    height: 120%;
+    background: linear-gradient(90deg, rgba(168,168,168,1) 0%, rgba(255,255,255,1) 50%, rgba(168,168,168,1) 100%);
+    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);   
+		position: absolute;
+    top: 100%;
+    left: -47px;
+    z-index: 5;
+  }
+ 
+  .caf-top{
+  	clip-path: polygon(51% 92%, 0% 100%, 100% 100%);  
+    width: 100%;
+    height: 100%;
+		position: absolute;
+    top: -164px;
+    z-index: 5; 
+  	background: linear-gradient(90deg, rgba(255,122,0,1) 0%, rgba(214,110,15,1) 24%, rgba(241,143,49,1) 25%, rgba(242,138,37,1) 46%, rgba(255,122,0,1) 46%, rgba(242,138,38,1) 55%, rgba(214,110,15,1) 69%, rgba(238,126,24,1) 70%);
+  }
+ 
+  .caf-connector{
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 24% 100%);
+  background: linear-gradient(90deg, rgba(255,122,0,1) 0%, rgba(214,110,15,1) 24%, rgba(241,143,49,1) 25%, rgba(242,138,37,1) 46%, rgba(255,122,0,1) 46%, rgba(242,138,38,1) 55%, rgba(214,110,15,1) 69%, rgba(238,126,24,1) 70%);
+  z-index: 5;
+  width: 20%;
+  height: 20%;  
+  position: absolute;
+  top: 1px;
+  left: -20px;
+  }
+  
+  .caf-handle{
+  clip-path: polygon(62% 1%, 43% 10%, 34% 15%, 28% 21%, 23% 29%, 20% 38%, 18% 47%, 16% 57%, 18% 68%, 17% 76%, 20% 81%, 28% 81%, 35% 81%, 41% 81%, 40% 73%, 34% 66%, 35% 59%, 39% 56%, 39% 51%, 37% 46%, 36% 40%, 40% 35%, 49% 28%, 53% 25%, 57% 21%, 61% 17%, 62% 9%);
+  background: black;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: -105px;
+  z-index: 5; 
+  }
+  
+  .caf-topblack{
+    clip-path: polygon(20% 0%, 80% 0%, 69% 100%, 29% 100%);
+    width: 25%;
+    height: 15%;
+		position: absolute;
+    top: -35px;
+    left: 55; 
+    z-index: 10; 
+    background: black ;	
+  }
+  .caf-pour{
+  	clip-path: polygon(50% 0%, 100% 0, 51% 100%); 
+    width: 50%;
+    height: 50%;
+		position: absolute;
+    top: 1px;
+    left: 100;
+    z-index: 5; 
+  	background: linear-gradient(90deg, rgba(255,122,0,1) 0%, rgba(214,110,15,1) 24%, rgba(241,143,49,1) 25%, rgba(242,138,37,1) 46%, rgba(255,122,0,1) 46%, rgba(242,138,38,1) 55%, rgba(214,110,15,1) 69%, rgba(238,126,24,1) 70%);
+  }
+
+  /* cafe bustellos */
+  
+  
+  .bustello {
+    width: 180px;
+    height: 230px;
+    background: linear-gradient(90deg, rgba(255,177,0,1) 0%, rgba(255,229,0,1) 35%, rgba(255,177,0,1) 100%);
+    border: 3px solid silver;
+  }
+  
+  .ref::before {
+  font-family: "Georgia", serif;
+  font-weight: bold;
+  color: navy;
+  content: "AFE USTE";
+  position: absolute; 
+  left: 190px ;
+  top: 170px;
+  font-size: 60px;
+}
+  
+  .refred2::before {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  content: "PRE PURO Y PLENO DE";
+  position: absolute; 
+  left: 200px;
+  bottom: 160px;
+  font-size: 10px;
+}   
+
+   .refred3::before {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  content: "COMO NINGUN OTR";
+  position: absolute; 
+  left: 220px;
+  bottom: 150px;
+  font-size: 10px;
+} 
+    .refred4::before {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  content: "ESO NETO 10 OZ";
+  position: absolute; 
+  left: 230px;
+  bottom: 115px;
+  font-size: 10px;
+}  
+
+   .refred5::before {
+  font-family: Arial, Helvetica, sans-serif;
+  color: yellow;
+  content: "ENVASADO AL VACIO 100% CA";
+  position: absolute; 
+  left: 210px;
+  bottom: 140px;
+  font-size: 8px;
+  font-style: italic;
+} 
+  
+    .refred6::before {
+  font-family: Arial, Helvetica, sans-serif;
+  color: yellow;
+  content: "M PACKED - 100% PURE";
+  position: absolute; 
+  right: -30px;
+  bottom: 140px;
+  font-size: 8px;
+  font-style: italic;
+}  
+     
+
+    .refred7::before {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  content: "T WT 10 OZ";
+  position: absolute; 
+  right: -10px;
+  bottom: 115px;
+  font-size: 10px;
+}    
+   
+  
+  
+  
+  .left-can {
+    position: absolute;
+    top: 160px;
+    left: 170px;
+  }
+  
+  .red-left-can{
+   clip-path: inset(54% 20% 15% 10%);
+ 	 background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,128,128,1) 50%, rgba(255,0,0,1) 100%);
+   position: absolute;
+ 	 top: 192px;
+ 	 left: 147px;
+   width: 250px; 
+  }
+  
+  .lid-left-can{
+   clip-path: inset(5% 20% 91% 10%);
+   position: absolute;
+   top: 150px;
+ 	 left: 1px;
+   width: 435px;
+  border: 15px solid silver;
+  background: yellow;
+  }
+ 
+  
+  .right-can {
+    position: absolute;
+    top: 160px;
+    left: 353px;
+  }
+  
+  .ref2::before {
+  font-family: "Georgia", serif;
+  font-weight: bold;
+  color: navy;
+  content: "CAFE";
+  position: absolute; 
+  right: -30px;
+  top: 170px;
+  font-size: 60px;
+}
+  
+  .ref3::before {
+  font-family: "Georgia", serif;
+  font-weight: bold;
+  color: navy;
+  content: "USTE";
+  position: absolute; 
+  right: -30px;
+  top: 235px;
+  font-size: 60px;
+}
+  
+ .red-right-can{
+   clip-path: inset(54% 20% 15% 10%);
+ 	 background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,128,128,1) 50%, rgba(255,0,0,1) 100%);
+   position: absolute;
+ 	 top: 192px;
+ 	 left: 330px;
+   width: 250px; 
+  }
+  
+  .refred1::before {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  content: "AND FLAVORFUL";
+  position: absolute; 
+  right: -30px;
+  bottom: 160px;
+  font-size: 10px;
+} 
+
+  
+  .lid-right-can{
+   clip-path: inset(5% 20% 91% 10%);
+   position: absolute;
+   top: 150px;
+ 	 left: 330px;
+   width: 250px;
+  border: 15px solid silver;
+  background: yellow;
+  } 
+
+  
+  .cup {
+    border: 1px solid black;
+    width: 88px;
+    height: 92px;
+    background-color: white;
+  }
+  
+  .top-cup {
+    position: absolute;
+    top: 228px;
+    left: 360px;
+    z-index: 10;
+  }
+  
+  .top-cup-handle{
+    position: absolute;
+    top: 20px;
+    right: 70px;
+    z-index: 10;  
+    background: white;
+    clip-path: polygon(100% 0%, 29% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+    width: 60%;
+  	height: 60%;
+    border: 1px solid black;
+  
+  }
+  
+  .bottom-cup {
+    position: absolute;
+    top: 320px;
+    left: 360px;
+    z-index: 10;
+  }
+  
+  .bottom-cup-handle{
+    position: absolute;
+    top: 20px;
+    right: 70px;
+    z-index: 10;  
+    background: white;
+    clip-path: polygon(100% 0%, 29% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+    width: 60%;
+  	height: 60%;
+    border: 1px solid black;
+  }
+  
+  .triangle {
+    width: 60%;
+    height: 90%;
+    background-color: hsl(0, 100%, 50%);
+    clip-path: polygon(0 0, 0% 100%, 100% 50%);
+    transform: translate(15%, 5%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .star {
+    background-color: white;
+    width: 45%;
+    height: 25%;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    transform: translate(-25%, 0px);
+  }
+  
+  .stripes {
+    background-image: linear-gradient(#0432ff 49%, #feffff 50%);
+    background-size: 100% 40%;
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    z-index: -1;
+    border: 1px solid black; 
+  }
+  
+  
+  
+  
+  
+  
+
+</style>
+
+</head><body><div class="frame">
+    <div class="cafetera">
+    <div class="caf-middle">
+    <div class="caf-bottom"></div>
+      <div class="caf-top"></div>
+      <div class="caf-connector"></div>
+      <div class="caf-handle"></div>
+      <div class="caf-topblack"></div>
+      <div class="caf-pour"></div>
+    </div>
+  </div>
+  <div class="bustello left-can"></div>
+   <div class="ref"></div>
+  <div class="refb"></div>
+ 
+  <div class="bustello lid-left-can"></div>
+   <div class="bustello red-left-can"></div>
+ 
+  
+  <div class="bustello right-can"></div>
+  <div class="bustello red-right-can"></div>
+  <div class="bustello lid-right-can"></div>
+	<div class="ref2"></div>
+
+  <div class="ref3"></div>
+  <div class="refred1"></div>
+  <div class="refred2"></div>
+   <div class="refred3"></div>
+  <div class="refred4"></div>
+  <div class="refred5"></div>
+  <div class="refred6"></div>
+  <div class="refred7"></div>
+  
+  	<div class="cup top-cup">
+    <div class="top-cup-handle"></div>
+    <div class="triangle">
+      <div class="star"></div>
+    </div>
+    <div class="stripes"></div>
+ 
+  
+  </div>
+  <div class="cup bottom-cup">
+    <div class="bottom-cup-handle"></div>
+    <div class="triangle">
+      <div class="star"></div>
+    </div>
+    <div class="stripes"></div>
+  </div>
+</div></body></html>

@@ -1,0 +1,34 @@
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap");
+
+  body {
+    background-color: #0082c8;
+    color: #ffffff;
+    font-size: 30px;
+    line-height: 30px;
+    word-wrap: anywhere;
+    font-family: "Noto Serif SC";
+  }
+</style>
+
+<body>
+	<!-- 	there's nothing here yet, we'll add text using JavaScript -->
+</body>
+
+<script>
+
+  const slashes = 2000
+
+  function drawSlashes () {
+    for (let i = 0; i < slashes; i++) {
+      if (Math.random() > 0.5) {
+        document.body.innerText += '／'
+      } else {
+        document.body.innerText += '＼'
+      }
+  	}
+  }
+
+  window.addEventListener('load', drawSlashes)
+
+</script>

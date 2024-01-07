@@ -1,0 +1,451 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style>
+  
+  * { box-sizing: border-box; }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgb(207, 218, 224);
+  }
+	
+  .frame {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+  }
+  
+  .cafetera {
+    position: absolute;
+    top: 10%;
+    left: 80px;
+    width: 210px;
+    height: 300px;
+  }
+  
+  .caf-middle {
+    width: 90%;
+    height: 55%;
+    background-image: linear-gradient(90deg, rgba(255,122,0,0.7) 8%,
+    rgba(214,110,15,1) 24%, rgba(238,123,40,1) 25%,
+    rgba(222,100,30,0.9) 46%, rgba(205,102,0,1) 46%,
+    rgba(232,108,38,0.9) 60%, rgba(100,100,75,1) 70%,
+    rgba(200,126,24,1) 70%);
+    position: absolute;
+    top: 10%;
+    left: 6%;
+    z-index: -2;
+    transform: perspective(300px) rotateX(-30deg);
+    border: 1px solid rgba(100,80,20,0.8);
+  }
+  
+  .caf-top {
+    height: 60px;
+    width: 160px;
+    top: -3px;
+    left: -3px;
+    position: absolute;
+    border-radius: 100%;
+    transform: perspective(100px);
+    background: linear-gradient(0deg, rgb(205, 100, 55) 60%, rgba(250,200,200,0.3) 75%, 
+      rgba(168,61,10,1) 80%, rgba(140,54,33,1) 90%, rgba(189,159,135,1) 96%);
+    border: 1px solid rgba(255,255,255,0.8);
+    z-index: -3;
+}
+  .caf-black {
+    width: 25px;
+    height: 25px;
+    background: black;
+    position: absolute;
+    top: -25px;
+    left: 65px;
+    transform: perspective(4px) rotateX(-5deg);
+    border: 2px solid rgb(106, 103, 106);
+  }
+  
+  .bustelo {
+    width: 180px;
+    height: 230px;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    background: linear-gradient(to top left, #816e06 25%, #fddd0d 100%);
+  }
+  
+  .bustelo-text {
+    font-family: "Times New Roman", sans-serif;
+    font-size: 30px;
+    color: rgb(22, 26, 115);
+    position: absolute;
+    font-weight: bold;
+    display: block;
+    transform: skew(-8deg, -1deg);
+    margin: 5px;
+  }
+  
+  
+  .red {
+    width: 180px;
+    height: 60px;
+    background: linear-gradient(to left, #9d0101 48%, #fb3232 100%);
+    top: 165px;
+    position: absolute;
+  }
+  
+  .left-can {
+    position: absolute;
+    top: 150px;
+    left: 130px;
+    z-index: 2;
+    
+  }
+  
+  .right-can {
+    position: absolute;
+    top: 140px;
+    left: 220px;
+    z-index: -1;
+  }
+  
+  .can-top {
+    width: 200px;
+    height: 80px;
+    clip-path: ellipse(45% 10% at 50% 50%);
+    position: absolute;
+    top: -35px;
+    left: -10px;
+    background-color: rgb(187, 183, 0);
+    border: 30px solid rgba(255, 255, 50, 0.2);
+    border-radius: 50%;
+    z-index: 3;
+  }
+  
+  .cup-top {
+    width: 90px;
+    height: 40px;
+    clip-path: ellipse(45% 10% at 50% 50%);
+    position: absolute;
+    top: -20px;
+    left: -3px;
+    background-color: rgb(198, 198, 222);
+    border: 14px solid rgba(142, 144, 145, 0.4);
+    border-radius: 80%;
+    z-index: 3;
+  }
+  
+  .cup-handle{
+    width: 50px;
+    height: 60px;
+    clip-path: polygon(20% 0%, 50% 0, 63% 11%, 62% 80%, 
+      51% 100%, 20% 100%, 36% 71%, 37% 18%);
+    position: absolute;
+    top: 15px;
+    left: 32px;
+    background: radial-gradient(ellipse at bottom right, #808091 25%, #ffffff 100%);
+    border: 1px solid gray;
+    border-radius: 20%
+  }
+  
+  .third-cup-shadow {
+    width: 220px;
+    height: 92px;
+    top: -35px;
+    right: -35px;
+    clip-path: ellipse(45% 10% at 50% 50%);
+    position: absolute;
+    background-color: rgba(120, 149, 237, 0.4);
+  }
+  
+  .cup {
+    background-size: 100% 33%;
+    border: 3px solid rgb(234, 235, 232);
+    width: 88px;
+    height: 92px;
+    background-color: white;
+  }
+  
+  .cup-gradient {
+		background: linear-gradient(
+      -90deg, rgba(50, 24, 28, 0.8) 0%,
+      rgba(231,231,231,0) 100%);
+    width: 88px;
+    height: 92px;
+  }
+  
+  .top-cup {
+    position: absolute;
+    top: 190px;
+    left: 50px;
+    z-index: 1;
+  }
+  
+  .bottom-cup {
+    position: absolute;
+    top: 280px;
+    left: 50px;
+    z-index: 1;
+  }
+  
+  .third-cup {
+    position: absolute;
+    top: 50px;
+    left: 230px;
+    z-index: 10;
+  }
+  
+  .triangle {
+    width: 100%;
+    height: 70%;
+    background: radial-gradient(ellipse, #e60000 11%, #691202 100%);
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    clip-path: polygon(100% 29%, 100% 79%, 58% 99%, 57% 0);
+    transform: scale(.7, 1.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+  }
+  
+  .star {
+    background: linear-gradient(to right, #f2f2f2 11%, #747272 100%);
+    width: 30%;
+    height: 30%;
+    position: absolute;
+    left: 55px;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 
+      21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    transform: skew(15deg, 0);
+    border: 2px solid red;
+  }
+  
+  .stripes {
+    background-image: linear-gradient(#152cab 49%, #feffff 50%);
+    background-size: 100% 40%;
+    width: 100%;
+    height: 90%;
+    position: absolute;
+    top: 5%;
+    left: 0%;
+    z-index: -1;
+  }
+  
+  .can-text1 {
+    width: 65px;
+    height: 95px;
+    border: 1.5px solid rgb(180, 0, 0);
+    line-height: 1.1;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: 4px;
+    display: block;
+  }
+  
+  .can-text2 {
+    width: 65px;
+    height: 65px;
+    border: 1.5px solid rgb(180, 0, 0);
+    position: absolute;
+    top: 120px;
+    right: 25px;
+    font-size: 4px;
+    display: block;
+    text-align: center;
+    line-height: 1;
+    z-index: -1;
+  }
+  
+  .white-text {
+    top: 5px;
+    color: white;
+    font-size: 10px;
+    position: absolute;
+    font-weight: bold;
+    line-height: 100%;
+  }
+  
+  .white-rect {
+    width: 50px;
+    height: 70px;
+    bottom: 10px;
+    right: 32px;
+    position: absolute;
+    background: linear-gradient(to right, #ffffff 27%, #bbaeb1 100%);
+    border: 0.5px solid gray;
+  }
+  
+  .white-rect2 {
+    width: 20px;
+    height: 85px;
+    bottom: 2px;
+    right: 20px;
+    position: absolute;
+    background: radial-gradient(ellipse, #6c6d84 10%, #cfcece 100%);
+  }
+  
+  .barcode {
+    width: 40px;
+    height: 60px;
+    background-image: linear-gradient(#ffffff 49%, #000000 50%);
+    background-size: 10px 2px;
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+  }
+  
+  .silver {
+    width: 180px;
+    height: 7px;
+    bottom: -3px;
+    right: -2px;
+    position: absolute;
+    background: radial-gradient(ellipse, #cfcece 30%, #6c6d84 100%);
+    border: 0.5px solid black;
+  }
+
+  .table {
+    height: 200px;
+    width: 500px;
+    bottom: 0px;
+    position: absolute;
+    z-index: -5;
+    background: linear-gradient(#857d7f 52%, #a6a0a0 98%);
+    border: 1px solid black;
+  }
+    
+  .back {
+    height: 300px;
+    width: 500px;
+    position: absolute;
+    z-index: -6;
+    background: linear-gradient(to top left, #caaaa7 2%, #ffffff 100%);
+    border: 1px solid black;
+	}
+  
+  .shadow {
+    clip-path: ellipse(50% 30% at 50% 50%);
+    position: absolute;
+    height: 200px;
+    width: 440px;
+    bottom: 30px;
+    right: 3px;
+    background: radial-gradient(ellipse at top left, #462829 44%, #a6a0a0 100%);
+    z-index: -2;
+  }
+  
+  .blue-triangle {
+    clip-path: polygon(50% 0%, 0 46%, 100% 46%);
+    background: linear-gradient(to right, #0331ba 5%, #01045b 99%);
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    top: 45px;
+    left: 30px;
+    border: 2px solid black;
+  }
+  
+  .red-triangle {
+    clip-path: polygon(47% 100%, 0 9%, 100% 10%);
+    background: radial-gradient(circle, #fee1de 35%, #c50202 10%);
+    position: absolute;
+    height: 40px;
+    width: 30px;
+    top: 40px;
+    left: 40px;
+    border: 2px solid black;
+  }
+  
+</style>
+</head><body><div class="frame">
+  <div class="back"></div>
+  <div class="table"></div>
+  <div class="shadow"></div>
+	<div class="cafetera">
+    <div class="caf-top"></div>
+    <div class="caf-middle"></div>
+    <div class="caf-black"></div>
+  </div>
+  <div class="bustelo left-can">
+    <div class="blue-triangle"></div>
+    <div class="red-triangle"></div>
+    <div class="bustelo-text">
+      <br>E'<br> TELO
+    </div>
+    <div class="red">
+      <div class="white-text">
+        , LIKE NO OTHER
+        <br><br><br>
+        OZ (283g)
+      </div>
+    </div>
+    <div class="can-text1">
+      Cafe Bustelo.. i cannot read the rest of the text on this can.
+      i was really hungry in this class when we were doing this tbh
+      i wanted to grab this cafe bustelo can from the middle of the 
+      table and make myself a cup of coffee. maybe i will buy
+      a can of this online hmmmm.. that sounds really good. 
+      Cafe Bustelo coffee has an incredible aroma and rich taste. i'm in 
+      pret right now and i already had my daily coffee. 
+      just looked it up and it's only 5 ish dollars
+      that's exciting. oh i can read this last sentence on the can ok
+      i will end with that sentence then. i am just trying to fill up
+      space now but i am having fun with this project.
+      The best coffee is enjoyed with company!
+    </div>
+    <div class="can-text2">
+      SOMETHING COFFEE INC
+      address, address, address
+      COFFEE COFFEE COFFEE COFFEE COFFEE COFFEE 
+      <br>
+      1-800-COF-FEE
+      <br>
+      cafebustelo.com
+    </div>
+    <div class="can-top"></div>
+      <div class="white-rect">
+        <div class="barcode"></div> 
+  </div>
+    <div class="silver"></div>
+  </div>
+  <div class="bustelo right-can">
+    <div class="bustelo-text">
+      <br>...........CAFE' <br>............BUST
+    </div>
+    <div class="red">
+     <div class="white-text">
+        WAAAAAAAAAA ALWAYS PURE AND
+       <br><br><br>
+       ......................NET WEIGHT
+      </div>
+    </div>
+    <div class="can-top">
+      <div class="third-cup-shadow"></div>
+    </div>
+    <div class="silver"></div>
+  </div>
+  <div class="cup top-cup">
+    <div class="stripes"></div>
+    <div class="cup-gradient"></div>
+    <div class="cup-top"></div>
+  </div>
+  <div class="cup bottom-cup">
+    <div class="stripes"></div>
+    <div class="cup-gradient"></div>
+  </div>
+  <div class="cup third-cup">
+    <div class="triangle">
+      <div class="star"></div>
+    </div>
+    <div class="stripes"></div>
+    <div class="cup-gradient"></div>
+    <div class="cup-top"></div>
+    <div class="white-rect2"></div>
+    <div class="cup-handle"></div>
+  </div>
+</div></body></html>

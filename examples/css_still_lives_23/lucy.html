@@ -1,0 +1,424 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(172deg, rgba(125, 96, 130, 1) 0%, rgba(99, 170, 188, 1) 53%, rgba(222, 223, 193, 1) 100%);
+  }
+
+  .frame {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border: 1px solid white;
+
+  }
+
+  .star {
+
+    background-image: linear-gradient(90deg, rgba(134, 44, 43, 1) 13%, rgba(190, 61, 51, 1) 61%, rgba(208, 114, 107, 1) 100%);
+    ;
+    width: 40px;
+    height: 45px;
+    position: absolute;
+    right: 155px;
+    bottom: 123px;
+    clip-path: polygon(0 0, 0% 100%, 100% 49%);
+    z-index: +4
+  }
+
+
+  .star:before {
+    content: "★";
+    color: white;
+    font-size: 15px;
+    position: absolute;
+    right: 20px;
+    bottom: 13px;
+
+
+  }
+
+  .star2 {
+
+    background-image: linear-gradient(90deg, rgba(134, 44, 43, 1) 13%, rgba(190, 61, 51, 1) 61%, rgba(208, 114, 107, 1) 100%);
+    ;
+    width: 40px;
+    height: 45px;
+    position: absolute;
+    right: 155px;
+    bottom: 176px;
+    clip-path: polygon(0 0, 0% 100%, 100% 49%);
+    z-index: +3
+  }
+
+  .star2:before {
+    content: "★";
+    color: white;
+    font-size: 15px;
+    position: absolute;
+    right: 20px;
+    bottom: 13px;
+
+
+  }
+
+  .cups {
+    background: linear-gradient(to left, #ffffff00 0%, hsla(120, 15%, 28%, 0.33) 100%), linear-gradient(0deg, hsl(239, 0%, 100%) 50%, hsl(242, 59%, 23%) 50%);
+    background-size: 100% 40%;
+    width: 55px;
+    height: 60px;
+    border-radius: 0% 0% 30% 30%;
+    position: absolute;
+    right: 140px;
+    bottom: 110px;
+    z-index: +3;
+  }
+
+  .cuphandle {
+    width: 30px;
+    height: 40px;
+    position: absolute;
+    right: 180px;
+    bottom: 120px;
+    border-radius: 50%;
+    z-index: +2;
+    border: 10px solid hsl(0, 0%, 86%);
+    background: transparent;
+  }
+
+
+  .cup2 {
+    background: linear-gradient(to left, #ffffff00 0%, hsla(120, 15%, 28%, 0.33) 100%), linear-gradient(0deg, hsl(239, 0%, 100%) 50%, hsl(242, 59%, 23%) 50%);
+    background-size: 100% 40%;
+    width: 55px;
+    height: 60px;
+    border-radius: 0% 0% 30% 30%;
+    position: absolute;
+    right: 140px;
+    bottom: 165px;
+    z-index: +2;
+
+  }
+
+
+
+  .cuphandle2 {
+    width: 30px;
+    height: 40px;
+    position: absolute;
+    right: 180px;
+    bottom: 180px;
+    border-radius: 50%;
+    z-index: +1;
+    border: 10px solid hsl(0, 0%, 86%);
+    background: transparent;
+  }
+
+  .cuphandle2:before {
+    content: "";
+    width: 300px;
+    height: 50px;
+    position: absolute;
+    top: 60px;
+    left: -130px;
+    z-index: +3;
+    border-radius: 50%;
+    background-color: rgba(0, 30, 30, 0.37);
+    transform: skewX(300deg);
+    filter: blur(10px);
+  }
+
+  .cuphandle2:after {
+    content: "";
+    width: 200px;
+    height: 40px;
+    position: absolute;
+    top: 60px;
+    left: -130px;
+    z-index: -4;
+    border-radius: 50%;
+    background-color: rgba(0, 30, 30, 0.37);
+    transform: skewX(350deg);
+    filter: blur(10px);
+  }
+
+  .bottom {
+    width: 110px;
+    height: 80px;
+    position: absolute;
+    left: 100px;
+    top: 240px;
+    border-radius: 5%;
+    background-image: linear-gradient(to top, #ffffff 0%, #7c837f 35%, #414644 100%);
+    transform: translateY(70px);
+    z-index: +2;
+  }
+
+
+
+  .bottom:before {
+    content: "";
+    width: 30px;
+    height: 75px;
+    position: absolute;
+    right: 70px;
+
+    background-image: linear-gradient(to left, #ffffff 0%, #b1b5b0 100%);
+    /*     transform: skewX(-20deg); */
+    filter: blur(10px);
+    z-index: +2;
+
+  }
+
+  .bottom:after {
+    content: "";
+    width: 220px;
+    height: 70px;
+    position: absolute;
+    top: 40px;
+    left: -100px;
+    z-index: -2;
+    border-radius: 50%;
+    background-color: rgba(0, 30, 30, 0.37);
+    transform: skewX(300deg);
+    filter: blur(5px);
+  }
+
+  .kettlebody {
+    width: 130px;
+    height: 120;
+    position: absolute;
+    left: 88px;
+    top: 180px;
+
+    border-radius: 10% 0%;
+    /*     transform: translateY(300px); */
+    background: orange;
+    transform: perspective(15px) rotateX(-3deg);
+    background-image: linear-gradient(90deg, rgba(218, 102, 15, 1) 0%, rgba(238, 164, 83, 1) 21%, rgba(218, 102, 15, 1) 47%, rgba(240, 164, 81, 1) 80%);
+    z-index: +1;
+  }
+
+
+
+  .kettlecap {
+    width: 155px;
+    height: 120px;
+    position: absolute;
+    left: 75px;
+    top: 120px;
+    /*     left: calc(50vw - 130px); */
+    /*     top: calc(50vh - 130px); */
+    border-radius: 50%;
+    background-image: linear-gradient(to bottom left, #f4aa43 0%, #d15400 100%);
+
+  }
+
+  .kettlecap:before {
+    content: "";
+    width: 25px;
+    height: 30px;
+    position: absolute;
+    left: 65px;
+    top: -25px;
+    background-color: black
+  }
+
+  .kettlecap:after {
+    content: "";
+    width: 110px;
+    height: 30px;
+    position: absolute;
+    left: 24px;
+    top: 160px;
+    z-index: +2;
+    background-color: #da660f
+  }
+
+  .handle {
+
+    width: 20px;
+    height: 120px;
+    position: absolute;
+    left: 60px;
+    top: 165px;
+    border-radius: 50% 0% 0% 50%;
+
+
+    z-index: +1;
+    background: black;
+
+
+  }
+
+  .coffeecaps {
+    width: 127px;
+    height: 10px;
+    position: absolute;
+    right: 102px;
+    bottom: 280px;
+    background-image: linear-gradient(90deg, rgba(152, 168, 31, 1) 22%, rgba(255, 226, 36, 1) 52%, rgba(255, 226, 36, 1) 70%, rgba(152, 168, 31, 1) 100%);
+  }
+
+  .coffeecaps:before {
+    content: "";
+    width: 105px;
+    height: 10px;
+    position: absolute;
+    right: 116px;
+    bottom: 0px;
+    background-image: linear-gradient(90deg, rgba(115, 123, 82, 1) 13%, rgba(171, 186, 57, 1) 52%, rgba(222, 206, 56, 1) 94%);
+
+  }
+
+
+
+
+  .coffee {
+    width: 110px;
+    height: 160px;
+    position: absolute;
+    right: 220px;
+    bottom: 120px;
+    border-radius: 0% 0% 20% 20%;
+    background-image: linear-gradient(90deg, rgba(152, 168, 31, 1) 22%, rgba(255, 226, 36, 1) 52%, rgba(255, 226, 36, 1) 70%, rgba(152, 168, 31, 1) 100%);
+
+
+  }
+
+
+
+
+
+  .coffee:before {
+    content: "xxxxxPRE PURO Y PLE";
+    font-size: 10px;
+    color: white;
+    width: 110px;
+    height: 45px;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    border-radius: 0% 0% 30% 30%;
+    background-image: linear-gradient(90deg, rgba(139, 29, 29, 1) 13%, rgba(187, 52, 42, 1) 52%, rgba(139, 29, 29, 1) 84%);
+    z-index: +1;
+  }
+
+  .coffee:after {
+    content: "xxxxxEso NETO 10 OZ 20";
+    font-size: 10px;
+    color: white;
+    width: 110px;
+    height: 20px;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    border-radius: 0% 0% 30% 30%;
+    background-image: linear-gradient(90deg, rgba(139, 29, 29, 1) 13%, rgba(187, 52, 42, 1) 52%, rgba(139, 29, 29, 1) 84%);
+    z-index: +1;
+  }
+
+  .coffee2 {
+    width: 110px;
+    height: 160px;
+    position: absolute;
+    right: 220px;
+    bottom: 120px;
+    border-radius: 0% 0% 20% 20%;
+    background-image: linear-gradient(90deg, rgba(119, 122, 79, 1) 0%, rgba(171, 186, 57, 1) 22%, rgba(255, 226, 36, 1) 52%, rgba(255, 226, 36, 1) 91%, rgba(232, 231, 140, 1) 100%);
+    transform: translateX(115px);
+
+
+  }
+
+  .coffee2:before {
+    content: "xxxxxAnd FLAVORFUL,";
+    font-size: 10px;
+    color: white;
+    width: 110px;
+    height: 45px;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    border-radius: 0% 0% 30% 30%;
+    background-image: linear-gradient(90deg, rgba(134, 44, 43, 1) 13%, rgba(190, 61, 51, 1) 88%, rgba(208, 114, 107, 1) 100%);
+  }
+
+  .coffee2:after {
+    content: "xxxxxT WT 10 OZ (20%)";
+    font-size: 10px;
+    color: white;
+    width: 110px;
+    height: 20px;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    border-radius: 0% 0% 30% 30%;
+    background-image: linear-gradient(90deg, rgba(134, 44, 43, 1) 13%, rgba(190, 61, 51, 1) 88%, rgba(208, 114, 107, 1) 100%);
+  }
+
+  .table {
+    width: 499px;
+    height: 180px;
+    position: absolute;
+    left: 0px;
+    bottom: 70px;
+
+    background-image: linear-gradient(172deg, rgba(255, 254, 190, 1) 0%, rgba(199, 215, 212, 1) 53%, rgba(216, 235, 236, 1) 100%);
+    ;
+    transform: translateY(70px);
+    z-index: -5;
+
+
+  }
+
+
+
+
+
+
+
+  h1 {
+    width: 110px;
+    height: 130px;
+    position: absolute;
+    right: 190px;
+    bottom: 100px;
+    font-size: 25px;
+  }
+
+  h2 {
+    width: 110px;
+    height: 130px;
+    position: absolute;
+    right: 70px;
+    bottom: 95px;
+    font-size: 25px;
+
+  }
+</style>
+</head><body><div class="frame">
+  <div class="star"></div>
+  <div class="star2"></div>
+  <div class="cups"></div>
+  <div class="cup2"></div>
+  <div class="cuphandle"></div>
+  <div class="cuphandle2"></div>
+  <div class="coffee"></div>
+  <div class="coffee2"></div>
+  <div class="coffeecaps"></div>
+  <div class="handle"></div>
+  <div class="kettlecap"></div>
+  <div class="bottom"></div>
+  <div class="kettlebody"></div>
+  <div class="table"></div>
+  <h1> CAFE JUSTE </h1>
+  <h2> CAFE JUSTE </h2></div></body></html>

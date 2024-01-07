@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miki's CSS Still Life</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link href="miki_files/css2.css" rel="stylesheet">
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .frame {
+    position: relative;
+    width: 500px;
+    height: 500px;
+  }
+
+  .cafetera {
+    position: absolute;
+    top: 100px;
+    left: 20px;
+    width: 210px;
+    height: 300px;
+  }
+
+  .cafetera-lid {
+    background-image: linear-gradient(#363743 56%, #1b1e20 93%);
+    background-size: 100% 30%;
+    border: 0.2px solid black;
+    clip-path: polygon(5% 0, 100% 0, 83% 100%, 21% 100%);
+    width: 15%;
+    height: 30px;
+    position: absolute;
+    left: 40%;
+    top: -30px;
+    z-index: 2;
+  }
+
+  .cafetera-top {
+    position: absolute;
+    border: 0.2px solid black;
+    bottom: 86%;
+    left: 9.8%;
+    width: 80%;
+    height: 45px;
+    background-image: linear-gradient(#ed9247 10%, #ee9642 30%, #d26713 70%, #cc5f01 80%);
+    border-radius: 50% 50% 0 0;
+  }
+
+  .cafetera-middle {
+    width: 70%;
+    border: 0.2px solid black;
+    height: 55%;
+    background-image: linear-gradient(to left, #ed9247 14%, #ee9642 36%, #d26713 53%, #cc5f01 68%);
+    position: absolute;
+    top: 14%;
+    left: 15%;
+    z-index: 5;
+    transform: perspective(300px) rotateX(-30deg);
+  }
+
+  .cafetera-mouth {
+    position: absolute;
+    clip-path: polygon(23% 0, 0 0, 0 100%, 0 100%, 100% 17%);
+    background-image: linear-gradient(to right, #ed9247 10%, #ee9642 36%, #d26713 60%, #cc5f01 68%);
+    height: 55px;
+    width: 40px;
+    top: 4.5%;
+    left: 89%;
+    transform: translateX(-50%, -50%);
+    z-index: 1;
+  }
+
+  .cafetera-bottom {
+    clip-path: polygon(22% 0, 77% 0, 100% 100%, 0 100%);
+    border: 0.2px solid black;
+    height: 37%;
+    width: 90%;
+    background-image: linear-gradient(#a6a9c3 56%, #859099 93%);
+    position: relative;
+    top: 60%;
+    left: 5%;
+    z-index: 1;
+  }
+
+  .cafetera-lefthandle {
+    background-image: linear-gradient(#363743 56%, #1b1e20 93%);
+    border: 0.2px solid black;
+    clip-path: polygon(100% 28%, 59% 48%, 59% 100%, 35% 100%, 36% 31%, 100% 0);
+    height: 44%;
+    width: 40%;
+    position: relative;
+    bottom: 31.5%;
+    left: -30%;
+    z-index: -1;
+  }
+
+  .bustello {
+    width: 180px;
+    height: 230px;
+    background-color: yellow;
+    position: absolute;
+    top: 90%;
+    left: 170px;
+  }
+
+  .left-can {
+    position: absolute;
+    top: 160px;
+    left: 170px;
+    border: 0.1px solid black;
+    background-image: linear-gradient(#f1e45d 70%, #dd240e 63%);
+  }
+
+  .bustello-left-brand-name {
+    color: rgb(0, 0, 128);
+    font-family: "Black Ops One", sans-serif;
+    font-size: 26px;
+    line-height: 1.2;
+    position: absolute;
+    top: 15%;
+    left: 16%;
+  }
+
+  .espresso-left-text {
+    color: rgb(0, 0, 128);
+    font-family: "Open Sans", sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 1;
+    position: absolute;
+    top: 60%;
+    left: 19%;
+    z-index: 1;
+  }
+
+  .left-red-line-1 {
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-size: 10px;
+    text-align: center;
+    font-weight: bold;
+    line-height: 1;
+    position: absolute;
+    top: 73%;
+    left: 13%;
+    z-index: 0;
+  }
+
+  .left-red-line-2 {
+    color: rgb(230, 155, 58);
+    font-family: "Open Sans", sans-serif;
+    font-size: 8px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1;
+    position: absolute;
+    top: 85%;
+    left: 16%;
+    z-index: 0;
+  }
+
+  .left-red-line-3 {
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-size: 8px;
+    font-weight: bold;
+    line-height: 1;
+    position: absolute;
+    top: 93.8%;
+    left: 34%;
+    z-index: 0;
+  }
+
+  .right-can {
+    position: absolute;
+    top: 160px;
+    left: 350px;
+    border: 0.1px solid black;
+    background-image: linear-gradient(#f1e45d 70%, #dd240e 63%);
+  }
+
+
+  .bustello-right-brand-name {
+    color: rgb(0, 0, 128);
+    font-family: "Black Ops One", sans-serif;
+    font-size: 26px;
+    line-height: 1.2;
+    position: absolute;
+    top: 15%;
+    left: 16%;
+  }
+
+  .espresso-right-text {
+    color: rgb(0, 0, 128);
+    font-family: "Open Sans", sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1;
+    position: absolute;
+    top: 60%;
+    left: 19%;
+    z-index: 1;
+  }
+
+  .right-red-line-1 {
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-size: 9.5px;
+    text-align: center;
+    font-weight: bold;
+    line-height: 1;
+    position: absolute;
+    top: 73%;
+    left: 13%;
+    z-index: 0;
+  }
+
+  .right-red-line-2 {
+    color: rgb(230, 155, 58);
+    font-family: "Open Sans", sans-serif;
+    font-size: 9px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1;
+    position: absolute;
+    top: 85%;
+    left: 16%;
+    z-index: 0;
+  }
+
+  .right-red-line-3 {
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-size: 8px;
+    font-weight: bold;
+    line-height: 1;
+    position: absolute;
+    top: 93.8%;
+    left: 34%;
+    z-index: 0;
+  }
+
+
+  .cup {
+    border: 0.2px solid black;
+    width: 88px;
+    height: 92px;
+    background-color: white;
+  }
+
+  .top-cup {
+    position: absolute;
+    top: 230px;
+    left: 360px;
+    z-index: 7;
+  }
+
+  .bottom-cup {
+    position: absolute;
+    top: 320px;
+    left: 360px;
+    z-index: 7;
+  }
+
+  .triangle {
+    width: 60%;
+    height: 90%;
+    background-color: red;
+    clip-path: polygon(0 0, 0% 100%, 100% 50%);
+    transform: translate(15%, 5%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .star {
+    background-color: white;
+    width: 45%;
+    height: 28%;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    transform: translate (-25%, 0px);
+  }
+
+  .stripes {
+    background-image: linear-gradient(#3430bc 50%, #f7fff4 50%);
+    background-size: 100% 40%;
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    z-index: 0;
+  }
+
+  .left-handle {
+    border: 0.2px solid black;
+    position: absolute;
+    z-index: 5;
+    width: 30px;
+    height: 40px;
+    background-color: white;
+    right: 130px;
+    top: 250px;
+    border-radius: 60%;
+  }
+
+ .left-handle-inner {
+    border: 0.2px solid black;
+    position: absolute;
+    z-index: 6;
+    width: 20px;
+    height: 30px;
+    background-color: rgba(221, 36, 14, 1);
+    right: 135px;
+    top: 350px;
+    border-radius: 60%;
+}
+
+  .right-handle {
+    border: 0.2px solid black;
+    position: absolute;
+    z-index: 5;
+    width: 30px;
+    height: 40px;
+    background-color: white;
+    right: 130px;
+    top: 345px;
+    border-radius: 60%;
+  }
+
+  .right-handle-inner {
+    border: 0.2px solid black;
+    position: absolute;
+    z-index: 6;
+    width: 20px;
+    height: 30px;
+    background-color: rgb(241, 228, 93);
+    right: 135px;
+    top: 255px;
+    border-radius: 60%;
+  }
+</style></head> 
+
+
+
+<body><div class="frame">
+  <div class="cafetera">
+    <div class="cafetera-lid"></div>
+    <div class="cafetera-top"></div>
+    <div class="cafetera-middle"></div>
+    <div class="cafetera-mouth"></div>
+    <div class="cafetera-bottom"></div>
+    <div class="cafetera-lefthandle"></div>
+  </div>
+  <div class="bustello left-can">
+    <div class="bustello-left-brand-name">CAFÉ BUSTELLO</div>
+    <div class="espresso-left-text">Espresso Ground Coffee</div>
+    <div class="left-red-line-1"> SIEMPRE PURO Y PLENO DE SABOR, COMO NINGUN OTRO </div>
+    <div class="left-red-line-2"> ENVASADO AL VACIO- 100% CAFE PURO </div>
+    <div class="left-red-line-3"> PESO NETO 10 OZ (283g) </div>
+  </div>
+  <div class="bustello right-can">
+    <div class="bustello-right-brand-name">CAFÉ BUSTELLO</div>
+    <div class="espresso-right-text">Espresso Ground Coffee</div>
+    <div class="right-red-line-1"> Always Pure and Flavorful, Like No Others </div>
+    <div class="right-red-line-2"> Vaccum Packed- 100% Pure Coffee </div>
+    <div class="right-red-line-3"> NET WT 10 OZ (283g) </div>
+  </div>
+  <div class="cup top-cup">
+    <div class="triangle">
+      <div class="star"></div>
+    </div>
+    <div class="stripes"></div>
+  </div>
+  <div class="left-handle"></div>
+  <div class="left-handle-inner"></div>
+  <div class="cup bottom-cup">
+    <div class="triangle">
+      <div class="star"></div>
+    </div>
+    <div class="stripes"></div>
+  </div>
+  <div class="right-handle"></div>
+  <div class="right-handle-inner"></div>
+</div>
+</body></html>

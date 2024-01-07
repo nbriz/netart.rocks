@@ -1,0 +1,481 @@
+<head><style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .frame {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border: 1px solid #ea74ec;
+    background-color: #FFC0E4;
+    z-index: -20
+  }
+
+  @font-face {
+    src: url(Mali-ExtraLight.ttf);
+    font-family: "cute"
+  }
+
+  @keyframes blink {
+    85% {
+      transform: rotateX(0deg);
+    }
+    90% {
+      transform: rotateX(90deg);
+    }
+  }
+
+  @keyframes talk {
+    0% {
+      transform: scaleY(1)
+    }
+    50% {
+      transform: scaleY(0)
+    }
+    100% {
+      transform: scaleY(1)
+    }
+  }
+  .cup {
+    height: 75px;
+    width: 75px;
+    position: relative;
+    bottom: 530px;
+    left: 186px;
+    border-radius: 10%;
+    z-index: -1;
+    background-image: linear-gradient(#470dce 50%, #ffffff 50%);
+    background-size: 100% 40%;
+    background-repeat: repeat;
+  }
+
+  .cup-eye-left {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: black;
+    position: relative;
+    top: 10px;
+    left: 15px;
+    background-image: radial-gradient(circle at 10px, #ffffff 10%, #000000 15%);
+    animation-name: blink;
+    animation-duration: 5s;
+    animation-iteration-count: infinite
+  }
+
+  .cup-eye-right {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: black;
+    position: relative;
+    top: -5px;
+    left: 40px;
+    background-image: radial-gradient(circle at 10px, #ffffff 10%, #000000 15%);
+    animation-name: blink;
+    animation-duration: 5s;
+    animation-iteration-count: infinite
+  }
+
+  .cup-smile {
+    height: 10px;
+    width: 10px;
+    background-color: black;
+    position: relative;
+    left: 27.5px;
+    top: 3px;
+    border-bottom-left-radius: 70%;
+    border-bottom-right-radius: 70%;
+    animation-name: talk;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite
+  }
+
+  .cup-bubble {
+    height: 80px;
+    width: 100px;
+    background-color: #9d0ff8;
+    position: relative;
+    bottom: 920px;
+    left: 110px;
+    border-radius: 50%;
+    border: 2px black solid;
+    text-align: center;
+    padding: 18px;
+    font-family: "cute";
+
+  }
+
+  .cup-bubble::after {
+    content: "";
+    height: 15px;
+    width: 15px;
+    background-color: #9d7ede;
+    position: absolute;
+    top: 100px;
+    right: 20px;
+    border-radius: 50%;
+    border: 2px black solid;
+  }
+
+  .cup-bubble::before {
+    content: "";
+    height: 20px;
+    width: 20px;
+    background-color: #a751bf;
+    position: absolute;
+    top: 85px;
+    right: 35px;
+    border-radius: 50%;
+    border: 2px black solid;
+  }
+
+  .bustelo-front {
+    height: 250px;
+    width: 200px;
+    background-color: yellow;
+    border-bottom-left-radius: 10%;
+    border-bottom-right-radius: 10%;
+    position: relative;
+    left: 98px;
+    bottom: 175px;
+    z-index: -1;
+    background-image: linear-gradient(#ffff00 75%, #ff0f0f 52%)
+  }
+
+  .bustelo-lid {
+    background-color: hsla(60, 100%, 76%, 1);
+    height: 40px;
+    width: 200px;
+    border-radius: 50%;
+    position: relative;
+    bottom: 442px;
+    left: 98px;
+    z-index: -1;
+    background-image: radial-gradient(ellipse, #ffff85 63%, #d0d011 55%)
+  }
+
+  .bustelo-eye {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    background-color: black;
+    position: relative;
+    top: 50px;
+    background-image: radial-gradient(circle at 25px, #ffffff 15%, #000000 15%);
+    animation-name: blink;
+    animation-duration: 4s;
+    animation-iteration-count: infinite
+  }
+
+  .bustelo-smile {
+    height: 20px;
+    width: 20px;
+    border-left: 0px;
+    border-bottom-right-radius: 70%;
+    background-color: black;
+    position: relative;
+    top: 80px;
+    animation-name: talk;
+    animation-duration: 1s;
+    animation-iteration-count: infinite
+  }
+
+  .bustelo-barcode {
+    height: 85px;
+    width: 65px;
+    background-image: linear-gradient(#ffffff 53%, #000000 52%);
+    position: relative;
+    top: 112px;
+    left: 80px;
+    background-size: 100% 5%;
+    border: 6px solid white;
+    z-index: 45;
+  }
+
+  .bustelo-text {
+    border: #ff0f0f solid 2px;
+    font-size: 6.5px;
+    width: 90px;
+    height: 149px;
+    position: relative;
+    bottom: 100px;
+    left: 70px;
+    font-family: "cute";
+    padding: 2px;
+    background-image: linear-gradient(#ffff00 63%, #ff0f0f 64%, #ffff00 64%);
+  }
+
+  .bustelo-back {
+    background-color: hsla(60, 100%, 76%, 1);
+    height: 40px;
+    width: 100px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 350px;
+    left: 165px;
+    z-index: -2;
+    background-image: radial-gradient(ellipse, #ffff85 63%, #d0d011 55%)
+  }
+
+  .bustelo-bubble {
+    height: 80px;
+    width: 100px;
+    background-color: #56937c;
+    position: relative;
+    bottom: 540px;
+    right: 0px;
+    border-radius: 50%;
+    text-align: center;
+    padding: 18px;
+    font-family: "cute";
+    border: 2px black solid;
+  }
+
+  .bustelo-bubble::after {
+    content: "";
+    height: 15px;
+    width: 15px;
+    background-color: #56e785;
+    position: absolute;
+    bottom: 100px;
+    right: 20px;
+    border-radius: 50%;
+    border: 2px black solid;
+  }
+
+  .bustelo-bubble::before {
+    content: "";
+    height: 20px;
+    width: 20px;
+    background-color: #56ca5d;
+    position: absolute;
+    bottom: 85px;
+    right: 35px;
+    border-radius: 50%;
+    border: 2px black solid;
+  }
+
+  .cafe-top {
+    background-color: black;
+    height: 50px;
+    width: 50px;
+    position: relative;
+    bottom: 655px;
+    left: 310px;
+    border-radius: 10%
+  }
+
+  .cafe-lid {
+    width: 200px;
+    height: 30px;
+    background-color: orange;
+    border-top-left-radius: 30%;
+    border-top-right-radius: 30%;
+    position: relative;
+    bottom: 660px;
+    left: 240px;
+    border-bottom: 2px solid rgb(255, 106, 0)
+  }
+
+  .cafe-lid::after {
+    content: "";
+    height: 10px;
+    width: 10px;
+    border: 4px solid rgba(255, 255, 255, 0.79);
+    position: absolute;
+    left: 180px;
+    top: 7px;
+    border-top-right-radius: 100%;
+    border-bottom: 0px;
+    border-left: 0px
+  }
+/* ^ this is the glare ^ */
+  .cafe-lid::before {
+    content: "";
+    height: 5px;
+    width: 5px;
+    border: 4px solid rgba(255, 255, 255, 0.79);
+    position: absolute;
+    left: 178px;
+    top: 15px;
+    border-top-right-radius: 100%;
+    border-bottom: 0px;
+    border-left: 0px
+  }
+  /* ^ this is the glare ^ */
+
+  .cafetera {
+    background-color: orange;
+    height: 200px;
+    width: 200px;
+    position: relative;
+    left: 240px;
+    top: 101px;
+    clip-path: polygon(20% 0%, 80% 0%, 100% 0, 90% 76%, 80% 100%, 20% 100%, 10% 76%, 0 0);
+    background-image: linear-gradient(to left, #ffa500 51%, #ff6a00 51%, #ffa500 52%);
+    background-size: 25% 100%;
+  }
+
+  .handle {
+    height: 200px;
+    width: 30px;
+    background-color: black;
+    border-radius: 20%;
+    position: relative;
+    left: 40%;
+  }
+
+  .cafe-bottom {
+    background-color: gray;
+    height: 120px;
+    width: 200px;
+    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+    border-radius: 20%;
+    position: relative;
+    left: 240px;
+    top: 100px;
+  }
+
+  .cafe-bottom::before {
+    content: "";
+    height: 15px;
+    width: 5px;
+    background-color: rgba(255, 255, 255, 0.79);
+    position: absolute;
+    left: 150px;
+    top: 10px;
+    rotate: -10deg;
+    /* ^ this is the glare ^ */
+  }
+
+  .cafe-eye-left {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: black;
+    position: relative;
+    top: 30px;
+    left: 50px;
+    background-image: radial-gradient(circle at 9px 8px, #ffffff 20%, #000000 15%);
+    animation-name: blink;
+    animation-duration: 4.5s;
+    animation-iteration-count: infinite
+  }
+
+  .cafe-eye-right {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: black;
+    position: relative;
+    top: 5px;
+    left: 100px;
+    background-image: radial-gradient(circle at 9px 8px, #ffffff 20%, #000000 15%);
+    animation-name: blink;
+    animation-duration: 4.5s;
+    animation-iteration-count: infinite
+  }
+
+  .cafe-smile {
+    height: 20px;
+    width: 20px;
+    border-bottom-left-radius: 70%;
+    border-bottom-right-radius: 70%;
+    background-color: black;
+    position: relative;
+    top: 9px;
+    left: 75px;
+    animation-name: talk;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite
+  }
+
+  .cafe-bubble {
+    height: 80px;
+    width: 100px;
+    background-color: #7fb3ff;
+    position: relative;
+    bottom: 360px;
+    left: 330px;
+    border-radius: 50%;
+    text-align: center;
+    padding: 18px;
+    font-family: "cute";
+    z-index: 45;
+    border: 2px black solid;
+  }
+
+  .cafe-bubble::after {
+    content: "";
+    height: 15px;
+    width: 15px;
+    background-color: #7fd1ff;
+    position: absolute;
+    bottom: 100px;
+    left: 20px;
+    border-radius: 50%;
+    border: 2px black solid;
+  }
+
+  .cafe-bubble::before {
+    content: "";
+    height: 20px;
+    width: 20px;
+    background-color: #51d5ff;
+    position: absolute;
+    bottom: 85px;
+    left: 35px;
+    border-radius: 50%;
+    border: 2px black solid;
+  }
+</style>
+
+</head><body><div class="frame">
+  <div class="cafetera">
+    <div class="handle"></div>
+  </div>
+  <div class="cafe-bottom">
+    <div class="cafe-eye-left"></div>
+    <div class="cafe-eye-right"></div>
+    <div class="cafe-smile"></div>
+  </div>
+  <div class="bustelo-front">
+    <div class="bustelo-eye"></div>
+    <div class="bustelo-smile"></div>
+    <div class="bustelo-barcode"></div>
+    <div class="bustelo-text">
+      <b> Gregorio Menendez Bustelo</b> (born June 21, 1894) traveled from his native Spain to Cuba as a young man, and moved to the United States in 1917. <br>
+      <b>He founded the Café Bustelo</b> coffee company in East Harlem, New York in 1928.<br>
+      <br>
+      His product became popular among Cuban exiles
+    </div>
+  </div>
+  <div class="bustelo-lid"></div>
+  <div class="bustelo-back"></div>
+  <div class="cup">
+    <div class="cup-eye-left"></div>
+    <div class="cup-eye-right"></div>
+    <div class="cup-smile"></div>
+  </div>
+  <div class="cafe-top"></div>
+  <div class="cafe-lid"></div>
+  <div class="cafe-bubble">
+    <b>pour me!</b>
+  </div>
+  <div class="bustelo-bubble">
+    <b> brew me!</b>
+  </div>
+  <div class="cup-bubble">
+    <b> drink me!</b>
+  </div>
+</div></body>

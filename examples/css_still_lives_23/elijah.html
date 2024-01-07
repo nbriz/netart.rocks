@@ -1,0 +1,242 @@
+<style>
+
+  * { box-sizing: border-box; }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .frame {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+    background-color: grey;
+  }
+
+  .backg {
+    position: relative;
+    height: 300px;
+    width: 500px;
+    background-color: black;
+    z-index: 6;
+  }
+  .cafetera {
+    position: absolute;
+    top: 120px;
+    left: 270px;
+    background-image: linear-gradient(to right, #e56510 21%, #ed811d 20%, #e37b35 50%, #d0640b 48%, #ea781a 78%, #ba6a08 76%);
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    clip-path: polygon(0 0, 100% 0, 86% 100%, 15% 100%);
+  }
+
+  .caf-cap {
+    position: absolute;
+    top: 90px;
+    left: 272px;
+    height: 50px;
+    width: 200px;
+    border: 1px, black;
+    background-image: radial-gradient(circle, #eaba99 0%, #e57f1f 52%);
+    clip-path: polygon(51% 23%, 75% 28%, 94% 42%, 100% 69%, 80% 78%, 52% 82%, 22% 79%, 0% 70%, 6% 44%, 24% 28%);
+  }
+
+  .caf-base {
+    position: absolute;
+    top: 320px;
+    left: 280px;
+    width: 200px;
+    height: 100px;
+    border: 1px, solid black;
+    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+    background-image: radial-gradient(400px 800px at 49% 49%, #d6d6d6 0%, #6e6e6e 16%, #4f4f4f 28%);
+  }
+
+  .caf-nub {
+    position: absolute;
+    border: 2px, black;
+    top: 80px;
+    left: 360px;
+    width: 30px;
+    height: 30px;
+    background-color: hsl(0, 0%, 27%);
+    clip-path: polygon(0 0, 100% 0, 84% 100%, 16% 100%);
+  }
+  /*I used this website to figure out how to make cylindrical shapes https://alvaromontoro.medium.com/how-to-draw-a-cylinder-in-css-in-three-easy-steps-b71b7f8ba99e*/
+   .can-right {
+    position: absolute;
+    top: 125px;
+    right: 150px;
+    border: 1px solid black;
+    border-bottom: none;
+    width: 200px;
+    height: 250px;
+    border-radius: 100% / 60px;
+  		  background: radial-gradient(50% 30px at 50% 30px, #0003 99.99%, #0000 0),
+    radial-gradient(400px 800px, #ffe08a 0%, #ffbb00 33%, #bd9400 67%, #8a6c00 77%);
+    z-index: 3;
+  }
+
+  .can-left {
+    position: absolute;
+    top: 150px;
+    left: 50px;
+    border: 1px solid black;
+    border-bottom: none;
+    width: 150px;
+    height: 200px;
+    border-radius: 100% / 60px;
+  		  background: radial-gradient(50% 30px at 50% 30px, #0003 99.99%, #0000 0),
+    yellow;
+    z-index: 1
+  }
+
+  /*My artistic background is in painting, so overlaying shadows makes the most intuitive sense to me*/
+  .llshadow {
+    position: absolute;
+    top: 245px;
+    left: -11px;
+    border: 1px, black;
+    width: 150px;
+    height: 28px;
+    background-image: linear-gradient(to top, #ffff00 0%, #caca1c 100%);
+    z-index: 2;
+    clip-path: polygon(99% 0, 92% 49%, 86% 99%, 0 99%, 0% 50%, 7% 0);
+    transform: rotate(270deg);
+  }
+  .lrshadow {
+    position: absolute;
+    top: 210px;
+    left: 100px;
+    border: 1px, black;
+    width: 50px;
+    height: 138px;
+    background-image: linear-gradient(to right, #ffff00 0%, #caca1c 100%);
+    z-index: 1;
+  }
+
+  .left-band {
+	    position: absolute;
+    top: 300px;
+    right: 150px;
+    border: 1px solid black;
+    border-top: none;
+    width: 200px;
+    height: 150px;
+    border-radius: 100% / 60px;
+  		  background: radial-gradient(90% 0px at 90% 90px, #0003 99.99%, #0000 0),
+    radial-gradient(400px 800px, #ff8a8a 0%, #ff0000 33%, #bd0000 67%, #8a0000 77%);
+    z-index: 1;
+  }
+
+  .right-band {
+    position: absolute;
+    top: 150px;
+    left: 50px;
+    border: 1px solid black;
+    width: 150px;
+    height: 250px;
+    border-radius: 100% / 60px;
+  		  background: radial-gradient(50% 30px at 50% 30px, #0003 99.99%, #0000 0),
+    radial-gradient(400px 800px, #ff8a8a 0%, #ff0000 33%, #bd0000 67%, #8a0000 77%);
+    z-index: ;
+  }
+  .cup {
+    position: absolute;
+    border: 1px solid black;
+    width: 95px;
+    height: 100px;
+    top: 70px;
+    left: 215px;
+    z-index: 7;
+  }
+
+  .cup-base {
+    position: absolute;
+    top: 170px;
+    left: 215px;
+    border: 1px, black;
+    width: 95px;
+    height: 10px;
+    background-color: white;
+    clip-path: polygon(0 0, 100% 0, 78% 100%, 23% 100%);
+    z-index: 6;
+  }
+
+  .cup-handle {
+    position: absolute;
+    top: 73px;
+    left: 169px;
+    border: 7px solid rgb(255, 255, 255);
+    border-radius: 50%;
+    height: 100px;
+    width: 95px;
+    z-index: 4
+
+  }
+
+  .stripes {
+    background-image: linear-gradient(#303382 50%, #ffffff 49%);
+    background-size: 100% 40%;
+    width: 100%;
+    height: 100%;
+    border: 1px;
+    position: absolute;
+    z-index: -1;
+    /*z-index changes the order of things*/
+  }
+
+  .triangle {
+    width: 80%;
+    height: 90%;
+    background-color: red;
+    clip-path: polygon(0 0, 0% 100%, 100% 50%);
+    transform: rotate(0deg) translate(0, 5%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .star {
+    background-color: white;
+    position: absolute;
+    width: 40%;
+    height: 35%;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    transform: translate(-55%, 0px)
+  }
+
+
+</style>
+
+<div class="frame">
+  <div class="backg">
+  <div class="cafetera"></div>
+  <div class="caf-cap"></div>
+  <div class="caf-base"></div>
+  <div class="caf-nub"></div>
+  <div class="bustelo can-right"></div>
+  <div class="bustelo can-left"></div>
+  <div class="llshadow"></div>
+  <div class="lrshadow"></div>
+  <div class="bustelo right-band"></div>
+  <div class="bustelo left-band"></div>
+  <div class="cup-base"></div>
+  <div class="cup-handle"></div>
+  <div class="cup">
+    <div class="stripes"></div>
+    <div class="triangle">
+       <div class="star">
+         </div>
+    </div>
+  </div>
+
+
+</div>
+</div>

@@ -1,0 +1,420 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: pink;
+  }
+
+  .frame {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+  }
+
+  .barcode {
+    width: 50px;
+    height: 80px;
+    position: absolute;
+    top: 200px;
+    left: 130px;
+    border: 1px solid white;
+    background-color: white;
+    z-index: 1
+  }
+
+  .stripes {
+    width: 100%;
+    height: 80%;
+    position: absolute;
+    top: 12%;
+    left: 0%;
+    background: linear-gradient(rgba(0, 0, 0, 1) 0%,
+        rgba(255, 255, 255, 1) 10%, rgba(0, 0, 0, 1) 20%,
+        rgba(255, 255, 255, 1) 30%, rgba(0, 0, 0, 1) 40%,
+        rgba(255, 255, 255, 1) 50%, rgba(0, 0, 0, 1) 60%,
+        rgba(255, 255, 255, 1) 70%, rgba(0, 0, 0, 1) 80%,
+        rgba(255, 255, 255, 1) 90%, rgba(0, 0, 0, 1) 95%);
+  }
+
+  .cup {
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+    background-color: white;
+  }
+
+  .top-cup {
+    position: absolute;
+    top: 180px;
+    left: 80px;
+    z-index: 1;
+  }
+
+  .bottom-cup {
+    position: absolute;
+    top: 280px;
+    left: 80px;
+    z-index: 2;
+  }
+
+  .solo-cup {
+    position: absolute;
+    top: 5px;
+    left: 240px;
+    z-index: 2;
+  }
+
+  .block {
+    position: absolute;
+    width: 20px;
+    height: 90px;
+    top: 0px;
+    left: 50px;
+    z-index: 3;
+    background-color: white;
+  }
+
+  .handle {
+    position: absolute;
+    border: 15px solid hsl(0, 0%, 100%);
+    border-radius: 50%;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    width: 20%;
+    height: 20%;
+    top: 20px;
+    left: 303px;
+    z-index: 3;
+    background-color: transparent;
+    transform: rotate(180deg);
+  }
+
+  .handle::after {
+    content: "";
+    position: absolute;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    top: -15px;
+    left: -17px;
+    width: calc(100% + 22px);
+    height: calc(100% + 28px);
+    border: 1px solid black;
+    border-right: 1px solid transparent;
+    z-index: 4;
+  }
+
+  .border {
+    position: absolute;
+    width: 2px;
+    height: 78.5px;
+    top: 4.5px;
+    left: 0px;
+    z-index: 4;
+    background-color: #0432ff;
+  }
+
+  .border2 {
+    position: absolute;
+    width: 2px;
+    height: 78.5px;
+    top: 4.5px;
+    left: 20px;
+    z-index: 4;
+    background-color: #0432ff;
+  }
+
+  .red-triangle {
+    width: 40%;
+    height: 35%;
+    position: absolute;
+    background-color: red;
+    clip-path: polygon(0 0, 0% 100%, 100% 50%);
+    transform: rotate(90deg) scale(0.5) translate(50px, -70px);
+    z-index: 4;
+  }
+
+  .black-triangle {
+    width: 25%;
+    height: 45%;
+    position: absolute;
+    background-color: black;
+    clip-path: polygon(0 0, 0% 100%, 100% 50%);
+    transform: rotate(270deg) scale(0.5) translate(-10px, 100px);
+    z-index: 3;
+  }
+
+  .yellow-triangle {
+    width: 10%;
+    height: 8%;
+    position: absolute;
+    background-color: yellow;
+    clip-path: polygon(0 0, 0% 100%, 100% 50%);
+    transform: rotate(90deg) scale(0.5) translate(150px, -129px);
+    z-index: 5;
+  }
+
+  .blue-stripes {
+    width: 100%;
+    height: 80%;
+    position: absolute;
+    top: 5%;
+    left: 0%;
+    background-image: linear-gradient(#0432ff 49%, #feffff 50%);
+    background-size: 100% 40%;
+  }
+
+  .cafetera {
+    width: 210px;
+    height: 320px;
+    position: absolute;
+    top: 87px;
+    left: 20px;
+    border: 1px solid pink;
+    z-index: -3;
+  }
+
+  .caf-pot {
+    width: 17%;
+    height: 10%;
+    background: brown;
+    position: absolute;
+    top: -9%;
+    left: 50%;
+    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+    transform: perspective(1000px) rotate(180deg);
+    border: 1px solid black;
+    z-index: -2;
+  }
+
+  .caf-top {
+    width: 100%;
+    height: 12%;
+    background-color: orange;
+    position: absolute;
+    top: 0%;
+    left: 10%;
+    border-radius: 50%;
+    border: 1px solid black;
+    z-index: -2;
+  }
+
+  .caf-middle {
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(90deg, rgba(255, 122, 0, 1) 0%,
+        rgba(214, 110, 15, 1) 24%, rgba(241, 143, 49, 1) 25%,
+        rgba(242, 138, 37, 1) 46%, rgba(255, 122, 0, 1) 46%,
+        rgba(242, 138, 38, 1) 55%, rgba(214, 110, 15, 1) 69%,
+        rgba(238, 126, 24, 1) 70%);
+    position: absolute;
+    top: 7%;
+    left: 10%;
+    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+    transform: perspective(1000px) rotate(-180deg);
+    border: 1px solid black;
+    z-index: -2;
+  }
+
+  .caf-mid {
+    width: 57%;
+    height: 15%;
+    background: rgba(255, 122, 0, 1);
+    position: absolute;
+    top: 56%;
+    left: 32%;
+    transform: perspective(1000px);
+    border: 1px solid black;
+    z-index: -3;
+  }
+
+  .caf-hole {
+    width: 7%;
+    height: 3%;
+    background: black;
+    position: absolute;
+    top: 7%;
+    left: 70%;
+    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+    transform: perspective(1000px) rotate(180deg);
+    border: 1px solid black;
+    z-index: 1;
+  }
+
+  .caf-bottom {
+    width: 94%;
+    height: 48%;
+    position: absolute;
+    top: 70%;
+    left: 13.5%;
+    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+    transform: perspective(1000px);
+    background-image: linear-gradient(90deg, rgba(166, 166, 166, 1) 0%,
+        rgba(137, 137, 137, 1) 24%, rgba(192, 192, 192, 1) 15%,
+        rgba(181, 181, 181, 1) 46%, rgba(166, 166, 166, 1) 46%,
+        rgba(180, 180, 180, 1) 55%, rgba(137, 137, 137, 1) 69%,
+        rgba(168, 168, 168, 1) 70%);
+    border: 1px solid black;
+    z-index: -1;
+  }
+
+  .bustello {
+    width: 200px;
+    height: 290px;
+    position: absolute;
+    top: 33%;
+    left: 92%;
+    background-color: yellow;
+    border: 1px solid black;
+    z-index: -1;
+  }
+
+  .bustello-lid {
+    width: 210px;
+    height: 20px;
+    position: absolute;
+    top: -.5%;
+    left: -2.5%;
+    background-color: yellow;
+    border: 1px solid black;
+    z-index: -1;
+  }
+
+  .bustello-bottom {
+    width: 200px;
+    height: 70px;
+    border: 1px solid black;
+    position: absolute;
+    top: 75.9%;
+    left: -.5%;
+    background-color: red;
+    z-index: 1;
+  }
+
+  .bustello-can-bottom {
+    width: 205px;
+    height: 10px;
+    position: absolute;
+    top: 100%;
+    left: -1.5%;
+    background-color: gray;
+    border: 1px solid black;
+    z-index: 1;
+  }
+
+  .top-label {
+    width: 70px;
+    height: 120px;
+    border: 1px solid red;
+    position: absolute;
+    top: 10%;
+    left: 60%;
+    z-index: 1
+  }
+
+  .bottom-label {
+    width: 70px;
+    height: 80px;
+    border: 1px solid red;
+    position: absolute;
+    top: 51%;
+    left: 60%;
+    z-index: 1
+  }
+
+  #title {
+    color: black;
+    font-size: 32px;
+    position: absolute;
+    top: 45%;
+    left: 43%;
+  }
+
+  .heading {
+    color: black;
+    font-size: 16px;
+    position: absolute;
+    top: 75%;
+    left: 43%;
+    font-style: italic;
+  }
+
+  .label1 {
+    color: white;
+    font-size: 7px;
+    position: absolute;
+    top: 84%;
+    left: 43%;
+  }
+
+  .label2 {
+    color: yellow;
+    font-size: 7px;
+    position: absolute;
+    top: 87%;
+    font-style: italic;
+    left: 43%;
+  }
+
+  .label-text {
+    color: black;
+    font-size: 7px;
+    position: absolute;
+    top: 44.3%;
+    left: 67.5%;
+  }
+</style>
+
+</head><body><div class="frame">
+  <h1 id="title">FE'<br><br>STELO</h1>
+  <h2 class="heading">Ground Coffee</h2>
+  <h3 class="label1">DELIGHTFUL, LIKE NO OTHER<br><br><br><br>10 OZ (273g)</h3>
+  <h3 class="label2">100% PURE COFFEE</h3>
+  <p class="label-text">
+    Location information <br>that I am unsure where<br>to find...<br>Please let me know<br>if this must be a part<br>of the project as I will<br>then update it.<br>I am currently getting<br>a bunch of stuff for my<br>friend's birthday gift<br>including a sweater<br>hoodie &amp; some snacks<br><br><br>More nutritional<br>information about<br>the coffee that<br>I am unsure where to<br>locate!
+  </p>
+  <div class="cafetera">
+    <div class="caf-pot"></div>
+    <div class="caf-top"></div>
+    <div class="caf-middle"></div>
+    <div class="caf-mid"></div>
+    <div class="caf-hole"></div>
+    <div class="caf-bottom"></div>
+    <div class="bustello">
+      <div class="red-triangle"></div>
+      <div class="black-triangle"></div>
+      <div class="yellow-triangle"></div>
+      <div class="bustello-lid"></div>
+      <div class="bustello-bottom"></div>
+      <div class="top-label"></div>
+      <div class="bottom-label"></div>
+      <div class="bustello-can-bottom"></div>
+      <div class="barcode">
+        <div class="stripes"></div>
+      </div>
+    </div>
+    <div class="cup top-cup">
+      <div class="blue-stripes"></div>
+    </div>
+    <div class="cup bottom-cup">
+      <div class="blue-stripes"></div>
+    </div>
+    <div class="handle"></div>
+    <div class="cup solo-cup">
+      <div class="blue-stripes"></div>
+      <div class="block">
+        <div class="border"></div>
+        <div class="border2"></div>
+      </div>
+    </div>
+    <div class="top"></div>
+  </div>
+</div></body></html>
