@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Internet Art II</title>
+    <meta name="description" content="a class website for Internet Art II (MAAD 23632) at the University of Chicago">
+    <meta name="author" content="Nick Briz">
+    <meta charset="utf-8">
+
+    <!-- social media stuff -->
+    <meta property="og:title" content="Internet Art II">
+    <meta property="og:url" content="https://netart.rocks/uchicago">
+    <meta property="og:image" content="https://netart.rocks/images/netartdiagram.gif">
+    <meta property="og:description" content="a class website for Internet Art II (MAAD 23632) at the University of Chicago">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:site_name" content="https://netart.rocks/uchicago">
+    <meta name="twitter:site" content="@nbriz">
+
+    <link rel="icon" type="image/png"  href="https://netart.rocks/images/icon.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style media="screen">
+      .center {
+        text-align: center;
+        display: block;
+        width: 100%;
+      }
+
+      article.center a {
+        display: block;
+        font-size: 24px;
+        font-weight: bold;
+        font-style: italic;
+        text-decoration: underline;
+      }
+
+      article.center a:hover {
+        border-bottom: none;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <header>
+      <h1>10print</h1>
+      <h2>variations</h2>
+    </header>
+
+    <article>
+      <div id="ne0"></div>
+      <p>
+        In class we learned that we could write our 10print algorithm using a <code>while</code> loop like the example above, but we could also use a <code>for</code> loop like the example below. Both produce the same output, but the <code>for</code> loop allows us to write our instructions with less code. Let's explore other variations on this same sketch to learn a bit about how JavaScript can be written a number of different ways to express the same idea.
+      </p>
+      <div id="ne1"></div>
+      <p>
+        Let's create a <code>p()</code> function in order to set ourselves up for some other code variations down the line. This function will take care of "printing" (ie. outputing) our text to our document's body.
+      </p>
+      <div id="ne2"></div>
+      <p>
+        In the example above, we defined our <code>p()</code> function using the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions#function_declarations" target="_blank">declarative approach</a>, this is the most conventional way, but we can also define it as a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions#function_expressions" target="_blank">function expression</a>, which looks more like we're defining a variable (like all variables creating a function is really about storing data in memory and assigning it a name, in this case the datatype we're storing is a "function", rather than a "number", "string", etc). There is nothing functionally different about these two approaches, it's just different syntax which allow us to use functions in different ways/contexts.
+      </p>
+      <div id="ne3"></div>
+      <p>
+        Here is yet another way to create that same function, this variation is known as an <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions#arrow_functions" target="_blank">arrow function</a>, notice the absence of the <code>function</code> keyword and the presence of the <code>=&gt;</code> between the function's parenthesis <code>()</code> and its brackets <code>{ ... }</code>
+      </p>
+      <div id="ne4"></div>
+      <p>
+        Arrow functions do behave a little different from the traditional declarations (refer to this <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions#arrow_functions" target="_blank">MDN</a> page for more on that), but for our purpose of exploring variations on this code, what's most interesting is that they can be written evern more compactly. When an arrow function only has one line of code in it's code block (ie. between its brackets) it can be written like this
+      </p>
+      <div id="ne5"></div>
+      <p>
+        Similarly, when an arrow function only contains a single parameter between its parenthesis <code>()</code> then we don't actually need to write the parenthesis
+      </p>
+      <div id="ne6"></div>
+      <p>
+        Now that we've tightend up our function, let's do the same with the rest of our code
+      </p>
+      <div id="ne7"></div>
+      <p>
+        When conditional statements only have 1 line in their code block, their brackets can also be omitted and the statement can be written on the same line
+      </p>
+      <div id="ne8"></div>
+      <p>
+        When we have an <code>if / else</code> like this which is a simple "either / or", we can write both on the same line using a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator" target="_blank">ternary</a> expression like this
+      </p>
+      <div id="ne9"></div>
+      <p>
+        Just like functions and conditoinals, when a <code>for</code> loop only has a single statement in its code block (as it does now) we can also omit the brackets and write that on the same line.
+      </p>
+      <div id="ne10"></div>
+      <p>
+        This code produces the same exact output as the first example, except now we've written our insructions in just two lines of code. This version is real compact, but it's also not the most readale code. The sweet spot is probably somewhere inbetween. The purpose of these variations is not necessarily to end up at this last version, but rather to learn how the same instructions can be written in a number of different ways
+      </p>
+    </article>
+
+
+    <br><br><br><br><br><br>
+
+    <script src="/js/Averigua.js"></script>
+    <script src="/js/rainbow-text.js"></script>
+    <script src="/js/fancy-chars.js"></script>
+    <script src="/js/netitor.min.js"></script>
+    <script>
+      FancyText.animate(document.querySelector('header > h1'), 200, 0.2)
+
+      Array.from(document.querySelectorAll('h3'))
+        .forEach(h3 => FancyText.animate(h3, 5000, 0.2))
+
+      Array.from(document.querySelectorAll('a'))
+        .filter(a => a.className !== 'button')
+        .forEach(a => RainbowText.hoverShimmer(a))
+
+        const ne0 = new Netitor({
+          ele: '#ne0',
+          language: 'javascript',
+          code:`  let i = 0
+  while (i < 1000) {
+    if (Math.random() > 0.5) {
+      document.body.innerText += '／'
+    } else  {
+      document.body.innerText += '＼'
+    }
+    i++
+  }`})
+
+        const ne1 = new Netitor({
+          ele: '#ne1',
+          language: 'javascript',
+          code:`  for (let i = 0; i < 1000; i++) {
+    if (Math.random() > 0.5) {
+      document.body.innerText += '／'
+    } else {
+      document.body.innerText += '＼'
+    }
+  }`})
+
+  const ne2 = new Netitor({
+    ele: '#ne2',
+    language: 'javascript',
+    code:`	function p (c) {
+    document.body.innerText += c
+  }
+
+  for (let i = 0; i < 1000; i++) {
+    if (Math.random() > 0.5) {
+      p('／')
+    } else {
+    	p('＼')
+    }
+  }`})
+
+  const ne3 = new Netitor({
+    ele: '#ne3',
+    language: 'javascript',
+    code:`	const p = function (c) {
+    document.body.innerText += c
+  }`})
+
+  const n43 = new Netitor({
+    ele: '#ne3',
+    language: 'javascript',
+    code:`	const p = (c) => {
+    document.body.innerText += c
+  }`})
+
+  const ne5 = new Netitor({
+    ele: '#ne5',
+    language: 'javascript',
+    code:`	const p = (c) => document.body.innerText += c`})
+
+  const ne6 = new Netitor({
+    ele: '#ne6',
+    language: 'javascript',
+    code:`	const p = c => document.body.innerText += c`})
+
+    const ne7 = new Netitor({
+      ele: '#ne7',
+      language: 'javascript',
+      code:`  const p = c => document.body.innerText += c
+
+  for (let i = 0; i < 1000; i++) {
+    if (Math.random() > 0.5) {
+      p('／')
+    } else {
+      p('＼')
+    }
+  }`})
+
+  const ne8 = new Netitor({
+    ele: '#ne8',
+    language: 'javascript',
+    code:`  const p = c => document.body.innerText += c
+
+for (let i = 0; i < 1000; i++) {
+  if (Math.random() > 0.5) p('／')
+  else p('＼')
+}`})
+
+const ne9 = new Netitor({
+  ele: '#ne9',
+  language: 'javascript',
+  code:`  const p = c => document.body.innerText += c
+
+  for (let i = 0; i < 1000; i++) {
+    (Math.random() > 0.5) ? p('／') : p('＼')
+  }`})
+
+  const ne10 = new Netitor({
+    ele: '#ne10',
+    language: 'javascript',
+    code:`  const p = c => document.body.innerText += c
+  for (let i = 0; i < 1000; i++) Math.random() > 0.5 ? p('／') : p('＼') `})
+    </script>
+  </body>
+</html>
