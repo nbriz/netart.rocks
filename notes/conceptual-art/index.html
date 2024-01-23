@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Internet Art II</title>
+    <meta name="description" content="a class website for Internet Art II (MAAD 23632) at the University of Chicago">
+    <meta name="author" content="Nick Briz">
+    <meta charset="utf-8">
+
+    <!-- social media stuff -->
+    <meta property="og:title" content="Internet Art II">
+    <meta property="og:url" content="https://netart.rocks/uchicago">
+    <meta property="og:image" content="https://netart.rocks/images/computer.gif">
+    <meta property="og:description" content="a class website for Internet Art II (MAAD 23632) at the University of Chicago">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:site_name" content="https://netart.rocks/uchicago">
+    <meta name="twitter:site" content="@nbriz">
+
+    <link rel="icon" type="image/png"  href="https://netart.rocks/images/icon.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style media="screen">
+      .center {
+        text-align: center;
+        display: block;
+        width: 100%;
+      }
+
+      article.center a {
+        display: block;
+        font-size: 24px;
+        font-weight: bold;
+        font-style: italic;
+        text-decoration: underline;
+      }
+
+      article.center a:hover {
+        border-bottom: none;
+      }
+
+      .double {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .double div {
+        width: 50%;
+        max-width: 440px;
+      }
+
+      .double p {
+        max-width: 440px;
+      }
+
+      @media (max-width: 986px) {
+        .double { flex-direction: column; }
+        .double div { margin: 40px auto; }
+        .double p { margin: 40px auto; }
+      }
+
+      .double .rwd {
+        max-height: 300px;
+        width: auto;
+      }
+
+      @media (max-width: 986px) {
+        .double .rwd {
+          max-height: none;
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>conceptual art</h1>
+    </header>
+
+    <article>
+
+      <br><br>
+
+      <iframe width="800" height="450" src="https://www.youtube.com/embed/VHLs76HLon4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+      <br><br><br>
+
+      <h3>software + conceptual art</h3>
+
+      <blockquote>
+        <p>A Digital Computer has the wrong name to begin with. John von Neumann, at the very beginning (late forties), called it the All-Purpose Machine, and that was the right name, but it got mislaid somewhere. A digital computer is a device which can be programmed to move information [, they] can also count, and do arithmetic. But this numerical activity of computers has been vastly overemphasized. For it is their ability to vary and combine programs, test the outside world and modify it (through input and output), and handle the general diddling of vast quantities of information [...] that makes it, in some very important sense, the ultimate machine.</p>
+        <p>A computer language is usually a set of artificial words [...] which a programmer may combine by some set of rules into a long spell (a program). This spell is then given in some way to another program in the computer, the “language processor”, which turns the relatively few instructions in the computer language into the many ittybitty instructions needed by the computer itself. If the spell is properly cast, the system does what the programmer wants [...]</p>
+        <cite><a href=https://en.wikipedia.org/wiki/Ted_Nelson" target="_blank">Ted Nelson</a> <br>from "Computers are not what you think" <br>pg 66 in the <a href="/files/software-exhibition-catalogue-c.pdf" target="_blank">"Software" exhibition catalogue</a> 1970</cite>
+      </blockquote>
+
+      <div>
+        <img src="images/software-cover.png" alt="cover to the software exhibition catalogue">
+      </div>
+
+      <p>
+        The image above is from the cover of the exhibition catalog for "Software, Information Technology: Its New Meaning for Art" curated by Jack Burnham at the Jewish Museum in New York in 1970. You can <a href="/files/software-exhibition-catalogue.pdf" target="_blank">view a pdf of the full program here (missing pages)</a> or a color version <a href="/files/software-exhibition-catalogue-c.pdf" target="_blank">here</a> (includes all the pages, some are nsfw) it's definitely worth a look through.
+      </p>
+
+      <div class="double">
+        <img src="images/resistors.png" alt="Radically Emphatic Students Interested in Science,Technology and Other Research Studies" class="rwd">
+        <p style="padding-left: 20px">The show drew connections and arranged collaborations between technologists and conceptual artists. For exmpale, pictured here are three members of the R.E.S.I.S.T.O.R.S. (Radically Emphatic Students Interested in Science, Technology and Other Research Studies) a rare/early "computer club" of middle and high school students with conceptual artist Agnes Denes. Pictured here are Peter Eichenberger, Lauren Sarno, John Levine (not present: Nat Kuhn).</p>
+      </div>
+
+
+      <div class="double">
+        <p style="padding-right: 20px">The exhibition included early examples of the sorts of work we'll be creating in this class, visual algorithmic compositions, like "Matrix of Knowledge & Trigonal Ballet" featured above, as well as musical algorithmic compositions like "the Composer" by Allen Razdow and Paul Conly (Art & Technology, Inc, Boston) an early music synthesizer (the ARP) connected to an early computer (PDP-8) which was programmed to create random musical compositions the audience could "contribute ideas to" by "directly changing the computer program using electro-mechanical devices in front of four seats in the gallery".</p>
+        <img src="images/computer-synthesizer.png" alt="Allen Razdow and Paul Conly's computer controlle musical synthesizer" class="rwd">
+      </div>
+
+      <p>The exhibition included algorithmic works with less conventional modes of output like the haptic feedback in Linda Berris's "Tactile Film", the "first motion picture created to be felt as well as seen and heard" designed to be played back through the Vision Subsituttion System (seen here from the <a href="images/linda-berris-1.png" target="_blank">front</a> and from the <a href="images/linda-berris-2.png" target="_blank">back</a>). For the purposes of our first assignment it might be worth looking little deeper into some of the exhibitions algorithmic text-based works. The exhibition included many text-based pieces including "Labyrinth", an interactive version of the exhibition catalogue by Ted Nelson, which was also one of the first "hypertext" systems to be created. Let's dive deeper into one of the text-based pieces, "The Boolean Image/Conceptual Typewriter"</p>
+
+      <div class="double">
+        <img src="images/conceptual-typewriter-1.png" alt="conceptual typewriter" class="rwd">
+        <img src="images/conceptual-typewriter-2.png" alt="conceptual typewriter" class="rwd">
+      </div>
+
+      <p>
+        Originally produced for the exhibition in 1970 by Carl Fernbach-Flarsheim, the piece is composed by a program called 'Conceptual Typewriter' which is used to generate random spatial outputs of letters and numbers. Here's a <a href="https://netnet.studio/?c=2N&layout=dock-left" target="_blank">modern version I created on netnet</a> based on another version created in processing by the poet and programmer <a href="https://www.decontextualize.com/" target="_blank">Allison Parrish</a>
+      </p>
+
+
+      <br><br><br>
+
+      <h3>the JavaScript "Date" Object</h3>
+
+      <p>
+        The conceptual artist <a href="https://en.wikipedia.org/wiki/On_Kawara" target="_blank">On Kawara</a>, whose <a href="http://localhost:8000/notes/conceptual-art/" target="_blank">Self-Observation</a> series was mentioned in the video above, is likely best known for his "Today Series", also known as his "date paintings"...
+      </p>
+
+      <iframe width="800" height="450" src="https://www.youtube.com/embed/wXjiWD7j0fM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </article>
+
+    <br><br><br>
+
+    <article>
+      <h3>Examples</h3>
+
+      <ul style="border: 2px solid blue; padding: 10px 24px; border-radius: 10px;">
+        <p>
+          here are a few different version of a JavaScript version of the "Today Series", let's call it <b>::after onKawara</b>
+        </p>
+        <li style="margin-left: 20px">
+          <a href="https://netnet.studio/?layout=dock-left#code/eJxtUMFKxDAQvfcrhj0ppLutsIjdsLCXPQie9AfSNk1njalMkkoV/92JqbAHIRnCmzfvTZ70YbH6WAC0U7/AFz8ARo1mDA3UVTWPh1+oVd2roSm6vuwmO1EDZNqbSkA6t5nTo3+3amnAEPYZUhaN4wkXtGPBjqum3LpEH3BY/mt+8y2S3rwudGV5t98L+Cur8cAS5aDe0LL5OYZISsDmhXQbu1EHeHreCDgRKivAK+dLrwmHq1mPnzp9d/7I9nK3xlLIFEuKR/I2x0fltlALqB/uK7lLCFMz4wdKV1/M" target="_blank">static HTML/CSS</a>: here's a basic HTML/CSS setup of what we'd like our piece to look like
+        </li>
+        <li style="margin-left: 20px">
+          <a href="https://netnet.studio/?layout=dock-left#code/eJxtUl1L60AQfe+vGERIC2lsBZFboyBKH4TqQ30RueBmM01Wt5u6H9VY+t+d6ba3vSIke3bnzMfZ2cmdbzVedQCKpmxhRRuAGlVV+xEMB4NlfbExFUK+VbYJpuzLRjd2BLYquoMU+OtFn1K5hRbtCCqrymgSWlWGIoxHQwklrWgj9RqcV7P2N3JNf4fzLbeCDkqenp2lsFu2hWeUoj8Tc6Wp+Dj4YEUKR48WiyBr9DCZHqVwbZXQKThhXN+hVbODWKe+kK+7/Ijl85NtWzo5t4Xbk5OaqzthMhimMPxzPshP2EKu0YNcnbRq4WnLgo3zUMIlGPyAW+Gx29ubRUtEmVXofzBzElM7Ip832hKql6SQjLFgmAjLcL2w8dQy3AVy2XoHveFDxTDFBcOD9Az3zZLhFmVCzn/3FXdKJlz6pxQio6Tn+T6kRWF3UeOg9ROd/7udx6m3ylTk9HK82iRYZ3C8onuvU0JOsH45aBO9M+VrZJjTCGTvAW07RY3SN7abEJv04jRkHj/9TZwXjvhXieeF3iz2/xviD9bu" target="_blank">the Date object</a>: here is a dynamic version using the JavaScript <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a></code> object.
+        </li>
+        <li style="margin-left: 20px">
+          <a href="https://netnet.studio/?layout=dock-left#code/eJxtUU1r4zAQvftXDLkkLraVFErZrBsohD0s5NReepQlWVYqS2EkJ3iX/e87il3SQ4wsifl47+lNHeJo1S4DaLwc4S9dADpldBe3sFmvz93Pa6jh4lOjH5wshbcet4C6Wa0LSCufaqQJJ8vHLWg0cgpxa7SjDheVI0BBu8IpdRxCNO14L/mP/izhnWdB3ygfn54K+Npm4pYgypb3xhL5ryEOyAtYvKNqBtGpCIe3RQGvaLgtIHAXyqDQtN96g/mj0nPPl4m+ZrMtWZ1sSfbUpGb3m7sKNgVsfjyva5YiVDpVUGkQaE4RAoqXRRfjKWwZE9JVxyCVNWesnIpMd4wO4nMedbrSKkPkTnKUpTUNchxZMxgrmXNVb1L/YkeKrui7+zS978m9Y6iE75n0F2c9l2EOlxcTu9J6wa0K99HSC9kDaOsbbsG5AqZWeGBZlvx3IYLkUb1FNE7Dy5xf5VXrsedxtTwcDrDfF/BB3zK/DpD0a0UpMmqZV/OgVzeYPM35puU/Y4TNdg==" target="_blank">using libraries</a>: here's the same sketch except with much less code because we're making use of JavaScript <a href="/notes/js-libs/" target="_blank">libraries</a>, specifially the <a href="https://github.com/netizenorg/netnet-standard-library" target="_blank">netnet-standard-library</a> and the <a href="https://momentjs.com/" target="_blank">moment.js</a> library.
+        </li>
+        <li style="margin-left: 20px">
+          <a href="https://netnet.studio/?layout=dock-left#code/eJxtUktr4zAQvudXDLnILraVXeilpIFC6WXJqb3sUZZkWVlZCiM5Ibvkv+/4kXrLRgwaoe+b92yjRHtMEFE+r9uUjvGJc6l8dYhKO3vCyuvETctJ2d/aBzTDk6SMSXglUJXO1ijwwuveOsW9rzo72K93Wz55362298J0odM+HWIlQ8dVOHsXhIrzd3m2qS1dkMLpeN/bbgXAH8C4UAsH3hcwmcIDJ4Sk6b1MNngI/oc4CxSQ5fCHACB2ZXTKWB3UheWVjDGbAADWamvaxJ6AfdtsTi0rbkAt5C+DofeqlMEFHCho6mxTwCD5wlQ2Hp24DASDVi2AcNZ4svaJEh1gSVrjQjj0MdnmcocyMq75atQExwRKJP2e0HoDz3PxWV41ATtBte33e3h9LeAnHZaPHRkLl6jJLqMkTyyf41ZzvGxxuUD/NIcy/FL698fHAm7X0gCiNeSwbERn3diGtz71KApYf6Cue9nqBPv3dQEvaIUrIAofy6jRNv/5iLR30zBOZzZj18/khFIf4TZH+rxOo6cyg8/YsFGs+Jz/QFgte/QXV7Liig==" target="_blank">JS Only</a>: here's a version created entirely out of JavaScript (no direct HTML or CSS, besides the <code>&lt;script&gt;</code> tags)
+        </li>
+      </ul>
+    </article>
+
+
+    <br><br><br><br><br><br>
+
+    <script src="/js/Averigua.js"></script>
+    <script src="/js/rainbow-text.js"></script>
+    <script src="/js/fancy-chars.js"></script>
+    <script>
+      FancyText.animate(document.querySelector('header > h1'), 200, 0.2)
+
+      Array.from(document.querySelectorAll('h3'))
+        .forEach(h3 => FancyText.animate(h3, 5000, 0.2))
+
+      Array.from(document.querySelectorAll('a'))
+        .filter(a => a.className !== 'button')
+        .forEach(a => RainbowText.hoverShimmer(a))
+
+      document.querySelectorAll('img').forEach(img => {
+        img.addEventListener('click', () => {
+          console.log(img);
+          const specs = `width=${img.width},height=${img.height} top=50,left=50`
+          window.open(img.src, '_blank', specs)
+        })
+      })
+    </script>
+  </body>
+</html>

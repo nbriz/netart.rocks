@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Internet Art II</title>
+    <meta name="description" content="a class website for Internet Art II (MAAD 23632) at the University of Chicago">
+    <meta name="author" content="Nick Briz">
+    <meta charset="utf-8">
+
+    <!-- social media stuff -->
+    <meta property="og:title" content="Internet Art II">
+    <meta property="og:url" content="https://netart.rocks/uchicago">
+    <meta property="og:image" content="https://netart.rocks/images/computer.gif">
+    <meta property="og:description" content="a class website for Internet Art II (MAAD 23632) at the University of Chicago">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:site_name" content="https://netart.rocks/uchicago">
+    <meta name="twitter:site" content="@nbriz">
+
+    <link rel="icon" type="image/png"  href="https://netart.rocks/images/icon.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style media="screen">
+      .center {
+        text-align: center;
+        display: block;
+        width: 100%;
+      }
+
+      article.center a {
+        display: block;
+        font-size: 24px;
+        font-weight: bold;
+        font-style: italic;
+        text-decoration: underline;
+      }
+
+      article.center a:hover {
+        border-bottom: none;
+      }
+
+      .double {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .double div {
+        width: 50%;
+        max-width: 440px;
+      }
+
+      .double p {
+        max-width: 440px;
+      }
+
+      @media (max-width: 986px) {
+        .double { flex-direction: column; }
+        .double div { margin: 40px auto; }
+        .double p { margin: 40px auto; }
+      }
+
+      .double .rwd {
+        max-height: 300px;
+        width: auto;
+      }
+
+      @media (max-width: 986px) {
+        .double .rwd {
+          max-height: none;
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>instruction sets</h1>
+    </header>
+    <article>
+
+      <p>In <a href="/notes/conceptual-art" target="_blank">another class</a> we discussed the 1970 art and technology exhibition "Software". Among the many connections curator Jack Burnham was making between the <a href="https://www.youtube.com/watch?v=VHLs76HLon4" target="_blank">conceptual art</a> movment and the new information technologies of the time was the separation of "ideas" form "objects" in art, in the <a href="/files/software-exhibition-catalogue.pdf" target="_blank">exhibition catalogue</a> he writes "our bodies are hardware, our behavior software", which echoes Sol Lewitt's famous quote...</p>
+
+      <blockquote>
+        <p>In conceptual art the idea or concept is the most important aspect of the work. When an artist uses a conceptual form of art, it means that all of the planning and decisions are made beforehand and the execution is a perfunctory affair. <b>The idea becomes a machine that makes the art.</b></p>
+        <cite><a href="https://en.wikipedia.org/wiki/Sol_LeWitt" target="_blank">Sol Lewitt</a></cite>
+      </blockquote>
+
+      <img src="/images/notes/form-code/lewitt.png" alt="Sol Lewitt" class="rwd">
+
+      <p>
+        The first two images are examples of instructions Sol Lewitt would send to a museum or gallery, the last image is an example of the "executed" painting (created by the gallery assistants following Lewitt's instructions)
+      </p>
+
+      <div class="double">
+        <img src="images/lawrence-weiner.png" alt=Lawrence Weiner's piece An Accumulation of Information Taken from Here to There" class="rwd">
+        <p style="padding-left: 20px">Some artists really pushed the boundaries of non-objecthood. Artists like Lawrence Weiner, whose piece "An Accumulation of Information Taken from Here to There"  (1969) was exhibited in the Software exhibition catalogue</p>
+      </div>
+
+      <p>
+        or Yoko Ono whose "instrution pieces" were often impossilbe to "exectue", such that they could only ever exist as an idea.
+      </p>
+
+      <img src="/images/notes/form-code/ono.png" alt="Yoko Ono" class="rwd">
+
+      <br><br><br>
+
+    </article>
+
+
+    <br><br><br><br><br><br>
+
+    <script src="/js/Averigua.js"></script>
+    <script src="/js/rainbow-text.js"></script>
+    <script src="/js/fancy-chars.js"></script>
+    <script>
+      FancyText.animate(document.querySelector('header > h1'), 200, 0.2)
+
+      Array.from(document.querySelectorAll('h3'))
+        .forEach(h3 => FancyText.animate(h3, 5000, 0.2))
+
+      Array.from(document.querySelectorAll('a'))
+        .filter(a => a.className !== 'button')
+        .forEach(a => RainbowText.hoverShimmer(a))
+
+      document.querySelectorAll('img').forEach(img => {
+        img.addEventListener('click', () => {
+          console.log(img);
+          const specs = `width=${img.width},height=${img.height} top=50,left=50`
+          window.open(img.src, '_blank', specs)
+        })
+      })
+    </script>
+  </body>
+</html>
