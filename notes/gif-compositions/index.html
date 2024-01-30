@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Internet Art II</title>
+    <meta name="description" content="a class website for Internet Art II (MAAD 23632) at the University of Chicago">
+    <meta name="author" content="Nick Briz">
+    <meta charset="utf-8">
+
+    <!-- social media stuff -->
+    <meta property="og:title" content="Internet Art II">
+    <meta property="og:url" content="https://netart.rocks/uchicago">
+    <meta property="og:image" content="https://netart.rocks/images/netartdiagram.gif">
+    <meta property="og:description" content="a class website for Internet Art II (MAAD 23632) at the University of Chicago">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:site_name" content="https://netart.rocks/uchicago">
+    <meta name="twitter:site" content="@nbriz">
+
+    <link rel="icon" type="image/png"  href="https://netart.rocks/images/icon.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style media="screen">
+      .center {
+        text-align: center;
+        display: block;
+        width: 100%;
+      }
+
+      article.center a {
+        display: block;
+        font-size: 24px;
+        font-weight: bold;
+        font-style: italic;
+        text-decoration: underline;
+      }
+
+      article.center a:hover {
+        border-bottom: none;
+      }
+
+      .double {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .double div {
+        width: 50%;
+        max-width: 440px;
+      }
+
+      .double p {
+        max-width: 440px;
+      }
+
+      @media (max-width: 986px) {
+        .double { flex-direction: column; }
+        .double div { margin: 40px auto; }
+        .double p { margin: 40px auto; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <header>
+      <h1>algorithmic gif compositions</h1>
+      <h2>a case study</h2>
+    </header>
+
+    <article>
+      <br>
+      <br>
+      <img src="/images/blimp-720x480.gif" alt="A Tribute To Heather - Blimp">
+      <p>
+        Expanding on the core JavaScript/programming concepts we learned last week we'll continue our exploration of "algorithmic composition" by taking a look at an internet art piece called <a href="http://www.evan-roth.com/work/tribute-to-heather/" target="_blank">A Tribute To Heather</a> (2013) by <a href="https://evan-roth.com" target="_blank">Evan Roth</a>.
+      </p>
+
+      <blockquote cite="/files/digital-folklore.pdf">
+        <p>A Tribute to Heather consists of ten compositions created by embedding a single animated GIF in a website hundreds of times to produce a rich tapestry of color and motion. The URL of each composition serves as its title, describing the repeated animation and the background color. Because file load times vary every time a One Gif Composition website is accessed, each viewing is unique.</p>
+        <p>
+          The animations in A Tribute to Heather were sourced from Heathers Animations, a sprawling hand-coded archive of 90s-era animated GIFs and background images operated by its elusive namesake, Heather. Founded in 1999, the site maintains the ethos of the early web, eschewing author attribution and copyright concerns to offer a wandering taxonomy of thousands of downloadable images."
+        </p>
+        <cite>
+          <a href="https://movingimage.us/" target="_blank">Museum of Moving Image</a>
+        </cite>
+      </blockquote>
+
+      <p>
+        The "ethos" of the early web mentioned in the Museum's description of the piece refers to the "<a href="https://netart.rocks/files/digital-folklore.pdf" target="_blank">digital folklore</a>" we discussed last semester (see the video below as a recap of this concept). Unforntuatley heatheranimations.com no longer exists but you can visit an <a href="https://web.archive.org/web/20040123095913/http://heathersanimations.com/" target="_blank">archived version</a> of it on the Internet Archive.
+      </p>
+
+      <br>
+
+      <iframe class="rwd" height="420" src="https://www.youtube.com/embed/2LzyRcLJdlg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <br>
+      <br>
+      <hr>
+      <br>
+      <br>
+
+      <p>
+        Today we're going to recreate our own "Tribute to Heather" in the style of Evan Roth by building on the core concepts we learned last week by exploring the browser's most fundamental API, the Document Object Model (or "the DOM" for short) which we can use to create dynamic HTML/CSS content. More specifically, we'll be using the <a href="https://github.com/netizenorg/netnet-standard-library/blob/main/README.md" target="_blank">netnet-standard-library</a> which is a JavaScript library built on top of the Web's <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction" target="_blank">the DOM</a> API, which is to say it "abstracts" the DOM API so that we can express more complex ideas with less code. Refer to the class notes on <a href="../js-libs" target="_blank">JavaScript libraries, APIs and abstraction</a> for more on those concepts.
+      </p>
+
+      <img src="/images/hotairballoon-on-whitesmoke.jpg" alt="hot air balloon piece by Evan Roth">
+
+      <p>
+        The specific algorithmic compositions we'll be recreating from Evan's "A Tribute To Heather" series are <a href="https://hotairballoon-on-whitesmoke.com/" target="_blank">hotairballoon-on-whitesmoke.com</a> and <a href="http://blimp-on-deepskyblue.com/" target="_blank">blimp-on-deepskyblue.com</a>. Remember, as we learned last quarter, you can <i>right-click</i> on any page and choose the <i>View Page Source</i> option in the context menu to view the code of any website, which means we can see exactly how Evan created these pieces, but because these pieces were made 10 years ago they written with some outdated JavaScript, so before we inspect Evan's souce code we'll be recreating his algorithms from scratch using more modern syntax and techniques by making use of the latest features modern JavaScript and web browser's have to offer.
+      </p>
+
+    </article>
+
+    <br><br><br>
+
+    <article>
+      <h3>Examples</h3>
+
+      <ul style="border: 2px solid blue; padding: 10px 24px; border-radius: 10px;">
+        <p>
+          here are a few different versions of our "<i>tributes to</i> A Tribute To Heather":
+        </p>
+
+        <li style="margin-left: 20px">
+          <a href="https://netnet.studio/?layout=dock-left#code/eJx1T0FqAzEMvOcVIjkEArFOgVI2uRRaAj0V+gCv1/Eq9cqLrDRsX19tQ0ovBYGGYTQzamoQGhWqhP2yVx3rI2Lo2J1rFzN9iuOomHq0RV+Ri6QZ2myreu68dNtMrXiZsL1Q7pDZDTTfLw8N3twPi+YOAHADKZfWZ2CGDRozkwgSx+xDBO2pwpW0h6lcBMqV4eX4bJpQuCokOr2/vcIe1ve21sWLOinhoyINPsVqVVSjnPLkTL/+L8CbZy5ijFeDw5hpiKz1lvw3tU1PP0qLXcXdwy742XTx++A3X61uFA==" target="_blank">a template</a>: here's some starter code for our GIF sketches (note: read the comments and update the variable values)
+        </li>
+        <li style="margin-left: 20px">
+          <a href="https://netnet.studio/?layout=dock-left#code/eJxdks9PwyAUx+/7K16mCZ3pihqXmGZ68eDFk9G7FChFGTRA3eqy/10oXTdNCKV83o/ve4+1o1a2HpylD/PG+9aVGFOmi0/HuJLfttDcY9Hg8JE/XBsr4jGspfNEM2LZUsnKEtvjqpOKYa2LjYz+88c1TtEfZ+vjAQBfgVCmIgq0hiscbsKiRjsPQtbvry/wAOioJOQh1hfW0C+H5YYI7kIa77mtVV8EezQ5V+LJKGOj9wVf3a8oQSl23WnqpdFALSeeP8sasl0OfQ7bHJocOqsWsA+GEBQVyShDciPQYrgEKBz32T72qIzWcJgAdS7bjz8ArXEyZioBkcoZ1XmO8oluJfNNCR+X++2h3X2cQMOlaPxAmr9E8Trd72AJW8Bw+5d70w64D7g54pGeRBLG3kyGKsP6oaTDv76E6roWsrMmiFDvaJ9KBFQR+iWs6TRb0thnVE4dHzMNW5rFLkwhhBkqjrLOUJ9QqvnEjqMZJ3Nzdz1u6U2cyQ7ORmdIGcJQnrRHOpse2y9+0dQo" target="_blank">createGif()</a>: in this sketch we've defined a custom "createGif" function which creates a GIF at a specific location from a specific image asset URL, which we'll be using in the subsequent sketches.
+        </li>
+        <li style="margin-left: 20px">
+          <a href="https://netnet.studio/?layout=dock-left#code/eJxdU8tu2zAQvOcrFmkByo4sBUWNFq6TSw9tgZ6CFr2GIimJDU0aJBVZNfzvXYp6OYAgiZzZ3dnhcu+YlUcPzrKH29r7o9vlOeM6++u4UPLVZlr4vKpz/Mh/QhtbhV98Ns5TzanlGyULS22XF41UPNc6O8gQf/u4z2P2x5v9+AOQr6FSpqAKtIZ1jjv4MKOdh0qWv59+wgOQUQnWodZn1rAXl8sDrYTDMt4LW6ouQz6Zgovqq1HGhuh3Yvt5yyiJuctGMy+NBmYF9eKbLCE5pdCl0KZQp9BYtYIzEgEVZZGUEHmoyKrfBMic8Mk5eLQLbLhMAHMuOQ8LgKNxMlTaAaGFM6rxgqQT2kru6x08vz+3l+PpeQZqIava90h9jShRxv0TbKCFHD5c494ce7hDuB7hAZ1FUs5/mYQUhnd9S5foC3WdZrM72GNzhGRhRYVdD1FXjZKCspfKmkbzDQuek93o/iiNmNdwRKZFiNSSc6HJzUJV/5oOHc+MtlT6UFQZyn+Eg07iNKwWVCaU+hNcxABEs95RbPvjG8733tCBFN19w9LNAfU2B+2QhVXHTFOFa+6TaQMxQeaUbi60gjXcZ5+2c2clzmGihIcwjvdf8LMf0+Di7m40ecFkkckicxCH6yV5VHRCLsOi12pnvEPcDniUOBPGOzBcgcnGdGFWCkvv48DE9zA66IPRCQlnRdI4OYF7M134/7yyRR4=" target="_blank">GIF Grid</a>: here's a version with a composition similar to <a href="https://hotairballoon-on-whitesmoke.com/" target="_blank">hotairballoon-on-whitesmoke.com</a>, here's a <a href="https://netnet.studio/?layout=dock-left#code/eJxdVFFvmzAQfu+vOLWVTFqCq2nVpiztyx62SdtLtWmvNbYDXh07sk0Ji/Lfe8ZASCUE2N93d5+/O1h77tQugHf84bIOYedXlHJhin9eSK1eXWFkoFVN8aH+S2NdFV/xWvrAjGBOLLUqHXMdLRulBTWm2KoYf/m4pin748V6fAGgN1BpWzINxsANxR28uDU+QKU2f55+wgOQUQnWYS4UzvIXT9WWVdJjmRCk2+iuQD6Zgsvqq9XWxegref/5njOScm8aw4OyBriTLMhvagPZPocuhzaHOofG6QUckAioqEikjKhtRRb9JkDhZcgO0aMVPF8fMOB4dX34xUJdOPTAbrPF8RmOC6AUNigBnakq6aQAbZlQphrzcO+zw7AA2FmvorAVEFZ6q5sgST6hrRKh7uu1x93++QTUUlV16JH6HNFyk/b3sIQWKHw4x4Pd9XCHcD3CA3qcDsuE+G0zUlrR9Q4ck43Md4afzERLmh1kM+cqNGmIOjsoKRl/qZxtjFjy2CKyGps1SiP2NXbUtgiRWgkhDbmYqepv04xgi1nLVIhFo8E/4lxkaXgWMyqXWv+NLmIAokXvKB774zvO997QgZTcfccyzRb1NlvjkYVVx0xThXPuk20jMUPmlO5UaAE3cFd8uj+dLM5MpmWAOL13X/CxHtPg4vZ2NHnG5InJE3MQh+s5eVS0Ry7HoudqT3iHuBvwJPFEGD+Z4YuZbMxnZuUw9z4NTLoPo4M+WJOR2CuSp8mJ3Ivp//AG7ahVfA==" target="_blank">version</a> with staggered loading.
+        </li>
+        <li style="margin-left: 20px">
+          <a href="https://netnet.studio/?layout=dock-left#code/eJyNVFFv2yAQfs+vOLWVcFrHzjJVmrK0L32YJm0vU/deDASzEogAN/Ei//cdxk5rbdomIXHmu/u4++7wxjOn9gG8Y3cXdQh7vy5Lxk3xw3Oh1YsrjAilrEvc1E9hrJPRxLXwgRpOHV9oVTnq2rJqlOalMcVOxfiL+02Z2O9nm9EAKK9BaltRDcbAdYknuJg1PoBU2+/fvsAdkDETvIe6UDjLnn2pdlQKj9eEINxWtwX6k3NwJR+sti5GX4rbD7eMksS9bQwLyhpgTtAgPqktZMcc2hwOOdQ5NE7P4YSOgBkVySkjaifJvD8EKLwI2SlqtIanqxMGdJdXp6801IVDDewum3dP0M2hLGGLKaAyUgonOGhLuTJy5GHeZ6fhA2BvvYqJrYHQylvdBEHyM3pQPNT9fYduf3x6BWqhZB16pJ4iWmzT+REWcIASVlM82H0PtwjXIzyg3blYyvmjzUhledsr0CUZqW8N+4OYD8oxLSAzzS4Hz6gWOTisuvETac8dxgbRA1Uhih3l+Ry7mkXP3i/ql2kRQKHj8iNuG0BqNG5uRq6RjR3RB2l6qWI9U7RNaNLrNzjGIsEN9H30ymQKrlMBczRSCZOIyIekQwSz/m8RozzDqGHhKc1kppySQH1E9yr0WWKcumYP2ZvhlDiHQ2Mms0Qqyp6ls43hCxZfAVmP72HsPrEv8dHYA0KkVpwLQ2ZvGj+bZJ2amq1WOSyL9zm8Wy7z4XnO/+F5+7+eqynnUD1WaU1G4mSQPEkQ0dn5X/ILTzRgJw==" target="_blank">GIF Circles</a>: here's a version with a composition similar to <a href="http://blimp-on-deepskyblue.com/" target="_blank">blimp-on-deepskyblue.com</a>, it makes use of the <a href="https://en.wikipedia.org/wiki/Sine_and_cosine" target="_blank" style="">sine and cosine</a> methods of the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math" target="_blank">Math</a> object in JavaScript. Here's an "interactive" <a href="https://netnet.studio/?layout=dock-left#code/eJyNVMFu2zAMvfcriLaA7NaxswwFhiztpYdhwHYZ2ntlSba1KlIgyU2yIP8+yrLTekm3AQYk+5EU3+OzFo5ZufLgLLs9b7xfuXlRMK7zn44LJV9sroUv6qbARf4S2tg6bPGZOE81p5ZPlCwttduibKXihdb5Uob887tFEavfnS2GDUBxBbUyJVWgNVwV+AUfZrTzUMvq8cc3uAUydILnUOtza9izK+SS1sLhMd4LW6ltjvHkkFzW90YZG7IvxM2nG0ZJrF21mnlpNDArqBdfZAXJJoNtBusMmgxaq1LYYeCbNrAK8ogJCZHLmqRdAEDuhE92Qa85PF3uMHl/cbn7Tn2TW9TDLJN0/wT7FIoCKmwHVaprYQUHZSiXuh7qMOeSXf8CsDJOhibnQGjpjGq9INkBXUvum+689X61eXoFGiHrxndIM0aUqOL3DUxgDQXMxrg3qw7eItycgJHMa0dKwcyRHtwfpKCcP5iElIZvD/p0CyqYG52QpWmdMC/CkgySFG7vYGAcIjoFBm5kutpg1ECoex2O6pcTpVt/VBnn8yCXAUrGwIlDD4IeCfnKcp/Bh+l0+qaTffQVdVvNTrjrXlqmBCS6XWbgGFUiA4ujb927XqNrKn1wXPDI12DzJER2ccFEiRIeJAZOP+OyACyNm+vr9EAuVmObaNyOXhjqGN1GNHI9gkMuFriGzsxO6kTCVSSQ4iZSGGWEeli0z2DG/S1jkKf/98IsujbjNvYUBYpKvys0DrhdhaFH7kioxl+yd+HotyIlZc+1Na3mExYuBzIfronB6SS4s1JmjRBpJOdCkyPP/THaZDbLYJp/7IyR9bdW+o/Im/+NnI1r9hogy+D64A90fCdBQM8OV+xvRFurlg==" target="_blank">version</a> which makes use of  CSS <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transition" target="_blank">transitions</a> and DOM <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseover_event" target="_blank">mouse events</a>.
+        </li>
+
+      </ul>
+    </article>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <script src="/js/Averigua.js"></script>
+    <script src="/js/rainbow-text.js"></script>
+    <script src="/js/fancy-chars.js"></script>
+    <script>
+      FancyText.animate(document.querySelector('header > h1'), 200, 0.2)
+
+      Array.from(document.querySelectorAll('h3'))
+        .forEach(h3 => FancyText.animate(h3, 5000, 0.2))
+
+      Array.from(document.querySelectorAll('a'))
+        .filter(a => a.className !== 'button')
+        .forEach(a => RainbowText.hoverShimmer(a))
+    </script>
+  </body>
+</html>
