@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>aol data</title>
+    <link rel="stylesheet" href="FiraMono.css">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+
+    <div class="row">
+      <div>
+        <a href="https://en.wikipedia.org/wiki/AOL_search_log_release"  target="_blank" class="title">
+          AOL Search Data
+        </a>
+      </div>
+      <div>
+        <input id="input" placeholder="search AOl data">
+        <button id="search">SEARCH</button>
+        |
+        <button id="filter">
+          show only this user
+        </button>
+        |
+        <button id="open">
+          open URL using the Wayback Machine
+        </button>
+      </div>
+    </div>
+
+    <div class="header-row">
+        <span>User ID</span>
+        <span>Search Query</span>
+        <span>Search Time</span>
+        <span>URL Rank</span>
+        <span>URL Clicked</span>
+    </div>
+
+    <div id="search-results">
+      <!-- data goes here -->
+      ...loading...
+    </div>
+
+    <script src="main.js"></script>
+
+  </body>
+</html>
