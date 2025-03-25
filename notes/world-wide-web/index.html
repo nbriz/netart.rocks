@@ -83,7 +83,7 @@
 
       <img src="#" id="html-code">
       <p class="caption">
-        a simple website, an HTML file (index.html) a CSS file (/css/styles.css) and a few images; opened in the <a href="https://atom.io/" target="_blank">Atom</a> editor
+        a simple website, an HTML file (index.html) a CSS file (/css/styles.css) and a few images; opened in the <a href="https://pulsar-edit.dev/" target="_blank">Pulsar</a> editor
       </p>
 
       <br><br><br>
@@ -101,7 +101,7 @@
       <br><br><br>
 
       <h3>running a local server</h3>
-      <p>When your working a simple web page or web app you can test and see what it looks like by simply opening up your HTML file a web browser, without the need for a web server. When you view a "local" (ie. on your computer) HTML file in your browser you'll notice that the address bar has a <code>file:///</code> protocol followed by the local path to your HTML file (ie. it's location on your hard drive). That said, in some instances, for security purposes (specifically when your project contains JavaScript code which loads data from other files), your browser will refuse to execute your code. In these circumstances it's necessary to run your own web server locally on your computer for testing. Then, rather than opening your file directly in your browser, you can send an HTTP request (locally on your comptuer, rather than over the Internet) to your server which in tern returns the requested files/resources to your browser. This time the browser will execute the code, because it came from a server (made clear by the <code>http://</code> protocol in the address bar).</p>
+      <p>When your working on a simple web page or web app you can test and see what it looks like by simply opening up your HTML file a web browser, without the need for a web server. When you view a "local" (ie. on your computer) HTML file in your browser you'll notice that the address bar has a <code>file:///</code> protocol followed by the local path to your HTML file (ie. it's location on your hard drive). That said, in some instances, for security purposes (specifically when your project contains JavaScript code which loads data from other files), your browser will refuse to execute your code. In these circumstances it's necessary to run your own web server locally on your computer for testing. Then, rather than opening your file directly in your browser, you can send an HTTP request (locally on your comptuer, rather than over the Internet) to your server which in tern returns the requested files/resources to your browser. This time the browser will execute the code, because it came from a server (made clear by the <code>http://</code> protocol in the address bar).</p>
 
 
       <p>There are a number of different servers you can use to host your files locally (you can even <a href="https://www.youtube.com/watch?v=O4g39i_yqyw" rel="nofollow">write your own</a>). Below I've got instructions for a couple of common severs as well as a simple one I made for these purposes. Feel free to use any of these (or any other) servers while locally working and testing your contributions to the class project.</p>
@@ -119,7 +119,7 @@
     <article class="simple server">
       <h4>Simple Server</h4>
       <p>I've written a simple web server (in JavaScript) which you can <a href="/files/simple-web-server.zip">download</a> for Mac, Windows and Linux. When you unzip the download you'll find 3 differnt foldrs for the three differnt versions, choose the one that reflects your system and double-click (or drag+drop into your terminal) the server file. It should open in your terminal (or command prompt) with a message that reads: <em>Enter the path to the folder you want to serve:</em>, type the path to the paintArtware1.0 project folder (or drag+drop your folder into your terminal, it should paste-in that folder's path automatically) and then press Enter.</p>
-      <p>Assuming you've entered a valid file path in the step above, the next message should read: <em>What port would you like to run this server on:</em> enter the port number <code>8000</code> (or any other unused port number you'd like). Assuming you entered a valid (and unused) port number, you should see a message displaying your computer's local IP address as well as the port the server is running on and the path to the folder being served. The terminal message will also list a few different URLs you can type into your browser to access the web app.</p>
+      <p>Assuming you've entered a valid file path in the step above, the next message should read: <em>What port would you like to run this server on:</em> enter the port number <code>80</code> (or any other unused port number you'd like). Assuming you entered a valid (and unused) port number, you should see a message displaying your computer's local IP address as well as the port the server is running on and the path to the folder being served. The terminal message will also list a few different URLs you can type into your browser to access the web app.</p>
       <img src="" id="simple-server-terminal">
     </article>
 
