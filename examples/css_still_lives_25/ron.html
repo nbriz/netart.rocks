@@ -1,0 +1,920 @@
+<style>
+
+  * { box-sizing: border-box; }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  div{
+    position: absolute;
+  }
+
+  .frame {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+  }
+
+  .coffee-1{
+    bottom: 50px;
+    left: 150px;
+    height: 200px;
+    width: 175px;
+    z-index: 10;
+  }
+  .coffee-2{
+    bottom: 70px;
+    left: 120px;
+    height: 200px;
+    width: 175px;
+  }
+
+  .coffee-lid{
+    top: -25px;
+    border-radius: 100% / 40px;
+    background: #FFD700;
+    height: 40px;
+    width: calc(100% + 2px);
+    left: -1px;
+    z-index: 4;
+    background: radial-gradient(circle, rgba(255,215,0,1) 0%, #feed92 20%, rgba(255,215,0,1) 100%);
+  }
+
+  .coffee-lid-surface{
+     top: -20px;
+     left: 5px;
+    background: radial-gradient(circle, #EEC600 5%, rgba(255,238,0,1) 50% rgba(255,238,0,1) 100%);
+     width: calc(100% - 10px);
+     border: 1px solid gray;
+     height: 30px;
+     border-radius: 100% / 30px;
+     z-index: 4;
+
+  }
+
+  .coffee-lid-rim{
+    top: -22px;
+    border-radius: 100% / 40px;
+    background: #FFD700;
+    height: 40px;
+    width: calc(100% + 2px);
+    left: -1px;
+    border: 1px solid gray;
+    z-index: 3;
+    box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.5);
+  }
+  .yellow-area{
+    background: linear-gradient(90deg, rgba(255,238,0,1) 0%, #eeed92 20%, rgba(255,238,0,1) 100%);
+
+    height: 80%;
+    width: 100%;
+    box-shadow: inset 0px 5px 10px #000000;
+    border-radius: 0% 0% 100% 100% / 50px 50px;
+    z-index: 2;
+  }
+  .elo-text{
+    font-size: 42px;
+    font-weight: bold;
+  }
+  .et1{
+    top: 35px;
+    left: -8px;
+    transform: rotateY(70deg) rotateZ(4deg)
+  }
+  .et2{
+    top: 70px;
+    left: -8px;
+    transform: rotateY(70deg) rotateZ(4deg);
+  }
+  .et3{
+    top: 73px;
+    left: 8px;
+    transform: rotateY(55deg) rotateZ(4deg);
+  }
+  .et4{
+    top: 76px;
+    left: 30px;
+    transform: rotateY(30deg) rotateZ(4deg);
+  }
+  .et5{
+    top: 78px;
+    left: 56px;
+     transform: rotateZ(3deg);
+    z-index: 3;
+  }
+
+  .red-area{
+    background: linear-gradient(90deg, red 0%, #fe9292 20%, red 100%);
+    top: 65%;
+    height: 43%;
+    width: 100%;
+    z-index: 1;
+    box-shadow: inset 0px 5px 10px #000000;
+    border-radius: 0% 0% 100% 100% / 50px 50px;
+  }
+  .grey-rounded-bottom{
+    top: calc(100% - 30px);
+    border-radius: 100% / 50px;
+     background: linear-gradient(90deg, gray 0%, lightgray 30%, gray 100%);
+    height: 50px;
+    width: calc(100% + 2px);
+    left: -1px;
+    z-index: 0;
+    box-shadow: 0px 5px 5px rgb(0,0,0,0.3);
+  }
+
+  .shadow-ring{
+    border-bottom: 1px solid black;
+    border-radius: 100% / 50px;
+    filter: blur(6px);
+    height: 50px;
+    width: 100%;
+    }
+  .sr2{
+    top: 30px;
+  }
+  .sr3{
+    top: 60px;
+  }
+  .sr4{
+    top: 90px;
+  }
+
+  .coffee-text{
+    font-size: 14px;
+  }
+  .ct1{
+    top: 125px;
+    left: -13px;
+    transform: rotateY(70deg) rotateZ(8deg);
+  }
+  .ct2{
+    top: 130px;
+    left: 15px;
+    transform: rotateY(40deg) rotateZ(5deg);
+  }
+  .ct3{
+    top: 132px;
+    left: 30px;
+    transform: rotateY(20deg) rotateZ(2deg);
+  }
+
+  .nutrition{
+    border: 1px solid black;
+    border-bottom: transparent;
+    height: 140px;
+    width: 70px;
+    top: 30px;
+    right: 10px;
+    transform: rotateY(150deg) rotateZ(1deg);
+    text-align: right;
+    font-size: 4px;
+    z-index: 0;
+  }
+
+  .barcode{
+    background-color: white;
+    top: 155px;
+    right: 17px;
+    transform: rotateY(150deg) rotateZ(1deg);
+    width: 50px;
+    height: 50px;
+  }
+  .stripe{
+    height: 1px;
+    width: 38px;
+    left: 6px;
+    background-color: black;
+  }
+
+  .st1{
+    top: 36px;
+  }
+  .st2{
+    top: 45px;
+  }
+  .st3{
+    top: 8px;
+  }
+  .st4{
+    top: 12px;
+  }
+  .st5{
+    top: 14px;
+  }
+  .st6{
+    top: 17px;
+  }
+  .st7{
+    top: 24px;
+  }
+  .st8{
+    top: 30px;
+  }
+  .st9{
+    top: 32px;
+  }
+  .st10{
+    top: 40px;
+  }
+  .st11{
+    top: 42px;
+  }
+  .st12{
+    top: 27px;
+  }
+  .st13{
+    top: 4px;
+  }
+
+  .white-letters{
+    color: white;
+    font-weight: bold;
+    font-size: 10px;
+  }
+
+   .wl1{
+    top: 24px;
+    left: -24px;
+    transform: rotateY(70deg) rotateZ(6deg)
+  }
+  .wl2{
+    top: 30px;
+    left: 20px;
+    transform: rotateY(50deg) rotateZ(5deg);
+  }
+  .wl3{
+    top: 32px;
+    left: 42px;
+    transform: rotateY(30deg) rotateZ(5deg);
+  }
+  .wl4{
+    top: 34px;
+    left: 58px;
+    transform: rotateY(0deg) rotateZ(1deg);
+  }
+
+  .yellow-letters{
+    color: yellow;
+    font-size: 6px;
+    font-weight: bold;
+  }
+
+   .yl1{
+    top: 34px;
+    left: -5px;
+    transform: rotateY(70deg) rotateZ(6deg)
+  }
+  .yl2{
+    top: 38px;
+    left: 3px;
+    transform: rotateY(50deg) rotateZ(8deg);
+  }
+  .yl3{
+    top: 42px;
+    left: 14px;
+    transform: rotateY(30deg) rotateZ(8deg);
+  }
+
+  .bottom-letters{
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+   .bl1{
+    top: 50px;
+    left: -8px;
+    transform: rotateY(70deg) rotateZ(8deg)
+  }
+  .bl2{
+    top: 55px;
+    left: 12px;
+    transform: rotateY(40deg) rotateZ(5deg);
+  }
+
+
+  .green-triangle{
+    clip-path: polygon(50% 0, 0 100%, 100% 100%);
+    background-color: green;
+    height: 20px;
+    width: 50px;
+    top: 50px;
+    left: 20px;
+    transform: rotateZ(3deg)
+  }
+  .red-triangle{
+    clip-path: polygon(0 0, 50% 100%, 100% 0);
+    background-color: red;
+    height: 30px;
+    width: 30px;
+    top: 50px;
+    left: 30px;
+    transform: rotateZ(3deg)
+  }
+
+  .person{
+    background-color: white;
+    border-radius: 999px;
+    height: 15px;
+    width: 15px;
+    top: 54px;
+    left: 37px;
+  }
+
+  .cup-1{
+    top: 195px;
+    left: 245px;
+    height: 70px;
+    width: 55px;
+    z-index: 11;
+  }
+  .cup-2{
+    top: 390px;
+    left: 80px;
+    height: 70px;
+    width: 55px;
+    z-index: 11;
+  }
+  .cup-3{
+    top: 347px;
+    left: 80px;
+    height: 70px;
+    width: 55px;
+    z-index: 12;
+  }
+  .white-area{
+    background: linear-gradient(90deg, rgba(225,225,225,1) 0%, white 20%, rgba(225,225,225,1) 100%);
+    height: 70%;
+    width: 100%;
+    border-radius: 0% 0% 100% 100% / 10px 10px;
+    z-index: 2;
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.5), inset 0px 10px 10px #000000;
+  }
+
+  .white-stripe{
+   background: linear-gradient(90deg, rgba(225,225,225,1) 0%, white 20%, rgba(225,225,225,1) 100%);
+    box-shadow: inset 0px 1px 3px #555555;
+
+    height: 20%;
+    width: 100%;
+    border-radius: 0% 0% 100% 100% / 10px 10px;
+    z-index: 2;
+  }
+
+  .blue-stripe{
+    background: linear-gradient(90deg, darkblue 0%, rgb(100,100,239) 20%, darkblue 100%);
+box-shadow: inset 0px 2px 5px #555555;
+    height: 26%;
+    width: 100%;
+    border-radius: 0% 0% 100% 100% / 10px 10px;
+    z-index: 2;
+  }
+
+    .bs1{
+      top: 2px;
+      z-index: 100;
+    }
+  .ws1{
+    top: 10px;
+    z-index: 99;
+  }
+  .bs2{
+    top: 16px;
+    z-index: 98;
+    }
+  .ws2{
+    top: 24px;
+    z-index: 97;
+  }
+  .bs3{
+    top: 30px;
+    z-index: 96;
+    }
+
+  .cup-lid{
+     top: -1px;
+     left: 2px;
+     background: lightgray;
+     width: calc(100% - 5px);
+     height: 4px;
+     border-radius: 100% / 4px;
+     z-index: 4;
+
+  }
+
+  .cup-lid-surface{
+    top: -5px;
+    border-radius: 100% / 10px;
+    background: white;
+    height: 10px;
+    width: calc(100% + 2px);
+    left: -1px;
+    z-index: 3;
+  }
+
+  .cup-bottom{
+    height: 10px;
+    width: 90%;
+    left: 2.5px;
+    background-color: white;
+    top: 45px;
+    box-shadow: inset 0px 5px 10px rgba(0,0,0,0.2), 0px 3px 5px 0px rgba(0,0,0,0.4);
+    border-radius: 0% 0% 100% 100% / 10px 10px;
+  }
+
+  .vert-stripe{
+    height: 90%;
+    width: 12px;
+    background-color: white;
+    z-index: 1000;
+    left: 10px;
+    transform: rotateY(40deg) rotateZ(1deg);
+  }
+
+  .handle{
+    height: 80%;
+    width: 12px;
+    top: 5px;
+    background: linear-gradient(90deg, rgba(225,225,225,1) 0%, white 20%, rgba(225,225,225,1) 100%);
+    z-index: 1001;
+    left: 6px;
+    border-radius: 100% 0% 0% 100% / 20px 20px;
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.5);
+
+  }
+  .inner-handle{
+    height: 50%;
+    width: 7px;
+    background-color: gray;
+    opacity: 70%;
+    z-index: 1001;
+    top: 12px;
+    left: 11px;
+    border-radius: 100% 0% 0% 100% / 15px 15px;
+  }
+
+  .flag{
+    clip-path: polygon(0 0, 0% 100%, 100% 50%);
+     background: linear-gradient(90deg, red 0%, darkred 70%, darkred 100%);
+    height: 38px;
+    width: 25px;
+    top: 5px;
+    left: 20px;
+    z-index: 100000;
+    transform: rotateZ(1deg);
+  }
+
+  .star{
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    background-color: white;
+    width: 12px;
+    height: 12px;
+    z-index: 100001;
+     top: 18px;
+    left: 22px;
+
+  }
+
+   .handle-2{
+    height: 50%;
+    width: 12px;
+    top: 5px;
+    background: linear-gradient(90deg, rgba(225,225,225,1) 0%, white 20%, rgba(225,225,225,1) 100%);
+    z-index: 1;
+    left: -7px;
+    border-radius: 100% 0% 0% 100% / 20px 20px;
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.5);
+
+  }
+  .inner-handle-2{
+    height: 30%;
+    width: 7px;
+    background-color: lightgray;
+    opacity: 80%;
+    z-index: 1;
+    top: 13px;
+    left: -4px;
+    border-radius: 100% 0% 0% 100% / 7px 7px;
+  }
+
+  .flag-2{
+    clip-path: polygon(0 0, 0% 100%, 100% 50%);
+     background: linear-gradient(90deg, red 0%, darkred 70%, darkred 100%);
+    height: 30px;
+    width: 10px;
+    top: 7px;
+    left: 0px;
+    z-index: 100000;
+    transform: rotateZ(1deg);
+  }
+
+  .random-shadow{
+    background-color: black;
+    opacity: 60%;
+    border-radius: 999px;
+
+    transform: rotateZ(60deg);
+    filter: blur(4px)
+  }
+
+  .rs1{
+    width: 40px;
+    height: 50px;
+    top: 395px;
+    left: 120px;
+    z-index: 10
+  }
+
+  .rs2{
+    width: 35px;
+    height: 20px;
+    top: 420px;
+    left: 305px;
+    z-index: 10
+  }
+
+  .coffee-maker{
+    bottom: 50px;
+    left: 330px;
+    height: 270px;
+    width: 140px;
+    z-index: 10;
+
+  }
+
+  .blacktop{
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
+    background-color: black;
+    width: 22px;
+    height: 20px;
+    border-radius: 5px;
+    left: 58px;
+
+  }
+
+  .orangemask{
+    width: 102%;
+    left: -1px;
+    height: 75px;
+    border-radius: 100% 110% 0px 0px;
+    top: 20px;
+    overflow: hidden;
+
+  }
+  .orangebit{
+
+ background: linear-gradient(0deg, rgba(255,114,14,1) 0%, rgba(255,161,123,1) 30%, rgba(255,114,14,1) 100%);
+    width: 100%;
+    height: 30px;
+    top: 0px;
+
+
+  }
+
+  .orangesection{
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
+    height: 100px;
+    width: 100%;
+    top: 50px;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+
+  .orangebottom{
+    height: 30px;
+    width: 60%;
+    left: 28px;
+    top: 140px;
+    background: linear-gradient(90deg, rgb(210, 46, 0) 0%, rgba(255,114,14,1) 30%, rgb(210, 46, 0) 100%);
+    box-shadow: inset 0px 0px 10px #333333;
+  }
+
+  .silver{
+    clip-path: polygon(20% 0, 80% 0, 100% 100%, 0 100%);
+     border-radius: 0% 0% 100% 100% / 20px 20px;
+     background: linear-gradient(90deg, gray 0%, white 40%, gray 100%);
+    height: 100px;
+    width: 100%;
+    top: 165px;
+    border-bottom: 1px solid black;
+    z-index: 1;
+    overflow: hidden;
+  }
+  .bottombottom{
+    width: 90%;
+    left: 7px;
+    top: 250px;
+    height: 10px;
+     border-radius: 0% 0% 100% 100% / 10px 10px;
+    box-shadow: 0px 10px 10px rgb(0,0,0,0.3);
+  }
+
+  .orange-trap{
+    height: 100%;
+    width: 30%;
+    box-shadow: 10px 0px 10px rgb(0, 0, 0, 0.2);
+
+  }
+  .ot1{
+    clip-path: polygon(0 0, 100% 0, 90% 100%, 60% 100%);
+    background-color: rgb(199, 47, 0);
+    left: -7px;
+    top: -5px;
+    transform: rotateZ(-5deg);
+     border-radius: 0% 0% 100% 100% / 20px 20px;
+  }
+  .ot2{
+    clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+    background-color: rgb(210, 46, 0);
+    left: 30px;
+    top: -5px;
+     border-radius: 0% 0% 100% 100% / 20px 20px;
+  }
+
+  .ot3{
+    clip-path: polygon(0 0, 100% 0, 90% 100%, 5% 100%);
+    background-color: rgb(175, 36, 0);
+    left: 60px;
+    top: -5px;
+     border-radius: 0% 0% 100% 100% / 20px 20px;
+  }
+  .ot4{
+    clip-path: polygon(0 0, 100% 0, 60% 100%, 5% 100%);
+    background-color: rgb(164, 38, 0);
+    left: 95px;
+    top: -5px;
+     border-radius: 0% 0% 100% 100% / 20px 20px;
+     transform: rotateZ(5deg);
+  }
+ .orange-cover{
+   width: 90%;
+   left: 8px;
+   height: 100%;
+   box-shadow: inset 0px 0px 10px #000000;
+   opacity: 20%;
+
+    background: linear-gradient(45deg, rgba(255,114,14,1) 0%, rgba(255,226,206,1) 30%, rgba(255,114,14,1) 100%);
+
+  }
+  .reflections{
+    width: 20%;
+    height: 100%;
+    opacity: 60%;
+    transform: rotateZ(10deg);
+    left: 10px;
+  }
+   .yellow-reflect{
+    background: linear-gradient(90deg, rgba(255,238,0,1) 0%, #eeed92 20%, rgba(255,238,0,1) 100%);
+    width: 100%;
+    height: 60%;
+
+    z-index: 2;
+  }
+
+  .red-reflect{
+    background: linear-gradient(90deg, red 0%, #fe9292 20%, red 100%);
+    top: 60%;
+    height: 50%;
+    width: 100%;
+    z-index: 1;
+    border-radius: 0% 0% 100% 100% / 50px 50px;
+  }
+
+  .black-handle{
+    clip-path: polygon(70% 17%, 76% 30%, 79% 53%, 80% 71%, 79% 82%, 69% 81%, 70% 65%, 70% 50%, 68% 36%, 64% 27%, 56% 23%, 56% 11%, 66% 14%);
+
+  background: linear-gradient(45deg, black 70%, gray 80%, black 100%);
+    width: 200px;
+    height: 150px;
+    top: 30px;
+    z-index: 100000;
+
+  }
+  .orange-handle{
+    background-color: rgba(255,114,14,1);
+    width: 10px;
+    height: 20px;
+    left: 107px;
+    top: 45px;
+    z-index: 1000;
+    box-shadow: inset 0px 0px 3px rgba(0,0,0,0.5), 0px 1px 5px 0px rgba(0,0,0,0.5);
+  }
+</style>
+
+
+<div class="frame">
+  <div class="random-shadow rs1"></div>
+  <div class="random-shadow rs2"></div>
+
+  <div class="cup-1">
+    <div class="cup-lid"></div>
+    <div class="cup-lid-surface"></div>
+    <div class="white-area">
+      <div class="blue-stripe bs1"></div>
+      <div class="blue-stripe bs2"></div>
+      <div class="blue-stripe bs3"></div>
+
+      <div class="white-stripe ws1"></div>
+      <div class="white-stripe ws2"></div>
+      <div class="flag"></div>
+      <div class="star"></div>
+      <div class="vert-stripe"></div>
+      <div class="handle"></div>
+      <div class="inner-handle"></div>
+    </div>
+    <div class="cup-bottom"></div>
+
+  </div>
+  <div class="cup-2">
+    <div class="cup-lid"></div>
+    <div class="cup-lid-surface"></div>
+    <div class="white-area">
+      <div class="blue-stripe bs1"></div>
+      <div class="blue-stripe bs2"></div>
+      <div class="blue-stripe bs3"></div>
+
+      <div class="white-stripe ws1"></div>
+      <div class="white-stripe ws2"></div>
+      <div class="flag-2"></div>
+
+    </div>
+     <div class="handle-2"></div>
+      <div class="inner-handle-2"></div>
+    <div class="cup-bottom"></div>
+
+  </div>
+  <div class="cup-3">
+    <div class="cup-lid"></div>
+    <div class="cup-lid-surface"></div>
+    <div class="white-area">
+      <div class="blue-stripe bs1"></div>
+      <div class="blue-stripe bs2"></div>
+      <div class="blue-stripe bs3"></div>
+
+      <div class="white-stripe ws1"></div>
+      <div class="white-stripe ws2"></div>
+      <div class="flag-2"></div>
+
+    </div>
+     <div class="handle-2"></div>
+      <div class="inner-handle-2"></div>
+
+  </div>
+  <div class="coffee-1">
+    <div class="coffee-lid"></div>
+    <div class="coffee-lid-surface"></div>
+    <div class="coffee-lid-rim"></div>
+    <div class="yellow-area">
+      <div class="elo-text et1">E</div>
+      <div class="elo-text et2">T</div>
+      <div class="elo-text et3">E</div>
+      <div class="elo-text et4">L</div>
+      <div class="elo-text et5">O</div>
+
+      <div class="coffee-text ct1">Ground</div>
+      <div class="coffee-text ct2">Co</div>
+      <div class="coffee-text ct3">ffee</div>
+
+      <div class="green-triangle"></div>
+      <div class="red-triangle"></div>
+      <div class="person"></div>
+      <div class="shadow-ring sr1"></div>
+      <div class="shadow-ring sr2"></div>
+      <div class="shadow-ring sr3"></div>
+      <div class="shadow-ring sr4"></div>
+      <div class="nutrition">
+      <b>Lorem ipsum</b> odor amet, consectetuer adipiscing elit. Per laoreet enim mi tristique nibh finibus non aptent. Suspendisse leo montes torquent praesent malesuada vehicula nisl. Praesent vehicula mus elit rutrum tellus
+      <b>Potenti dapibus</b> sed ex vivamus neque justo. Rhoncus proin egestas justo est curae litora eget nibh. Primis taciti volutpat venenatis efficitur accumsan aliquam porttitor. Dui nisl viverra laoreet est penatibus, diam nibh.
+      <b>=========================</b>
+      Felis finibus rutrum quisque varius quisque fames. Class dis urna euismod eget suspendisse curae. Laoreet scelerisque nulla nulla facilisi elit; pulvinar porta risus? Posuere donec mauris mauris felis nec vel tempor hac. Integer commodo cursus cras eu lobortis montes? Ipsum vulputate amet semper etiam dui enim fermentum litora erat. Litora molestie platea, nostra ligula volutpat facilisis iaculis. Maximus dui adipiscing nostra commodo facilisis platea. Lacinia montes est massa
+
+    </div>
+      <div class="barcode">
+        <div class="stripe st1"></div>
+        <div class="stripe st2"></div>
+        <div class="stripe st3"></div>
+        <div class="stripe st4"></div>
+        <div class="stripe st5"></div>
+        <div class="stripe st6"></div>
+        <div class="stripe st7"></div>
+        <div class="stripe st8"></div>
+        <div class="stripe st9"></div>
+        <div class="stripe st10"></div>
+        <div class="stripe st11"></div>
+        <div class="stripe st12"></div>
+        <div class="stripe st13"></div>
+      </div>
+    </div>
+
+    <div class="red-area">
+      <div class="white-letters wl1">WONDERFUL,</div>
+      <div class="white-letters wl2">LIKE</div>
+      <div class="white-letters wl3">NO</div>
+      <div class="white-letters wl4">OTHER</div>
+
+      <div class="yellow-letters yl1">BAL</div>
+      <div class="yellow-letters yl2">RAG</div>
+      <div class="yellow-letters yl3">COMPANY</div>
+
+      <div class="bottom-letters bl1">32OZ</div>
+      <div class="bottom-letters bl2">(283g)</div>
+    </div>
+    <div class="red-rounded-bottom"></div>
+    <div class="grey-rounded-bottom"></div>
+  </div>
+  <div class="coffee-2">
+    <div class="coffee-lid"></div>
+    <div class="coffee-lid-surface"></div>
+    <div class="coffee-lid-rim"></div>
+    <div class="yellow-area">
+      <div class="elo-text et1">E</div>
+      <div class="elo-text et2">T</div>
+      <div class="elo-text et3">E</div>
+      <div class="elo-text et4">L</div>
+      <div class="elo-text et5">O</div>
+
+      <div class="coffee-text ct1">Ground</div>
+      <div class="coffee-text ct2">Co</div>
+      <div class="coffee-text ct3">ffee</div>
+
+      <div class="green-triangle"></div>
+      <div class="red-triangle"></div>
+      <div class="person"></div>
+      <div class="shadow-ring sr1"></div>
+      <div class="shadow-ring sr2"></div>
+      <div class="shadow-ring sr3"></div>
+      <div class="shadow-ring sr4"></div>
+      <div class="nutrition">
+      <b>Lorem ipsum</b> odor amet, consectetuer adipiscing elit. Per laoreet enim mi tristique nibh finibus non aptent. Suspendisse leo montes torquent praesent malesuada vehicula nisl. Praesent vehicula mus elit rutrum tellus
+      <b>Potenti dapibus</b> sed ex vivamus neque justo. Rhoncus proin egestas justo est curae litora eget nibh. Primis taciti volutpat venenatis efficitur accumsan aliquam porttitor. Dui nisl viverra laoreet est penatibus, diam nibh.
+      <b>=========================</b>
+      Felis finibus rutrum quisque varius quisque fames. Class dis urna euismod eget suspendisse curae. Laoreet scelerisque nulla nulla facilisi elit; pulvinar porta risus? Posuere donec mauris mauris felis nec vel tempor hac. Integer commodo cursus cras eu lobortis montes? Ipsum vulputate amet semper etiam dui enim fermentum litora erat. Litora molestie platea, nostra ligula volutpat facilisis iaculis. Maximus dui adipiscing nostra commodo facilisis platea. Lacinia montes est massa
+
+    </div>
+      <div class="barcode">
+        <div class="stripe st1"></div>
+        <div class="stripe st2"></div>
+        <div class="stripe st3"></div>
+        <div class="stripe st4"></div>
+        <div class="stripe st5"></div>
+        <div class="stripe st6"></div>
+        <div class="stripe st7"></div>
+        <div class="stripe st8"></div>
+        <div class="stripe st9"></div>
+        <div class="stripe st10"></div>
+        <div class="stripe st11"></div>
+        <div class="stripe st12"></div>
+        <div class="stripe st13"></div>
+      </div>
+    </div>
+
+    <div class="red-area">
+      <div class="white-letters wl1">WONDERFUL,</div>
+      <div class="white-letters wl2">LIKE</div>
+      <div class="white-letters wl3">NO</div>
+      <div class="white-letters wl4">OTHER</div>
+
+      <div class="yellow-letters yl1">BAL</div>
+      <div class="yellow-letters yl2">RAG</div>
+      <div class="yellow-letters yl3">COMPANY</div>
+
+      <div class="bottom-letters bl1">32OZ</div>
+      <div class="bottom-letters bl2">(283g)</div>
+    </div>
+    <div class="red-rounded-bottom"></div>
+    <div class="grey-rounded-bottom"></div>
+  </div>
+
+  <div class="coffee-maker">
+    <div class="blacktop"></div>
+
+    <div class="orangemask">
+      <div class="orangebit"></div>
+    </div>
+    <div class="orangesection">
+      <div class="orange-trap ot1"></div>
+      <div class="orange-trap ot2"></div>
+      <div class="orange-trap ot3"></div>
+      <div class="orange-trap ot4"></div>
+      <div class="orange-cover"></div>
+    </div>
+
+    <div class="orangebottom"></div>
+    <div class="silver">
+      <div class="reflections">
+      <div class="yellow-reflect"></div>
+      <div class="red-reflect"></div>
+        </div>
+    </div>
+    <div class="orange-handle"></div>
+    <div class="black-handle"></div>
+    <div class="bottombottom"></div>
+  </div>
+</div>
