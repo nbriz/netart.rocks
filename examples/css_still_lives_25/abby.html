@@ -1,0 +1,436 @@
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  :root {
+    --background-color: #fff09b;
+    --frame-background: rgba(180, 234, 109, 0.78);
+    --cup: white;
+    --cup-stripes: rgb(0, 0, 100);
+    --metal: #e3e3e3;
+    --metal-dark: #7e7e7e;
+    --metal-darker: #787878;
+    --coffee-pot: rgb(216, 55, 0);
+    --coffee-yellow: rgb(236, 222, 0);
+    --coffee-red: rgb(217, 30, 23);
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .frame {
+    overflow: hidden;
+    position: relative;
+    z-index: -10;
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+    background-image: linear-gradient(3deg, white 18.5%, black 19%, var(--frame-background) 18.5%);
+  }
+
+  .coffee-pot {
+    height: 25em;
+    width: 15em;
+    position: absolute;
+    top: 1.8em;
+    left: 20em;
+    transform: rotate(2deg);
+    z-index: -10;
+  }
+
+  .orange-dome {
+    width: 15em;
+    height: 15em;
+    position: absolute;
+    top: -10em;
+    clip-path: ellipse(50% 20% at 50% 100%);
+    background-color: var(--coffee-pot);
+    background-image: linear-gradient(160deg, rgba(255, 255, 255, 1) 5%, rgba(255, 255, 255, 0) 80%, rgba(0,0,0, 0.5) 100%);
+    z-index: -2;
+  }
+
+   .dome-glare {
+    width: 1em;
+    height: 1em;
+    position: absolute;
+    top: 3.3em;
+    left: 8.3em;
+    border-radius: 50%;
+    background-color: white;
+    transform: skewX(30deg);
+    filter: blur(10px);
+  }
+
+  .metal-bottom {
+    width: 15em;
+    height: 8em;
+    position: absolute;
+    bottom: 0em;
+    background-image: radial-gradient(circle at left, var(--metal-dark) 0%,
+        var(--metal-dark) 25%,
+        var(--metal) 65%,
+        var(--metal-dark) 90%,
+        var(--metal-darker) 100%);
+    clip-path: polygon(15% 0, 85% 0, 100% 100%, 0% 100%);
+    border-radius: 0% 20% 0% 20%;
+    transform: skewX(15deg);
+  }
+
+  .metal-bottom::before {
+    content: "";
+    width: 15em;
+    height: 0.5em;
+    position: absolute;
+    background-image: linear-gradient(rgba(227, 227, 227, 0.1), 40%,
+        rgba(0, 0, 0, 0.3) 80%),
+      linear-gradient(to right,
+        var(--metal-dark) 0%,
+        var(--metal) 30%,
+        var(--metal-dark) 10%,
+        var(--metal) 75%,
+        var(--metal-dark) 100%);
+    transform: skewX(20deg);
+  }
+
+  .metal-bottom::after {
+    content: "";
+    width: 15em;
+    height: 0.2em;
+    position: absolute;
+    top: 7.6em;
+    background-color: var(--metal);
+    border: 0.5px solid black;
+  }
+
+  .orange-pot {
+    width: 15em;
+    height: 17em;
+    position: absolute;
+  }
+
+  .orange-pot::before {
+    content: "";
+    width: 2em;
+    height: 2em;
+    position: absolute;
+    left: 6em;
+    top: 0.1em;
+    background-image: linear-gradient(80deg,
+        rgba(40, 38, 40, 1) 0%,
+        rgba(70, 70, 70, 1) 30%,
+        rgba(40, 38, 40, 1) 50%);
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
+    border-radius: 20%;
+  }
+
+  .orange-pot::after {
+    content: "";
+    width: 15em;
+    height: 2.3em;
+    position: absolute;
+    top: 14.5em;
+    background-color: var(--coffee-pot);
+    background-image: linear-gradient(110deg, rgba(0,0,0, 0.1) 0%, rgba(255, 255, 255, 0.2) 20%, rgba(0,0,0, 0.1) 60%);
+    border-bottom: 3px solid black;
+    border-top: 4px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .orange-slat::after {
+    content: "";
+    width: 5em;
+    height: 1em;
+    position: absolute;
+    top: -0.5em;
+    left: -0.1em;
+    background-color: var(--coffee-pot);
+    background-image: linear-gradient(to bottom,
+        rgba(0, 0, 0, 0.4) 0%,
+        rgba(255, 255, 255, 0.1) 40%);
+    border-radius: 100%;
+    border: 0.5px solid black;
+    z-index: -1;
+  }
+
+  .orange-slat {
+    width: 5em;
+    height: 10em;
+    position: absolute;
+    background-color: var(--coffee-pot);
+    border: 1.2px solid rgba(0, 0, 0, 0.2);
+  }
+
+  .slat-one {
+    top: 5em;
+    background-image: linear-gradient(80deg, rgba(255, 255, 255, 0.1) 64%, rgba(0, 0, 0, 0.1) 100%);
+  }
+
+  .slat-two {
+    top: 5em;
+    left: 4.9em;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.1) 0%, rgba(255, 255, 255, 0.1) 64%, rgba(0, 0, 0, 0.1) 100%);
+  }
+
+  .slat-three {
+    top: 5em;
+    left: 9.8em;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.3) 30%);
+  }
+
+  .first-cup {
+    position: absolute;
+    z-index: -1;
+    top: 6.9em;
+    left: 17em;
+    transform: rotate(2deg);
+    transform-origin: center;
+  }
+
+  .shadow {
+    content: "";
+    width: 6em;
+    height: 10em;
+    position: absolute;
+    top: 8em;
+    left: 20em;
+    z-index: -8;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.15);
+    transform: skewX(10deg);
+    filter: blur(5px);
+  }
+
+  .tins {
+    position: absolute;
+    z-index: -4;
+    transform: rotate(2deg);
+  }
+
+  .coffee-tins {
+    width: 11.5em;
+    height: 14em;
+    top: 12.5em;
+    border-radius: 2%;
+    background-image: radial-gradient(ellipse at top left,
+        rgba(255, 255, 255, 0) 66%,
+        rgba(0, 0, 0, 0.5) 90%),
+      radial-gradient(ellipse at top, rgba(255, 255, 255, 0.1) 80%, rgba(0, 0, 0, 0.2) 100%),
+      linear-gradient(var(--coffee-yellow) 65%, var(--coffee-red) 64%, var(--coffee-red) 98%, var(--metal) 98%);
+    position: absolute;
+    z-index: -3;
+    border: 1px solid black;
+  }
+
+  .coffee-tins::after {
+    content: "";
+    width: 15em;
+    height: 3em;
+    position: absolute;
+    top: 12.5em;
+    left: 1.5em;
+    z-index: -5;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.1);
+    transform: skewX(5deg);
+    filter: blur(5px);
+  }
+
+  .right-tin {
+    position: absolute;
+    left: 14.2em;
+    top: 12.4em;
+    z-index: -1;
+  }
+
+  .right-tin::before {
+    content: "";
+    width: 11.7em;
+    height: 0.9em;
+    background-color: var(--coffee-yellow);
+    border-radius: 20%;
+    position: absolute;
+    top: -0.5em;
+    left: -0.2em;
+    border: 1px solid black;
+  }
+
+  .left-tin {
+    position: absolute;
+    left: 2.7em;
+  }
+
+  .left-tin::before {
+    content: "";
+    width: 11.7em;
+    height: 0.8em;
+    background-color: var(--coffee-yellow);
+    border-radius: 20%;
+    position: absolute;
+    left: -0.2em;
+    top: -0.5em;
+    border: 1px solid black;
+  }
+
+  .tin-shadows {
+    width: 11.3em;
+    height: 13em;
+    position: absolute;
+    top: 0.5em;
+    background-image: linear-gradient(rgba(0,0,0,0.4) 0%,
+      rgba(255, 255, 255, 0) 3%,
+      rgba(255, 255, 255, 0) 18%,
+      rgba(0,0,0,0.1) 20%,
+      rgba(255, 255, 255, 0) 22%,
+      rgba(255, 255, 255, 0) 38%,
+      rgba(0,0,0,0.1) 40%,
+      rgba(255, 255, 255, 0) 42%,
+      rgba(255, 255, 255, 0) 58%,
+      rgba(0,0,0,0.1) 60%,
+      rgba(255, 255, 255, 0) 62%,
+      rgba(255, 255, 255, 0) 78%,
+      rgba(0,0,0,0.1) 80%,
+      rgba(255, 255, 255, 0) 82%);
+    filter: blur(4px);
+  }
+
+  .cups-on-bottom {
+    transform: rotate(2deg);
+    position: absolute;
+    left: 9.5em;
+    top: -2.7em;
+  }
+
+  .inner-cup::after {
+    content: "";
+    width: 6em;
+    height: 1em;
+    position: absolute;
+    top: -0.3em;
+    z-index: -2;
+    border-radius: 51% 49% 50% 50% / 10% 10% 90% 90%;
+    background-image: radial-gradient(ellipse, rgba(255, 255, 255, 1) 1%, rgba(0, 0, 0, 1) 75%);
+    transform: rotate(180deg)
+  }
+
+  .cup {
+    width: 6em;
+    height: 6em;
+    background-color: white;
+    overflow: visible;
+    position: absolute;
+    clip-path: polygon(0 0, 100% 0, 100% 20%, 100% 73%, 80% 100%, 20% 100%, 0 73%, 0% 20%);
+    background-image:
+      radial-gradient(ellipse at top, rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0.5) 100%),
+      linear-gradient(var(--cup) 50%, var(--cup-stripes) 50%);
+    background-size: auto, 1em 1.8em;
+    background-repeat: no-repeat, repeat;
+    background-position: top left, left top;
+    border: 1.5px solid black;
+  }
+
+  .cup::before {
+    content: "";
+    width: 60%;
+    height: 75%;
+    background: linear-gradient(to left,
+        rgba(255, 80, 80, 1) 5%,
+        rgba(200, 0, 0, 1) 85%,
+        rgba(120, 0, 0, 1) 100%);
+    position: absolute;
+    clip-path: polygon(0 0, 0 100%, 100% 50%);
+  }
+
+  .cup::after {
+    content: "";
+    width: 30%;
+    height: 30%;
+    background-color: white;
+    position: absolute;
+    top: 23%;
+    left: 5%;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  }
+
+  .top-cup {
+    position: absolute;
+    top: 19.3em;
+    left: calc(50% - 3em);
+  }
+
+  .bottom-cup {
+    position: absolute;
+    top: 24em;
+    left: calc(50% - 3em);
+  }
+
+  .handle::after {
+    content: "";
+    width: 3em;
+    height: 3.2em;
+    position: absolute;
+    z-index: -1;
+    background-color: white;
+    top: 1em;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at right, rgba(0, 0, 0, 0) 55%, black 59%, var(--cup) 57%, rgba(0, 0, 0, 0.1) 100%);
+    transform: translate(-2em);
+    border: 1px solid black;
+  }
+
+  .bottom-cup::after {
+    content: "";
+    width: 11em;
+    height: 3em;
+    position: absolute;
+    top: 4.5em;
+    z-index: -1;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.05);
+    transform: skewX(10deg);
+    filter: blur(5px);
+  }
+</style>
+
+
+<div class="frame">
+  <div class="coffee-pot">
+    <div class="orange-dome"></div>
+    <div class="dome-glare"></div>
+    <div class="orange-pot">
+      <div class="orange-slat slat-one"></div>
+      <div class="orange-slat slat-two"></div>
+      <div class="orange-slat slat-three"></div>
+    </div>
+    <div class="metal-bottom"></div>
+  </div>
+  <div class="first-cup">
+    <div class="cup"></div>
+    <div class="handle"></div>
+    <div class="inner-cup"></div>
+  </div>
+  <div class="shadow"></div>
+  <div class="tins">
+    <div class="coffee-tins right-tin">
+      <div class="tin-shadows"></div>
+    </div>
+    <div class="coffee-tins left-tin">
+      <div class="tin-shadows"></div>
+    </div>
+  </div>
+  <div class="cups-on-bottom">
+    <div class="top-cup">
+      <div class="cup"></div>
+      <div class="handle"></div>
+      <div class="inner-cup"></div>
+    </div>
+    <div class="bottom-cup">
+      <div class="cup"></div>
+      <div class="handle"></div>
+    </div>
+  </div>
+</div>

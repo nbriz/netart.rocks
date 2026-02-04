@@ -1,0 +1,259 @@
+<style>
+
+  * { box-sizing: border-box; }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .frame {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+  }
+
+  .cup {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.40) 50%, rgba(255,255,255,0) 100%), linear-gradient(180deg, rgba(19,11,149,1) 50%, white 50%);
+    background-size: 100% 100%, 100% 41%;
+    overflow: hidden;
+  }
+
+  .top-cup {
+    position: absolute;
+    left: 380px;
+    top: 230px;
+
+  }
+
+  .bottom-cup {
+    position: absolute;
+    left: 380px;
+    top: 330px;
+
+    border-radius: 0% 0% 28% 28% / 10% 10% 23% 23%;
+
+  }
+
+  .stacked-cup {
+    position: absolute;
+    left: 235px;
+    top: 60px;
+
+    border-radius: 0% 0% 28% 28% / 10% 10% 23% 23%;
+
+  }
+
+  .triangle {
+    background: red;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(0 0, 0% 100%, 60% 50%);
+    transform: translate(75px, 0px);
+  }
+
+  .star {
+    background: white;
+    width: 30%;
+    height: 30%;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    transform: translate(4px, 32px);
+  }
+
+  .handle1 {
+    background: white;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+
+    width: 25px;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 50px;
+  }
+
+  .cafe {
+    width: 200px;
+    height: 270px;
+
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.30) 50%, rgba(255,255,255,0) 100%), yellow;
+    background-size: 100% 100%, 100% 100%;
+    border: 1px solid black;
+  }
+
+  .front-cafe {
+    position: absolute;
+    left: 180px;
+    top: 160px;
+  }
+
+ .back-cafe {
+    position: absolute;
+    left: 230px;
+    top: 160px;
+  }
+
+  .bottom {
+    background: 	rgb(192,192,192);
+    border: 1px solid black;
+    border-radius: 30px;
+
+    width: 206px;
+    height: 10px;
+
+    transform: translate(-3px, 30px);
+  }
+
+  .stripe {
+    background: red;
+
+    width: 198px;
+    height: 60px;
+
+    transform: translate(0px, 40px);
+
+    font-size: 12px;
+    color: white;
+    text-align: center;
+    padding: 10px 20px 10px 0px;
+  }
+
+  .top {
+    background: yellow;
+    border: 1px solid black;
+    border-radius: 5px 5px 0px 0px;
+
+    width: 202px;
+    height: 15px;
+
+    transform: translate(-2px, -2px);
+  }
+
+  .top-label {
+    font-size: 55px;
+
+    overflow: hidden;
+    transform: translate(0px, 30px);
+  }
+
+  .bottom-label {
+    font-size: 18px;
+    font-family: fantasy;
+    transform: translate(0px, 30px);
+  }
+
+  .kettle-cap-handle {
+    position: absolute;
+    left: 103px;
+    top: 3px;
+
+    width: 30px;
+    height: 25px;
+
+    background: black;
+    border-radius: 0% 0% 35% 35% / 40% 40% 50% 50%;
+  }
+
+  .kettle-cap {
+    position: absolute;
+    left: 20px;
+    top: 25px;
+
+    width: 200px;
+    height: 40px;
+
+    background: rgb(255,77,0);
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-radius: 50% 50% 10% 10% / 100% 100% 0% 0%;
+  }
+
+  .kettle-top1 {
+    position: absolute;
+    left: 20px;
+    top: 65px;
+
+    width: 200px;
+    height: 200px;
+
+    background: rgb(255,77,0);
+    border: 1px solid black;
+    border-radius: 0% 0% 23% 23% / 10% 10% 80% 80%;
+  }
+
+  .kettle-top2 {
+    position: absolute;
+    left: 60px;
+    top: 260px;
+
+    width: 150px;
+    height: 30px;
+
+    background: rgb(255,77,0);
+    border: 1px solid black;
+
+  }
+
+  .kettle-bottom {
+    position: absolute;
+    left: 20px;
+    top: 290px;
+
+    background: 	linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.60) 50%, rgba(255,255,255,0) 100%), rgb(192,192,192);
+    border: 1px solid black;
+    border-radius: 20% 20% 10% 10% / 100% 100% 0% 0%;
+
+    width: 206px;
+    height: 140px;
+  }
+
+</style>
+
+
+<div class="frame">
+	<!-- ur HTML code goes here -->
+  <div class="cafe back-cafe">
+    <div class="top"></div>
+    <div class="top-label">USTLFE HE</div>
+    <div class="bottom-label">cafe expresso moods</div>
+    <div class="stripe"></div>
+    <div class="bottom"></div>
+  </div>
+
+  <div class="cup top-cup">
+    <div class="handle1"></div>
+    <div class="triangle"><div class="star"></div></div>
+  </div>
+
+  <div class="cup bottom-cup">
+    <div class="handle1"></div>
+    <div class="triangle"><div class="star"></div></div>
+  </div>
+
+  <div class="cup stacked-cup"></div>
+
+  <div class="kettle-cap-handle"></div>
+  <div class="kettle-cap"></div>
+  <div class="kettle-top2"></div>
+  <div class="kettle-top1"></div>
+  <div class="kettle-bottom"></div>
+
+  <div class="cafe front-cafe">
+    <div class="top"></div>
+    <div class="top-label">AFÉ USTLO</div>
+    <div class="bottom-label">cafe expresso moods</div>
+    <div class="stripe">I cannot tell you what this says fr but ik it's nutrition info (28.3g)</div>
+    <div class="bottom"></div>
+  </div>
+
+</div>

@@ -20,16 +20,18 @@
 
     <script>
       const list = [
-        'marina',
-        'alyssa',
-        'fatima',
-        'vivian',
-        'ines',
-        'nicole',
-        'olivia',
-        'jamie',
-        'sofiya',
-        'skylar'
+        'Red',
+        'Natalyah',
+        'Toby',
+        'Diana',
+        'Chris',
+        'Annie',
+        'Sanaa',
+        'Ron',
+        'Alex',
+        'Lola',
+        'Abby',
+        'Manu'
       ]
 
       let idx = 0
@@ -37,7 +39,7 @@
         setTimeout(animate, 8000)
         idx++
         if (idx >= list.length) idx = 0
-        document.querySelector('iframe').src = `${list[idx]}.html`
+        document.querySelector('iframe').src = `${list[idx].toLowerCase()}.html`
       }
 
       animate()

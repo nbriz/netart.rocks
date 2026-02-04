@@ -1,0 +1,478 @@
+<style>
+
+  * { box-sizing: border-box; }
+  :root {
+    --cup-white: hsl(57, 60%, 91%);
+    --handle-white: hsl(57, 35%, 75%);
+    --letter-scale-y: 1;
+  }
+
+  @font-face {
+    font-family: MoriaCitadel;
+    src: url(MoriaCitadel.TTF);
+  }
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .frame {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+    background-color: rgb(180, 180, 180);
+    z-index: -10;
+    overflow: hidden;
+  }
+
+  .cup  {
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    border-radius: 5% 5% 20% 20%;
+    background-image: linear-gradient(90deg, rgba(0,0,0,0.13) 8%, rgba(255,255,255,0.5) 19%, rgba(0,0,0,0) 27%, rgba(255,255,255,0.3) 33%, rgba(255,255,255,0.3) 31%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 91%, rgba(0,0,0,0.13) 100%),
+    linear-gradient(180deg, var(--cup-white) 45%, rgba(5,0,91,1) 45%);
+    background-size: 100% 30%;
+    box-shadow: 24px 18px 41px -14px rgba(66, 68, 90, 0.54);
+    border-bottom: 3px solid rgb(72, 69, 85);
+  }
+
+  #topCup {
+    top: 70px;
+    right: 110px;
+  }
+
+  #bottomBottomCup {
+    bottom: 10px;
+    left: 120px;
+    z-index: 2;
+    border-top: 1px solid black;
+  }
+
+  #topBottomCup {
+    bottom: 125px;
+    left: 120px;
+    z-index: 1;
+  }
+
+  .bottomCup::before {
+    background: rgb(220, 0, 0);
+    border-radius: 5% 5% 20% 20%;
+    display: inline-block;
+    background-image: linear-gradient(90deg, rgba(76,76,182,0.2) 0%, rgba(255,255,255,0) 17%,rgba(255,255,255,0.60) 33%, rgba(255,255,255,0) 43%, rgba(255,255,255,0.60) 55%, rgba(255,255,255,0.08) 76%);;
+    content: "";
+    width: 60%;
+    height: 100%;
+    clip-path: polygon(100% 50%, 0 0, 0 100%);
+  }
+
+  .bottomCup::after {
+    content: "";
+    background: yellow;
+    position: absolute;
+    left: 8%;
+    top: 36%;
+    width: 25%;
+    height: 25%;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  }
+
+  .handle {
+    position: absolute;
+    z-index: -2;
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    background-image: radial-gradient(circle, rgba(255,255,255,0) 45%, var(--handle-white) 45%, var(--handle-white) 46%, rgba(249,249,249,1) 63%, var(--handle-white) 100%);
+    transform: scaleY(1.3);
+  }
+
+
+  .handleTop {
+    right: -30%;
+    top: 23%;
+  }
+
+  .handleBottom {
+    left: -30%;
+    top: 23%;
+  }
+
+  .canister {
+    width: 210px;
+    height: 290px;
+    background-color: rgb(255,230,120);
+    position: absolute;
+    border-radius: 5% 5% 0% 0%;
+    background-image:
+      linear-gradient(90deg, rgba(60,60,176,0.2) 0%, rgba(255,255,255,0.08) 36%, rgba(255,255,255,0) 75%, rgba(60,60,176,0.2) 100%),
+      linear-gradient(180deg, hsl(52, 100%, 54%) 66%, hsl(7, 100%, 56%) 66%);
+    overflow: hidden;
+  }
+
+  .canister::before {
+    content: "";
+    width: 210px;
+    height: 10px;
+    bottom: 0px;
+    position: absolute;
+    background-color: rgba(164,164,164,1) ;
+    background-image: linear-gradient(90deg, rgba(164,164,190,1) 16%, rgba(255,255,255,1) 36%, rgba(164,164,190,1) 52%, rgba(164,164,190,1) 58%, rgba(207,208,227,1) 75%, rgba(146,146,168,1) 93%);
+  }
+  .cansiterCapL {
+    background-color: hsl(52, 100%, 54%);
+    position: absolute;
+    border-radius: 10%;
+    width: 220px;
+    height: 20px;
+    top: 190px;
+    left: 1px;
+    z-index: 1;
+    background-image:
+      linear-gradient(90deg, rgba(60,60,176,0.2) 0%, rgba(255,255,255,0.08) 36%, rgba(255,255,255,0) 75%, rgba(60,60,176,0.2) 100%);
+    box-shadow: 0px 10px 5px -4px #BEA31F;
+  }
+
+  #leftCanister {
+    top: 190px;
+    left: 6px;
+  }
+
+  .cansiterCapR {
+    background-color: hsl(52, 100%, 54%);
+    position: absolute;
+    border-radius: 10%;
+    width: 220px;
+    height: 20px;
+    top: 190px;
+    left: 225px;
+    z-index: 1;
+    background-image:
+      linear-gradient(90deg, rgba(60,60,176,0.2) 0%, rgba(255,255,255,0.08) 36%, rgba(255,255,255,0) 75%, rgba(60,60,176,0.2) 100%);
+    box-shadow: 0px 10px 5px -4px #BEA31F;
+  }
+
+  #rightCanister {
+    top: 190px;
+    left: 230px;
+  }
+
+  .pot {
+    position: absolute;
+    width: 311px;
+    height: 164px;
+    right: -3%;
+    top: 16%;
+/*     border: 1px solid black; */
+/*     background-color: blue; */
+    z-index: -3;
+  }
+
+  #main-body1 {
+    width: 51%;
+    height: 58%;
+    background-color: hsl(19, 100%, 55%);
+    position: absolute;
+    left: 15%;
+    top: 17%;
+    border-radius: 0% 0% 0% 4%;
+    transform: skew(-5deg);
+  }
+
+  #main-body2 {
+    width: 13%;
+    height: 58%;
+    left: 64%;
+    top: 17%;
+    position: absolute;
+    background-color: hsl(19, 84%, 48%);
+    clip-path: polygon(20% 0, 100% 4%, 61% 100%, 0% 100%);
+  }
+
+  #spout {
+    width: 26%;
+    height: 58%;
+    left: -9%;
+    top: 17%;
+    position: absolute;
+    background-color: hsl(19, 84%, 48%);
+    clip-path: polygon(32% 7%, 50% 0, 100% 0, 91% 100%);
+  }
+
+  #lid {
+    width: 65%;
+    height: 29%;
+    left: 9%;
+    top: 5%;
+    border-radius: 50%;
+    position: absolute;
+    z-index: -1;
+    background-color: hsl(19, 100%, 63%);
+  }
+
+  #handle-attach {
+    width: 10%;
+    height: 29%;
+    background-color: hsl(19, 88%, 55%);
+    position: absolute;
+    border-radius: 5%;
+    left: 71%;
+    top: 13%;
+    z-index: -1;
+  }
+
+  #handle1 {
+    width: 20%;
+    height: 26%;
+    background-color: black;
+    position: absolute;
+    left: 72%;
+    top: 13%;
+    z-index: -2;
+    border-radius: 0% 37% 30% 0%;
+  }
+
+  #handle2 {
+    width: 11%;
+    height: 75%;
+    background-color: black;
+    position: absolute;
+    left: 85%;
+    top: 15%;
+    z-index: -2;
+    border-radius: 30% 65% 33% 50%;
+  }
+
+  #top-handle {
+    width: 14%;
+    height: 20%;
+    background-color: black;
+    position: absolute;
+    border-radius: 16%;
+    left: 33%;
+    top: -18%;
+    z-index: -2;
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
+  }
+
+  .bustelo {
+    font-family: MoriaCitadel;
+    font-size: 50px;
+    color: hsla(253, 100%, 12%, 0.85);
+    position: absolute;
+    top: 33%;
+  }
+
+  .bl {
+    left: 20%;
+    transform:
+      scaleX(.85)
+      scaleY(var(--letter-scale-y));
+  }
+
+  .br {
+    left: 0%;
+    transform:
+      scaleX(.5)
+      scaleY(var(--letter-scale-y));
+  }
+
+  .ur {
+    left: 15%;
+    transform:
+      scaleX(0.6)
+      scaleY(var(--letter-scale-y));
+  }
+
+  .sr {
+    left: 33%;
+    transform:
+      scaleX(.8)
+      scaleY(var(--letter-scale-y));
+  }
+
+  .tr {
+    left: 48%;
+    transform:
+      scaleX(.83)
+      scaleY(var(--letter-scale-y));
+  }
+
+  .ber {
+    left: 69%;
+    transform:
+      scaleX(.7)
+      scaleY(var(--letter-scale-y));
+  }
+
+  .lr {
+    left: 85%;
+    transform:
+      scaleX(.75)
+      scaleY(var(--letter-scale-y));
+  }
+
+  .or {
+    left: 88%;
+    transform:
+      scaleX(.3)
+      scaleY(var(--letter-scale-y));
+  }
+
+  .cafe {
+    font-family: MoriaCitadel;
+    font-size: 50px;
+    color: hsla(253, 100%, 12%, 0.85);
+    position: absolute;
+    top: 13%;
+  }
+
+  .cl {
+    left: 20%;
+    transform:
+      scaleX(.9)
+      scaleY(var(--letter-scale-y));
+  }
+
+  .al {
+    left: 45.5%;
+    transform:
+      scaleX(1.1)
+      scaleY(var(--letter-scale-y));
+  }
+
+  .fl {
+    left: 68%;
+    transform:
+      scaleX(.85)
+      scaleY(var(--letter-scale-y));
+  }
+
+  .el {
+    left: 86%;
+    transform:
+      scaleX(.7)
+      scaleY(var(--letter-scale-y));
+  }
+
+  .cr {
+    left: 0%;
+    transform:
+      scaleX(.6)
+      scaleY(var(--letter-scale-y));
+  }
+
+  .ar {
+    left: 17%;
+    transform:
+      scaleX(0.75)
+      scaleY(var(--letter-scale-y));
+  }
+
+  .fr {
+    left: 39%;
+    transform:
+      scaleX(.9)
+      scaleY(var(--letter-scale-y));
+  }
+
+  .er {
+    left: 60%;
+    transform:
+      scaleX(.9)
+      scaleY(var(--letter-scale-y));
+  }
+
+  .bottomText {
+    font-size: 18px;
+/*     font-family: sans-serif; */
+    color: hsla(253, 100%, 12%, 0.85);
+    position: absolute;
+    font-style: italic;
+    top: 57%;
+  }
+
+  .espressoR {
+    left: 18%;
+    transform: scaleX(.9)
+  }
+
+  .groundR {
+    left: 49%;
+    transform: scaleX(1)
+  }
+
+  .coffeeR {
+    left: 76%;
+    transform: scaleX(.78)
+  }
+
+</style>
+
+
+<div class="frame">
+	<!-- ur HTML code goes here -->
+  <div class="cup" id="topCup">
+    <div class="handle handleTop"></div>
+  </div>
+
+  <div class="cup bottomCup" id="bottomBottomCup">
+    <div class="handle handleBottom"></div>
+  </div>
+
+  <div class="cup bottomCup" id="topBottomCup">
+    <div class="handle handleBottom"></div>
+  </div>
+
+<!--   Left Canister HTML Code -->
+  <div class="cansiterCapL"></div>
+  <div class="canister" id="leftCanister">
+    <!--     Cafe Letters -->
+    <div class="cafe cl">C</div>
+    <div class="cafe al">A</div>
+    <div class="cafe fl">F</div>
+    <div class="cafe el">E</div>
+      <!--     Bustelo Letters -->
+    <div class="bustelo bl">B</div>
+    <div class="bustelo al">U</div>
+  </div>
+
+<!--   Right Conister HTML Code -->
+  <div class="cansiterCapR">  </div>
+  <div class="canister" id="rightCanister">
+      <!--     Cafe Letters -->
+    <div class="cafe cr">C</div>
+    <div class="cafe ar">A</div>
+    <div class="cafe fr">F</div>
+    <div class="cafe er">E'</div>
+      <!--     Bustelo Letters -->
+    <div class="bustelo br">B</div>
+    <div class="bustelo ur">U</div>
+    <div class="bustelo sr">S</div>
+    <div class="bustelo tr">T</div>
+    <div class="bustelo ber">E</div>
+    <div class="bustelo lr">L</div>
+    <div class="bustelo or">O</div>
+
+    <div class="bottomText espressoR">Espresso</div>
+    <div class="bottomText groundR">Ground</div>
+    <div class="bottomText coffeeR">Coffe</div>
+  </div>
+
+<!--   Pot HTML Code -->
+  <div class="pot">
+    <div id="spout"></div>
+    <div id="main-body1"></div>
+    <div id="main-body2"></div>
+    <div id="lid"></div>
+    <div id="handle-attach"></div>
+    <div id="handle1"></div>
+    <div id="handle2"></div>
+    <div id="top-handle"></div>
+  </div>
+
+</div>

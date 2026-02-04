@@ -1,0 +1,573 @@
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  @font-face {
+    font-family: "standing-room";
+    src: url(StandingRoomOnlyNF.otf) format("opentype");
+  }
+
+  @font-face {
+    font-family: "helvetica";
+    src: url(helvetica.otf);
+  }
+
+    @font-face {
+    font-family: "helvetica1";
+    src: url(helvetica1.ttf);
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .frame {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+  }
+
+  .bustelo {
+    position: absolute;
+    width: 220px;
+    height: 310px;
+    background-color: hsl(53, 100%, 58%);
+    bottom: 0%;
+
+  }
+
+  .bustelo::before {
+    position: absolute;
+    font-family: standing-room;
+    width: 100%;
+    color: #000097;
+    /* Change text color */
+    font-size: 40px;
+    white-space: pre;
+  }
+
+  .bustelo::after {
+    content: "";
+    font-family: "helvetica";
+    color: white;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    bottom: 0%;
+    background-color: red;
+    white-space: pre;
+  }
+
+  .right-can {
+    position: absolute;
+  }
+
+  .right-can-net-weight {
+    font-family: "helvetica";
+    color: white;
+    position: absolute;
+    transform: translateX(40%) translateY(-280%);
+  }
+
+  .right-can-text {
+    position: absolute;
+    content: "";
+    color: white;
+    font-family: "helvetica";
+    font-size: 10.5px;
+    transform: translateX(21%)translateY(-570%)scaleY(1.1);
+  }
+
+    .right-can-text::before {
+    position: absolute;
+    content: "VACUUM PACKED - 100% PURE COFFEE";
+    color: hsl(53, 100%, 58%);
+    font-family: "helvetica";
+    font-size: 9px;
+    font-style: italic;
+    transform: translateX(10%)translateY(240%)scaleY(1.1);
+  }
+
+  .left-can {
+    left: 225px;
+  }
+
+  .left-can-net-weight {
+    font-family: "helvetica";
+    color: white;
+    position: absolute;
+    transform: translateX(185%) translateY(-280%);
+  }
+
+  .left-can-text {
+    position: absolute;
+    content: "";
+    color: white;
+    font-family: "helvetica";
+    font-size: 10.5px;
+    transform: translateX(109.5%)translateY(-570%)scaleY(1.1);
+  }
+
+  .left-can-text::before {
+    position: absolute;
+    content: "VACUUM PACKED - 100% PURE COFFEE";
+    color: hsl(53, 100%, 58%);
+    font-family: "helvetica";
+    font-size: 9px;
+    font-style: italic;
+    transform: translateX(10%)translateY(240%)scaleY(1.1);
+  }
+
+  .cup1 {
+    width: 120px;
+    height: 120px;
+    background-color: white;
+    position: absolute;
+    border: 1px solid black;
+    left: 125px;
+    background: rgb(9, 9, 121);
+    background: rgb(255, 255, 255);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 3%, rgba(9, 9, 121, 1) 3%, rgba(9, 9, 121, 1) 22%, rgba(255, 255, 255, 1) 22%, rgba(255, 255, 255, 1) 41%, rgba(9, 9, 121, 1) 41%, rgba(9, 9, 121, 1) 60%, rgba(255, 255, 255, 1) 60%, rgba(255, 255, 255, 1) 79%, rgba(9, 9, 121, 1) 79%, rgba(9, 9, 121, 1) 97%, rgba(255, 255, 255, 1) 97%);
+  }
+
+  .cup1::before {
+    content: "";
+    background-color: red;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(0 3%, 0 97%, 65% 50%);
+
+  }
+
+  .cup1::after {
+    content: "";
+    position: absolute;
+    width: 30%;
+    height: 30%;
+    background: white;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    transform: translate(3px, 39px) scale(.9);
+  }
+
+  .cupstack1 {
+    top: 260px;
+  }
+
+  .cupstack2 {
+    top: 380px;
+  }
+
+  .cylinder-container1 {
+    transform: translateX(-28%) translateY(30%);
+    bottom: 50%;
+    perspective: 100px;
+    /* Creates depth */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    overflow: hidden;
+  }
+
+  .cylinder-text1 {
+    display: flex;
+    position: relative;
+  }
+
+  .cylinder-text2 {
+    display: flex;
+    position: relative;
+  }
+
+  .cylinder-text1 span {
+    position: absolute;
+    font-family: standing-room;
+    font-size: 60px;
+    font-weight: bold;
+    color: #000049;
+    transform-origin: center center -110px;
+    word-spacing: 0px;
+  }
+
+
+  .cylinder-text2 span {
+    position: absolute;
+    font-family: standing-room;
+    font-size: 60px;
+    font-weight: bold;
+    color: #000049;
+    transform-origin: center center -110px;
+    /* Distance from center */
+  }
+
+
+  .cylinder-text1 span:nth-child(1) {
+    transform: translateX(-30%) rotateY(-40deg);
+  }
+
+  .cylinder-text1 span:nth-child(2) {
+    transform: translateX(-20%) rotateY(-20deg);
+  }
+
+  .cylinder-text1 span:nth-child(3) {
+    transform: translateX(10%)rotateY(0deg);
+  }
+
+  .cylinder-text1 span:nth-child(4) {
+    transform: translateX(20%)rotateY(20deg);
+  }
+
+  .cylinder-text2 span:nth-child(1) {
+    transform: translateX(20%)rotateY(-40deg);
+  }
+
+  .cylinder-text2 span:nth-child(2) {
+    transform: translateX(27%)rotateY(-20deg);
+  }
+
+  .cylinder-text2 span:nth-child(3) {
+    transform: translateX(26%)rotateY(0deg);
+  }
+
+  .cylinder-text2 span:nth-child(4) {
+    transform: translateX(-7%)rotateY(30deg);
+  }
+
+  .cylinder-text2 span:nth-child(5) {
+    transform: translateX(24%)rotateY(40deg);
+  }
+
+  .cylinder-text2 span:nth-child(6) {
+    transform: translateX(0%)rotateY(70deg);
+  }
+
+  .cylinder-text2 span:nth-child(7) {
+    transform: rotateY(80deg);
+  }
+
+  .line2 {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 60px;
+  }
+
+  .cylinder-container2 {
+    transform: translateX(15%) translateY(-70%);
+    bottom: 50%;
+    perspective: 100px;
+    /* Creates depth */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    overflow: hidden;
+  }
+
+  .cylinder-text3 {
+    display: flex;
+    position: relative;
+  }
+
+  .cylinder-text4 {
+    display: flex;
+    position: relative;
+  }
+
+  .cylinder-text3 span {
+    position: absolute;
+    font-family: standing-room;
+    font-size: 60px;
+    font-weight: bold;
+    color: #000049;
+    transform-origin: center center -110px;
+    word-spacing: 0px;
+  }
+
+  .cylinder-text4 span {
+    position: absolute;
+    font-family: standing-room;
+    font-size: 60px;
+    font-weight: bold;
+    color: #000049;
+    transform-origin: center center -110px;
+    /* Distance from center */
+  }
+
+
+  .cylinder-text3 span:nth-child(1) {
+    transform: translateX(-10%) rotateY(-70deg);
+  }
+
+  .cylinder-text3 span:nth-child(2) {
+    transform: translateX(-10%) rotateY(-45deg);
+  }
+
+  .cylinder-text3 span:nth-child(3) {
+    transform: translateX(-25%) rotateY(-10deg);
+  }
+
+  .cylinder-text3 span:nth-child(4) {
+    transform: translateX(-25%) rotateY(13deg);
+  }
+
+  .cylinder-text4 span:nth-child(1) {
+    transform: translateX(30%) rotateY(-70deg);
+  }
+
+  .cylinder-text4 span:nth-child(2) {
+    transform: translateX(-2%) rotateY(-30deg);
+  }
+
+  .cylinder-text4 span:nth-child(3) {
+    transform: translateX(-15%) rotateY(-5deg);
+  }
+
+  .cylinder-text4 span:nth-child(4) {
+    transform: translateX(0%) rotateY(10deg);
+  }
+
+  .cylinder-text4 span:nth-child(5) {
+    transform: translateX(35%) rotateY(20deg);
+  }
+
+  .cylinder-text4 span:nth-child(6) {
+    transform: translateX(7%) rotateY(50deg);
+  }
+
+  .cylinder-text4 span:nth-child(7) {
+    transform: translateX(20%) rotateY(60deg);
+  }
+
+  .line4 {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 60px;
+  }
+
+  .coffee {
+    position: absolute;
+    font-family: "futura";
+    font-weight: bold;
+    font-style: italic ;
+    color: #000049;
+    font-size: 12.5px;
+  }
+
+  .coffee-left {
+    top: 74%;
+    left: 12%;
+  }
+
+    .coffee-right {
+    top: 74%;
+    left: 50%;
+  }
+
+  .shader {
+  position: absolute;
+  width: 220px;
+  height: 315px;
+  background: rgb(154,150,150);
+  background: linear-gradient(90deg, rgba(154,150,150,0.7967667436489607) 0%, rgba(255,255,255,0) 10%, rgba(255,255,255,0) 82%, rgba(0,0,0,0.5) 96%, rgba(0,0,0,0.55) 100%);
+  transform: translateY(-415px);
+  }
+
+  .shader::before {
+    position: absolute;
+    content:"";
+    width: 220px;
+    height: 315px;
+      background: rgb(154,150,150);
+    background: linear-gradient(90deg, rgba(154,150,150,0.7967667436489607) 0%, rgba(255,255,255,0) 10%, rgba(255,255,255,0) 82%, rgba(0,0,0,0.5) 98%, rgba(0,0,0,1) 100%);
+    transform: translateX(225px) rotateY(180deg);
+  }
+
+  .lid {
+    width: 220px;
+    height: 20px;
+    content: "";
+    position: absolute;
+    transform: translateY(-415px);
+    background: rgb(154,150,150);
+    background: linear-gradient(90deg, rgba(154,150,150,0.7967667436489607) 0%, rgba(255,255,255,0) 7%, rgba(255,255,255,0) 82%, rgba(0,0,0,0.5) 96%, rgba(0,0,0,0.55) 100%);
+   background: rgb(252,255,0);
+   background: linear-gradient(0deg, rgba(252,255,0,1) 15%, rgba(228,205,0,1) 40%, rgba(228,205,0,1) 60%, rgba(252,255,0,1) 85%);
+  }
+
+  .lid::after {
+    width: 220px;
+    height: 20px;
+    content: "";
+    position: absolute;
+    transform: translateY(-415px);
+    background: rgb(154,150,150);
+    background: linear-gradient(90deg, rgba(154,150,150,0.7967667436489607) 0%, rgba(255,255,255,0) 7%, rgba(255,255,255,0) 82%, rgba(0,0,0,0.5) 96%, rgba(0,0,0,0.55) 100%);
+   background: rgb(252,255,0);
+   background: linear-gradient(0deg, rgba(252,255,0,1) 15%, rgba(228,205,0,1) 40%, rgba(228,205,0,1) 60%, rgba(252,255,0,1) 85%);
+   transform: translateX(225px)
+  }
+  .lighting {
+    position: absolute;
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 45%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,1) 55%);
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(100% 43%, 75% 50%, 100% 56%, 0% 56%, 0% 51%, 22% 43%);
+    transform: scale(.05) translateY(-10200px) translateX(900px);
+  }
+
+  .L2 {
+    position: absolute;
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 45%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,1) 55%);
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(100% 43%, 75% 50%, 100% 56%, 0% 56%, 0% 51%, 22% 43%);
+    transform: scale(.05) translateY(-10200px) translateX(2000px);
+  }
+
+    .L3 {
+    position: absolute;
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 45%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,1) 55%);
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(100% 43%, 75% 50%, 100% 56%, 0% 56%, 0% 51%, 22% 43%);
+    transform: scale(.05) translateY(-20200px) translateX(2000px);
+  }
+
+  .logo1 {
+    position: absolute;
+    clip-path: polygon(51% 66%, 52% 72%, 52% 100%, 67% 100%, 0 100%);
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    transform: scale(.1) translateY(-1180%) translateX(-60%);
+     background: rgb(196,185,137);
+background: linear-gradient(90deg, rgba(196,185,137,1) 5%, rgba(1,2,102,1) 5%, rgba(1,2,102,1) 10%, rgba(196,185,137,1) 10%, rgba(196,185,137,1) 15%, rgba(1,2,102,1) 15%, rgba(1,2,102,1) 20%, rgba(196,185,137,1) 20%, rgba(196,185,137,1) 25%, rgba(1,2,102,1) 25%, rgba(1,2,102,1) 30%, rgba(196,185,137,1) 30%, rgba(196,185,137,1) 35%, rgba(1,2,102,1) 35%, rgba(1,2,102,1) 40%, rgba(196,185,137,1) 40%, rgba(196,185,137,1) 45%, rgba(1,2,102,1) 45%, rgba(1,2,102,1) 50%, rgba(196,185,137,1) 50%, rgba(196,185,137,1) 55%, rgba(1,2,102,1) 55%, rgba(1,2,102,1) 60%, rgba(196,185,137,1) 60%, rgba(196,185,137,1) 65%, rgba(1,2,102,1) 65%, rgba(1,2,102,1) 70%, rgba(196,185,137,1) 70%, rgba(196,185,137,1) 75%, rgba(1,2,102,1) 75%, rgba(1,2,102,1) 80%, rgba(196,185,137,1) 80%, rgba(196,185,137,1) 85%, rgba(1,2,102,1) 85%, rgba(1,2,102,1) 90%, rgba(196,185,137,1) 90%, rgba(196,185,137,1) 95%, rgba(1,2,102,1) 95%, rgba(1,2,102,1) 100%);
+  }
+
+  .logo2 {
+    position: absolute;
+    content:"";
+    clip-path: polygon(52% 100%, 0 0, 100% 0);
+    height: 100%;
+    width: 100%;
+    background-color: red;
+    transform: scale(.1) translateY(-1150%) translateX(320%);
+  }
+
+  .logo2::after {
+    position: absolute;
+    content: "";
+    clip-path: polygon(52% 61%, 0% 100%, 100% 100%);
+    width: 100%;
+    height: 100%;
+    transform: scale(1) translateY(-1180%) translateX(310%);
+    background: rgb(196,185,137);
+    background: linear-gradient(90deg, rgba(1_96,185,137,1) 5%, rgba(1,2,102,1) 5%, rgba(1,2,102,1) 10%, rgba(196,185,137,1) 10%, rgba(196,185,137,1) 15%, rgba(1,2,102,1) 15%, rgba(1,2,102,1) 20%, rgba(196,185,137,1) 20%, rgba(196,185,137,1) 25%, rgba(1,2,102,1) 25%, rgba(1,2,102,1) 30%, rgba(196,185,137,1) 30%, rgba(196,185,137,1) 35%, rgba(1,2,102,1) 35%, rgba(1,2,102,1) 40%, rgba(196,185,137,1) 40%, rgba(196,185,137,1) 45%, rgba(1,2,102,1) 45%, rgba(1,2,102,1) 50%, rgba(196,185,137,1) 50%, rgba(196,185,137,1) 55%, rgba(1,2,102,1) 55%, rgba(1,2,102,1) 60%, rgba(196,185,137,1) 60%, rgba(196,185,137,1) 65%, rgba(1,2,102,1) 65%, rgba(1,2,102,1) 70%, rgba(196,185,137,1) 70%, rgba(196,185,137,1) 75%, rgba(1,2,102,1) 75%, rgba(1,2,102,1) 80%, rgba(196,185,137,1) 80%, rgba(196,185,137,1) 85%, rgba(1,2,102,1) 85%, rgba(1,2,102,1) 90%, rgba(196,185,137,1) 90%, rgba(196,185,137,1) 95%, rgba(1,2,102,1) 95%, rgba(1,2,102,1) 100%);
+  }
+
+  .grid {
+    position: absolute;
+  }
+</style>
+
+
+<div class="frame">
+ <!-- <div class="grid"> <img src="Untitled design(12).png" alt="grid"></div>-->
+  <div class="cup1 cupstack1">
+    <div class="triangle">
+      <div class="star"></div>
+    </div>
+  </div>
+  <div class="cup1 cupstack2">
+    <div class="triangle">
+      <div class="star"></div>
+    </div>
+  </div>
+  <div class="cup2"></div>
+  <div class="bustelo right-can"></div>
+  <div class="bustelo left-can"></div>
+  <div class="cylinder-container1">
+    <div class="cylinder-text1">
+      <div class="line1">
+        <span>C&nbsp;</span>
+        <span>A&nbsp;</span>
+        <span>F&nbsp;</span>
+        <span>É&nbsp;</span>
+      </div>
+    </div>
+    <div class="cylinder-text2">
+      <div class="line2">
+        <span>B&nbsp</span>
+        <span>U&nbsp</span>
+        <span>S&nbsp</span>
+        <span>T&nbsp</span>
+        <span>E&nbsp</span>
+        <span>L&nbsp</span>
+        <span>O&nbsp</span>
+      </div>
+      <div>
+      </div>
+    </div>
+  </div>
+  <div class="cylinder-container2">
+    <div class="cylinder-text3">
+      <div class="line3">
+        <span>C&nbsp;</span>
+        <span>A&nbsp;</span>
+        <span>F&nbsp;</span>
+        <span>É&nbsp;</span>
+      </div>
+    </div>
+    <div class="cylinder-text4">
+      <div class="line4">
+        <span>B&nbsp</span>
+        <span>U&nbsp</span>
+        <span>S&nbsp</span>
+        <span>T&nbsp</span>
+        <span>E&nbsp</span>
+        <span>L&nbsp</span>
+        <span>O&nbsp</span>
+      </div>
+    </div>
+  </div>
+  <div>
+    <p class="coffee coffee-left">
+      Espresso Ground Coffee
+    </p>
+    <p class="coffee coffee-right">
+      Espresso Ground Coffee
+    </p>
+  </div>
+  <div class="left-can-text">
+    <p>LWAYS PURE AND FLAVORFUL, LIKE NO OTHER</p>
+  </div>
+  <div class="right-can-text">
+    <p>ALWAYS PURE AND FLAVORFUL, LIKE NO</p>
+  </div>
+  <div class="right-can-net-weight">
+    <p> NET WT 10 OZ (283g)</p>
+  </div>
+  <div class="left-can-net-weight">
+    <p> NET WT 10 OZ (283g)</p>
+  </div>
+  <div class="lid"></div>
+  <div class="lighting"></div>
+  <div class="L2"></div>
+  <div class="logo1"></div>
+  <div class="logo2"></div>
+  <div class="shader"></div>
+</div>

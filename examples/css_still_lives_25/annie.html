@@ -1,0 +1,471 @@
+<!-- refer to css gradient, and clippy for shapes, 8 point full control for fancy shapes -->
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Diplomata&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+
+
+<style>
+
+  * { box-sizing: border-box; }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .frame {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+  }
+
+  .shadow {
+    position: absolute;
+    width: 470px;
+    height: 300px;
+    top: 280px;
+    left: 30px;
+    background-color: black;
+    clip-path: ellipse(43% 6% at 50% 50%);
+    filter: blur(100px);
+    opacity: 5;
+  }
+
+  .cup {
+    width: 90px;
+    height: 90px;
+    background-color: white;
+    border: 1px solid blue;
+
+    background-image:
+      linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%),
+
+      linear-gradient(180deg, rgba(0,30,133,1) 50%, white 50%);
+
+    background-size: 100% 100%, 100% 35%;
+
+
+    border-radius: 51% 49% 0% 0% / 7% 6% 10% 10% ;
+  }
+
+  .back_cup {
+    width: 90px;
+    height: 90px;
+    background-color: white;
+    border: 1px solid gray;
+
+    background-image:
+
+      linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,0) 100%),
+
+      linear-gradient(180deg, rgba(0,30,133,1) 50%, white 50%);
+
+    background-size: 100% 35%;
+
+    border-radius: 51% 49% 0% 0% / 7% 6% 10% 10% ;
+    position: absolute;
+    left: 255px;
+    bottom: 320px;
+  }
+
+
+  .middle-cup {
+    position: absolute;
+    left: 230px;
+    bottom: 142px;
+  }
+
+  .bottom-cup {
+    border: 1px solid black;
+/*     don't use relative for css art  */
+    position: absolute;
+    left: 230px;
+    bottom: 60px;
+  }
+
+  .cup::before {
+    content: '';
+    position: absolute;
+    left: 40px;
+    background: red;
+    width: 75%;
+    height: 95%;
+    clip-path: polygon(69% 47%, 0% 100%, 0 0);
+  }
+
+  .cup::after {
+    content: '';
+    position: absolute;
+    left: 35px;
+    background: white;
+    width: 30%;
+    height: 30%;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    transform: translate(8px, 30px) scale(0.8);
+
+  }
+
+  .handle {
+    width: 25%;
+    height: 80px;
+    position: absolute;
+    left: 20px;
+    background-color: white;
+    margin-bottom: 11px;
+  }
+
+  .handle::after {
+    content: '';
+    position: absolute;
+    left: 1px;
+    top: 40px;
+    background: hsl(0, 0%, 87%);
+    width: 100%;
+    height: 25%;
+    clip-path: polygon(57% 18%, 51% 11%, 38% 10%, 33% 17%, 31% 25%, 29% 35%, 29% 42%, 29% 50%, 30% 58%, 31% 64%, 32% 69%, 34% 75%, 40% 78%, 44% 79%, 48% 81%, 55% 78%, 58% 77%, 61% 71%, 61% 64%, 56% 64%, 52% 67%, 49% 68%, 44% 66%, 43% 69%, 44% 59%, 42% 50%, 42% 45%, 42% 38%, 43% 31%, 45% 25%, 47% 24%, 50% 27%, 53% 28%, 56% 30%, 58% 30%);
+    transform: scale(3.5);
+  }
+
+  .handle_back_cup {
+    position: absolute;
+    left: 100px;
+    top: 40px;
+    background: hsl(0, 0%, 87%);
+    width: 20%;
+    height: 30%;
+    clip-path: polygon(22% 18%, 47% 8%, 77% 20%, 78% 54%, 61% 75%, 25% 71%, 23% 54%, 49% 61%, 66% 49%, 67% 31%, 54% 21%, 35% 25%, 23% 30%);
+    transform: scale(4);
+    box-shadow: 0 0 0 2px black;
+  }
+
+  .kettle::before {
+    content: '';
+    position: absolute;
+    left: 60px;
+    bottom: 88px;
+    background: black;
+    width: 40%;
+    height: 30%;
+    clip-path: polygon(8% 0%, 90% 0%, 100% 11%, 100% 23%, 82% 100%, 16% 100%, 0% 22%, 0% 10%);
+  }
+
+  .kettle {
+    width: 20%;
+    height: 88px;
+    position: absolute;
+    top: 90px;
+    left: 156px;
+    background-color: rgb(255, 81, 0);
+    margin-bottom: 11px;
+    border-radius: 100% 22% 0% 0% / 40% 3% 10% 25% ;
+  }
+
+  .kettle::after {
+    content: '';
+    position: absolute;
+    left: 0px;
+    background: rgb(255, 118, 0);
+    width: 100%;
+    height: 30%;
+    border-radius: 100% 22% 0% 0% / 100% 3% 10% 25% ;
+  }
+
+  .cans {
+    width: 40%;
+    height: 265px;
+    position: absolute;
+    top: 175px;
+    left: 60px;
+    background-color: yellow;
+    border: 1px solid orange;
+
+    margin-bottom: 11px;
+
+    background-image:
+      linear-gradient(90deg, rgba(255,255,255,0) 10%, rgba(255,255,255,1) 30%, rgba(255,255,255,0) 60%);
+
+    background-size: 100% 100%, 100% 15%;
+
+    border-radius: 50% 48% 49% 50% / 3% 2% 3% 4%
+  }
+
+  .cans::after {
+    content: '';
+    position: absolute;
+    top: 180px;
+    left: 0px;
+    background: red;
+    width: 100%;
+    height: 30%;
+    background-image:
+      linear-gradient(90deg, rgba(255,255,255,0) 10%, rgba(255,255,255,1) 30%, rgba(255,255,255,0) 60%);
+
+    background-size: 100% 100%, 100% 15%;
+
+    border-radius: 51% 49% 49% 50% / 0% 0% 3% 4%
+  }
+
+  .right {
+    position: absolute;
+    left: 230px;
+    top: 160px;
+    bottom: 100px;
+  }
+
+  .can_text_right {
+    font-size: 25px;
+    position: absolute;
+    left: 40px;
+    top: 60px;
+    font-family: 'Diplomata', sans-serif;
+    display: inline-block;
+    transform: scaleY(2);
+  }
+
+  .can_text {
+    font-size: 25px;
+    position: absolute;
+    left: 105px;
+    top: 60px;
+    font-family: 'Diplomata', sans-serif;
+    display: inline-block;
+    transform: scaleY(2);
+  }
+
+  .can_text_left {
+    font-size: 25px;
+    position: absolute;
+    left: 0px;
+    top: 60px;
+    font-family: 'Diplomata', sans-serif;
+    display: inline-block;
+    transform: scaleY(2);
+  }
+
+  .kettle_handle {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    top: 20px;
+    left: 170px;
+    background-color: black;
+    clip-path: polygon(14% 0%, 32% 10%, 46% 45%, 56% 93%, 54% 100%, 13% 100%, 0% 21%, 2% 0%);
+  }
+
+  .kettle_nub {
+    width: 50%;
+    height: 100px;
+    position: absolute;
+    top: 20px;
+    left: 0px;
+    background-color: black;
+    clip-path: polygon(27% 0%, 89% 7%, 69% 19%, 63% 27%, 29% 19%, 26% 12%);
+  }
+
+  .kettle_highlight {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    top: 18px;
+    left: 0px;
+    background-color: white;
+    clip-path: polygon(0 0, 100% 7%, 99% 17%, 0 7%);
+  }
+
+  .kettle_nub_tri {
+    width: 40%;
+    height: 40px;
+    position: absolute;
+    top: 33px;
+    left: 22px;
+    background-color: rgb(255, 130, 0);
+    clip-path: polygon(16% 6%, 30% 2%, 59% 0%, 75% 0%, 86% 0%, 61% 98%);
+    transform: rotate(-10deg);
+  }
+
+  .kettle_nub_highlight {
+    width: 40%;
+    height: 40px;
+    position: absolute;
+    top: 20px;
+    left: 7px;
+    background-color: white;
+    clip-path: polygon(31% 0%, 23% 7%, 19% 23%, 19% 38%, 61% 48%, 70% 29%, 79% 15%, 88% 8%, 93% 5%, 83% 21%, 78% 29%, 70% 38%, 66% 53%, 66% 60%, 13% 47%, 13% 26%, 16% 11%);
+  }
+
+  .red_text_left {
+    font-size: 8px;
+    position: absolute;
+    left: 65px;
+    top: 370px;
+    display: inline-block;
+    color: white;
+    transform: scaleY(2);
+  }
+
+  .red_text_right {
+    font-size: 8px;
+    position: absolute;
+    left: 320px;
+    top: 355px;
+    display: inline-block;
+    color: white;
+    transform: scaleY(2);
+  }
+
+  .net_weight_left {
+    font-size: 8px;
+    position: absolute;
+    left: 63px;
+    top: 415px;
+    display: inline-block;
+    color: white;
+    transform: scaleY(2);
+  }
+
+  .net_weight_right {
+    font-size: 8px;
+    position: absolute;
+    left: 325px;
+    top: 405px;
+    display: inline-block;
+    color: white;
+    transform: scaleY(2);
+  }
+
+  .can_rim_left {
+    width: 100%;
+    height: 20px;
+    position: absolute;
+    top: 2px;
+    left: 0px;
+    background-color: yellow;
+    box-shadow: 0px 1px 0px hsl(29, 57%, 52%);
+  }
+
+  .can_rim_right {
+    width: 100%;
+    height: 20px;
+    position: absolute;
+    top: -8px;
+    left: 170px;
+    background-color: yellow;
+    box-shadow: 0px 1px 0px hsl(29, 57%, 52%);
+  }
+
+  .can_rim_highlight_right {
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    top: -10px;
+    left: 170px;
+    background-color: hsl(49, 100%, 95%);
+  }
+
+  .can_rim_highlight_left {
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    top: 2px;
+    left: 70px;
+    background-color: hsl(49, 100%, 95%);
+  }
+
+  .quaker {
+    width: 30%;
+    height: 50px;
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    background-image: url("quaker.png");
+    background-position: center;
+    background-size: 70px;
+    clip-path: polygon(49% 100%, 0 0, 100% 0);
+  }
+
+  .quaker_blue {
+    width: 35%;
+    height: 20px;
+    position: absolute;
+    top: 60px;
+    left: 35px;
+    background-color: darkblue;
+    clip-path: polygon(49% 100%, 0 0, 100% 0);
+    transform: rotate(180deg);
+  }
+</style>
+
+
+<div class="frame">
+	<!-- ur HTML code goes here -->
+  <div class="shadow">
+  </div>
+  <div class="kettle">
+    <div class="kettle_handle">
+    </div>
+    <div class="kettle_nub">
+    </div>
+    <div class="kettle_nub_tri">
+    </div>
+    <div class="kettle_highlight">
+    </div>
+    <div class="kettle_nub_highlight">
+    </div>
+  </div>
+
+  <div class="cans right">
+    <div class="can_text_right"> CAFE BUSTE
+    </div>
+  </div>
+  <div class="cans">
+    <div class="can_text"> CAF BUST
+    </div>
+    <div class="can_text_left"> E <br>ELO
+    </div>
+    <div class="can_rim_right">
+    </div>
+    <div class="can_rim_left">
+    </div>
+    <div class="can_rim_highlight_left">
+    </div>
+    <div class="can_rim_highlight_right">
+    </div>
+    <div class="quaker_blue">
+    </div>
+    <div class="quaker">
+    </div>
+
+
+  </div>
+  <div class="red_text_left"> MY PICTURE IS TOO &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp SMALL TO SEE  WHAT THIS SAYS
+    </div>
+  <div class="red_text_right"> MY PICTURE IS TOO SMALL TO SEE
+    </div>
+  <div class="net_weight_right"> NET WEIGHT (170g)
+  </div>
+  <div class="net_weight_left"> GHT (170g) &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp NET WT
+  </div>
+
+  <div class="back_cup">
+    <div class="handle_back_cup">
+    </div>
+  </div>
+
+  <div class="cup middle-cup">
+    <div class="handle"></div>
+  </div>
+
+  <div class="cup bottom-cup">
+    <div class="handle"></div>
+  </div>
+
+
+
+
+</div>

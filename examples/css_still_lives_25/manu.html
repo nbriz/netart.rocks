@@ -1,0 +1,319 @@
+<style>
+
+  * { box-sizing: border-box; }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .frame {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+  }
+
+/*   .cup {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border: 1px solid black;
+    background-image: linear-gradient(0deg, rgba(64,57,179,1) 50%, rgba(255,255,255,1) 50%);
+    background-size: 100% 30%;
+  } */
+
+  .the-cup {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(270deg, rgba(215,215,215,1) 0%, rgba(255,255,255,1) 51%, rgba(215,215,215,1) 100%);
+    overflow: visible;
+  }
+
+  .cup1 {
+    position: absolute;
+    left: 150px;
+    bottom: 0px;
+  }
+
+  .cup2 {
+    position: absolute;
+    left: 150px;
+    bottom: 101px;
+  }
+
+  .cup3 {
+    position: absolute;
+    top: 110px;
+    right: 130px;
+  }
+
+  .stripe {
+    width: 100%;
+    height: 20%;
+    margin-bottom: 20px;
+    background: linear-gradient(270deg, rgba(25,23,71,1) 0%, rgba(64,57,179,1) 51%, rgba(25,23,71,1) 100%);
+  }
+
+/*   .cup::before {
+    content: '';
+    position: absolute;
+    background: red;
+    width: 100px;
+    height: 100px;
+    clip-path: polygon(50% 52%, 0 0, 0 100%);
+  }
+
+  .cup::after {
+    content: '';
+    position: absolute;
+    width: 30%;
+    height: 30%;
+    background: white;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    transform: translate(4px, 32px);
+  } */
+
+  .cup1::before {
+    content: '';
+    position: absolute;
+    background: linear-gradient(270deg, rgba(230,0,0,1) 0%, rgba(179,0,0,1) 100%);
+    width: 100px;
+    height: 100px;
+    clip-path: polygon(50% 52%, 0 0, 0 100%);
+  }
+
+  .cup1::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    right: 70px;
+    width: 40px;
+    height: 50%;
+    border: 13px solid transparent;
+    background: linear-gradient(#ff2222, #ff2222) padding-box,
+      linear-gradient(180deg, rgba(215,215,215,1) 0%, rgba(255,255,255,1) 51%, rgba(215,215,215,1) 100%);
+    border-image-slice: 1;
+    border-radius: 50%;
+    z-index: -1;
+  }
+
+  .cup2::before {
+    content: '';
+    position: absolute;
+    background: linear-gradient(270deg, rgba(230,0,0,1) 0%, rgba(179,0,0,1) 100%);
+    width: 100px;
+    height: 100px;
+    clip-path: polygon(50% 52%, 0 0, 0 100%);
+  }
+
+  .cup2::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    right: 70px;
+    width: 40px;
+    height: 50%;
+    border: 13px solid transparent;
+    background: linear-gradient(#d5c83f, #d5c83f) padding-box,
+      linear-gradient(180deg, rgba(215,215,215,1) 0%, rgba(255,255,255,1) 51%, rgba(215,215,215,1) 100%);
+    border-image-slice: 1;
+    border-radius: 50%;
+    z-index: -1;
+  }
+
+  .cup3::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    left: 70px;
+    width: 40px;
+    height: 50%;
+    border: 13px solid transparent;
+    background: linear-gradient(rgba(255,115,47,1), rgba(255,115,47,1)) padding-box,
+      linear-gradient(180deg, rgba(215,215,215,1) 0%, rgba(255,255,255,1) 51%, rgba(215,215,215,1) 100%);
+    border-image-slice: 1;
+    border-radius: 50%;
+    z-index: -1;
+  }
+
+  .star1 {
+    position: absolute;
+    width: 30%;
+    height: 30%;
+    background: white;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    transform: translate(3px, -186px);
+    z-index: 1;
+  }
+
+  .star2 {
+    position: absolute;
+    width: 30%;
+    height: 30%;
+    background: white;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    transform: translate(3px, 17px);
+  }
+
+  .can {
+    width: 220px;
+    height: 290px;
+    background: linear-gradient(270deg, rgba(213,200,63,1) 0%, rgba(255,235,25,1) 51%, rgba(213,200,63,1) 100%);
+    z-index: -2;
+  }
+
+  .can::after {
+    content: "";
+    width: 220px;
+    height: 30%;
+    bottom: 0px;
+    position: absolute;
+    background: linear-gradient(270deg, rgba(200,62,62,1) 0%, rgba(255,34,34,1) 51%, rgba(200,62,62,1) 100%);
+  }
+
+  .can::before {
+    content: "";
+    width: 220px;
+    height: 7%;
+    top: 0px;
+    position: absolute;
+    background: linear-gradient(270deg, rgba(180,169,53,1) 0%, rgba(213,200,63,1) 51%, rgba(180,169,53,1) 100%);
+  }
+
+  .can1 {
+    bottom: 0px;
+    left: 10px;
+    position: absolute;
+  }
+
+  .can2 {
+    bottom: 0px;
+    right: 40px;
+    position: absolute;
+  }
+
+  .pot {
+    width: 180px;
+    height: 300px;
+    background: linear-gradient(270deg, rgba(235,83,10,1) 0%, rgba(255,115,47,1) 50%, rgba(235,83,10,1) 100%);
+    position: absolute;
+    top: 70px;
+    right: 70px;
+    z-index: -3;
+  }
+
+  .pot::after {
+    content: '';
+    width: 30px;
+    height: 40px;
+    position: absolute;
+    background: linear-gradient(270deg, rgba(0,0,0,1) 0%, rgba(85,78,76,1) 50%, rgba(0,0,0,1) 100%);
+    top: -40px;
+    right: 70px;
+    clip-path: polygon(0 0, 100% 0, 88% 100%, 15% 100%);
+
+  }
+
+  .pot::before {
+    content: '';
+    width: 100px;
+    height: 150px;
+    position: absolute;
+    background-color: white;
+    clip-path: polygon(0 0, 0% 100%, 45% 100%);
+  }
+
+  .pot-handle {
+    width: 100px;
+    height: 120px;
+    position: absolute;
+    right: 30px;
+    top: 80px;
+    border: 13px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+      linear-gradient(270deg, rgba(0,0,0,1) 0%, rgba(85,78,76,1) 50%, rgba(0,0,0,1) 100%);
+    border-image-slice: 1;
+    border-radius: 50%;
+    z-index: -4;
+  }
+
+  .cafe{
+    font-size: 70px;
+  }
+
+  .cafe1 {
+    position: absolute;
+    top: 250px;
+    right: 70px;
+  }
+
+  .cafe2 {
+    position: absolute;
+    top: 250px;
+    right: 300px;
+    z-index: -1;
+  }
+
+  .buste{
+    font-size: 60px;
+  }
+
+  .buste1 {
+    position: absolute;
+    top: 320px;
+    right: 360px;
+    z-index: -2;
+  }
+
+  .buste2 {
+    position: absolute;
+    top: 320px;
+    right: 50px;
+  }
+
+
+</style>
+
+
+<div class="frame">
+
+  <div class="the-cup cup1">
+    <div class="stripe"></div>
+    <div class="stripe"></div>
+    <div class="stripe"></div>
+    <div class="star1"></div>
+  </div>
+
+  <div class="the-cup cup2">
+    <div class="stripe"></div>
+    <div class="stripe"></div>
+    <div class="stripe"></div>
+    <div class="star2"></div>
+  </div>
+
+  <div class="the-cup cup3">
+    <div class="stripe"></div>
+    <div class="stripe"></div>
+    <div class="stripe"></div>
+  </div>
+
+  <div class="can can1"></div>
+  <div class="can can2"></div>
+
+  <div class="pot"></div>
+  <div class="pot-handle"></div>
+
+  <div class="cafe cafe1"> CAFE </div>
+  <div class="cafe cafe2"> CAFE </div>
+  <div class="buste buste1"> BUS </div>
+  <div class="buste buste2"> BUSTE </div>
+
+
+
+
+</div>

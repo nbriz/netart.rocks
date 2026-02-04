@@ -1,0 +1,384 @@
+<head>
+  <title>css still life</title>
+  <link rel="icon" href="bustelo.jpg">
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Chango&display=swap');
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .frame {
+    position: relative;
+    /*
+    keeps things inside frame
+    */
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+  }
+
+  .cup {
+    width: 80px;
+    height: 80px;
+    border: 1px solid gray;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 5%, rgba(11, 57, 138, 1) 5%, rgba(11, 57, 138, 1) 23%, rgba(255, 255, 255, 1) 23%, rgba(255, 255, 255, 1) 41%, rgba(11, 57, 138, 1) 41%, rgba(11, 57, 138, 1) 59%, rgba(255, 255, 255, 1) 59%, rgba(255, 255, 255, 1) 77%, rgba(11, 57, 138, 1) 77%, rgba(11, 57, 138, 1) 77%, rgba(11, 57, 138, 1) 95%, rgba(255, 255, 255, 1) 95%);
+    /*can pass multiple gradients to create glare effect */
+    background-size: 100%;
+    /*would need another set of vals here */
+    border-radius: 5%
+  }
+    .cup::before {
+    content: '';
+    position: absolute;
+    background-color: #ce1e1e;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(56% 50%, 0 0, 0 100%);
+  }
+
+  .cup::after {
+    content: '';
+    position: absolute;
+    background-color: white;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    width: 30%;
+    height: 30%;
+    top: 26px;
+    left: 5px;
+  }
+
+  .top-cup {
+    position: absolute;
+    /*
+    takes out of relative positioning
+    things will stay in the same place within
+    the frame and not be affected by other
+    elements
+    */
+    left: 50px;
+    bottom: 115px
+  }
+
+  .bottom-cup {
+    position: absolute;
+    left: 50px;
+    bottom: 35px
+  }
+
+  .side-cup {
+    position: absolute;
+      width: 80px;
+    height: 80px;
+    border: 1px solid gray;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 5%, rgba(11, 57, 138, 1) 5%, rgba(11, 57, 138, 1) 23%, rgba(255, 255, 255, 1) 23%, rgba(255, 255, 255, 1) 41%, rgba(11, 57, 138, 1) 41%, rgba(11, 57, 138, 1) 59%, rgba(255, 255, 255, 1) 59%, rgba(255, 255, 255, 1) 77%, rgba(11, 57, 138, 1) 77%, rgba(11, 57, 138, 1) 77%, rgba(11, 57, 138, 1) 95%, rgba(255, 255, 255, 1) 95%);
+    /*can pass multiple gradients to create glare effect */
+    background-size: 100%;
+    /*would need another set of vals here */
+    border-radius: 5%;
+    left: 230px;
+    bottom: 285px;
+  }
+  .side-cup::after{
+    content: '';
+    position: absolute;
+    background-color: white;
+    width: 20%;
+    height: 100%;
+    left: 40px;
+  }
+  .side-cup::before{
+    content: '';
+    position: absolute;
+    background-color: #ce1e1e;
+    height: 100%;
+    width: 36%;
+    left: 50px;
+    clip-path: polygon(0 0, 100% 26%, 100% 74%, 0% 100%);
+  }
+  .star {
+    position: absolute;
+    background-color: white;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    width: 15px;
+    height: 15px;
+    bottom: 316px;
+    left: 293px;
+  }
+  .coffee {
+    width: 170px;
+    height: 250px;
+    background: linear-gradient(0deg, rgba(255,68,68,1) 26%, rgba(255,252,40,1) 26%);
+    border: 1px solid gray;
+    border-radius: 2%;
+  }
+  .coffee::before {
+    content: '';
+    position: absolute;
+    background-color: #f5f11f;
+    height: 5%;
+    width: 100%;
+    border: 1px solid gray;
+  }
+  .left-coffee{
+    position: absolute;
+    left: 15px;
+    bottom: 35px
+  }
+  .right-coffee{
+    position: absolute;
+    left: 185px;
+    bottom: 35px
+  }
+  .kettle{
+    position: absolute;
+    left: 200px;
+    top: 100px;
+    width: 300px;
+    height: 325px;
+    background: linear-gradient(0deg, rgba(134,134,119,1) 33%, rgba(255,149,68,1) 33%);
+    clip-path: polygon(86% 26%, 71% 59%, 71% 67%, 79% 80%, 81% 100%, 30% 100%, 29% 16%, 58% 4%, 86% 12%);
+  }
+  .kettle-base {
+    position: absolute;
+    left: 250px;
+    bottom: 40px;
+    width: 220px;
+    height: 150px;
+    background: linear-gradient(
+      45deg,
+      #999 5%,
+      #fff 10%,
+      #ccc 30%,
+      #ddd 50%,
+      #ccc 70%,
+      #fff 80%,
+      #999 95%
+    );
+    clip-path: polygon(17% 0, 80% 0%, 100% 100%, 0% 100%);
+    border-radius: 5%
+  }
+  .kettle-divider {
+    position: absolute;
+    bottom: 190px;
+    right: 70px;
+    background-color: #ff6b33;
+    width: 100px;
+    height: 30px;
+    border-radius: 5%;
+    border: 1px solid #b68181;
+  }
+  .kettle-body {
+    position: absolute;
+    bottom: 218px;
+    background: linear-gradient(90deg, rgba(255,107,51,1) 35%, #b68181 50%, rgba(255,107,51,1) 65%);
+    background-repeat: 3;
+    background-size: 33%;
+    width: 170px;
+    height: 150px;
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+    border-radius: 20%;
+    right: 45px;
+  }
+  .kettle-lid {
+    position: absolute;
+    bottom: 300px;
+    background-color: #ff6b33;
+    width: 165px;
+    height: 85px;
+    clip-path: polygon(30% 0, 70% 0, 100% 35%, 0 35%);
+    right: 45px;
+    border-radius: 20%;
+  }
+  .kettle-top {
+    position: absolute;
+    clip-path: polygon(0 0, 100% 0, 81% 100%, 19% 100%);
+    background-color: black;
+    width: 30px;
+    height: 40px;
+    right: 110px;
+    top: 75px;
+    border-radius: 20%;
+  }
+  .kettle-side {
+    position: absolute;
+    background-color: #ff6b33;
+    top: 133px;
+    width: 25px;
+    height: 25px;
+    border-radius: 5%;
+    right: 35px;
+  }
+  .kettle-handle {
+    position: absolute;
+    background-color: black;
+    right: 0px;
+    height: 150px;
+    width: 100px;
+    top: 107px;
+    clip-path: polygon(65% 18%, 77% 19%, 91% 24%, 100% 42%, 100% 70%, 98% 91%, 84% 91%, 87% 71%, 88% 51%, 84% 38%, 65% 33%);
+  }
+  .cafebr{
+    text-align: center;
+    font-family: "Chango";
+    text-transform: uppercase;
+    padding: 10px;
+    color: #0c1080;
+  }
+  .cafebl{
+    text-align: left;
+    font-family: "Chango";
+    text-transform: uppercase;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #0c1080;
+  }
+  .espresso{
+    font-style: italic;
+    text-align: center;
+    padding-top: 20px;
+    color: #0c1080;
+  }
+  .pure{
+    color: white;
+    text-align: center;
+    font-size: 8px;
+  }
+  .weight{
+    color: white;
+    text-align: center;
+  }
+  .vacuum{
+    color: yellow;
+    text-align: center;
+    font-size: 7px;
+  }
+  .handle {
+    width: 30px;
+    height: 40px;
+    border: 1px solid gray;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    left: 25px;
+  }
+
+  .top-handle{
+    position: absolute;
+    bottom: 135px
+  }
+  .top-handle::before {
+    content: '';
+    background-color: #fffc28;
+    position: absolute;
+    clip-path: ellipse(30% 30% at 50% 50%);
+    width: 100%;
+    height: 100%;
+  }
+  .bottom-handle {
+    position: absolute;
+    bottom: 55px;
+  }
+  .bottom-handle::before {
+    content: '';
+    background-color: #ff4444;
+    position: absolute;
+    clip-path: ellipse(30% 30% at 50% 50%);
+    width: 100%;
+    height: 100%;
+  }
+</style>
+</head>
+
+
+<div class="frame">
+  <!-- ur HTML code goes here -->
+  <div class="kettle-base">
+
+  </div>
+    <div class="kettle-divider">
+
+  </div>
+
+    <div class="kettle-body">
+
+  </div>
+      <div class="kettle-lid">
+
+  </div>
+  <div class="kettle-top">
+
+  </div>
+  <div class="kettle-side">
+
+  </div>
+  <div class="kettle-handle">
+
+  </div>
+  <div class="coffee left-coffee">
+    <h1 class="cafebr">
+      CAFé BUSTELO
+    </h1>
+    <p class="espresso">
+      Espresso Ground Coffee
+    </p>
+    <p class="pure">
+      ALWAYS PURE AND FLAVORFUL, LIKE NO
+    </p>
+    <p class="vacuum">
+      VACUUM PACKED - 100% PURE COFFEE
+    </p>
+    <p class="weight">
+      NET WT 10 OZ (283g)
+    </p>
+  </div>
+  <div class="coffee right-coffee">
+    <h1 class="cafebl">
+      afé ustelo
+    </h1>
+    <p class="espresso">
+      Espresso Ground Coffee
+    </p>
+    <p class="pure">
+       YS PURE AND FLAVORFUL, LIKE NO OTHER
+    </p>
+    <p class="vacuum">
+      VACUUM PACKED - 100% PURE COFFEE
+    </p>
+    <p class="weight">
+      NET WT 10 OZ (283g)
+    </p>
+  </div>
+    <div class="handle top-handle">
+
+  </div>
+    <div class="handle bottom-handle">
+
+  </div>
+  <div class="cup top-cup">
+  </div>
+
+  <!--     <div class="stripe">
+
+    </div>
+    <div class="stripe">
+
+    </div>
+    <div class="stripe">
+
+    </div> -->
+  <div class="cup bottom-cup"></div>
+  <div class="side-cup">
+
+  </div>
+  <div class="star">
+
+  </div>
+</div>
